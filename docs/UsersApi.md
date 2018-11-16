@@ -1,6 +1,6 @@
 # UsersApi
 
-All URIs are relative to *http://localhost/v1*
+All URIs are relative to *http://http:/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,8 +21,8 @@ Authorization header expects the following format ‘OAuth {token}’
 //import org.openapitools.client.api.UsersApi;
 
 UsersApi apiInstance = new UsersApi();
-UUID uuid = new UUID(); // UUID | 
-String authorization = "authorization_example"; // String | 
+UUID uuid = null; // UUID | 
+String authorization = null; // String | 
 try {
     User result = apiInstance.usersUuidGet(uuid, authorization);
     System.out.println(result);
@@ -36,8 +36,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | [**UUID**](.md)|  |
- **authorization** | **String**|  | [optional]
+ **uuid** | [**UUID**](.md)|  | [default to null]
+ **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type
 

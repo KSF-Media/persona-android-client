@@ -73,6 +73,62 @@ public class JsonUtil {
       return new TypeToken<List<DescriptionFrequency>>(){}.getType();
     }
     
+    if ("InlineResponse400".equalsIgnoreCase(className)) {
+      return new TypeToken<List<InlineResponse400>>(){}.getType();
+    }
+    
+    if ("InlineResponse400InvalidRequestBody".equalsIgnoreCase(className)) {
+      return new TypeToken<List<InlineResponse400InvalidRequestBody>>(){}.getType();
+    }
+    
+    if ("InlineResponse403".equalsIgnoreCase(className)) {
+      return new TypeToken<List<InlineResponse403>>(){}.getType();
+    }
+    
+    if ("InlineResponse4031".equalsIgnoreCase(className)) {
+      return new TypeToken<List<InlineResponse4031>>(){}.getType();
+    }
+    
+    if ("InlineResponse4031AccessTokenExpired".equalsIgnoreCase(className)) {
+      return new TypeToken<List<InlineResponse4031AccessTokenExpired>>(){}.getType();
+    }
+    
+    if ("InlineResponse4032".equalsIgnoreCase(className)) {
+      return new TypeToken<List<InlineResponse4032>>(){}.getType();
+    }
+    
+    if ("InlineResponse4032EmailAddressInUse".equalsIgnoreCase(className)) {
+      return new TypeToken<List<InlineResponse4032EmailAddressInUse>>(){}.getType();
+    }
+    
+    if ("InlineResponse4032EmailNotAuthorized".equalsIgnoreCase(className)) {
+      return new TypeToken<List<InlineResponse4032EmailNotAuthorized>>(){}.getType();
+    }
+    
+    if ("InlineResponse4032OauthFailed".equalsIgnoreCase(className)) {
+      return new TypeToken<List<InlineResponse4032OauthFailed>>(){}.getType();
+    }
+    
+    if ("InlineResponse403InvalidCredentials".equalsIgnoreCase(className)) {
+      return new TypeToken<List<InlineResponse403InvalidCredentials>>(){}.getType();
+    }
+    
+    if ("InlineResponse415".equalsIgnoreCase(className)) {
+      return new TypeToken<List<InlineResponse415>>(){}.getType();
+    }
+    
+    if ("InlineResponse415UnsupportedMediaType".equalsIgnoreCase(className)) {
+      return new TypeToken<List<InlineResponse415UnsupportedMediaType>>(){}.getType();
+    }
+    
+    if ("InlineResponse500".equalsIgnoreCase(className)) {
+      return new TypeToken<List<InlineResponse500>>(){}.getType();
+    }
+    
+    if ("InlineResponse500InternalServerError".equalsIgnoreCase(className)) {
+      return new TypeToken<List<InlineResponse500InternalServerError>>(){}.getType();
+    }
+    
     if ("LoginData".equalsIgnoreCase(className)) {
       return new TypeToken<List<LoginData>>(){}.getType();
     }
@@ -141,6 +197,62 @@ public class JsonUtil {
     
     if ("DescriptionFrequency".equalsIgnoreCase(className)) {
       return new TypeToken<DescriptionFrequency>(){}.getType();
+    }
+    
+    if ("InlineResponse400".equalsIgnoreCase(className)) {
+      return new TypeToken<InlineResponse400>(){}.getType();
+    }
+    
+    if ("InlineResponse400InvalidRequestBody".equalsIgnoreCase(className)) {
+      return new TypeToken<InlineResponse400InvalidRequestBody>(){}.getType();
+    }
+    
+    if ("InlineResponse403".equalsIgnoreCase(className)) {
+      return new TypeToken<InlineResponse403>(){}.getType();
+    }
+    
+    if ("InlineResponse4031".equalsIgnoreCase(className)) {
+      return new TypeToken<InlineResponse4031>(){}.getType();
+    }
+    
+    if ("InlineResponse4031AccessTokenExpired".equalsIgnoreCase(className)) {
+      return new TypeToken<InlineResponse4031AccessTokenExpired>(){}.getType();
+    }
+    
+    if ("InlineResponse4032".equalsIgnoreCase(className)) {
+      return new TypeToken<InlineResponse4032>(){}.getType();
+    }
+    
+    if ("InlineResponse4032EmailAddressInUse".equalsIgnoreCase(className)) {
+      return new TypeToken<InlineResponse4032EmailAddressInUse>(){}.getType();
+    }
+    
+    if ("InlineResponse4032EmailNotAuthorized".equalsIgnoreCase(className)) {
+      return new TypeToken<InlineResponse4032EmailNotAuthorized>(){}.getType();
+    }
+    
+    if ("InlineResponse4032OauthFailed".equalsIgnoreCase(className)) {
+      return new TypeToken<InlineResponse4032OauthFailed>(){}.getType();
+    }
+    
+    if ("InlineResponse403InvalidCredentials".equalsIgnoreCase(className)) {
+      return new TypeToken<InlineResponse403InvalidCredentials>(){}.getType();
+    }
+    
+    if ("InlineResponse415".equalsIgnoreCase(className)) {
+      return new TypeToken<InlineResponse415>(){}.getType();
+    }
+    
+    if ("InlineResponse415UnsupportedMediaType".equalsIgnoreCase(className)) {
+      return new TypeToken<InlineResponse415UnsupportedMediaType>(){}.getType();
+    }
+    
+    if ("InlineResponse500".equalsIgnoreCase(className)) {
+      return new TypeToken<InlineResponse500>(){}.getType();
+    }
+    
+    if ("InlineResponse500InternalServerError".equalsIgnoreCase(className)) {
+      return new TypeToken<InlineResponse500InternalServerError>(){}.getType();
     }
     
     if ("LoginData".equalsIgnoreCase(className)) {

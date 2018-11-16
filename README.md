@@ -79,7 +79,7 @@ public class LoginApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost/v1*
+All URIs are relative to *http://http:/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -95,6 +95,20 @@ Class | Method | HTTP request | Description
  - [Address](docs/Address.md)
  - [Campaign](docs/Campaign.md)
  - [DescriptionFrequency](docs/DescriptionFrequency.md)
+ - [InlineResponse400](docs/InlineResponse400.md)
+ - [InlineResponse400InvalidRequestBody](docs/InlineResponse400InvalidRequestBody.md)
+ - [InlineResponse403](docs/InlineResponse403.md)
+ - [InlineResponse4031](docs/InlineResponse4031.md)
+ - [InlineResponse4031AccessTokenExpired](docs/InlineResponse4031AccessTokenExpired.md)
+ - [InlineResponse4032](docs/InlineResponse4032.md)
+ - [InlineResponse4032EmailAddressInUse](docs/InlineResponse4032EmailAddressInUse.md)
+ - [InlineResponse4032EmailNotAuthorized](docs/InlineResponse4032EmailNotAuthorized.md)
+ - [InlineResponse4032OauthFailed](docs/InlineResponse4032OauthFailed.md)
+ - [InlineResponse403InvalidCredentials](docs/InlineResponse403InvalidCredentials.md)
+ - [InlineResponse415](docs/InlineResponse415.md)
+ - [InlineResponse415UnsupportedMediaType](docs/InlineResponse415UnsupportedMediaType.md)
+ - [InlineResponse500](docs/InlineResponse500.md)
+ - [InlineResponse500InternalServerError](docs/InlineResponse500InternalServerError.md)
  - [LoginData](docs/LoginData.md)
  - [LoginDataSSO](docs/LoginDataSSO.md)
  - [LoginDataSoMe](docs/LoginDataSoMe.md)

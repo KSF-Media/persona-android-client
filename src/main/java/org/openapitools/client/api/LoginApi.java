@@ -23,6 +23,12 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
+import org.openapitools.client.model.InlineResponse400;
+import org.openapitools.client.model.InlineResponse403;
+import org.openapitools.client.model.InlineResponse4031;
+import org.openapitools.client.model.InlineResponse4032;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.LoginData;
 import org.openapitools.client.model.LoginDataSSO;
 import org.openapitools.client.model.LoginDataSoMe;
@@ -39,7 +45,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
 public class LoginApi {
-  String basePath = "http://localhost/v1";
+  String basePath = "http://http:/v1";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
   public void addHeader(String key, String value) {
