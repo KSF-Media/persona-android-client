@@ -16,31 +16,31 @@ import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
 @ApiModel(description = "")
-public class Paper {
+public class GdprConsent {
   
-  @SerializedName("code")
-  private String code = null;
-  @SerializedName("name")
-  private String name = null;
+  @SerializedName("key")
+  private String key = null;
+  @SerializedName("val")
+  private Boolean val = null;
 
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public String getCode() {
-    return code;
+  public String getKey() {
+    return key;
   }
-  public void setCode(String code) {
-    this.code = code;
+  public void setKey(String key) {
+    this.key = key;
   }
 
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public String getName() {
-    return name;
+  public Boolean getVal() {
+    return val;
   }
-  public void setName(String name) {
-    this.name = name;
+  public void setVal(Boolean val) {
+    this.val = val;
   }
 
 
@@ -52,26 +52,26 @@ public class Paper {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Paper paper = (Paper) o;
-    return (this.code == null ? paper.code == null : this.code.equals(paper.code)) &&
-        (this.name == null ? paper.name == null : this.name.equals(paper.name));
+    GdprConsent gdprConsent = (GdprConsent) o;
+    return (this.key == null ? gdprConsent.key == null : this.key.equals(gdprConsent.key)) &&
+        (this.val == null ? gdprConsent.val == null : this.val.equals(gdprConsent.val));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (this.code == null ? 0: this.code.hashCode());
-    result = 31 * result + (this.name == null ? 0: this.name.hashCode());
+    result = 31 * result + (this.key == null ? 0: this.key.hashCode());
+    result = 31 * result + (this.val == null ? 0: this.val.hashCode());
     return result;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Paper {\n");
+    sb.append("class GdprConsent {\n");
     
-    sb.append("  code: ").append(code).append("\n");
-    sb.append("  name: ").append(name).append("\n");
+    sb.append("  key: ").append(key).append("\n");
+    sb.append("  val: ").append(val).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
