@@ -57,7 +57,7 @@ No authorization required
 
 <a name="usersUuidGet"></a>
 # **usersUuidGet**
-> User usersUuidGet(uuid, authorization)
+> User usersUuidGet(uuid, authorization, cacheControl)
 
 Get user by UUID.
 
@@ -71,8 +71,9 @@ Authorization header expects the following format ‘OAuth {token}’
 UsersApi apiInstance = new UsersApi();
 UUID uuid = null; // UUID | 
 String authorization = null; // String | 
+String cacheControl = null; // String | 
 try {
-    User result = apiInstance.usersUuidGet(uuid, authorization);
+    User result = apiInstance.usersUuidGet(uuid, authorization, cacheControl);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidGet");
@@ -86,6 +87,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**UUID**](.md)|  | [default to null]
  **authorization** | **String**|  | [optional] [default to null]
+ **cacheControl** | **String**|  | [optional] [default to null]
 
 ### Return type
 

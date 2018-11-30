@@ -207,9 +207,10 @@ public class UsersApi {
   * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
    * @param authorization 
+   * @param cacheControl 
    * @return User
   */
-  public User usersUuidGet (UUID uuid, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public User usersUuidGet (UUID uuid, String authorization, String cacheControl) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -227,6 +228,7 @@ public class UsersApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+    headerParams.put("Cache-Control", ApiInvoker.parameterToString(cacheControl));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -269,9 +271,9 @@ public class UsersApi {
       /**
    * Get user by UUID.
    * Authorization header expects the following format ‘OAuth {token}’
-   * @param uuid    * @param authorization 
+   * @param uuid    * @param authorization    * @param cacheControl 
   */
-  public void usersUuidGet (UUID uuid, String authorization, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidGet (UUID uuid, String authorization, String cacheControl, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'uuid' is set
@@ -292,6 +294,7 @@ public class UsersApi {
 
 
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+    headerParams.put("Cache-Control", ApiInvoker.parameterToString(cacheControl));
 
     String[] contentTypes = {
       
