@@ -14,6 +14,7 @@ package org.openapitools.client.model;
 
 import java.util.Date;
 import org.openapitools.client.model.ActiveDays;
+import org.openapitools.client.model.Paper;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -28,6 +29,8 @@ public class Product {
   private ActiveDays active = null;
   @SerializedName("nextDelivery")
   private Date nextDelivery = null;
+  @SerializedName("paper")
+  private Paper paper = null;
 
   /**
    **/
@@ -69,6 +72,16 @@ public class Product {
     this.nextDelivery = nextDelivery;
   }
 
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public Paper getPaper() {
+    return paper;
+  }
+  public void setPaper(Paper paper) {
+    this.paper = paper;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -82,7 +95,8 @@ public class Product {
     return (this.id == null ? product.id == null : this.id.equals(product.id)) &&
         (this.name == null ? product.name == null : this.name.equals(product.name)) &&
         (this.active == null ? product.active == null : this.active.equals(product.active)) &&
-        (this.nextDelivery == null ? product.nextDelivery == null : this.nextDelivery.equals(product.nextDelivery));
+        (this.nextDelivery == null ? product.nextDelivery == null : this.nextDelivery.equals(product.nextDelivery)) &&
+        (this.paper == null ? product.paper == null : this.paper.equals(product.paper));
   }
 
   @Override
@@ -92,6 +106,7 @@ public class Product {
     result = 31 * result + (this.name == null ? 0: this.name.hashCode());
     result = 31 * result + (this.active == null ? 0: this.active.hashCode());
     result = 31 * result + (this.nextDelivery == null ? 0: this.nextDelivery.hashCode());
+    result = 31 * result + (this.paper == null ? 0: this.paper.hashCode());
     return result;
   }
 
@@ -104,6 +119,7 @@ public class Product {
     sb.append("  name: ").append(name).append("\n");
     sb.append("  active: ").append(active).append("\n");
     sb.append("  nextDelivery: ").append(nextDelivery).append("\n");
+    sb.append("  paper: ").append(paper).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

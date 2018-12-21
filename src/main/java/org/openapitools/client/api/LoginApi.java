@@ -33,6 +33,7 @@ import org.openapitools.client.model.LoginData;
 import org.openapitools.client.model.LoginDataSSO;
 import org.openapitools.client.model.LoginDataSoMe;
 import org.openapitools.client.model.LoginResponse;
+import java.util.UUID;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -434,6 +435,136 @@ public class LoginApi {
           public void onResponse(String localVarResponse) {
             try {
               responseListener.onResponse((LoginResponse) ApiInvoker.deserialize(localVarResponse,  "", LoginResponse.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
+  /**
+  * Logout
+  * Authorization header expects the following format ‘OAuth {token}’
+   * @param uuid 
+   * @param authorization 
+   * @return List<Object>
+  */
+  public List<Object> loginUuidDelete (UUID uuid, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = null;
+    // verify the required parameter 'uuid' is set
+    if (uuid == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'uuid' when calling loginUuidDelete",
+        new ApiException(400, "Missing the required parameter 'uuid' when calling loginUuidDelete"));
+    }
+
+    // create path and map variables
+    String path = "/login/{uuid}".replaceAll("\\{" + "uuid" + "\\}", apiInvoker.escapeString(uuid.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+    String[] contentTypes = {
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+    }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      if (localVarResponse != null) {
+         return (List<Object>) ApiInvoker.deserialize(localVarResponse, "array", Object.class);
+      } else {
+         return null;
+      }
+    } catch (ApiException ex) {
+       throw ex;
+    } catch (InterruptedException ex) {
+       throw ex;
+    } catch (ExecutionException ex) {
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
+    } catch (TimeoutException ex) {
+      throw ex;
+    }
+  }
+
+      /**
+   * Logout
+   * Authorization header expects the following format ‘OAuth {token}’
+   * @param uuid    * @param authorization 
+  */
+  public void loginUuidDelete (UUID uuid, String authorization, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = null;
+
+    // verify the required parameter 'uuid' is set
+    if (uuid == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'uuid' when calling loginUuidDelete",
+        new ApiException(400, "Missing the required parameter 'uuid' when calling loginUuidDelete"));
+    }
+
+    // create path and map variables
+    String path = "/login/{uuid}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "uuid" + "\\}", apiInvoker.escapeString(uuid.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+
+    String[] contentTypes = {
+      
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+            try {
+              responseListener.onResponse((List<Object>) ApiInvoker.deserialize(localVarResponse,  "array", Object.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
