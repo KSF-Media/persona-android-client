@@ -18,10 +18,22 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class GdprConsent {
   
+  @SerializedName("brand")
+  private String brand = null;
   @SerializedName("key")
   private String key = null;
   @SerializedName("val")
   private Boolean val = null;
+
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public String getBrand() {
+    return brand;
+  }
+  public void setBrand(String brand) {
+    this.brand = brand;
+  }
 
   /**
    **/
@@ -53,13 +65,15 @@ public class GdprConsent {
       return false;
     }
     GdprConsent gdprConsent = (GdprConsent) o;
-    return (this.key == null ? gdprConsent.key == null : this.key.equals(gdprConsent.key)) &&
+    return (this.brand == null ? gdprConsent.brand == null : this.brand.equals(gdprConsent.brand)) &&
+        (this.key == null ? gdprConsent.key == null : this.key.equals(gdprConsent.key)) &&
         (this.val == null ? gdprConsent.val == null : this.val.equals(gdprConsent.val));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
+    result = 31 * result + (this.brand == null ? 0: this.brand.hashCode());
     result = 31 * result + (this.key == null ? 0: this.key.hashCode());
     result = 31 * result + (this.val == null ? 0: this.val.hashCode());
     return result;
@@ -70,6 +84,7 @@ public class GdprConsent {
     StringBuilder sb = new StringBuilder();
     sb.append("class GdprConsent {\n");
     
+    sb.append("  brand: ").append(brand).append("\n");
     sb.append("  key: ").append(key).append("\n");
     sb.append("  val: ").append(val).append("\n");
     sb.append("}\n");
