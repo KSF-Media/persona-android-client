@@ -27,6 +27,8 @@ import org.openapitools.client.model.GdprConsent;
 import org.openapitools.client.model.InlineResponse400;
 import org.openapitools.client.model.InlineResponse415;
 import java.util.*;
+import org.openapitools.client.model.LoginResponse;
+import org.openapitools.client.model.NewUser;
 import java.util.UUID;
 import org.openapitools.client.model.User;
 
@@ -60,6 +62,134 @@ public class UsersApi {
     return basePath;
   }
 
+  /**
+  * Create a new user.
+  * 
+   * @param newUser 
+   * @return LoginResponse
+  */
+  public LoginResponse usersPost (NewUser newUser) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = newUser;
+    // verify the required parameter 'newUser' is set
+    if (newUser == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'newUser' when calling usersPost",
+        new ApiException(400, "Missing the required parameter 'newUser' when calling usersPost"));
+    }
+
+    // create path and map variables
+    String path = "/users";
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+    String[] contentTypes = {
+      "application/json;charset=utf-8"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+    }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      if (localVarResponse != null) {
+         return (LoginResponse) ApiInvoker.deserialize(localVarResponse, "", LoginResponse.class);
+      } else {
+         return null;
+      }
+    } catch (ApiException ex) {
+       throw ex;
+    } catch (InterruptedException ex) {
+       throw ex;
+    } catch (ExecutionException ex) {
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
+    } catch (TimeoutException ex) {
+      throw ex;
+    }
+  }
+
+      /**
+   * Create a new user.
+   * 
+   * @param newUser 
+  */
+  public void usersPost (NewUser newUser, final Response.Listener<LoginResponse> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = newUser;
+
+    // verify the required parameter 'newUser' is set
+    if (newUser == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'newUser' when calling usersPost",
+        new ApiException(400, "Missing the required parameter 'newUser' when calling usersPost"));
+    }
+
+    // create path and map variables
+    String path = "/users".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+
+
+    String[] contentTypes = {
+      "application/json;charset=utf-8"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+            try {
+              responseListener.onResponse((LoginResponse) ApiInvoker.deserialize(localVarResponse,  "", LoginResponse.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
   /**
   * Updates the GDPR consent settings for a given user.
   * Authorization header expects the following format ‘OAuth {token}’

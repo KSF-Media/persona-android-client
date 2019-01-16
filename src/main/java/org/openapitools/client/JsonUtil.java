@@ -153,6 +153,10 @@ public class JsonUtil {
       return new TypeToken<List<ModelPackage>>(){}.getType();
     }
     
+    if ("NewUser".equalsIgnoreCase(className)) {
+      return new TypeToken<List<NewUser>>(){}.getType();
+    }
+    
     if ("PackageDescription".equalsIgnoreCase(className)) {
       return new TypeToken<List<PackageDescription>>(){}.getType();
     }
@@ -281,6 +285,10 @@ public class JsonUtil {
     
     if ("ModelPackage".equalsIgnoreCase(className)) {
       return new TypeToken<ModelPackage>(){}.getType();
+    }
+    
+    if ("NewUser".equalsIgnoreCase(className)) {
+      return new TypeToken<NewUser>(){}.getType();
     }
     
     if ("PackageDescription".equalsIgnoreCase(className)) {
