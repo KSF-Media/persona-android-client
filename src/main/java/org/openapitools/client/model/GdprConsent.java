@@ -20,10 +20,10 @@ public class GdprConsent {
   
   @SerializedName("brand")
   private String brand = null;
-  @SerializedName("key")
-  private String key = null;
-  @SerializedName("val")
-  private Boolean val = null;
+  @SerializedName("consentKey")
+  private String consentKey = null;
+  @SerializedName("value")
+  private Boolean value = null;
 
   /**
    **/
@@ -38,21 +38,21 @@ public class GdprConsent {
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public String getKey() {
-    return key;
+  public String getConsentKey() {
+    return consentKey;
   }
-  public void setKey(String key) {
-    this.key = key;
+  public void setConsentKey(String consentKey) {
+    this.consentKey = consentKey;
   }
 
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public Boolean getVal() {
-    return val;
+  public Boolean getValue() {
+    return value;
   }
-  public void setVal(Boolean val) {
-    this.val = val;
+  public void setValue(Boolean value) {
+    this.value = value;
   }
 
 
@@ -66,16 +66,16 @@ public class GdprConsent {
     }
     GdprConsent gdprConsent = (GdprConsent) o;
     return (this.brand == null ? gdprConsent.brand == null : this.brand.equals(gdprConsent.brand)) &&
-        (this.key == null ? gdprConsent.key == null : this.key.equals(gdprConsent.key)) &&
-        (this.val == null ? gdprConsent.val == null : this.val.equals(gdprConsent.val));
+        (this.consentKey == null ? gdprConsent.consentKey == null : this.consentKey.equals(gdprConsent.consentKey)) &&
+        (this.value == null ? gdprConsent.value == null : this.value.equals(gdprConsent.value));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
     result = 31 * result + (this.brand == null ? 0: this.brand.hashCode());
-    result = 31 * result + (this.key == null ? 0: this.key.hashCode());
-    result = 31 * result + (this.val == null ? 0: this.val.hashCode());
+    result = 31 * result + (this.consentKey == null ? 0: this.consentKey.hashCode());
+    result = 31 * result + (this.value == null ? 0: this.value.hashCode());
     return result;
   }
 
@@ -85,8 +85,8 @@ public class GdprConsent {
     sb.append("class GdprConsent {\n");
     
     sb.append("  brand: ").append(brand).append("\n");
-    sb.append("  key: ").append(key).append("\n");
-    sb.append("  val: ").append(val).append("\n");
+    sb.append("  consentKey: ").append(consentKey).append("\n");
+    sb.append("  value: ").append(value).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
