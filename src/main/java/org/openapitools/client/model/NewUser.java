@@ -26,6 +26,8 @@ public class NewUser {
   private String emailAddress = null;
   @SerializedName("password")
   private String password = null;
+  @SerializedName("confirmPassword")
+  private String confirmPassword = null;
   @SerializedName("streetAddress")
   private String streetAddress = null;
   @SerializedName("zipCode")
@@ -75,6 +77,16 @@ public class NewUser {
   }
   public void setPassword(String password) {
     this.password = password;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public String getConfirmPassword() {
+    return confirmPassword;
+  }
+  public void setConfirmPassword(String confirmPassword) {
+    this.confirmPassword = confirmPassword;
   }
 
   /**
@@ -141,6 +153,7 @@ public class NewUser {
         (this.lastName == null ? newUser.lastName == null : this.lastName.equals(newUser.lastName)) &&
         (this.emailAddress == null ? newUser.emailAddress == null : this.emailAddress.equals(newUser.emailAddress)) &&
         (this.password == null ? newUser.password == null : this.password.equals(newUser.password)) &&
+        (this.confirmPassword == null ? newUser.confirmPassword == null : this.confirmPassword.equals(newUser.confirmPassword)) &&
         (this.streetAddress == null ? newUser.streetAddress == null : this.streetAddress.equals(newUser.streetAddress)) &&
         (this.zipCode == null ? newUser.zipCode == null : this.zipCode.equals(newUser.zipCode)) &&
         (this.city == null ? newUser.city == null : this.city.equals(newUser.city)) &&
@@ -155,6 +168,7 @@ public class NewUser {
     result = 31 * result + (this.lastName == null ? 0: this.lastName.hashCode());
     result = 31 * result + (this.emailAddress == null ? 0: this.emailAddress.hashCode());
     result = 31 * result + (this.password == null ? 0: this.password.hashCode());
+    result = 31 * result + (this.confirmPassword == null ? 0: this.confirmPassword.hashCode());
     result = 31 * result + (this.streetAddress == null ? 0: this.streetAddress.hashCode());
     result = 31 * result + (this.zipCode == null ? 0: this.zipCode.hashCode());
     result = 31 * result + (this.city == null ? 0: this.city.hashCode());
@@ -172,6 +186,7 @@ public class NewUser {
     sb.append("  lastName: ").append(lastName).append("\n");
     sb.append("  emailAddress: ").append(emailAddress).append("\n");
     sb.append("  password: ").append(password).append("\n");
+    sb.append("  confirmPassword: ").append(confirmPassword).append("\n");
     sb.append("  streetAddress: ").append(streetAddress).append("\n");
     sb.append("  zipCode: ").append(zipCode).append("\n");
     sb.append("  city: ").append(city).append("\n");

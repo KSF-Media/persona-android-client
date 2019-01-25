@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **lastName** | **String** |  | 
 **emailAddress** | **String** |  | 
 **password** | **String** |  | 
+**confirmPassword** | **String** |  | 
 **streetAddress** | **String** |  |  [optional]
 **zipCode** | **String** |  |  [optional]
 **city** | **String** |  |  [optional]
