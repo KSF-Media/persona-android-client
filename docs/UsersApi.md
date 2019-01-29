@@ -52,7 +52,7 @@ No authorization required
 
 <a name="usersUuidGdprPut"></a>
 # **usersUuidGdprPut**
-> List&lt;Object&gt; usersUuidGdprPut(uuid, gdprConsent, authorization)
+> User usersUuidGdprPut(uuid, gdprConsent, authorization)
 
 Updates the GDPR consent settings for a given user.
 
@@ -68,7 +68,7 @@ UUID uuid = null; // UUID |
 List<GdprConsent> gdprConsent = Arrays.asList(new List()); // List<GdprConsent> | 
 String authorization = null; // String | 
 try {
-    List<Object> result = apiInstance.usersUuidGdprPut(uuid, gdprConsent, authorization);
+    User result = apiInstance.usersUuidGdprPut(uuid, gdprConsent, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidGdprPut");
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;Object&gt;**
+[**User**](User.md)
 
 ### Authorization
 
