@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**usersPost**](UsersApi.md#usersPost) | **POST** /users | Create a new user.
 [**usersUuidGdprPut**](UsersApi.md#usersUuidGdprPut) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.
 [**usersUuidGet**](UsersApi.md#usersUuidGet) | **GET** /users/{uuid} | Get user by UUID.
+[**usersUuidPatch**](UsersApi.md#usersUuidPatch) | **PATCH** /users/{uuid} | Update a user
 
 
 <a name="usersPost"></a>
@@ -142,5 +143,52 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json;charset=utf-8
+
+<a name="usersUuidPatch"></a>
+# **usersUuidPatch**
+> User usersUuidPatch(uuid, userUpdate, authorization)
+
+Update a user
+
+Authorization header expects the following format ‘OAuth {token}’
+
+### Example
+```java
+// Import classes:
+//import org.openapitools.client.api.UsersApi;
+
+UsersApi apiInstance = new UsersApi();
+UUID uuid = null; // UUID | 
+UserUpdate userUpdate = new UserUpdate(); // UserUpdate | 
+String authorization = null; // String | 
+try {
+    User result = apiInstance.usersUuidPatch(uuid, userUpdate, authorization);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#usersUuidPatch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**UUID**](.md)|  | [default to null]
+ **userUpdate** | [**UserUpdate**](UserUpdate.md)|  |
+ **authorization** | **String**|  | [optional] [default to null]
+
+### Return type
+
+[**User**](User.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/json;charset=utf-8
 
