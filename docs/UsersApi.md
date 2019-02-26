@@ -5,6 +5,7 @@ All URIs are relative to *http://http:/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**usersPost**](UsersApi.md#usersPost) | **POST** /users | Create a new user.
+[**usersUuidEntitlementGet**](UsersApi.md#usersUuidEntitlementGet) | **GET** /users/{uuid}/entitlement | Get users entitlements.
 [**usersUuidGdprPut**](UsersApi.md#usersUuidGdprPut) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.
 [**usersUuidGet**](UsersApi.md#usersUuidGet) | **GET** /users/{uuid} | Get user by UUID.
 [**usersUuidPatch**](UsersApi.md#usersUuidPatch) | **PATCH** /users/{uuid} | Update a user
@@ -49,6 +50,51 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+<a name="usersUuidEntitlementGet"></a>
+# **usersUuidEntitlementGet**
+> List&lt;String&gt; usersUuidEntitlementGet(uuid, authorization, cacheControl)
+
+Get users entitlements.
+
+### Example
+```java
+// Import classes:
+//import org.openapitools.client.api.UsersApi;
+
+UsersApi apiInstance = new UsersApi();
+UUID uuid = null; // UUID | 
+String authorization = null; // String | 
+String cacheControl = null; // String | 
+try {
+    List<String> result = apiInstance.usersUuidEntitlementGet(uuid, authorization, cacheControl);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#usersUuidEntitlementGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**UUID**](.md)|  | [default to null]
+ **authorization** | **String**|  | [optional] [default to null]
+ **cacheControl** | **String**|  | [optional] [default to null]
+
+### Return type
+
+**List&lt;String&gt;**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=utf-8
 
 <a name="usersUuidGdprPut"></a>

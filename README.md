@@ -58,18 +58,17 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import org.openapitools.client.api.LoginApi;
+import org.openapitools.client.api.EntitlementsApi;
 
-public class LoginApiExample {
+public class EntitlementsApiExample {
 
     public static void main(String[] args) {
-        LoginApi apiInstance = new LoginApi();
-        LoginData loginData = new LoginData(); // LoginData | 
+        EntitlementsApi apiInstance = new EntitlementsApi();
         try {
-            LoginResponse result = apiInstance.loginPost(loginData);
+            Map<String, List<String>> result = apiInstance.entitlementsGet();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling LoginApi#loginPost");
+            System.err.println("Exception when calling EntitlementsApi#entitlementsGet");
             e.printStackTrace();
         }
     }
@@ -83,11 +82,13 @@ All URIs are relative to *http://http:/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*EntitlementsApi* | [**entitlementsGet**](docs/EntitlementsApi.md#entitlementsGet) | **GET** /entitlements | List all entitlements
 *LoginApi* | [**loginPost**](docs/LoginApi.md#loginPost) | **POST** /login | Login with email and password
 *LoginApi* | [**loginSomePost**](docs/LoginApi.md#loginSomePost) | **POST** /login/some | Login with social media
 *LoginApi* | [**loginSsoPost**](docs/LoginApi.md#loginSsoPost) | **POST** /login/sso | Login with the AccessToken given by the SSO auth
 *LoginApi* | [**loginUuidDelete**](docs/LoginApi.md#loginUuidDelete) | **DELETE** /login/{uuid} | Logout
 *UsersApi* | [**usersPost**](docs/UsersApi.md#usersPost) | **POST** /users | Create a new user.
+*UsersApi* | [**usersUuidEntitlementGet**](docs/UsersApi.md#usersUuidEntitlementGet) | **GET** /users/{uuid}/entitlement | Get users entitlements.
 *UsersApi* | [**usersUuidGdprPut**](docs/UsersApi.md#usersUuidGdprPut) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.
 *UsersApi* | [**usersUuidGet**](docs/UsersApi.md#usersUuidGet) | **GET** /users/{uuid} | Get user by UUID.
 *UsersApi* | [**usersUuidPatch**](docs/UsersApi.md#usersUuidPatch) | **PATCH** /users/{uuid} | Update a user
