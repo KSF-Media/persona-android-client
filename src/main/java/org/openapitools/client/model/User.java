@@ -16,6 +16,7 @@ import java.util.*;
 import java.util.UUID;
 import org.openapitools.client.model.Address;
 import org.openapitools.client.model.GdprConsent;
+import org.openapitools.client.model.LegalConsent;
 import org.openapitools.client.model.Subscription;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
@@ -39,6 +40,8 @@ public class User {
   private List<Subscription> subs = null;
   @SerializedName("consent")
   private List<GdprConsent> consent = null;
+  @SerializedName("legal")
+  private List<LegalConsent> legal = null;
 
   /**
    **/
@@ -120,6 +123,16 @@ public class User {
     this.consent = consent;
   }
 
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public List<LegalConsent> getLegal() {
+    return legal;
+  }
+  public void setLegal(List<LegalConsent> legal) {
+    this.legal = legal;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -137,7 +150,8 @@ public class User {
         (this.address == null ? user.address == null : this.address.equals(user.address)) &&
         (this.cusno == null ? user.cusno == null : this.cusno.equals(user.cusno)) &&
         (this.subs == null ? user.subs == null : this.subs.equals(user.subs)) &&
-        (this.consent == null ? user.consent == null : this.consent.equals(user.consent));
+        (this.consent == null ? user.consent == null : this.consent.equals(user.consent)) &&
+        (this.legal == null ? user.legal == null : this.legal.equals(user.legal));
   }
 
   @Override
@@ -151,6 +165,7 @@ public class User {
     result = 31 * result + (this.cusno == null ? 0: this.cusno.hashCode());
     result = 31 * result + (this.subs == null ? 0: this.subs.hashCode());
     result = 31 * result + (this.consent == null ? 0: this.consent.hashCode());
+    result = 31 * result + (this.legal == null ? 0: this.legal.hashCode());
     return result;
   }
 
@@ -167,6 +182,7 @@ public class User {
     sb.append("  cusno: ").append(cusno).append("\n");
     sb.append("  subs: ").append(subs).append("\n");
     sb.append("  consent: ").append(consent).append("\n");
+    sb.append("  legal: ").append(legal).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -26,6 +26,7 @@ import com.android.volley.VolleyError;
 import org.openapitools.client.model.GdprConsent;
 import org.openapitools.client.model.InlineResponse400;
 import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.LegalConsent;
 import java.util.*;
 import org.openapitools.client.model.LoginResponse;
 import org.openapitools.client.model.NewUser;
@@ -580,6 +581,148 @@ public class UsersApi {
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+            try {
+              responseListener.onResponse((User) ApiInvoker.deserialize(localVarResponse,  "", User.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
+  /**
+  * Updates the legal consent settings for a given user.
+  * Authorization header expects the following format ‘OAuth {token}’
+   * @param uuid 
+   * @param legalConsent 
+   * @param authorization 
+   * @return User
+  */
+  public User usersUuidLegalPut (UUID uuid, List<LegalConsent> legalConsent, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = legalConsent;
+    // verify the required parameter 'uuid' is set
+    if (uuid == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'uuid' when calling usersUuidLegalPut",
+        new ApiException(400, "Missing the required parameter 'uuid' when calling usersUuidLegalPut"));
+    }
+    // verify the required parameter 'legalConsent' is set
+    if (legalConsent == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'legalConsent' when calling usersUuidLegalPut",
+        new ApiException(400, "Missing the required parameter 'legalConsent' when calling usersUuidLegalPut"));
+    }
+
+    // create path and map variables
+    String path = "/users/{uuid}/legal".replaceAll("\\{" + "uuid" + "\\}", apiInvoker.escapeString(uuid.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+    String[] contentTypes = {
+      "application/json;charset=utf-8"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+    }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      if (localVarResponse != null) {
+         return (User) ApiInvoker.deserialize(localVarResponse, "", User.class);
+      } else {
+         return null;
+      }
+    } catch (ApiException ex) {
+       throw ex;
+    } catch (InterruptedException ex) {
+       throw ex;
+    } catch (ExecutionException ex) {
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
+    } catch (TimeoutException ex) {
+      throw ex;
+    }
+  }
+
+      /**
+   * Updates the legal consent settings for a given user.
+   * Authorization header expects the following format ‘OAuth {token}’
+   * @param uuid    * @param legalConsent    * @param authorization 
+  */
+  public void usersUuidLegalPut (UUID uuid, List<LegalConsent> legalConsent, String authorization, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = legalConsent;
+
+    // verify the required parameter 'uuid' is set
+    if (uuid == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'uuid' when calling usersUuidLegalPut",
+        new ApiException(400, "Missing the required parameter 'uuid' when calling usersUuidLegalPut"));
+    }
+    // verify the required parameter 'legalConsent' is set
+    if (legalConsent == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'legalConsent' when calling usersUuidLegalPut",
+        new ApiException(400, "Missing the required parameter 'legalConsent' when calling usersUuidLegalPut"));
+    }
+
+    // create path and map variables
+    String path = "/users/{uuid}/legal".replaceAll("\\{format\\}","json").replaceAll("\\{" + "uuid" + "\\}", apiInvoker.escapeString(uuid.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+
+    String[] contentTypes = {
+      "application/json;charset=utf-8"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
         new Response.Listener<String>() {
           @Override
           public void onResponse(String localVarResponse) {

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **cusno** | **String** |  | 
 **subs** | [**List&lt;Subscription&gt;**](Subscription.md) |  | 
 **consent** | [**List&lt;GdprConsent&gt;**](GdprConsent.md) |  | 
+**legal** | [**List&lt;LegalConsent&gt;**](LegalConsent.md) |  | 
 
 
 

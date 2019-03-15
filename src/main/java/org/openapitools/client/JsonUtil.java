@@ -133,6 +133,10 @@ public class JsonUtil {
       return new TypeToken<List<InlineResponse500InternalServerError>>(){}.getType();
     }
     
+    if ("LegalConsent".equalsIgnoreCase(className)) {
+      return new TypeToken<List<LegalConsent>>(){}.getType();
+    }
+    
     if ("LoginData".equalsIgnoreCase(className)) {
       return new TypeToken<List<LoginData>>(){}.getType();
     }
@@ -273,6 +277,10 @@ public class JsonUtil {
     
     if ("InlineResponse500InternalServerError".equalsIgnoreCase(className)) {
       return new TypeToken<InlineResponse500InternalServerError>(){}.getType();
+    }
+    
+    if ("LegalConsent".equalsIgnoreCase(className)) {
+      return new TypeToken<LegalConsent>(){}.getType();
     }
     
     if ("LoginData".equalsIgnoreCase(className)) {
