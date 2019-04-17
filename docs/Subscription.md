@@ -1,7 +1,9 @@
 
+
 # Subscription
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **subsno** | **Integer** |  | 
@@ -15,6 +17,7 @@ Name | Type | Description | Notes
 **dates** | [**SubscriptionDates**](SubscriptionDates.md) |  | 
 **extsubsexists** | **Boolean** |  | 
 **campaign** | [**Campaign**](Campaign.md) |  |  [optional]
+
 
 
 

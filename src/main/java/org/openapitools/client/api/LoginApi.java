@@ -68,15 +68,15 @@ public class LoginApi {
   /**
   * Login with email and password
   * 
-   * @param loginData 
+   * @param body 
    * @return LoginResponse
   */
-  public LoginResponse loginPost (LoginData loginData) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = loginData;
-    // verify the required parameter 'loginData' is set
-    if (loginData == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'loginData' when calling loginPost",
-        new ApiException(400, "Missing the required parameter 'loginData' when calling loginPost"));
+  public LoginResponse loginPost (LoginData body) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = body;
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling loginPost",
+        new ApiException(400, "Missing the required parameter 'body' when calling loginPost"));
     }
 
     // create path and map variables
@@ -131,15 +131,15 @@ public class LoginApi {
       /**
    * Login with email and password
    * 
-   * @param loginData 
+   * @param body 
   */
-  public void loginPost (LoginData loginData, final Response.Listener<LoginResponse> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = loginData;
+  public void loginPost (LoginData body, final Response.Listener<LoginResponse> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = body;
 
-    // verify the required parameter 'loginData' is set
-    if (loginData == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'loginData' when calling loginPost",
-        new ApiException(400, "Missing the required parameter 'loginData' when calling loginPost"));
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling loginPost",
+        new ApiException(400, "Missing the required parameter 'body' when calling loginPost"));
     }
 
     // create path and map variables
@@ -196,15 +196,15 @@ public class LoginApi {
   /**
   * Login with social media
   * 
-   * @param loginDataSoMe 
+   * @param body 
    * @return LoginResponse
   */
-  public LoginResponse loginSomePost (LoginDataSoMe loginDataSoMe) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = loginDataSoMe;
-    // verify the required parameter 'loginDataSoMe' is set
-    if (loginDataSoMe == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'loginDataSoMe' when calling loginSomePost",
-        new ApiException(400, "Missing the required parameter 'loginDataSoMe' when calling loginSomePost"));
+  public LoginResponse loginSomePost (LoginDataSoMe body) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = body;
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling loginSomePost",
+        new ApiException(400, "Missing the required parameter 'body' when calling loginSomePost"));
     }
 
     // create path and map variables
@@ -259,15 +259,15 @@ public class LoginApi {
       /**
    * Login with social media
    * 
-   * @param loginDataSoMe 
+   * @param body 
   */
-  public void loginSomePost (LoginDataSoMe loginDataSoMe, final Response.Listener<LoginResponse> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = loginDataSoMe;
+  public void loginSomePost (LoginDataSoMe body, final Response.Listener<LoginResponse> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = body;
 
-    // verify the required parameter 'loginDataSoMe' is set
-    if (loginDataSoMe == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'loginDataSoMe' when calling loginSomePost",
-        new ApiException(400, "Missing the required parameter 'loginDataSoMe' when calling loginSomePost"));
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling loginSomePost",
+        new ApiException(400, "Missing the required parameter 'body' when calling loginSomePost"));
     }
 
     // create path and map variables
@@ -324,15 +324,15 @@ public class LoginApi {
   /**
   * Login with the AccessToken given by the SSO auth
   * 
-   * @param loginDataSSO 
+   * @param body 
    * @return LoginResponse
   */
-  public LoginResponse loginSsoPost (LoginDataSSO loginDataSSO) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = loginDataSSO;
-    // verify the required parameter 'loginDataSSO' is set
-    if (loginDataSSO == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'loginDataSSO' when calling loginSsoPost",
-        new ApiException(400, "Missing the required parameter 'loginDataSSO' when calling loginSsoPost"));
+  public LoginResponse loginSsoPost (LoginDataSSO body) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = body;
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling loginSsoPost",
+        new ApiException(400, "Missing the required parameter 'body' when calling loginSsoPost"));
     }
 
     // create path and map variables
@@ -387,15 +387,15 @@ public class LoginApi {
       /**
    * Login with the AccessToken given by the SSO auth
    * 
-   * @param loginDataSSO 
+   * @param body 
   */
-  public void loginSsoPost (LoginDataSSO loginDataSSO, final Response.Listener<LoginResponse> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = loginDataSSO;
+  public void loginSsoPost (LoginDataSSO body, final Response.Listener<LoginResponse> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = body;
 
-    // verify the required parameter 'loginDataSSO' is set
-    if (loginDataSSO == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'loginDataSSO' when calling loginSsoPost",
-        new ApiException(400, "Missing the required parameter 'loginDataSSO' when calling loginSsoPost"));
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling loginSsoPost",
+        new ApiException(400, "Missing the required parameter 'body' when calling loginSsoPost"));
     }
 
     // create path and map variables

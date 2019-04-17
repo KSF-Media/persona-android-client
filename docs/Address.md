@@ -1,7 +1,9 @@
 
+
 # Address
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **countryCode** | **String** |  | 
@@ -12,6 +14,7 @@ Name | Type | Description | Notes
 **houseNo** | **String** |  |  [optional]
 **staircase** | **String** |  |  [optional]
 **apartment** | **String** |  |  [optional]
+
 
 
 

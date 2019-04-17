@@ -1,7 +1,9 @@
 
+
 # SubscriptionDates
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **lenMonths** | **Integer** |  |  [optional]
@@ -12,6 +14,7 @@ Name | Type | Description | Notes
 **invoicingStart** | [**Date**](Date.md) |  |  [optional]
 **paidUntil** | [**Date**](Date.md) |  |  [optional]
 **suspend** | [**Date**](Date.md) |  |  [optional]
+
 
 
 

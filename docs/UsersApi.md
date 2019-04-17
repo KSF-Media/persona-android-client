@@ -10,23 +10,26 @@ Method | HTTP request | Description
 [**usersUuidGet**](UsersApi.md#usersUuidGet) | **GET** /users/{uuid} | Get user by UUID.
 [**usersUuidLegalPut**](UsersApi.md#usersUuidLegalPut) | **PUT** /users/{uuid}/legal | Updates the legal consent settings for a given user.
 [**usersUuidPatch**](UsersApi.md#usersUuidPatch) | **PATCH** /users/{uuid} | Update a user
+[**usersUuidSubscriptionsSubsnoPausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoPausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 
 
-<a name="usersPost"></a>
-# **usersPost**
-> LoginResponse usersPost(newUser)
+
+## usersPost
+
+> LoginResponse usersPost(body)
 
 Create a new user.
 
 ### Example
+
 ```java
 // Import classes:
 //import org.openapitools.client.api.UsersApi;
 
 UsersApi apiInstance = new UsersApi();
-NewUser newUser = new NewUser(); // NewUser | 
+NewUser body = new NewUser(); // NewUser | 
 try {
-    LoginResponse result = apiInstance.usersPost(newUser);
+    LoginResponse result = apiInstance.usersPost(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersPost");
@@ -36,9 +39,10 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **newUser** | [**NewUser**](NewUser.md)|  |
+ **body** | [**NewUser**](NewUser.md)|  |
 
 ### Return type
 
@@ -50,16 +54,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
 
-<a name="usersUuidEntitlementGet"></a>
-# **usersUuidEntitlementGet**
+
+## usersUuidEntitlementGet
+
 > List&lt;String&gt; usersUuidEntitlementGet(uuid, authorization, cacheControl)
 
 Get users entitlements.
 
 ### Example
+
 ```java
 // Import classes:
 //import org.openapitools.client.api.UsersApi;
@@ -79,6 +85,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**UUID**](.md)|  | [default to null]
@@ -95,28 +102,30 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json;charset=utf-8
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=utf-8
 
-<a name="usersUuidGdprPut"></a>
-# **usersUuidGdprPut**
-> User usersUuidGdprPut(uuid, gdprConsent, authorization)
+
+## usersUuidGdprPut
+
+> User usersUuidGdprPut(uuid, body, authorization)
 
 Updates the GDPR consent settings for a given user.
 
 Authorization header expects the following format ‘OAuth {token}’
 
 ### Example
+
 ```java
 // Import classes:
 //import org.openapitools.client.api.UsersApi;
 
 UsersApi apiInstance = new UsersApi();
 UUID uuid = null; // UUID | 
-List<GdprConsent> gdprConsent = Arrays.asList(new List()); // List<GdprConsent> | 
+List<GdprConsent> body = Arrays.asList(new List()); // List<GdprConsent> | 
 String authorization = null; // String | 
 try {
-    User result = apiInstance.usersUuidGdprPut(uuid, gdprConsent, authorization);
+    User result = apiInstance.usersUuidGdprPut(uuid, body, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidGdprPut");
@@ -126,10 +135,11 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**UUID**](.md)|  | [default to null]
- **gdprConsent** | [**List&lt;GdprConsent&gt;**](List.md)|  |
+ **body** | [**List&lt;GdprConsent&gt;**](List.md)|  |
  **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type
@@ -142,11 +152,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
 
-<a name="usersUuidGet"></a>
-# **usersUuidGet**
+
+## usersUuidGet
+
 > User usersUuidGet(uuid, authorization, cacheControl)
 
 Get user by UUID.
@@ -154,6 +165,7 @@ Get user by UUID.
 Authorization header expects the following format ‘OAuth {token}’
 
 ### Example
+
 ```java
 // Import classes:
 //import org.openapitools.client.api.UsersApi;
@@ -173,6 +185,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**UUID**](.md)|  | [default to null]
@@ -189,28 +202,30 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json;charset=utf-8
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=utf-8
 
-<a name="usersUuidLegalPut"></a>
-# **usersUuidLegalPut**
-> User usersUuidLegalPut(uuid, legalConsent, authorization)
+
+## usersUuidLegalPut
+
+> User usersUuidLegalPut(uuid, body, authorization)
 
 Updates the legal consent settings for a given user.
 
 Authorization header expects the following format ‘OAuth {token}’
 
 ### Example
+
 ```java
 // Import classes:
 //import org.openapitools.client.api.UsersApi;
 
 UsersApi apiInstance = new UsersApi();
 UUID uuid = null; // UUID | 
-List<LegalConsent> legalConsent = Arrays.asList(new List()); // List<LegalConsent> | 
+List<LegalConsent> body = Arrays.asList(new List()); // List<LegalConsent> | 
 String authorization = null; // String | 
 try {
-    User result = apiInstance.usersUuidLegalPut(uuid, legalConsent, authorization);
+    User result = apiInstance.usersUuidLegalPut(uuid, body, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidLegalPut");
@@ -220,10 +235,11 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**UUID**](.md)|  | [default to null]
- **legalConsent** | [**List&lt;LegalConsent&gt;**](List.md)|  |
+ **body** | [**List&lt;LegalConsent&gt;**](List.md)|  |
  **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type
@@ -236,28 +252,30 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
 
-<a name="usersUuidPatch"></a>
-# **usersUuidPatch**
-> User usersUuidPatch(uuid, userUpdate, authorization)
+
+## usersUuidPatch
+
+> User usersUuidPatch(uuid, body, authorization)
 
 Update a user
 
 Authorization header expects the following format ‘OAuth {token}’
 
 ### Example
+
 ```java
 // Import classes:
 //import org.openapitools.client.api.UsersApi;
 
 UsersApi apiInstance = new UsersApi();
 UUID uuid = null; // UUID | 
-UserUpdate userUpdate = new UserUpdate(); // UserUpdate | 
+UserUpdate body = new UserUpdate(); // UserUpdate | 
 String authorization = null; // String | 
 try {
-    User result = apiInstance.usersUuidPatch(uuid, userUpdate, authorization);
+    User result = apiInstance.usersUuidPatch(uuid, body, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidPatch");
@@ -267,10 +285,11 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**UUID**](.md)|  | [default to null]
- **userUpdate** | [**UserUpdate**](UserUpdate.md)|  |
+ **body** | [**UserUpdate**](UserUpdate.md)|  |
  **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type
@@ -283,6 +302,56 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
+
+
+## usersUuidSubscriptionsSubsnoPausePost
+
+> List&lt;PausedSubscription&gt; usersUuidSubscriptionsSubsnoPausePost(uuid, subsno, body, authorization)
+
+Pause users subscription
+
+### Example
+
+```java
+// Import classes:
+//import org.openapitools.client.api.UsersApi;
+
+UsersApi apiInstance = new UsersApi();
+UUID uuid = null; // UUID | 
+Integer subsno = null; // Integer | 
+SubscriptionPauseDates body = new SubscriptionPauseDates(); // SubscriptionPauseDates | 
+String authorization = null; // String | 
+try {
+    List<PausedSubscription> result = apiInstance.usersUuidSubscriptionsSubsnoPausePost(uuid, subsno, body, authorization);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#usersUuidSubscriptionsSubsnoPausePost");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**UUID**](.md)|  | [default to null]
+ **subsno** | **Integer**|  | [default to null]
+ **body** | [**SubscriptionPauseDates**](SubscriptionPauseDates.md)|  |
+ **authorization** | **String**|  | [optional] [default to null]
+
+### Return type
+
+[**List&lt;PausedSubscription&gt;**](PausedSubscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
 

@@ -1,7 +1,9 @@
 
+
 # ModelPackage
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
@@ -12,6 +14,7 @@ Name | Type | Description | Notes
 **campaigns** | [**List&lt;Campaign&gt;**](Campaign.md) |  | 
 **nextDelivery** | [**Date**](Date.md) |  |  [optional]
 **description** | [**PackageDescription**](PackageDescription.md) |  |  [optional]
+
 
 
 

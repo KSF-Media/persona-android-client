@@ -1,7 +1,9 @@
 
+
 # ActiveDays
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **mon** | **Boolean** |  | 
@@ -11,6 +13,7 @@ Name | Type | Description | Notes
 **fri** | **Boolean** |  | 
 **sat** | **Boolean** |  | 
 **sun** | **Boolean** |  | 
+
 
 
 

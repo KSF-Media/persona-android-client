@@ -173,6 +173,10 @@ public class JsonUtil {
       return new TypeToken<List<Paper>>(){}.getType();
     }
     
+    if ("PausedSubscription".equalsIgnoreCase(className)) {
+      return new TypeToken<List<PausedSubscription>>(){}.getType();
+    }
+    
     if ("Product".equalsIgnoreCase(className)) {
       return new TypeToken<List<Product>>(){}.getType();
     }
@@ -183,6 +187,10 @@ public class JsonUtil {
     
     if ("SubscriptionDates".equalsIgnoreCase(className)) {
       return new TypeToken<List<SubscriptionDates>>(){}.getType();
+    }
+    
+    if ("SubscriptionPauseDates".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SubscriptionPauseDates>>(){}.getType();
     }
     
     if ("User".equalsIgnoreCase(className)) {
@@ -319,6 +327,10 @@ public class JsonUtil {
       return new TypeToken<Paper>(){}.getType();
     }
     
+    if ("PausedSubscription".equalsIgnoreCase(className)) {
+      return new TypeToken<PausedSubscription>(){}.getType();
+    }
+    
     if ("Product".equalsIgnoreCase(className)) {
       return new TypeToken<Product>(){}.getType();
     }
@@ -329,6 +341,10 @@ public class JsonUtil {
     
     if ("SubscriptionDates".equalsIgnoreCase(className)) {
       return new TypeToken<SubscriptionDates>(){}.getType();
+    }
+    
+    if ("SubscriptionPauseDates".equalsIgnoreCase(className)) {
+      return new TypeToken<SubscriptionPauseDates>(){}.getType();
     }
     
     if ("User".equalsIgnoreCase(className)) {

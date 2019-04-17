@@ -1,14 +1,13 @@
 
 
-# Campaign
+# SubscriptionPauseDates
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**no** | **Integer** |  | 
-**id** | **String** |  | 
-**name** | **String** |  | 
+**startDate** | [**Date**](Date.md) |  | 
+**endDate** | [**Date**](Date.md) |  | 
 
 
 

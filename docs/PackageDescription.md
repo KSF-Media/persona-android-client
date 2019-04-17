@@ -1,7 +1,9 @@
 
+
 # PackageDescription
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **brand** | **String** |  | 
@@ -13,6 +15,7 @@ Name | Type | Description | Notes
 **weekdays** | **String** |  | 
 **frequency** | [**DescriptionFrequency**](DescriptionFrequency.md) |  | 
 **includes** | **List&lt;String&gt;** |  | 
+
 
 
 

@@ -7,13 +7,15 @@ Method | HTTP request | Description
 [**entitlementsGet**](EntitlementsApi.md#entitlementsGet) | **GET** /entitlements | List all entitlements
 
 
-<a name="entitlementsGet"></a>
-# **entitlementsGet**
+
+## entitlementsGet
+
 > Map&lt;String, List&lt;String&gt;&gt; entitlementsGet()
 
 List all entitlements
 
 ### Example
+
 ```java
 // Import classes:
 //import org.openapitools.client.api.EntitlementsApi;
@@ -29,6 +31,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -41,6 +44,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json;charset=utf-8
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=utf-8
 

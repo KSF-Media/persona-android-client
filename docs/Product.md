@@ -1,7 +1,9 @@
 
+
 # Product
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
@@ -9,6 +11,7 @@ Name | Type | Description | Notes
 **active** | [**ActiveDays**](ActiveDays.md) |  | 
 **nextDelivery** | [**Date**](Date.md) |  |  [optional]
 **paper** | [**Paper**](Paper.md) |  | 
+
 
 
 

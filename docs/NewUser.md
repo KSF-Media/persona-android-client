@@ -1,7 +1,9 @@
 
+
 # NewUser
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **firstName** | **String** |  | 
@@ -14,6 +16,7 @@ Name | Type | Description | Notes
 **city** | **String** |  |  [optional]
 **country** | **String** |  |  [optional]
 **phone** | **String** |  |  [optional]
+
 
 
 

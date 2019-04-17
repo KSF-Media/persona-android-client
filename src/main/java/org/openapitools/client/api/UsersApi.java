@@ -30,6 +30,8 @@ import org.openapitools.client.model.LegalConsent;
 import java.util.*;
 import org.openapitools.client.model.LoginResponse;
 import org.openapitools.client.model.NewUser;
+import org.openapitools.client.model.PausedSubscription;
+import org.openapitools.client.model.SubscriptionPauseDates;
 import java.util.UUID;
 import org.openapitools.client.model.User;
 import org.openapitools.client.model.UserUpdate;
@@ -67,15 +69,15 @@ public class UsersApi {
   /**
   * Create a new user.
   * 
-   * @param newUser 
+   * @param body 
    * @return LoginResponse
   */
-  public LoginResponse usersPost (NewUser newUser) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = newUser;
-    // verify the required parameter 'newUser' is set
-    if (newUser == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'newUser' when calling usersPost",
-        new ApiException(400, "Missing the required parameter 'newUser' when calling usersPost"));
+  public LoginResponse usersPost (NewUser body) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = body;
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling usersPost",
+        new ApiException(400, "Missing the required parameter 'body' when calling usersPost"));
     }
 
     // create path and map variables
@@ -130,15 +132,15 @@ public class UsersApi {
       /**
    * Create a new user.
    * 
-   * @param newUser 
+   * @param body 
   */
-  public void usersPost (NewUser newUser, final Response.Listener<LoginResponse> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = newUser;
+  public void usersPost (NewUser body, final Response.Listener<LoginResponse> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = body;
 
-    // verify the required parameter 'newUser' is set
-    if (newUser == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'newUser' when calling usersPost",
-        new ApiException(400, "Missing the required parameter 'newUser' when calling usersPost"));
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling usersPost",
+        new ApiException(400, "Missing the required parameter 'body' when calling usersPost"));
     }
 
     // create path and map variables
@@ -329,21 +331,21 @@ public class UsersApi {
   * Updates the GDPR consent settings for a given user.
   * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
-   * @param gdprConsent 
+   * @param body 
    * @param authorization 
    * @return User
   */
-  public User usersUuidGdprPut (UUID uuid, List<GdprConsent> gdprConsent, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = gdprConsent;
+  public User usersUuidGdprPut (UUID uuid, List<GdprConsent> body, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = body;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
       VolleyError error = new VolleyError("Missing the required parameter 'uuid' when calling usersUuidGdprPut",
         new ApiException(400, "Missing the required parameter 'uuid' when calling usersUuidGdprPut"));
     }
-    // verify the required parameter 'gdprConsent' is set
-    if (gdprConsent == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'gdprConsent' when calling usersUuidGdprPut",
-        new ApiException(400, "Missing the required parameter 'gdprConsent' when calling usersUuidGdprPut"));
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling usersUuidGdprPut",
+        new ApiException(400, "Missing the required parameter 'body' when calling usersUuidGdprPut"));
     }
 
     // create path and map variables
@@ -399,20 +401,20 @@ public class UsersApi {
       /**
    * Updates the GDPR consent settings for a given user.
    * Authorization header expects the following format ‘OAuth {token}’
-   * @param uuid    * @param gdprConsent    * @param authorization 
+   * @param uuid    * @param body    * @param authorization 
   */
-  public void usersUuidGdprPut (UUID uuid, List<GdprConsent> gdprConsent, String authorization, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = gdprConsent;
+  public void usersUuidGdprPut (UUID uuid, List<GdprConsent> body, String authorization, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = body;
 
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
       VolleyError error = new VolleyError("Missing the required parameter 'uuid' when calling usersUuidGdprPut",
         new ApiException(400, "Missing the required parameter 'uuid' when calling usersUuidGdprPut"));
     }
-    // verify the required parameter 'gdprConsent' is set
-    if (gdprConsent == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'gdprConsent' when calling usersUuidGdprPut",
-        new ApiException(400, "Missing the required parameter 'gdprConsent' when calling usersUuidGdprPut"));
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling usersUuidGdprPut",
+        new ApiException(400, "Missing the required parameter 'body' when calling usersUuidGdprPut"));
     }
 
     // create path and map variables
@@ -604,21 +606,21 @@ public class UsersApi {
   * Updates the legal consent settings for a given user.
   * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
-   * @param legalConsent 
+   * @param body 
    * @param authorization 
    * @return User
   */
-  public User usersUuidLegalPut (UUID uuid, List<LegalConsent> legalConsent, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = legalConsent;
+  public User usersUuidLegalPut (UUID uuid, List<LegalConsent> body, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = body;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
       VolleyError error = new VolleyError("Missing the required parameter 'uuid' when calling usersUuidLegalPut",
         new ApiException(400, "Missing the required parameter 'uuid' when calling usersUuidLegalPut"));
     }
-    // verify the required parameter 'legalConsent' is set
-    if (legalConsent == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'legalConsent' when calling usersUuidLegalPut",
-        new ApiException(400, "Missing the required parameter 'legalConsent' when calling usersUuidLegalPut"));
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling usersUuidLegalPut",
+        new ApiException(400, "Missing the required parameter 'body' when calling usersUuidLegalPut"));
     }
 
     // create path and map variables
@@ -674,20 +676,20 @@ public class UsersApi {
       /**
    * Updates the legal consent settings for a given user.
    * Authorization header expects the following format ‘OAuth {token}’
-   * @param uuid    * @param legalConsent    * @param authorization 
+   * @param uuid    * @param body    * @param authorization 
   */
-  public void usersUuidLegalPut (UUID uuid, List<LegalConsent> legalConsent, String authorization, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = legalConsent;
+  public void usersUuidLegalPut (UUID uuid, List<LegalConsent> body, String authorization, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = body;
 
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
       VolleyError error = new VolleyError("Missing the required parameter 'uuid' when calling usersUuidLegalPut",
         new ApiException(400, "Missing the required parameter 'uuid' when calling usersUuidLegalPut"));
     }
-    // verify the required parameter 'legalConsent' is set
-    if (legalConsent == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'legalConsent' when calling usersUuidLegalPut",
-        new ApiException(400, "Missing the required parameter 'legalConsent' when calling usersUuidLegalPut"));
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling usersUuidLegalPut",
+        new ApiException(400, "Missing the required parameter 'body' when calling usersUuidLegalPut"));
     }
 
     // create path and map variables
@@ -746,21 +748,21 @@ public class UsersApi {
   * Update a user
   * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
-   * @param userUpdate 
+   * @param body 
    * @param authorization 
    * @return User
   */
-  public User usersUuidPatch (UUID uuid, UserUpdate userUpdate, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = userUpdate;
+  public User usersUuidPatch (UUID uuid, UserUpdate body, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = body;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
       VolleyError error = new VolleyError("Missing the required parameter 'uuid' when calling usersUuidPatch",
         new ApiException(400, "Missing the required parameter 'uuid' when calling usersUuidPatch"));
     }
-    // verify the required parameter 'userUpdate' is set
-    if (userUpdate == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'userUpdate' when calling usersUuidPatch",
-        new ApiException(400, "Missing the required parameter 'userUpdate' when calling usersUuidPatch"));
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling usersUuidPatch",
+        new ApiException(400, "Missing the required parameter 'body' when calling usersUuidPatch"));
     }
 
     // create path and map variables
@@ -816,20 +818,20 @@ public class UsersApi {
       /**
    * Update a user
    * Authorization header expects the following format ‘OAuth {token}’
-   * @param uuid    * @param userUpdate    * @param authorization 
+   * @param uuid    * @param body    * @param authorization 
   */
-  public void usersUuidPatch (UUID uuid, UserUpdate userUpdate, String authorization, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = userUpdate;
+  public void usersUuidPatch (UUID uuid, UserUpdate body, String authorization, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = body;
 
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
       VolleyError error = new VolleyError("Missing the required parameter 'uuid' when calling usersUuidPatch",
         new ApiException(400, "Missing the required parameter 'uuid' when calling usersUuidPatch"));
     }
-    // verify the required parameter 'userUpdate' is set
-    if (userUpdate == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'userUpdate' when calling usersUuidPatch",
-        new ApiException(400, "Missing the required parameter 'userUpdate' when calling usersUuidPatch"));
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling usersUuidPatch",
+        new ApiException(400, "Missing the required parameter 'body' when calling usersUuidPatch"));
     }
 
     // create path and map variables
@@ -870,6 +872,159 @@ public class UsersApi {
           public void onResponse(String localVarResponse) {
             try {
               responseListener.onResponse((User) ApiInvoker.deserialize(localVarResponse,  "", User.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
+  /**
+  * Pause users subscription
+  * 
+   * @param uuid 
+   * @param subsno 
+   * @param body 
+   * @param authorization 
+   * @return List<PausedSubscription>
+  */
+  public List<PausedSubscription> usersUuidSubscriptionsSubsnoPausePost (UUID uuid, Integer subsno, SubscriptionPauseDates body, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = body;
+    // verify the required parameter 'uuid' is set
+    if (uuid == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'uuid' when calling usersUuidSubscriptionsSubsnoPausePost",
+        new ApiException(400, "Missing the required parameter 'uuid' when calling usersUuidSubscriptionsSubsnoPausePost"));
+    }
+    // verify the required parameter 'subsno' is set
+    if (subsno == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'subsno' when calling usersUuidSubscriptionsSubsnoPausePost",
+        new ApiException(400, "Missing the required parameter 'subsno' when calling usersUuidSubscriptionsSubsnoPausePost"));
+    }
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling usersUuidSubscriptionsSubsnoPausePost",
+        new ApiException(400, "Missing the required parameter 'body' when calling usersUuidSubscriptionsSubsnoPausePost"));
+    }
+
+    // create path and map variables
+    String path = "/users/{uuid}/subscriptions/{subsno}/pause".replaceAll("\\{" + "uuid" + "\\}", apiInvoker.escapeString(uuid.toString())).replaceAll("\\{" + "subsno" + "\\}", apiInvoker.escapeString(subsno.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+    String[] contentTypes = {
+      "application/json;charset=utf-8"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+    }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      if (localVarResponse != null) {
+         return (List<PausedSubscription>) ApiInvoker.deserialize(localVarResponse, "array", PausedSubscription.class);
+      } else {
+         return null;
+      }
+    } catch (ApiException ex) {
+       throw ex;
+    } catch (InterruptedException ex) {
+       throw ex;
+    } catch (ExecutionException ex) {
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
+    } catch (TimeoutException ex) {
+      throw ex;
+    }
+  }
+
+      /**
+   * Pause users subscription
+   * 
+   * @param uuid    * @param subsno    * @param body    * @param authorization 
+  */
+  public void usersUuidSubscriptionsSubsnoPausePost (UUID uuid, Integer subsno, SubscriptionPauseDates body, String authorization, final Response.Listener<List<PausedSubscription>> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = body;
+
+    // verify the required parameter 'uuid' is set
+    if (uuid == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'uuid' when calling usersUuidSubscriptionsSubsnoPausePost",
+        new ApiException(400, "Missing the required parameter 'uuid' when calling usersUuidSubscriptionsSubsnoPausePost"));
+    }
+    // verify the required parameter 'subsno' is set
+    if (subsno == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'subsno' when calling usersUuidSubscriptionsSubsnoPausePost",
+        new ApiException(400, "Missing the required parameter 'subsno' when calling usersUuidSubscriptionsSubsnoPausePost"));
+    }
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling usersUuidSubscriptionsSubsnoPausePost",
+        new ApiException(400, "Missing the required parameter 'body' when calling usersUuidSubscriptionsSubsnoPausePost"));
+    }
+
+    // create path and map variables
+    String path = "/users/{uuid}/subscriptions/{subsno}/pause".replaceAll("\\{format\\}","json").replaceAll("\\{" + "uuid" + "\\}", apiInvoker.escapeString(uuid.toString())).replaceAll("\\{" + "subsno" + "\\}", apiInvoker.escapeString(subsno.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+
+    String[] contentTypes = {
+      "application/json;charset=utf-8"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+            try {
+              responseListener.onResponse((List<PausedSubscription>) ApiInvoker.deserialize(localVarResponse,  "array", PausedSubscription.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
