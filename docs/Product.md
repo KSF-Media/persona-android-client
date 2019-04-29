@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **active** | [**ActiveDays**](ActiveDays.md) |  | 
 **nextDelivery** | [**Date**](Date.md) |  |  [optional]
 **paper** | [**Paper**](Paper.md) |  | 
+**digital** | **Boolean** |  | 
 
 
 

@@ -12,8 +12,10 @@
 
 package org.openapitools.client.model;
 
+import java.util.*;
 import org.openapitools.client.model.Campaign;
 import org.openapitools.client.model.ModelPackage;
+import org.openapitools.client.model.PausedSubscription;
 import org.openapitools.client.model.SubscriptionDates;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
@@ -43,6 +45,8 @@ public class Subscription {
   private Boolean extsubsexists = null;
   @SerializedName("campaign")
   private Campaign campaign = null;
+  @SerializedName("paused")
+  private List<PausedSubscription> paused = null;
 
   /**
    * minimum: -9223372036854775808
@@ -162,6 +166,16 @@ public class Subscription {
     this.campaign = campaign;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public List<PausedSubscription> getPaused() {
+    return paused;
+  }
+  public void setPaused(List<PausedSubscription> paused) {
+    this.paused = paused;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -182,7 +196,8 @@ public class Subscription {
         (this._package == null ? subscription._package == null : this._package.equals(subscription._package)) &&
         (this.dates == null ? subscription.dates == null : this.dates.equals(subscription.dates)) &&
         (this.extsubsexists == null ? subscription.extsubsexists == null : this.extsubsexists.equals(subscription.extsubsexists)) &&
-        (this.campaign == null ? subscription.campaign == null : this.campaign.equals(subscription.campaign));
+        (this.campaign == null ? subscription.campaign == null : this.campaign.equals(subscription.campaign)) &&
+        (this.paused == null ? subscription.paused == null : this.paused.equals(subscription.paused));
   }
 
   @Override
@@ -199,6 +214,7 @@ public class Subscription {
     result = 31 * result + (this.dates == null ? 0: this.dates.hashCode());
     result = 31 * result + (this.extsubsexists == null ? 0: this.extsubsexists.hashCode());
     result = 31 * result + (this.campaign == null ? 0: this.campaign.hashCode());
+    result = 31 * result + (this.paused == null ? 0: this.paused.hashCode());
     return result;
   }
 
@@ -218,6 +234,7 @@ public class Subscription {
     sb.append("  dates: ").append(dates).append("\n");
     sb.append("  extsubsexists: ").append(extsubsexists).append("\n");
     sb.append("  campaign: ").append(campaign).append("\n");
+    sb.append("  paused: ").append(paused).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

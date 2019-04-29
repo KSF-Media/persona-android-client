@@ -31,6 +31,8 @@ public class Product {
   private Date nextDelivery = null;
   @SerializedName("paper")
   private Paper paper = null;
+  @SerializedName("digital")
+  private Boolean digital = null;
 
   /**
    **/
@@ -82,6 +84,16 @@ public class Product {
     this.paper = paper;
   }
 
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean getDigital() {
+    return digital;
+  }
+  public void setDigital(Boolean digital) {
+    this.digital = digital;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -96,7 +108,8 @@ public class Product {
         (this.name == null ? product.name == null : this.name.equals(product.name)) &&
         (this.active == null ? product.active == null : this.active.equals(product.active)) &&
         (this.nextDelivery == null ? product.nextDelivery == null : this.nextDelivery.equals(product.nextDelivery)) &&
-        (this.paper == null ? product.paper == null : this.paper.equals(product.paper));
+        (this.paper == null ? product.paper == null : this.paper.equals(product.paper)) &&
+        (this.digital == null ? product.digital == null : this.digital.equals(product.digital));
   }
 
   @Override
@@ -107,6 +120,7 @@ public class Product {
     result = 31 * result + (this.active == null ? 0: this.active.hashCode());
     result = 31 * result + (this.nextDelivery == null ? 0: this.nextDelivery.hashCode());
     result = 31 * result + (this.paper == null ? 0: this.paper.hashCode());
+    result = 31 * result + (this.digital == null ? 0: this.digital.hashCode());
     return result;
   }
 
@@ -120,6 +134,7 @@ public class Product {
     sb.append("  active: ").append(active).append("\n");
     sb.append("  nextDelivery: ").append(nextDelivery).append("\n");
     sb.append("  paper: ").append(paper).append("\n");
+    sb.append("  digital: ").append(digital).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

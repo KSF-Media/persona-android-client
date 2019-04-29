@@ -19,167 +19,29 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class PausedSubscription {
   
-  @SerializedName("subsno")
-  private Integer subsno = null;
-  @SerializedName("sleepStartdate")
-  private Date sleepStartdate = null;
-  @SerializedName("sleepEndDate")
-  private Date sleepEndDate = null;
-  @SerializedName("creditType")
-  private String creditType = null;
-  @SerializedName("creditAmount")
-  private Integer creditAmount = null;
-  @SerializedName("sleepType")
-  private String sleepType = null;
-  @SerializedName("credited")
-  private Boolean credited = null;
-  @SerializedName("creditInvno")
-  private Integer creditInvno = null;
-  @SerializedName("bookingDate")
-  private String bookingDate = null;
-  @SerializedName("allowWebpaper")
-  private Boolean allowWebpaper = null;
-  @SerializedName("receiveType")
-  private String receiveType = null;
-  @SerializedName("confirmStatus")
-  private String confirmStatus = null;
-  @SerializedName("stampUser")
-  private String stampUser = null;
+  @SerializedName("startDate")
+  private Date startDate = null;
+  @SerializedName("endDate")
+  private Date endDate = null;
 
   /**
-   * minimum: -9223372036854775808
-   * maximum: 9223372036854775807
    **/
   @ApiModelProperty(required = true, value = "")
-  public Integer getSubsno() {
-    return subsno;
+  public Date getStartDate() {
+    return startDate;
   }
-  public void setSubsno(Integer subsno) {
-    this.subsno = subsno;
+  public void setStartDate(Date startDate) {
+    this.startDate = startDate;
   }
 
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public Date getSleepStartdate() {
-    return sleepStartdate;
+  public Date getEndDate() {
+    return endDate;
   }
-  public void setSleepStartdate(Date sleepStartdate) {
-    this.sleepStartdate = sleepStartdate;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(required = true, value = "")
-  public Date getSleepEndDate() {
-    return sleepEndDate;
-  }
-  public void setSleepEndDate(Date sleepEndDate) {
-    this.sleepEndDate = sleepEndDate;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(required = true, value = "")
-  public String getCreditType() {
-    return creditType;
-  }
-  public void setCreditType(String creditType) {
-    this.creditType = creditType;
-  }
-
-  /**
-   * minimum: -9223372036854775808
-   * maximum: 9223372036854775807
-   **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getCreditAmount() {
-    return creditAmount;
-  }
-  public void setCreditAmount(Integer creditAmount) {
-    this.creditAmount = creditAmount;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(required = true, value = "")
-  public String getSleepType() {
-    return sleepType;
-  }
-  public void setSleepType(String sleepType) {
-    this.sleepType = sleepType;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(required = true, value = "")
-  public Boolean getCredited() {
-    return credited;
-  }
-  public void setCredited(Boolean credited) {
-    this.credited = credited;
-  }
-
-  /**
-   * minimum: -9223372036854775808
-   * maximum: 9223372036854775807
-   **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getCreditInvno() {
-    return creditInvno;
-  }
-  public void setCreditInvno(Integer creditInvno) {
-    this.creditInvno = creditInvno;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(required = true, value = "")
-  public String getBookingDate() {
-    return bookingDate;
-  }
-  public void setBookingDate(String bookingDate) {
-    this.bookingDate = bookingDate;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(required = true, value = "")
-  public Boolean getAllowWebpaper() {
-    return allowWebpaper;
-  }
-  public void setAllowWebpaper(Boolean allowWebpaper) {
-    this.allowWebpaper = allowWebpaper;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(required = true, value = "")
-  public String getReceiveType() {
-    return receiveType;
-  }
-  public void setReceiveType(String receiveType) {
-    this.receiveType = receiveType;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(required = true, value = "")
-  public String getConfirmStatus() {
-    return confirmStatus;
-  }
-  public void setConfirmStatus(String confirmStatus) {
-    this.confirmStatus = confirmStatus;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(required = true, value = "")
-  public String getStampUser() {
-    return stampUser;
-  }
-  public void setStampUser(String stampUser) {
-    this.stampUser = stampUser;
+  public void setEndDate(Date endDate) {
+    this.endDate = endDate;
   }
 
 
@@ -192,37 +54,15 @@ public class PausedSubscription {
       return false;
     }
     PausedSubscription pausedSubscription = (PausedSubscription) o;
-    return (this.subsno == null ? pausedSubscription.subsno == null : this.subsno.equals(pausedSubscription.subsno)) &&
-        (this.sleepStartdate == null ? pausedSubscription.sleepStartdate == null : this.sleepStartdate.equals(pausedSubscription.sleepStartdate)) &&
-        (this.sleepEndDate == null ? pausedSubscription.sleepEndDate == null : this.sleepEndDate.equals(pausedSubscription.sleepEndDate)) &&
-        (this.creditType == null ? pausedSubscription.creditType == null : this.creditType.equals(pausedSubscription.creditType)) &&
-        (this.creditAmount == null ? pausedSubscription.creditAmount == null : this.creditAmount.equals(pausedSubscription.creditAmount)) &&
-        (this.sleepType == null ? pausedSubscription.sleepType == null : this.sleepType.equals(pausedSubscription.sleepType)) &&
-        (this.credited == null ? pausedSubscription.credited == null : this.credited.equals(pausedSubscription.credited)) &&
-        (this.creditInvno == null ? pausedSubscription.creditInvno == null : this.creditInvno.equals(pausedSubscription.creditInvno)) &&
-        (this.bookingDate == null ? pausedSubscription.bookingDate == null : this.bookingDate.equals(pausedSubscription.bookingDate)) &&
-        (this.allowWebpaper == null ? pausedSubscription.allowWebpaper == null : this.allowWebpaper.equals(pausedSubscription.allowWebpaper)) &&
-        (this.receiveType == null ? pausedSubscription.receiveType == null : this.receiveType.equals(pausedSubscription.receiveType)) &&
-        (this.confirmStatus == null ? pausedSubscription.confirmStatus == null : this.confirmStatus.equals(pausedSubscription.confirmStatus)) &&
-        (this.stampUser == null ? pausedSubscription.stampUser == null : this.stampUser.equals(pausedSubscription.stampUser));
+    return (this.startDate == null ? pausedSubscription.startDate == null : this.startDate.equals(pausedSubscription.startDate)) &&
+        (this.endDate == null ? pausedSubscription.endDate == null : this.endDate.equals(pausedSubscription.endDate));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (this.subsno == null ? 0: this.subsno.hashCode());
-    result = 31 * result + (this.sleepStartdate == null ? 0: this.sleepStartdate.hashCode());
-    result = 31 * result + (this.sleepEndDate == null ? 0: this.sleepEndDate.hashCode());
-    result = 31 * result + (this.creditType == null ? 0: this.creditType.hashCode());
-    result = 31 * result + (this.creditAmount == null ? 0: this.creditAmount.hashCode());
-    result = 31 * result + (this.sleepType == null ? 0: this.sleepType.hashCode());
-    result = 31 * result + (this.credited == null ? 0: this.credited.hashCode());
-    result = 31 * result + (this.creditInvno == null ? 0: this.creditInvno.hashCode());
-    result = 31 * result + (this.bookingDate == null ? 0: this.bookingDate.hashCode());
-    result = 31 * result + (this.allowWebpaper == null ? 0: this.allowWebpaper.hashCode());
-    result = 31 * result + (this.receiveType == null ? 0: this.receiveType.hashCode());
-    result = 31 * result + (this.confirmStatus == null ? 0: this.confirmStatus.hashCode());
-    result = 31 * result + (this.stampUser == null ? 0: this.stampUser.hashCode());
+    result = 31 * result + (this.startDate == null ? 0: this.startDate.hashCode());
+    result = 31 * result + (this.endDate == null ? 0: this.endDate.hashCode());
     return result;
   }
 
@@ -231,19 +71,8 @@ public class PausedSubscription {
     StringBuilder sb = new StringBuilder();
     sb.append("class PausedSubscription {\n");
     
-    sb.append("  subsno: ").append(subsno).append("\n");
-    sb.append("  sleepStartdate: ").append(sleepStartdate).append("\n");
-    sb.append("  sleepEndDate: ").append(sleepEndDate).append("\n");
-    sb.append("  creditType: ").append(creditType).append("\n");
-    sb.append("  creditAmount: ").append(creditAmount).append("\n");
-    sb.append("  sleepType: ").append(sleepType).append("\n");
-    sb.append("  credited: ").append(credited).append("\n");
-    sb.append("  creditInvno: ").append(creditInvno).append("\n");
-    sb.append("  bookingDate: ").append(bookingDate).append("\n");
-    sb.append("  allowWebpaper: ").append(allowWebpaper).append("\n");
-    sb.append("  receiveType: ").append(receiveType).append("\n");
-    sb.append("  confirmStatus: ").append(confirmStatus).append("\n");
-    sb.append("  stampUser: ").append(stampUser).append("\n");
+    sb.append("  startDate: ").append(startDate).append("\n");
+    sb.append("  endDate: ").append(endDate).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

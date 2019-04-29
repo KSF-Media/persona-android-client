@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **dates** | [**SubscriptionDates**](SubscriptionDates.md) |  | 
 **extsubsexists** | **Boolean** |  | 
 **campaign** | [**Campaign**](Campaign.md) |  |  [optional]
+**paused** | [**List&lt;PausedSubscription&gt;**](PausedSubscription.md) |  |  [optional]
 
 
 

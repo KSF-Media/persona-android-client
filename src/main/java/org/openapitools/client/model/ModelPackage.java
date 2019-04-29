@@ -31,6 +31,8 @@ public class ModelPackage {
   private String name = null;
   @SerializedName("paper")
   private Paper paper = null;
+  @SerializedName("digitalOnly")
+  private Boolean digitalOnly = null;
   @SerializedName("products")
   private List<Product> products = null;
   @SerializedName("offers")
@@ -70,6 +72,16 @@ public class ModelPackage {
   }
   public void setPaper(Paper paper) {
     this.paper = paper;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean getDigitalOnly() {
+    return digitalOnly;
+  }
+  public void setDigitalOnly(Boolean digitalOnly) {
+    this.digitalOnly = digitalOnly;
   }
 
   /**
@@ -135,6 +147,7 @@ public class ModelPackage {
     return (this.id == null ? _package.id == null : this.id.equals(_package.id)) &&
         (this.name == null ? _package.name == null : this.name.equals(_package.name)) &&
         (this.paper == null ? _package.paper == null : this.paper.equals(_package.paper)) &&
+        (this.digitalOnly == null ? _package.digitalOnly == null : this.digitalOnly.equals(_package.digitalOnly)) &&
         (this.products == null ? _package.products == null : this.products.equals(_package.products)) &&
         (this.offers == null ? _package.offers == null : this.offers.equals(_package.offers)) &&
         (this.campaigns == null ? _package.campaigns == null : this.campaigns.equals(_package.campaigns)) &&
@@ -148,6 +161,7 @@ public class ModelPackage {
     result = 31 * result + (this.id == null ? 0: this.id.hashCode());
     result = 31 * result + (this.name == null ? 0: this.name.hashCode());
     result = 31 * result + (this.paper == null ? 0: this.paper.hashCode());
+    result = 31 * result + (this.digitalOnly == null ? 0: this.digitalOnly.hashCode());
     result = 31 * result + (this.products == null ? 0: this.products.hashCode());
     result = 31 * result + (this.offers == null ? 0: this.offers.hashCode());
     result = 31 * result + (this.campaigns == null ? 0: this.campaigns.hashCode());
@@ -164,6 +178,7 @@ public class ModelPackage {
     sb.append("  id: ").append(id).append("\n");
     sb.append("  name: ").append(name).append("\n");
     sb.append("  paper: ").append(paper).append("\n");
+    sb.append("  digitalOnly: ").append(digitalOnly).append("\n");
     sb.append("  products: ").append(products).append("\n");
     sb.append("  offers: ").append(offers).append("\n");
     sb.append("  campaigns: ").append(campaigns).append("\n");
