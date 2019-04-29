@@ -30,7 +30,7 @@ import org.openapitools.client.model.LegalConsent;
 import java.util.*;
 import org.openapitools.client.model.LoginResponse;
 import org.openapitools.client.model.NewUser;
-import org.openapitools.client.model.PausedSubscription;
+import org.openapitools.client.model.Subscription;
 import org.openapitools.client.model.SubscriptionPauseDates;
 import java.util.UUID;
 import org.openapitools.client.model.User;
@@ -893,9 +893,9 @@ public class UsersApi {
    * @param subsno 
    * @param body 
    * @param authorization 
-   * @return List<PausedSubscription>
+   * @return Subscription
   */
-  public List<PausedSubscription> usersUuidSubscriptionsSubsnoPausePost (UUID uuid, Integer subsno, SubscriptionPauseDates body, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Subscription usersUuidSubscriptionsSubsnoPausePost (UUID uuid, Integer subsno, SubscriptionPauseDates body, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = body;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -942,7 +942,7 @@ public class UsersApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<PausedSubscription>) ApiInvoker.deserialize(localVarResponse, "array", PausedSubscription.class);
+         return (Subscription) ApiInvoker.deserialize(localVarResponse, "", Subscription.class);
       } else {
          return null;
       }
@@ -968,7 +968,7 @@ public class UsersApi {
    * 
    * @param uuid    * @param subsno    * @param body    * @param authorization 
   */
-  public void usersUuidSubscriptionsSubsnoPausePost (UUID uuid, Integer subsno, SubscriptionPauseDates body, String authorization, final Response.Listener<List<PausedSubscription>> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidSubscriptionsSubsnoPausePost (UUID uuid, Integer subsno, SubscriptionPauseDates body, String authorization, final Response.Listener<Subscription> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = body;
 
     // verify the required parameter 'uuid' is set
@@ -1024,7 +1024,7 @@ public class UsersApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<PausedSubscription>) ApiInvoker.deserialize(localVarResponse,  "array", PausedSubscription.class));
+              responseListener.onResponse((Subscription) ApiInvoker.deserialize(localVarResponse,  "", Subscription.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

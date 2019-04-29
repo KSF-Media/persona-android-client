@@ -308,7 +308,7 @@ No authorization required
 
 ## usersUuidSubscriptionsSubsnoPausePost
 
-> List&lt;PausedSubscription&gt; usersUuidSubscriptionsSubsnoPausePost(uuid, subsno, body, authorization)
+> Subscription usersUuidSubscriptionsSubsnoPausePost(uuid, subsno, body, authorization)
 
 Pause users subscription
 
@@ -324,7 +324,7 @@ Integer subsno = null; // Integer |
 SubscriptionPauseDates body = new SubscriptionPauseDates(); // SubscriptionPauseDates | 
 String authorization = null; // String | 
 try {
-    List<PausedSubscription> result = apiInstance.usersUuidSubscriptionsSubsnoPausePost(uuid, subsno, body, authorization);
+    Subscription result = apiInstance.usersUuidSubscriptionsSubsnoPausePost(uuid, subsno, body, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidSubscriptionsSubsnoPausePost");
@@ -344,7 +344,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;PausedSubscription&gt;**](PausedSubscription.md)
+[**Subscription**](Subscription.md)
 
 ### Authorization
 
