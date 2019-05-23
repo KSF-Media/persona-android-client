@@ -14,8 +14,10 @@ package org.openapitools.client.model;
 
 import java.util.*;
 import org.openapitools.client.model.Campaign;
+import org.openapitools.client.model.DeliveryAddress;
 import org.openapitools.client.model.ModelPackage;
 import org.openapitools.client.model.PausedSubscription;
+import org.openapitools.client.model.PendingAddressChange;
 import org.openapitools.client.model.SubscriptionDates;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
@@ -47,6 +49,10 @@ public class Subscription {
   private Campaign campaign = null;
   @SerializedName("paused")
   private List<PausedSubscription> paused = null;
+  @SerializedName("deliveryAddress")
+  private DeliveryAddress deliveryAddress = null;
+  @SerializedName("pendingAddressChanges")
+  private List<PendingAddressChange> pendingAddressChanges = null;
 
   /**
    * minimum: -9223372036854775808
@@ -176,6 +182,26 @@ public class Subscription {
     this.paused = paused;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public DeliveryAddress getDeliveryAddress() {
+    return deliveryAddress;
+  }
+  public void setDeliveryAddress(DeliveryAddress deliveryAddress) {
+    this.deliveryAddress = deliveryAddress;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public List<PendingAddressChange> getPendingAddressChanges() {
+    return pendingAddressChanges;
+  }
+  public void setPendingAddressChanges(List<PendingAddressChange> pendingAddressChanges) {
+    this.pendingAddressChanges = pendingAddressChanges;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -197,7 +223,9 @@ public class Subscription {
         (this.dates == null ? subscription.dates == null : this.dates.equals(subscription.dates)) &&
         (this.extsubsexists == null ? subscription.extsubsexists == null : this.extsubsexists.equals(subscription.extsubsexists)) &&
         (this.campaign == null ? subscription.campaign == null : this.campaign.equals(subscription.campaign)) &&
-        (this.paused == null ? subscription.paused == null : this.paused.equals(subscription.paused));
+        (this.paused == null ? subscription.paused == null : this.paused.equals(subscription.paused)) &&
+        (this.deliveryAddress == null ? subscription.deliveryAddress == null : this.deliveryAddress.equals(subscription.deliveryAddress)) &&
+        (this.pendingAddressChanges == null ? subscription.pendingAddressChanges == null : this.pendingAddressChanges.equals(subscription.pendingAddressChanges));
   }
 
   @Override
@@ -215,6 +243,8 @@ public class Subscription {
     result = 31 * result + (this.extsubsexists == null ? 0: this.extsubsexists.hashCode());
     result = 31 * result + (this.campaign == null ? 0: this.campaign.hashCode());
     result = 31 * result + (this.paused == null ? 0: this.paused.hashCode());
+    result = 31 * result + (this.deliveryAddress == null ? 0: this.deliveryAddress.hashCode());
+    result = 31 * result + (this.pendingAddressChanges == null ? 0: this.pendingAddressChanges.hashCode());
     return result;
   }
 
@@ -235,6 +265,8 @@ public class Subscription {
     sb.append("  extsubsexists: ").append(extsubsexists).append("\n");
     sb.append("  campaign: ").append(campaign).append("\n");
     sb.append("  paused: ").append(paused).append("\n");
+    sb.append("  deliveryAddress: ").append(deliveryAddress).append("\n");
+    sb.append("  pendingAddressChanges: ").append(pendingAddressChanges).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

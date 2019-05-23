@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 **extsubsexists** | **Boolean** |  | 
 **campaign** | [**Campaign**](Campaign.md) |  |  [optional]
 **paused** | [**List&lt;PausedSubscription&gt;**](PausedSubscription.md) |  |  [optional]
+**deliveryAddress** | [**DeliveryAddress**](DeliveryAddress.md) |  |  [optional]
+**pendingAddressChanges** | [**List&lt;PendingAddressChange&gt;**](PendingAddressChange.md) |  |  [optional]
 
 
 

@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**usersUuidGet**](UsersApi.md#usersUuidGet) | **GET** /users/{uuid} | Get user by UUID.
 [**usersUuidLegalPut**](UsersApi.md#usersUuidLegalPut) | **PUT** /users/{uuid}/legal | Updates the legal consent settings for a given user.
 [**usersUuidPatch**](UsersApi.md#usersUuidPatch) | **PATCH** /users/{uuid} | Update a user
+[**usersUuidSubscriptionsSubsnoAddressChangePost**](UsersApi.md#usersUuidSubscriptionsSubsnoAddressChangePost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 [**usersUuidSubscriptionsSubsnoPausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoPausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 
 
@@ -295,6 +296,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**User**](User.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
+
+
+## usersUuidSubscriptionsSubsnoAddressChangePost
+
+> Subscription usersUuidSubscriptionsSubsnoAddressChangePost(uuid, subsno, body, authorization)
+
+Make a temporary address change for a subscription
+
+### Example
+
+```java
+// Import classes:
+//import org.openapitools.client.api.UsersApi;
+
+UsersApi apiInstance = new UsersApi();
+UUID uuid = null; // UUID | 
+Integer subsno = null; // Integer | 
+TemporaryAddressChange body = new TemporaryAddressChange(); // TemporaryAddressChange | 
+String authorization = null; // String | 
+try {
+    Subscription result = apiInstance.usersUuidSubscriptionsSubsnoAddressChangePost(uuid, subsno, body, authorization);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#usersUuidSubscriptionsSubsnoAddressChangePost");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**UUID**](.md)|  | [default to null]
+ **subsno** | **Integer**|  | [default to null]
+ **body** | [**TemporaryAddressChange**](TemporaryAddressChange.md)|  |
+ **authorization** | **String**|  | [optional] [default to null]
+
+### Return type
+
+[**Subscription**](Subscription.md)
 
 ### Authorization
 

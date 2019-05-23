@@ -69,6 +69,10 @@ public class JsonUtil {
       return new TypeToken<List<Campaign>>(){}.getType();
     }
     
+    if ("DeliveryAddress".equalsIgnoreCase(className)) {
+      return new TypeToken<List<DeliveryAddress>>(){}.getType();
+    }
+    
     if ("DescriptionFrequency".equalsIgnoreCase(className)) {
       return new TypeToken<List<DescriptionFrequency>>(){}.getType();
     }
@@ -177,6 +181,10 @@ public class JsonUtil {
       return new TypeToken<List<PausedSubscription>>(){}.getType();
     }
     
+    if ("PendingAddressChange".equalsIgnoreCase(className)) {
+      return new TypeToken<List<PendingAddressChange>>(){}.getType();
+    }
+    
     if ("Product".equalsIgnoreCase(className)) {
       return new TypeToken<List<Product>>(){}.getType();
     }
@@ -191,6 +199,10 @@ public class JsonUtil {
     
     if ("SubscriptionPauseDates".equalsIgnoreCase(className)) {
       return new TypeToken<List<SubscriptionPauseDates>>(){}.getType();
+    }
+    
+    if ("TemporaryAddressChange".equalsIgnoreCase(className)) {
+      return new TypeToken<List<TemporaryAddressChange>>(){}.getType();
     }
     
     if ("User".equalsIgnoreCase(className)) {
@@ -221,6 +233,10 @@ public class JsonUtil {
     
     if ("Campaign".equalsIgnoreCase(className)) {
       return new TypeToken<Campaign>(){}.getType();
+    }
+    
+    if ("DeliveryAddress".equalsIgnoreCase(className)) {
+      return new TypeToken<DeliveryAddress>(){}.getType();
     }
     
     if ("DescriptionFrequency".equalsIgnoreCase(className)) {
@@ -331,6 +347,10 @@ public class JsonUtil {
       return new TypeToken<PausedSubscription>(){}.getType();
     }
     
+    if ("PendingAddressChange".equalsIgnoreCase(className)) {
+      return new TypeToken<PendingAddressChange>(){}.getType();
+    }
+    
     if ("Product".equalsIgnoreCase(className)) {
       return new TypeToken<Product>(){}.getType();
     }
@@ -345,6 +365,10 @@ public class JsonUtil {
     
     if ("SubscriptionPauseDates".equalsIgnoreCase(className)) {
       return new TypeToken<SubscriptionPauseDates>(){}.getType();
+    }
+    
+    if ("TemporaryAddressChange".equalsIgnoreCase(className)) {
+      return new TypeToken<TemporaryAddressChange>(){}.getType();
     }
     
     if ("User".equalsIgnoreCase(className)) {
