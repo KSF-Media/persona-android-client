@@ -47,7 +47,7 @@ public class DeliveryAddress {
 
   /**
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public String getCity() {
     return city;
   }

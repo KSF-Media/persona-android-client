@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **streetAddress** | **String** |  | 
 **zipcode** | **String** |  | 
-**city** | **String** |  | 
+**city** | **String** |  |  [optional]
 
 
 

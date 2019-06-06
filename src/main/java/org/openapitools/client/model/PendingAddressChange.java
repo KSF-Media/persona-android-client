@@ -26,6 +26,8 @@ public class PendingAddressChange {
   private Date startDate = null;
   @SerializedName("endDate")
   private Date endDate = null;
+  @SerializedName("type")
+  private String type = null;
 
   /**
    **/
@@ -57,6 +59,16 @@ public class PendingAddressChange {
     this.endDate = endDate;
   }
 
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public String getType() {
+    return type;
+  }
+  public void setType(String type) {
+    this.type = type;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -69,7 +81,8 @@ public class PendingAddressChange {
     PendingAddressChange pendingAddressChange = (PendingAddressChange) o;
     return (this.address == null ? pendingAddressChange.address == null : this.address.equals(pendingAddressChange.address)) &&
         (this.startDate == null ? pendingAddressChange.startDate == null : this.startDate.equals(pendingAddressChange.startDate)) &&
-        (this.endDate == null ? pendingAddressChange.endDate == null : this.endDate.equals(pendingAddressChange.endDate));
+        (this.endDate == null ? pendingAddressChange.endDate == null : this.endDate.equals(pendingAddressChange.endDate)) &&
+        (this.type == null ? pendingAddressChange.type == null : this.type.equals(pendingAddressChange.type));
   }
 
   @Override
@@ -78,6 +91,7 @@ public class PendingAddressChange {
     result = 31 * result + (this.address == null ? 0: this.address.hashCode());
     result = 31 * result + (this.startDate == null ? 0: this.startDate.hashCode());
     result = 31 * result + (this.endDate == null ? 0: this.endDate.hashCode());
+    result = 31 * result + (this.type == null ? 0: this.type.hashCode());
     return result;
   }
 
@@ -89,6 +103,7 @@ public class PendingAddressChange {
     sb.append("  address: ").append(address).append("\n");
     sb.append("  startDate: ").append(startDate).append("\n");
     sb.append("  endDate: ").append(endDate).append("\n");
+    sb.append("  type: ").append(type).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
