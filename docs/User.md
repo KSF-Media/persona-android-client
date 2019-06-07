@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **subs** | [**List&lt;Subscription&gt;**](Subscription.md) |  | 
 **consent** | [**List&lt;GdprConsent&gt;**](GdprConsent.md) |  | 
 **legal** | [**List&lt;LegalConsent&gt;**](LegalConsent.md) |  | 
+**pendingAddressChanges** | [**List&lt;PendingAddressChange&gt;**](PendingAddressChange.md) |  |  [optional]
 
 
 
