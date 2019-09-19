@@ -27,6 +27,8 @@ public class TemporaryAddressChange {
   private Date startDate = null;
   @SerializedName("endDate")
   private Date endDate = null;
+  @SerializedName("temporaryName")
+  private String temporaryName = null;
 
   /**
    **/
@@ -68,6 +70,16 @@ public class TemporaryAddressChange {
     this.endDate = endDate;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getTemporaryName() {
+    return temporaryName;
+  }
+  public void setTemporaryName(String temporaryName) {
+    this.temporaryName = temporaryName;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -81,7 +93,8 @@ public class TemporaryAddressChange {
     return (this.zipCode == null ? temporaryAddressChange.zipCode == null : this.zipCode.equals(temporaryAddressChange.zipCode)) &&
         (this.streetAddress == null ? temporaryAddressChange.streetAddress == null : this.streetAddress.equals(temporaryAddressChange.streetAddress)) &&
         (this.startDate == null ? temporaryAddressChange.startDate == null : this.startDate.equals(temporaryAddressChange.startDate)) &&
-        (this.endDate == null ? temporaryAddressChange.endDate == null : this.endDate.equals(temporaryAddressChange.endDate));
+        (this.endDate == null ? temporaryAddressChange.endDate == null : this.endDate.equals(temporaryAddressChange.endDate)) &&
+        (this.temporaryName == null ? temporaryAddressChange.temporaryName == null : this.temporaryName.equals(temporaryAddressChange.temporaryName));
   }
 
   @Override
@@ -91,6 +104,7 @@ public class TemporaryAddressChange {
     result = 31 * result + (this.streetAddress == null ? 0: this.streetAddress.hashCode());
     result = 31 * result + (this.startDate == null ? 0: this.startDate.hashCode());
     result = 31 * result + (this.endDate == null ? 0: this.endDate.hashCode());
+    result = 31 * result + (this.temporaryName == null ? 0: this.temporaryName.hashCode());
     return result;
   }
 
@@ -103,6 +117,7 @@ public class TemporaryAddressChange {
     sb.append("  streetAddress: ").append(streetAddress).append("\n");
     sb.append("  startDate: ").append(startDate).append("\n");
     sb.append("  endDate: ").append(endDate).append("\n");
+    sb.append("  temporaryName: ").append(temporaryName).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

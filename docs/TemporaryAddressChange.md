@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **streetAddress** | **String** |  | 
 **startDate** | [**Date**](Date.md) |  | 
 **endDate** | [**Date**](Date.md) |  | 
+**temporaryName** | **String** |  |  [optional]
 
 
 
