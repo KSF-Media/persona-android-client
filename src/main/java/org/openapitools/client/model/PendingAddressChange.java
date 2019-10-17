@@ -28,8 +28,6 @@ public class PendingAddressChange {
   private Date endDate = null;
   @SerializedName("type")
   private String type = null;
-  @SerializedName("temporaryName")
-  private String temporaryName = null;
 
   /**
    **/
@@ -71,16 +69,6 @@ public class PendingAddressChange {
     this.type = type;
   }
 
-  /**
-   **/
-  @ApiModelProperty(value = "")
-  public String getTemporaryName() {
-    return temporaryName;
-  }
-  public void setTemporaryName(String temporaryName) {
-    this.temporaryName = temporaryName;
-  }
-
 
   @Override
   public boolean equals(Object o) {
@@ -94,8 +82,7 @@ public class PendingAddressChange {
     return (this.address == null ? pendingAddressChange.address == null : this.address.equals(pendingAddressChange.address)) &&
         (this.startDate == null ? pendingAddressChange.startDate == null : this.startDate.equals(pendingAddressChange.startDate)) &&
         (this.endDate == null ? pendingAddressChange.endDate == null : this.endDate.equals(pendingAddressChange.endDate)) &&
-        (this.type == null ? pendingAddressChange.type == null : this.type.equals(pendingAddressChange.type)) &&
-        (this.temporaryName == null ? pendingAddressChange.temporaryName == null : this.temporaryName.equals(pendingAddressChange.temporaryName));
+        (this.type == null ? pendingAddressChange.type == null : this.type.equals(pendingAddressChange.type));
   }
 
   @Override
@@ -105,7 +92,6 @@ public class PendingAddressChange {
     result = 31 * result + (this.startDate == null ? 0: this.startDate.hashCode());
     result = 31 * result + (this.endDate == null ? 0: this.endDate.hashCode());
     result = 31 * result + (this.type == null ? 0: this.type.hashCode());
-    result = 31 * result + (this.temporaryName == null ? 0: this.temporaryName.hashCode());
     return result;
   }
 
@@ -118,7 +104,6 @@ public class PendingAddressChange {
     sb.append("  startDate: ").append(startDate).append("\n");
     sb.append("  endDate: ").append(endDate).append("\n");
     sb.append("  type: ").append(type).append("\n");
-    sb.append("  temporaryName: ").append(temporaryName).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

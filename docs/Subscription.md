@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **paused** | [**List&lt;PausedSubscription&gt;**](PausedSubscription.md) |  |  [optional]
 **deliveryAddress** | [**DeliveryAddress**](DeliveryAddress.md) |  |  [optional]
 **pendingAddressChanges** | [**List&lt;PendingAddressChange&gt;**](PendingAddressChange.md) |  |  [optional]
+**orderNumber** | **String** |  |  [optional]
+**paymentMethod** | **String** |  |  [optional]
 
 
 

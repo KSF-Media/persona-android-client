@@ -53,6 +53,10 @@ public class Subscription {
   private DeliveryAddress deliveryAddress = null;
   @SerializedName("pendingAddressChanges")
   private List<PendingAddressChange> pendingAddressChanges = null;
+  @SerializedName("orderNumber")
+  private String orderNumber = null;
+  @SerializedName("paymentMethod")
+  private String paymentMethod = null;
 
   /**
    * minimum: -9223372036854775808
@@ -202,6 +206,26 @@ public class Subscription {
     this.pendingAddressChanges = pendingAddressChanges;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getOrderNumber() {
+    return orderNumber;
+  }
+  public void setOrderNumber(String orderNumber) {
+    this.orderNumber = orderNumber;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getPaymentMethod() {
+    return paymentMethod;
+  }
+  public void setPaymentMethod(String paymentMethod) {
+    this.paymentMethod = paymentMethod;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -225,7 +249,9 @@ public class Subscription {
         (this.campaign == null ? subscription.campaign == null : this.campaign.equals(subscription.campaign)) &&
         (this.paused == null ? subscription.paused == null : this.paused.equals(subscription.paused)) &&
         (this.deliveryAddress == null ? subscription.deliveryAddress == null : this.deliveryAddress.equals(subscription.deliveryAddress)) &&
-        (this.pendingAddressChanges == null ? subscription.pendingAddressChanges == null : this.pendingAddressChanges.equals(subscription.pendingAddressChanges));
+        (this.pendingAddressChanges == null ? subscription.pendingAddressChanges == null : this.pendingAddressChanges.equals(subscription.pendingAddressChanges)) &&
+        (this.orderNumber == null ? subscription.orderNumber == null : this.orderNumber.equals(subscription.orderNumber)) &&
+        (this.paymentMethod == null ? subscription.paymentMethod == null : this.paymentMethod.equals(subscription.paymentMethod));
   }
 
   @Override
@@ -245,6 +271,8 @@ public class Subscription {
     result = 31 * result + (this.paused == null ? 0: this.paused.hashCode());
     result = 31 * result + (this.deliveryAddress == null ? 0: this.deliveryAddress.hashCode());
     result = 31 * result + (this.pendingAddressChanges == null ? 0: this.pendingAddressChanges.hashCode());
+    result = 31 * result + (this.orderNumber == null ? 0: this.orderNumber.hashCode());
+    result = 31 * result + (this.paymentMethod == null ? 0: this.paymentMethod.hashCode());
     return result;
   }
 
@@ -267,6 +295,8 @@ public class Subscription {
     sb.append("  paused: ").append(paused).append("\n");
     sb.append("  deliveryAddress: ").append(deliveryAddress).append("\n");
     sb.append("  pendingAddressChanges: ").append(pendingAddressChanges).append("\n");
+    sb.append("  orderNumber: ").append(orderNumber).append("\n");
+    sb.append("  paymentMethod: ").append(paymentMethod).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -24,6 +24,8 @@ public class DeliveryAddress {
   private String zipcode = null;
   @SerializedName("city")
   private String city = null;
+  @SerializedName("temporaryName")
+  private String temporaryName = null;
 
   /**
    **/
@@ -55,6 +57,16 @@ public class DeliveryAddress {
     this.city = city;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getTemporaryName() {
+    return temporaryName;
+  }
+  public void setTemporaryName(String temporaryName) {
+    this.temporaryName = temporaryName;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -67,7 +79,8 @@ public class DeliveryAddress {
     DeliveryAddress deliveryAddress = (DeliveryAddress) o;
     return (this.streetAddress == null ? deliveryAddress.streetAddress == null : this.streetAddress.equals(deliveryAddress.streetAddress)) &&
         (this.zipcode == null ? deliveryAddress.zipcode == null : this.zipcode.equals(deliveryAddress.zipcode)) &&
-        (this.city == null ? deliveryAddress.city == null : this.city.equals(deliveryAddress.city));
+        (this.city == null ? deliveryAddress.city == null : this.city.equals(deliveryAddress.city)) &&
+        (this.temporaryName == null ? deliveryAddress.temporaryName == null : this.temporaryName.equals(deliveryAddress.temporaryName));
   }
 
   @Override
@@ -76,6 +89,7 @@ public class DeliveryAddress {
     result = 31 * result + (this.streetAddress == null ? 0: this.streetAddress.hashCode());
     result = 31 * result + (this.zipcode == null ? 0: this.zipcode.hashCode());
     result = 31 * result + (this.city == null ? 0: this.city.hashCode());
+    result = 31 * result + (this.temporaryName == null ? 0: this.temporaryName.hashCode());
     return result;
   }
 
@@ -87,6 +101,7 @@ public class DeliveryAddress {
     sb.append("  streetAddress: ").append(streetAddress).append("\n");
     sb.append("  zipcode: ").append(zipcode).append("\n");
     sb.append("  city: ").append(city).append("\n");
+    sb.append("  temporaryName: ").append(temporaryName).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
