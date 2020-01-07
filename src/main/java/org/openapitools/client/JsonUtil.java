@@ -69,12 +69,24 @@ public class JsonUtil {
       return new TypeToken<List<Campaign>>(){}.getType();
     }
     
+    if ("CodeForTokenData".equalsIgnoreCase(className)) {
+      return new TypeToken<List<CodeForTokenData>>(){}.getType();
+    }
+    
     if ("DeliveryAddress".equalsIgnoreCase(className)) {
       return new TypeToken<List<DeliveryAddress>>(){}.getType();
     }
     
     if ("DescriptionFrequency".equalsIgnoreCase(className)) {
       return new TypeToken<List<DescriptionFrequency>>(){}.getType();
+    }
+    
+    if ("ForgotPasswordData".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ForgotPasswordData>>(){}.getType();
+    }
+    
+    if ("ForgotPasswordResponse".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ForgotPasswordResponse>>(){}.getType();
     }
     
     if ("GdprConsent".equalsIgnoreCase(className)) {
@@ -205,6 +217,14 @@ public class JsonUtil {
       return new TypeToken<List<TemporaryAddressChange>>(){}.getType();
     }
     
+    if ("TokenResponse".equalsIgnoreCase(className)) {
+      return new TypeToken<List<TokenResponse>>(){}.getType();
+    }
+    
+    if ("UpdatePasswordData".equalsIgnoreCase(className)) {
+      return new TypeToken<List<UpdatePasswordData>>(){}.getType();
+    }
+    
     if ("User".equalsIgnoreCase(className)) {
       return new TypeToken<List<User>>(){}.getType();
     }
@@ -235,12 +255,24 @@ public class JsonUtil {
       return new TypeToken<Campaign>(){}.getType();
     }
     
+    if ("CodeForTokenData".equalsIgnoreCase(className)) {
+      return new TypeToken<CodeForTokenData>(){}.getType();
+    }
+    
     if ("DeliveryAddress".equalsIgnoreCase(className)) {
       return new TypeToken<DeliveryAddress>(){}.getType();
     }
     
     if ("DescriptionFrequency".equalsIgnoreCase(className)) {
       return new TypeToken<DescriptionFrequency>(){}.getType();
+    }
+    
+    if ("ForgotPasswordData".equalsIgnoreCase(className)) {
+      return new TypeToken<ForgotPasswordData>(){}.getType();
+    }
+    
+    if ("ForgotPasswordResponse".equalsIgnoreCase(className)) {
+      return new TypeToken<ForgotPasswordResponse>(){}.getType();
     }
     
     if ("GdprConsent".equalsIgnoreCase(className)) {
@@ -369,6 +401,14 @@ public class JsonUtil {
     
     if ("TemporaryAddressChange".equalsIgnoreCase(className)) {
       return new TypeToken<TemporaryAddressChange>(){}.getType();
+    }
+    
+    if ("TokenResponse".equalsIgnoreCase(className)) {
+      return new TypeToken<TokenResponse>(){}.getType();
+    }
+    
+    if ("UpdatePasswordData".equalsIgnoreCase(className)) {
+      return new TypeToken<UpdatePasswordData>(){}.getType();
     }
     
     if ("User".equalsIgnoreCase(className)) {

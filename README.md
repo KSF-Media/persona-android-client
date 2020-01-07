@@ -58,17 +58,18 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import org.openapitools.client.api.EntitlementsApi;
+import org.openapitools.client.api.AccountApi;
 
-public class EntitlementsApiExample {
+public class AccountApiExample {
 
     public static void main(String[] args) {
-        EntitlementsApi apiInstance = new EntitlementsApi();
+        AccountApi apiInstance = new AccountApi();
+        CodeForTokenData body = new CodeForTokenData(); // CodeForTokenData | 
         try {
-            Map<String, List<String>> result = apiInstance.entitlementsGet();
+            TokenResponse result = apiInstance.accountCodeForTokenPost(body);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EntitlementsApi#entitlementsGet");
+            System.err.println("Exception when calling AccountApi#accountCodeForTokenPost");
             e.printStackTrace();
         }
     }
@@ -82,6 +83,9 @@ All URIs are relative to *http://http:/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountApi* | [**accountCodeForTokenPost**](docs/AccountApi.md#accountCodeForTokenPost) | **POST** /account/codeForToken | Get a password reset token
+*AccountApi* | [**accountForgotPassPost**](docs/AccountApi.md#accountForgotPassPost) | **POST** /account/forgotPass | Forgot Password
+*AccountApi* | [**accountResetForgottenPasswordPost**](docs/AccountApi.md#accountResetForgottenPasswordPost) | **POST** /account/resetForgottenPassword | Reset a forgotten password with a token
 *EntitlementsApi* | [**entitlementsGet**](docs/EntitlementsApi.md#entitlementsGet) | **GET** /entitlements | List all entitlements
 *LoginApi* | [**loginPost**](docs/LoginApi.md#loginPost) | **POST** /login | Login with email and password
 *LoginApi* | [**loginSomePost**](docs/LoginApi.md#loginSomePost) | **POST** /login/some | Login with social media
@@ -102,8 +106,11 @@ Class | Method | HTTP request | Description
  - [ActiveDays](docs/ActiveDays.md)
  - [Address](docs/Address.md)
  - [Campaign](docs/Campaign.md)
+ - [CodeForTokenData](docs/CodeForTokenData.md)
  - [DeliveryAddress](docs/DeliveryAddress.md)
  - [DescriptionFrequency](docs/DescriptionFrequency.md)
+ - [ForgotPasswordData](docs/ForgotPasswordData.md)
+ - [ForgotPasswordResponse](docs/ForgotPasswordResponse.md)
  - [GdprConsent](docs/GdprConsent.md)
  - [InlineResponse400](docs/InlineResponse400.md)
  - [InlineResponse400InvalidRequestBody](docs/InlineResponse400InvalidRequestBody.md)
@@ -136,6 +143,8 @@ Class | Method | HTTP request | Description
  - [SubscriptionDates](docs/SubscriptionDates.md)
  - [SubscriptionPauseDates](docs/SubscriptionPauseDates.md)
  - [TemporaryAddressChange](docs/TemporaryAddressChange.md)
+ - [TokenResponse](docs/TokenResponse.md)
+ - [UpdatePasswordData](docs/UpdatePasswordData.md)
  - [User](docs/User.md)
  - [UserUpdate](docs/UserUpdate.md)
  - [UserUpdateAddress](docs/UserUpdateAddress.md)
