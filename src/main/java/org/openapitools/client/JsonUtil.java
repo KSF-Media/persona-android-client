@@ -93,6 +93,10 @@ public class JsonUtil {
       return new TypeToken<List<GdprConsent>>(){}.getType();
     }
     
+    if ("GlobalEntitlementAccess".equalsIgnoreCase(className)) {
+      return new TypeToken<List<GlobalEntitlementAccess>>(){}.getType();
+    }
+    
     if ("InlineResponse400".equalsIgnoreCase(className)) {
       return new TypeToken<List<InlineResponse400>>(){}.getType();
     }
@@ -277,6 +281,10 @@ public class JsonUtil {
     
     if ("GdprConsent".equalsIgnoreCase(className)) {
       return new TypeToken<GdprConsent>(){}.getType();
+    }
+    
+    if ("GlobalEntitlementAccess".equalsIgnoreCase(className)) {
+      return new TypeToken<GlobalEntitlementAccess>(){}.getType();
     }
     
     if ("InlineResponse400".equalsIgnoreCase(className)) {

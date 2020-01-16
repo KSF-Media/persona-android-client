@@ -86,6 +86,7 @@ Class | Method | HTTP request | Description
 *AccountApi* | [**accountCodeForTokenPost**](docs/AccountApi.md#accountCodeForTokenPost) | **POST** /account/codeForToken | Get a password reset token
 *AccountApi* | [**accountForgotPassPost**](docs/AccountApi.md#accountForgotPassPost) | **POST** /account/forgotPass | Forgot Password
 *AccountApi* | [**accountResetForgottenPasswordPost**](docs/AccountApi.md#accountResetForgottenPasswordPost) | **POST** /account/resetForgottenPassword | Reset a forgotten password with a token
+*EntitlementsApi* | [**entitlementsAllowPost**](docs/EntitlementsApi.md#entitlementsAllowPost) | **POST** /entitlements/allow | 
 *EntitlementsApi* | [**entitlementsGet**](docs/EntitlementsApi.md#entitlementsGet) | **GET** /entitlements | List all entitlements
 *LoginApi* | [**loginPost**](docs/LoginApi.md#loginPost) | **POST** /login | Login with email and password
 *LoginApi* | [**loginSomePost**](docs/LoginApi.md#loginSomePost) | **POST** /login/some | Login with social media
@@ -112,6 +113,7 @@ Class | Method | HTTP request | Description
  - [ForgotPasswordData](docs/ForgotPasswordData.md)
  - [ForgotPasswordResponse](docs/ForgotPasswordResponse.md)
  - [GdprConsent](docs/GdprConsent.md)
+ - [GlobalEntitlementAccess](docs/GlobalEntitlementAccess.md)
  - [InlineResponse400](docs/InlineResponse400.md)
  - [InlineResponse400InvalidRequestBody](docs/InlineResponse400InvalidRequestBody.md)
  - [InlineResponse403](docs/InlineResponse403.md)

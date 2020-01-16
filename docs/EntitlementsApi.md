@@ -4,8 +4,55 @@ All URIs are relative to *http://http:/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**entitlementsAllowPost**](EntitlementsApi.md#entitlementsAllowPost) | **POST** /entitlements/allow | 
 [**entitlementsGet**](EntitlementsApi.md#entitlementsGet) | **GET** /entitlements | List all entitlements
 
+
+
+## entitlementsAllowPost
+
+> List&lt;Object&gt; entitlementsAllowPost(body, authorization)
+
+
+
+### Example
+
+```java
+// Import classes:
+//import org.openapitools.client.api.EntitlementsApi;
+
+EntitlementsApi apiInstance = new EntitlementsApi();
+GlobalEntitlementAccess body = new GlobalEntitlementAccess(); // GlobalEntitlementAccess | 
+String authorization = null; // String | 
+try {
+    List<Object> result = apiInstance.entitlementsAllowPost(body, authorization);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling EntitlementsApi#entitlementsAllowPost");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GlobalEntitlementAccess**](GlobalEntitlementAccess.md)|  |
+ **authorization** | **String**|  | [optional] [default to null]
+
+### Return type
+
+**List&lt;Object&gt;**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
 
 
 ## entitlementsGet

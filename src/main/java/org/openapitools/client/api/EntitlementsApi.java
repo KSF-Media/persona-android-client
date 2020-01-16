@@ -23,6 +23,9 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
+import org.openapitools.client.model.GlobalEntitlementAccess;
+import org.openapitools.client.model.InlineResponse400;
+import org.openapitools.client.model.InlineResponse415;
 import java.util.*;
 
 import org.apache.http.HttpEntity;
@@ -55,6 +58,137 @@ public class EntitlementsApi {
     return basePath;
   }
 
+  /**
+  * 
+  * 
+   * @param body 
+   * @param authorization 
+   * @return List<Object>
+  */
+  public List<Object> entitlementsAllowPost (GlobalEntitlementAccess body, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = body;
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling entitlementsAllowPost",
+        new ApiException(400, "Missing the required parameter 'body' when calling entitlementsAllowPost"));
+    }
+
+    // create path and map variables
+    String path = "/entitlements/allow";
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+    String[] contentTypes = {
+      "application/json;charset=utf-8"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+    }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      if (localVarResponse != null) {
+         return (List<Object>) ApiInvoker.deserialize(localVarResponse, "array", Object.class);
+      } else {
+         return null;
+      }
+    } catch (ApiException ex) {
+       throw ex;
+    } catch (InterruptedException ex) {
+       throw ex;
+    } catch (ExecutionException ex) {
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
+    } catch (TimeoutException ex) {
+      throw ex;
+    }
+  }
+
+      /**
+   * 
+   * 
+   * @param body    * @param authorization 
+  */
+  public void entitlementsAllowPost (GlobalEntitlementAccess body, String authorization, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = body;
+
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling entitlementsAllowPost",
+        new ApiException(400, "Missing the required parameter 'body' when calling entitlementsAllowPost"));
+    }
+
+    // create path and map variables
+    String path = "/entitlements/allow".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+
+    String[] contentTypes = {
+      "application/json;charset=utf-8"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+            try {
+              responseListener.onResponse((List<Object>) ApiInvoker.deserialize(localVarResponse,  "array", Object.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
   /**
   * List all entitlements
   * 
