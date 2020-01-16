@@ -23,6 +23,8 @@ public class TemporaryAddressChange {
   private String zipCode = null;
   @SerializedName("streetAddress")
   private String streetAddress = null;
+  @SerializedName("countryCode")
+  private String countryCode = null;
   @SerializedName("startDate")
   private Date startDate = null;
   @SerializedName("endDate")
@@ -48,6 +50,16 @@ public class TemporaryAddressChange {
   }
   public void setStreetAddress(String streetAddress) {
     this.streetAddress = streetAddress;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public String getCountryCode() {
+    return countryCode;
+  }
+  public void setCountryCode(String countryCode) {
+    this.countryCode = countryCode;
   }
 
   /**
@@ -92,6 +104,7 @@ public class TemporaryAddressChange {
     TemporaryAddressChange temporaryAddressChange = (TemporaryAddressChange) o;
     return (this.zipCode == null ? temporaryAddressChange.zipCode == null : this.zipCode.equals(temporaryAddressChange.zipCode)) &&
         (this.streetAddress == null ? temporaryAddressChange.streetAddress == null : this.streetAddress.equals(temporaryAddressChange.streetAddress)) &&
+        (this.countryCode == null ? temporaryAddressChange.countryCode == null : this.countryCode.equals(temporaryAddressChange.countryCode)) &&
         (this.startDate == null ? temporaryAddressChange.startDate == null : this.startDate.equals(temporaryAddressChange.startDate)) &&
         (this.endDate == null ? temporaryAddressChange.endDate == null : this.endDate.equals(temporaryAddressChange.endDate)) &&
         (this.temporaryName == null ? temporaryAddressChange.temporaryName == null : this.temporaryName.equals(temporaryAddressChange.temporaryName));
@@ -102,6 +115,7 @@ public class TemporaryAddressChange {
     int result = 17;
     result = 31 * result + (this.zipCode == null ? 0: this.zipCode.hashCode());
     result = 31 * result + (this.streetAddress == null ? 0: this.streetAddress.hashCode());
+    result = 31 * result + (this.countryCode == null ? 0: this.countryCode.hashCode());
     result = 31 * result + (this.startDate == null ? 0: this.startDate.hashCode());
     result = 31 * result + (this.endDate == null ? 0: this.endDate.hashCode());
     result = 31 * result + (this.temporaryName == null ? 0: this.temporaryName.hashCode());
@@ -115,6 +129,7 @@ public class TemporaryAddressChange {
     
     sb.append("  zipCode: ").append(zipCode).append("\n");
     sb.append("  streetAddress: ").append(streetAddress).append("\n");
+    sb.append("  countryCode: ").append(countryCode).append("\n");
     sb.append("  startDate: ").append(startDate).append("\n");
     sb.append("  endDate: ").append(endDate).append("\n");
     sb.append("  temporaryName: ").append(temporaryName).append("\n");
