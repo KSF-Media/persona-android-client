@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**usersUuidPatch**](UsersApi.md#usersUuidPatch) | **PATCH** /users/{uuid} | Update a user
 [**usersUuidSubscriptionsSubsnoAddressChangePost**](UsersApi.md#usersUuidSubscriptionsSubsnoAddressChangePost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 [**usersUuidSubscriptionsSubsnoPausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoPausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
+[**usersUuidSubscriptionsSubsnoReclamationPost**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationPost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 
 
 
@@ -396,6 +397,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Subscription**](Subscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
+
+
+## usersUuidSubscriptionsSubsnoReclamationPost
+
+> DeliveryReclamation usersUuidSubscriptionsSubsnoReclamationPost(uuid, subsno, body, authorization)
+
+Create a new delivery reclamation for a subscription
+
+### Example
+
+```java
+// Import classes:
+//import org.openapitools.client.api.UsersApi;
+
+UsersApi apiInstance = new UsersApi();
+UUID uuid = null; // UUID | 
+Integer subsno = null; // Integer | 
+NewDeliveryReclamation body = new NewDeliveryReclamation(); // NewDeliveryReclamation | 
+String authorization = null; // String | 
+try {
+    DeliveryReclamation result = apiInstance.usersUuidSubscriptionsSubsnoReclamationPost(uuid, subsno, body, authorization);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#usersUuidSubscriptionsSubsnoReclamationPost");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**UUID**](.md)|  | [default to null]
+ **subsno** | **Integer**|  | [default to null]
+ **body** | [**NewDeliveryReclamation**](NewDeliveryReclamation.md)|  |
+ **authorization** | **String**|  | [optional] [default to null]
+
+### Return type
+
+[**DeliveryReclamation**](DeliveryReclamation.md)
 
 ### Authorization
 
