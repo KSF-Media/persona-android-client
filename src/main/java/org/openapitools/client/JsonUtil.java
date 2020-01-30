@@ -81,6 +81,10 @@ public class JsonUtil {
       return new TypeToken<List<DeliveryReclamation>>(){}.getType();
     }
     
+    if ("DeliveryReclamationClaim".equalsIgnoreCase(className)) {
+      return new TypeToken<List<DeliveryReclamationClaim>>(){}.getType();
+    }
+    
     if ("DeliveryReclamationUpdate".equalsIgnoreCase(className)) {
       return new TypeToken<List<DeliveryReclamationUpdate>>(){}.getType();
     }
@@ -281,6 +285,10 @@ public class JsonUtil {
     
     if ("DeliveryReclamation".equalsIgnoreCase(className)) {
       return new TypeToken<DeliveryReclamation>(){}.getType();
+    }
+    
+    if ("DeliveryReclamationClaim".equalsIgnoreCase(className)) {
+      return new TypeToken<DeliveryReclamationClaim>(){}.getType();
     }
     
     if ("DeliveryReclamationUpdate".equalsIgnoreCase(className)) {

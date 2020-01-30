@@ -7,7 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **publicationDate** | [**Date**](Date.md) |  | 
-**claim** | **String** |  | 
+**claim** | [**DeliveryReclamationClaim**](DeliveryReclamationClaim.md) |  | 
 
 
 
