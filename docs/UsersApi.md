@@ -13,7 +13,8 @@ Method | HTTP request | Description
 [**usersUuidSubscriptionsSubsnoAddressChangePost**](UsersApi.md#usersUuidSubscriptionsSubsnoAddressChangePost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 [**usersUuidSubscriptionsSubsnoPausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoPausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 [**usersUuidSubscriptionsSubsnoReclamationPost**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationPost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
-[**usersUuidSubscriptionsSubsnoReclamationReclaimnoGet**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationReclaimnoGet) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamation/{reclaimno} | Get a delivery reclamation
+[**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
+[**usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch) | **PATCH** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Update a delivery reclamation
 
 
 
@@ -459,9 +460,9 @@ No authorization required
 - **Accept**: application/json;charset=utf-8
 
 
-## usersUuidSubscriptionsSubsnoReclamationReclaimnoGet
+## usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet
 
-> DeliveryReclamation usersUuidSubscriptionsSubsnoReclamationReclaimnoGet(uuid, subsno, reclaimno, authorization)
+> DeliveryReclamation usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet(uuid, subsno, reclaimno, authorization)
 
 Get a delivery reclamation
 
@@ -477,10 +478,10 @@ Integer subsno = null; // Integer |
 Integer reclaimno = null; // Integer | 
 String authorization = null; // String | 
 try {
-    DeliveryReclamation result = apiInstance.usersUuidSubscriptionsSubsnoReclamationReclaimnoGet(uuid, subsno, reclaimno, authorization);
+    DeliveryReclamation result = apiInstance.usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet(uuid, subsno, reclaimno, authorization);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#usersUuidSubscriptionsSubsnoReclamationReclaimnoGet");
+    System.err.println("Exception when calling UsersApi#usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet");
     e.printStackTrace();
 }
 ```
@@ -506,5 +507,57 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json;charset=utf-8
+
+
+## usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch
+
+> DeliveryReclamation usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch(uuid, subsno, reclaimno, body, authorization)
+
+Update a delivery reclamation
+
+### Example
+
+```java
+// Import classes:
+//import org.openapitools.client.api.UsersApi;
+
+UsersApi apiInstance = new UsersApi();
+UUID uuid = null; // UUID | 
+Integer subsno = null; // Integer | 
+Integer reclaimno = null; // Integer | 
+DeliveryReclamationUpdate body = new DeliveryReclamationUpdate(); // DeliveryReclamationUpdate | 
+String authorization = null; // String | 
+try {
+    DeliveryReclamation result = apiInstance.usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch(uuid, subsno, reclaimno, body, authorization);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**UUID**](.md)|  | [default to null]
+ **subsno** | **Integer**|  | [default to null]
+ **reclaimno** | **Integer**|  | [default to null]
+ **body** | [**DeliveryReclamationUpdate**](DeliveryReclamationUpdate.md)|  |
+ **authorization** | **String**|  | [optional] [default to null]
+
+### Return type
+
+[**DeliveryReclamation**](DeliveryReclamation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
 - **Accept**: application/json;charset=utf-8
 
