@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**number** | **String** |  | 
+**number** | **Integer** |  | 
 **customerNumber** | **Integer** |  | 
 **subscriptionNumber** | **Integer** |  | 
 **date** | [**Date**](Date.md) |  | 

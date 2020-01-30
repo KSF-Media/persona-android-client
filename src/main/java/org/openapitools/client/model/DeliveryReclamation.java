@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 public class DeliveryReclamation {
   
   @SerializedName("number")
-  private String number = null;
+  private Integer number = null;
   @SerializedName("customerNumber")
   private Integer customerNumber = null;
   @SerializedName("subscriptionNumber")
@@ -35,12 +35,14 @@ public class DeliveryReclamation {
   private String status = null;
 
   /**
+   * minimum: -9223372036854775808
+   * maximum: 9223372036854775807
    **/
   @ApiModelProperty(required = true, value = "")
-  public String getNumber() {
+  public Integer getNumber() {
     return number;
   }
-  public void setNumber(String number) {
+  public void setNumber(Integer number) {
     this.number = number;
   }
 
