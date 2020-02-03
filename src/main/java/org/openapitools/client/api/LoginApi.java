@@ -454,9 +454,10 @@ public class LoginApi {
   * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
    * @param authorization 
+   * @param everywhere 
    * @return List<Object>
   */
-  public List<Object> loginUuidDelete (UUID uuid, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<Object> loginUuidDelete (UUID uuid, String authorization, Boolean everywhere) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -473,6 +474,7 @@ public class LoginApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "everywhere", everywhere));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     String[] contentTypes = {
     };
@@ -516,9 +518,9 @@ public class LoginApi {
       /**
    * Logout
    * Authorization header expects the following format ‘OAuth {token}’
-   * @param uuid    * @param authorization 
+   * @param uuid    * @param authorization    * @param everywhere 
   */
-  public void loginUuidDelete (UUID uuid, String authorization, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
+  public void loginUuidDelete (UUID uuid, String authorization, Boolean everywhere, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'uuid' is set
@@ -537,6 +539,7 @@ public class LoginApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
 
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "everywhere", everywhere));
 
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
 
