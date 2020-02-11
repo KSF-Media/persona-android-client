@@ -19,7 +19,7 @@ import com.google.gson.annotations.SerializedName;
 public class InlineResponse400InvalidRequestBody {
   
   public enum DescriptionEnum {
-     Couldn&#39;t parse the request body., 
+     Could not parse the request body., 
   };
   @SerializedName("description")
   private DescriptionEnum description = null;
