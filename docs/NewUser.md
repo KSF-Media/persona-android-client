@@ -6,16 +6,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**firstName** | **String** |  | 
-**lastName** | **String** |  | 
-**emailAddress** | **String** |  | 
-**password** | **String** |  | 
-**confirmPassword** | **String** |  | 
-**streetAddress** | **String** |  |  [optional]
-**zipCode** | **String** |  |  [optional]
-**city** | **String** |  |  [optional]
-**country** | **String** |  |  [optional]
-**phone** | **String** |  |  [optional]
+**newUserFirstName** | **String** |  |  [optional]
+**newUserLastName** | **String** |  |  [optional]
+**newUserEmailAddress** | **String** |  | 
+**newUserPassword** | **String** |  | 
+**newUserConfirmPassword** | **String** |  | 
+**newUserStreetAddress** | **String** |  |  [optional]
+**newUserZipCode** | **String** |  |  [optional]
+**newUserCity** | **String** |  |  [optional]
+**newUserCountry** | **String** |  |  [optional]
+**newUserPhone** | **String** |  |  [optional]
 
 
 

@@ -18,125 +18,125 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class NewUser {
   
-  @SerializedName("firstName")
-  private String firstName = null;
-  @SerializedName("lastName")
-  private String lastName = null;
-  @SerializedName("emailAddress")
-  private String emailAddress = null;
-  @SerializedName("password")
-  private String password = null;
-  @SerializedName("confirmPassword")
-  private String confirmPassword = null;
-  @SerializedName("streetAddress")
-  private String streetAddress = null;
-  @SerializedName("zipCode")
-  private String zipCode = null;
-  @SerializedName("city")
-  private String city = null;
-  @SerializedName("country")
-  private String country = null;
-  @SerializedName("phone")
-  private String phone = null;
+  @SerializedName("newUserFirstName")
+  private String newUserFirstName = null;
+  @SerializedName("newUserLastName")
+  private String newUserLastName = null;
+  @SerializedName("newUserEmailAddress")
+  private String newUserEmailAddress = null;
+  @SerializedName("newUserPassword")
+  private String newUserPassword = null;
+  @SerializedName("newUserConfirmPassword")
+  private String newUserConfirmPassword = null;
+  @SerializedName("newUserStreetAddress")
+  private String newUserStreetAddress = null;
+  @SerializedName("newUserZipCode")
+  private String newUserZipCode = null;
+  @SerializedName("newUserCity")
+  private String newUserCity = null;
+  @SerializedName("newUserCountry")
+  private String newUserCountry = null;
+  @SerializedName("newUserPhone")
+  private String newUserPhone = null;
 
   /**
    **/
-  @ApiModelProperty(required = true, value = "")
-  public String getFirstName() {
-    return firstName;
+  @ApiModelProperty(value = "")
+  public String getNewUserFirstName() {
+    return newUserFirstName;
   }
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(required = true, value = "")
-  public String getLastName() {
-    return lastName;
-  }
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(required = true, value = "")
-  public String getEmailAddress() {
-    return emailAddress;
-  }
-  public void setEmailAddress(String emailAddress) {
-    this.emailAddress = emailAddress;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(required = true, value = "")
-  public String getPassword() {
-    return password;
-  }
-  public void setPassword(String password) {
-    this.password = password;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(required = true, value = "")
-  public String getConfirmPassword() {
-    return confirmPassword;
-  }
-  public void setConfirmPassword(String confirmPassword) {
-    this.confirmPassword = confirmPassword;
+  public void setNewUserFirstName(String newUserFirstName) {
+    this.newUserFirstName = newUserFirstName;
   }
 
   /**
    **/
   @ApiModelProperty(value = "")
-  public String getStreetAddress() {
-    return streetAddress;
+  public String getNewUserLastName() {
+    return newUserLastName;
   }
-  public void setStreetAddress(String streetAddress) {
-    this.streetAddress = streetAddress;
+  public void setNewUserLastName(String newUserLastName) {
+    this.newUserLastName = newUserLastName;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public String getNewUserEmailAddress() {
+    return newUserEmailAddress;
+  }
+  public void setNewUserEmailAddress(String newUserEmailAddress) {
+    this.newUserEmailAddress = newUserEmailAddress;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public String getNewUserPassword() {
+    return newUserPassword;
+  }
+  public void setNewUserPassword(String newUserPassword) {
+    this.newUserPassword = newUserPassword;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public String getNewUserConfirmPassword() {
+    return newUserConfirmPassword;
+  }
+  public void setNewUserConfirmPassword(String newUserConfirmPassword) {
+    this.newUserConfirmPassword = newUserConfirmPassword;
   }
 
   /**
    **/
   @ApiModelProperty(value = "")
-  public String getZipCode() {
-    return zipCode;
+  public String getNewUserStreetAddress() {
+    return newUserStreetAddress;
   }
-  public void setZipCode(String zipCode) {
-    this.zipCode = zipCode;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(value = "")
-  public String getCity() {
-    return city;
-  }
-  public void setCity(String city) {
-    this.city = city;
+  public void setNewUserStreetAddress(String newUserStreetAddress) {
+    this.newUserStreetAddress = newUserStreetAddress;
   }
 
   /**
    **/
   @ApiModelProperty(value = "")
-  public String getCountry() {
-    return country;
+  public String getNewUserZipCode() {
+    return newUserZipCode;
   }
-  public void setCountry(String country) {
-    this.country = country;
+  public void setNewUserZipCode(String newUserZipCode) {
+    this.newUserZipCode = newUserZipCode;
   }
 
   /**
    **/
   @ApiModelProperty(value = "")
-  public String getPhone() {
-    return phone;
+  public String getNewUserCity() {
+    return newUserCity;
   }
-  public void setPhone(String phone) {
-    this.phone = phone;
+  public void setNewUserCity(String newUserCity) {
+    this.newUserCity = newUserCity;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getNewUserCountry() {
+    return newUserCountry;
+  }
+  public void setNewUserCountry(String newUserCountry) {
+    this.newUserCountry = newUserCountry;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getNewUserPhone() {
+    return newUserPhone;
+  }
+  public void setNewUserPhone(String newUserPhone) {
+    this.newUserPhone = newUserPhone;
   }
 
 
@@ -149,31 +149,31 @@ public class NewUser {
       return false;
     }
     NewUser newUser = (NewUser) o;
-    return (this.firstName == null ? newUser.firstName == null : this.firstName.equals(newUser.firstName)) &&
-        (this.lastName == null ? newUser.lastName == null : this.lastName.equals(newUser.lastName)) &&
-        (this.emailAddress == null ? newUser.emailAddress == null : this.emailAddress.equals(newUser.emailAddress)) &&
-        (this.password == null ? newUser.password == null : this.password.equals(newUser.password)) &&
-        (this.confirmPassword == null ? newUser.confirmPassword == null : this.confirmPassword.equals(newUser.confirmPassword)) &&
-        (this.streetAddress == null ? newUser.streetAddress == null : this.streetAddress.equals(newUser.streetAddress)) &&
-        (this.zipCode == null ? newUser.zipCode == null : this.zipCode.equals(newUser.zipCode)) &&
-        (this.city == null ? newUser.city == null : this.city.equals(newUser.city)) &&
-        (this.country == null ? newUser.country == null : this.country.equals(newUser.country)) &&
-        (this.phone == null ? newUser.phone == null : this.phone.equals(newUser.phone));
+    return (this.newUserFirstName == null ? newUser.newUserFirstName == null : this.newUserFirstName.equals(newUser.newUserFirstName)) &&
+        (this.newUserLastName == null ? newUser.newUserLastName == null : this.newUserLastName.equals(newUser.newUserLastName)) &&
+        (this.newUserEmailAddress == null ? newUser.newUserEmailAddress == null : this.newUserEmailAddress.equals(newUser.newUserEmailAddress)) &&
+        (this.newUserPassword == null ? newUser.newUserPassword == null : this.newUserPassword.equals(newUser.newUserPassword)) &&
+        (this.newUserConfirmPassword == null ? newUser.newUserConfirmPassword == null : this.newUserConfirmPassword.equals(newUser.newUserConfirmPassword)) &&
+        (this.newUserStreetAddress == null ? newUser.newUserStreetAddress == null : this.newUserStreetAddress.equals(newUser.newUserStreetAddress)) &&
+        (this.newUserZipCode == null ? newUser.newUserZipCode == null : this.newUserZipCode.equals(newUser.newUserZipCode)) &&
+        (this.newUserCity == null ? newUser.newUserCity == null : this.newUserCity.equals(newUser.newUserCity)) &&
+        (this.newUserCountry == null ? newUser.newUserCountry == null : this.newUserCountry.equals(newUser.newUserCountry)) &&
+        (this.newUserPhone == null ? newUser.newUserPhone == null : this.newUserPhone.equals(newUser.newUserPhone));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (this.firstName == null ? 0: this.firstName.hashCode());
-    result = 31 * result + (this.lastName == null ? 0: this.lastName.hashCode());
-    result = 31 * result + (this.emailAddress == null ? 0: this.emailAddress.hashCode());
-    result = 31 * result + (this.password == null ? 0: this.password.hashCode());
-    result = 31 * result + (this.confirmPassword == null ? 0: this.confirmPassword.hashCode());
-    result = 31 * result + (this.streetAddress == null ? 0: this.streetAddress.hashCode());
-    result = 31 * result + (this.zipCode == null ? 0: this.zipCode.hashCode());
-    result = 31 * result + (this.city == null ? 0: this.city.hashCode());
-    result = 31 * result + (this.country == null ? 0: this.country.hashCode());
-    result = 31 * result + (this.phone == null ? 0: this.phone.hashCode());
+    result = 31 * result + (this.newUserFirstName == null ? 0: this.newUserFirstName.hashCode());
+    result = 31 * result + (this.newUserLastName == null ? 0: this.newUserLastName.hashCode());
+    result = 31 * result + (this.newUserEmailAddress == null ? 0: this.newUserEmailAddress.hashCode());
+    result = 31 * result + (this.newUserPassword == null ? 0: this.newUserPassword.hashCode());
+    result = 31 * result + (this.newUserConfirmPassword == null ? 0: this.newUserConfirmPassword.hashCode());
+    result = 31 * result + (this.newUserStreetAddress == null ? 0: this.newUserStreetAddress.hashCode());
+    result = 31 * result + (this.newUserZipCode == null ? 0: this.newUserZipCode.hashCode());
+    result = 31 * result + (this.newUserCity == null ? 0: this.newUserCity.hashCode());
+    result = 31 * result + (this.newUserCountry == null ? 0: this.newUserCountry.hashCode());
+    result = 31 * result + (this.newUserPhone == null ? 0: this.newUserPhone.hashCode());
     return result;
   }
 
@@ -182,16 +182,16 @@ public class NewUser {
     StringBuilder sb = new StringBuilder();
     sb.append("class NewUser {\n");
     
-    sb.append("  firstName: ").append(firstName).append("\n");
-    sb.append("  lastName: ").append(lastName).append("\n");
-    sb.append("  emailAddress: ").append(emailAddress).append("\n");
-    sb.append("  password: ").append(password).append("\n");
-    sb.append("  confirmPassword: ").append(confirmPassword).append("\n");
-    sb.append("  streetAddress: ").append(streetAddress).append("\n");
-    sb.append("  zipCode: ").append(zipCode).append("\n");
-    sb.append("  city: ").append(city).append("\n");
-    sb.append("  country: ").append(country).append("\n");
-    sb.append("  phone: ").append(phone).append("\n");
+    sb.append("  newUserFirstName: ").append(newUserFirstName).append("\n");
+    sb.append("  newUserLastName: ").append(newUserLastName).append("\n");
+    sb.append("  newUserEmailAddress: ").append(newUserEmailAddress).append("\n");
+    sb.append("  newUserPassword: ").append(newUserPassword).append("\n");
+    sb.append("  newUserConfirmPassword: ").append(newUserConfirmPassword).append("\n");
+    sb.append("  newUserStreetAddress: ").append(newUserStreetAddress).append("\n");
+    sb.append("  newUserZipCode: ").append(newUserZipCode).append("\n");
+    sb.append("  newUserCity: ").append(newUserCity).append("\n");
+    sb.append("  newUserCountry: ").append(newUserCountry).append("\n");
+    sb.append("  newUserPhone: ").append(newUserPhone).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
