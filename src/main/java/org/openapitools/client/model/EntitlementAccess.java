@@ -17,7 +17,7 @@ import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
 @ApiModel(description = "")
-public class GlobalEntitlementAccess {
+public class EntitlementAccess {
   
   @SerializedName("userUuid")
   private UUID userUuid = null;
@@ -65,10 +65,10 @@ public class GlobalEntitlementAccess {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GlobalEntitlementAccess globalEntitlementAccess = (GlobalEntitlementAccess) o;
-    return (this.userUuid == null ? globalEntitlementAccess.userUuid == null : this.userUuid.equals(globalEntitlementAccess.userUuid)) &&
-        (this.startAt == null ? globalEntitlementAccess.startAt == null : this.startAt.equals(globalEntitlementAccess.startAt)) &&
-        (this.endAt == null ? globalEntitlementAccess.endAt == null : this.endAt.equals(globalEntitlementAccess.endAt));
+    EntitlementAccess entitlementAccess = (EntitlementAccess) o;
+    return (this.userUuid == null ? entitlementAccess.userUuid == null : this.userUuid.equals(entitlementAccess.userUuid)) &&
+        (this.startAt == null ? entitlementAccess.startAt == null : this.startAt.equals(entitlementAccess.startAt)) &&
+        (this.endAt == null ? entitlementAccess.endAt == null : this.endAt.equals(entitlementAccess.endAt));
   }
 
   @Override
@@ -83,7 +83,7 @@ public class GlobalEntitlementAccess {
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GlobalEntitlementAccess {\n");
+    sb.append("class EntitlementAccess {\n");
     
     sb.append("  userUuid: ").append(userUuid).append("\n");
     sb.append("  startAt: ").append(startAt).append("\n");

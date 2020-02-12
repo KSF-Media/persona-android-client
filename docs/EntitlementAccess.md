@@ -1,6 +1,6 @@
 
 
-# GlobalEntitlementAccess
+# EntitlementAccess
 
 ## Properties
 

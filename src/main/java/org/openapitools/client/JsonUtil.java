@@ -93,6 +93,10 @@ public class JsonUtil {
       return new TypeToken<List<DescriptionFrequency>>(){}.getType();
     }
     
+    if ("EntitlementAccess".equalsIgnoreCase(className)) {
+      return new TypeToken<List<EntitlementAccess>>(){}.getType();
+    }
+    
     if ("ForgotPasswordData".equalsIgnoreCase(className)) {
       return new TypeToken<List<ForgotPasswordData>>(){}.getType();
     }
@@ -103,10 +107,6 @@ public class JsonUtil {
     
     if ("GdprConsent".equalsIgnoreCase(className)) {
       return new TypeToken<List<GdprConsent>>(){}.getType();
-    }
-    
-    if ("GlobalEntitlementAccess".equalsIgnoreCase(className)) {
-      return new TypeToken<List<GlobalEntitlementAccess>>(){}.getType();
     }
     
     if ("InlineResponse400".equalsIgnoreCase(className)) {
@@ -303,6 +303,10 @@ public class JsonUtil {
       return new TypeToken<DescriptionFrequency>(){}.getType();
     }
     
+    if ("EntitlementAccess".equalsIgnoreCase(className)) {
+      return new TypeToken<EntitlementAccess>(){}.getType();
+    }
+    
     if ("ForgotPasswordData".equalsIgnoreCase(className)) {
       return new TypeToken<ForgotPasswordData>(){}.getType();
     }
@@ -313,10 +317,6 @@ public class JsonUtil {
     
     if ("GdprConsent".equalsIgnoreCase(className)) {
       return new TypeToken<GdprConsent>(){}.getType();
-    }
-    
-    if ("GlobalEntitlementAccess".equalsIgnoreCase(className)) {
-      return new TypeToken<GlobalEntitlementAccess>(){}.getType();
     }
     
     if ("InlineResponse400".equalsIgnoreCase(className)) {

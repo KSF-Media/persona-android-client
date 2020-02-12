@@ -5,6 +5,7 @@ All URIs are relative to *http://http:/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**entitlementsAllowPost**](EntitlementsApi.md#entitlementsAllowPost) | **POST** /entitlements/allow | 
+[**entitlementsAllowUuidPost**](EntitlementsApi.md#entitlementsAllowUuidPost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
 [**entitlementsGet**](EntitlementsApi.md#entitlementsGet) | **GET** /entitlements | List all entitlements
 
 
@@ -22,7 +23,7 @@ Method | HTTP request | Description
 //import org.openapitools.client.api.EntitlementsApi;
 
 EntitlementsApi apiInstance = new EntitlementsApi();
-GlobalEntitlementAccess body = new GlobalEntitlementAccess(); // GlobalEntitlementAccess | 
+EntitlementAccess body = new EntitlementAccess(); // EntitlementAccess | 
 String authorization = null; // String | 
 try {
     List<Object> result = apiInstance.entitlementsAllowPost(body, authorization);
@@ -38,7 +39,55 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GlobalEntitlementAccess**](GlobalEntitlementAccess.md)|  |
+ **body** | [**EntitlementAccess**](EntitlementAccess.md)|  |
+ **authorization** | **String**|  | [optional] [default to null]
+
+### Return type
+
+**List&lt;Object&gt;**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
+
+
+## entitlementsAllowUuidPost
+
+> List&lt;Object&gt; entitlementsAllowUuidPost(uuid, body, authorization)
+
+Grant product access to a customer
+
+### Example
+
+```java
+// Import classes:
+//import org.openapitools.client.api.EntitlementsApi;
+
+EntitlementsApi apiInstance = new EntitlementsApi();
+UUID uuid = null; // UUID | 
+EntitlementAccess body = new EntitlementAccess(); // EntitlementAccess | 
+String authorization = null; // String | 
+try {
+    List<Object> result = apiInstance.entitlementsAllowUuidPost(uuid, body, authorization);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling EntitlementsApi#entitlementsAllowUuidPost");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**UUID**](.md)|  | [default to null]
+ **body** | [**EntitlementAccess**](EntitlementAccess.md)|  |
  **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type
