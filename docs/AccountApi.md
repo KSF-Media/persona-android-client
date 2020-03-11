@@ -56,7 +56,7 @@ No authorization required
 
 ## accountForgotPassPost
 
-> ForgotPasswordResponse accountForgotPassPost(body)
+> List&lt;Object&gt; accountForgotPassPost(body)
 
 Forgot Password
 
@@ -69,7 +69,7 @@ Forgot Password
 AccountApi apiInstance = new AccountApi();
 ForgotPasswordData body = new ForgotPasswordData(); // ForgotPasswordData | 
 try {
-    ForgotPasswordResponse result = apiInstance.accountForgotPassPost(body);
+    List<Object> result = apiInstance.accountForgotPassPost(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountApi#accountForgotPassPost");
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ForgotPasswordResponse**](ForgotPasswordResponse.md)
+**List&lt;Object&gt;**
 
 ### Authorization
 
@@ -100,7 +100,7 @@ No authorization required
 
 ## accountResetForgottenPasswordPost
 
-> ForgotPasswordResponse accountResetForgottenPasswordPost(body)
+> List&lt;Object&gt; accountResetForgottenPasswordPost(body)
 
 Reset a forgotten password with a token
 
@@ -113,7 +113,7 @@ Reset a forgotten password with a token
 AccountApi apiInstance = new AccountApi();
 UpdatePasswordData body = new UpdatePasswordData(); // UpdatePasswordData | 
 try {
-    ForgotPasswordResponse result = apiInstance.accountResetForgottenPasswordPost(body);
+    List<Object> result = apiInstance.accountResetForgottenPasswordPost(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountApi#accountResetForgottenPasswordPost");
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ForgotPasswordResponse**](ForgotPasswordResponse.md)
+**List&lt;Object&gt;**
 
 ### Authorization
 

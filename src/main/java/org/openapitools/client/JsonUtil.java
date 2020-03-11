@@ -101,10 +101,6 @@ public class JsonUtil {
       return new TypeToken<List<ForgotPasswordData>>(){}.getType();
     }
     
-    if ("ForgotPasswordResponse".equalsIgnoreCase(className)) {
-      return new TypeToken<List<ForgotPasswordResponse>>(){}.getType();
-    }
-    
     if ("GdprConsent".equalsIgnoreCase(className)) {
       return new TypeToken<List<GdprConsent>>(){}.getType();
     }
@@ -261,6 +257,10 @@ public class JsonUtil {
       return new TypeToken<List<UserUpdateAddress>>(){}.getType();
     }
     
+    if ("UserUpdatePassword".equalsIgnoreCase(className)) {
+      return new TypeToken<List<UserUpdatePassword>>(){}.getType();
+    }
+    
     return new TypeToken<List<Object>>(){}.getType();
   }
 
@@ -309,10 +309,6 @@ public class JsonUtil {
     
     if ("ForgotPasswordData".equalsIgnoreCase(className)) {
       return new TypeToken<ForgotPasswordData>(){}.getType();
-    }
-    
-    if ("ForgotPasswordResponse".equalsIgnoreCase(className)) {
-      return new TypeToken<ForgotPasswordResponse>(){}.getType();
     }
     
     if ("GdprConsent".equalsIgnoreCase(className)) {
@@ -469,6 +465,10 @@ public class JsonUtil {
     
     if ("UserUpdateAddress".equalsIgnoreCase(className)) {
       return new TypeToken<UserUpdateAddress>(){}.getType();
+    }
+    
+    if ("UserUpdatePassword".equalsIgnoreCase(className)) {
+      return new TypeToken<UserUpdatePassword>(){}.getType();
     }
     
     return new TypeToken<Object>(){}.getType();

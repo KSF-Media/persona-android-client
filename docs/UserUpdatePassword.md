@@ -1,12 +1,13 @@
 
 
-# ForgotPasswordResponse
+# UserUpdatePassword
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | **String** |  | 
+**password** | **String** |  | 
+**confirmPassword** | **String** |  | 
 
 
 

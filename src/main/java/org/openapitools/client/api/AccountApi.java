@@ -25,7 +25,6 @@ import com.android.volley.VolleyError;
 
 import org.openapitools.client.model.CodeForTokenData;
 import org.openapitools.client.model.ForgotPasswordData;
-import org.openapitools.client.model.ForgotPasswordResponse;
 import org.openapitools.client.model.InlineResponse400;
 import org.openapitools.client.model.InlineResponse415;
 import org.openapitools.client.model.TokenResponse;
@@ -193,9 +192,9 @@ public class AccountApi {
   * Forgot Password
   * 
    * @param body 
-   * @return ForgotPasswordResponse
+   * @return List<Object>
   */
-  public ForgotPasswordResponse accountForgotPassPost (ForgotPasswordData body) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<Object> accountForgotPassPost (ForgotPasswordData body) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = body;
     // verify the required parameter 'body' is set
     if (body == null) {
@@ -231,7 +230,7 @@ public class AccountApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (ForgotPasswordResponse) ApiInvoker.deserialize(localVarResponse, "", ForgotPasswordResponse.class);
+         return (List<Object>) ApiInvoker.deserialize(localVarResponse, "array", Object.class);
       } else {
          return null;
       }
@@ -257,7 +256,7 @@ public class AccountApi {
    * 
    * @param body 
   */
-  public void accountForgotPassPost (ForgotPasswordData body, final Response.Listener<ForgotPasswordResponse> responseListener, final Response.ErrorListener errorListener) {
+  public void accountForgotPassPost (ForgotPasswordData body, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = body;
 
     // verify the required parameter 'body' is set
@@ -302,7 +301,7 @@ public class AccountApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((ForgotPasswordResponse) ApiInvoker.deserialize(localVarResponse,  "", ForgotPasswordResponse.class));
+              responseListener.onResponse((List<Object>) ApiInvoker.deserialize(localVarResponse,  "array", Object.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -321,9 +320,9 @@ public class AccountApi {
   * Reset a forgotten password with a token
   * 
    * @param body 
-   * @return ForgotPasswordResponse
+   * @return List<Object>
   */
-  public ForgotPasswordResponse accountResetForgottenPasswordPost (UpdatePasswordData body) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<Object> accountResetForgottenPasswordPost (UpdatePasswordData body) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = body;
     // verify the required parameter 'body' is set
     if (body == null) {
@@ -359,7 +358,7 @@ public class AccountApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (ForgotPasswordResponse) ApiInvoker.deserialize(localVarResponse, "", ForgotPasswordResponse.class);
+         return (List<Object>) ApiInvoker.deserialize(localVarResponse, "array", Object.class);
       } else {
          return null;
       }
@@ -385,7 +384,7 @@ public class AccountApi {
    * 
    * @param body 
   */
-  public void accountResetForgottenPasswordPost (UpdatePasswordData body, final Response.Listener<ForgotPasswordResponse> responseListener, final Response.ErrorListener errorListener) {
+  public void accountResetForgottenPasswordPost (UpdatePasswordData body, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = body;
 
     // verify the required parameter 'body' is set
@@ -430,7 +429,7 @@ public class AccountApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((ForgotPasswordResponse) ApiInvoker.deserialize(localVarResponse,  "", ForgotPasswordResponse.class));
+              responseListener.onResponse((List<Object>) ApiInvoker.deserialize(localVarResponse,  "array", Object.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
