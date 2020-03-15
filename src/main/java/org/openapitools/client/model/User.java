@@ -45,6 +45,8 @@ public class User {
   private List<LegalConsent> legal = null;
   @SerializedName("pendingAddressChanges")
   private List<PendingAddressChange> pendingAddressChanges = null;
+  @SerializedName("hasCompletedRegistration")
+  private Boolean hasCompletedRegistration = null;
 
   /**
    **/
@@ -146,6 +148,16 @@ public class User {
     this.pendingAddressChanges = pendingAddressChanges;
   }
 
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean getHasCompletedRegistration() {
+    return hasCompletedRegistration;
+  }
+  public void setHasCompletedRegistration(Boolean hasCompletedRegistration) {
+    this.hasCompletedRegistration = hasCompletedRegistration;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -165,7 +177,8 @@ public class User {
         (this.subs == null ? user.subs == null : this.subs.equals(user.subs)) &&
         (this.consent == null ? user.consent == null : this.consent.equals(user.consent)) &&
         (this.legal == null ? user.legal == null : this.legal.equals(user.legal)) &&
-        (this.pendingAddressChanges == null ? user.pendingAddressChanges == null : this.pendingAddressChanges.equals(user.pendingAddressChanges));
+        (this.pendingAddressChanges == null ? user.pendingAddressChanges == null : this.pendingAddressChanges.equals(user.pendingAddressChanges)) &&
+        (this.hasCompletedRegistration == null ? user.hasCompletedRegistration == null : this.hasCompletedRegistration.equals(user.hasCompletedRegistration));
   }
 
   @Override
@@ -181,6 +194,7 @@ public class User {
     result = 31 * result + (this.consent == null ? 0: this.consent.hashCode());
     result = 31 * result + (this.legal == null ? 0: this.legal.hashCode());
     result = 31 * result + (this.pendingAddressChanges == null ? 0: this.pendingAddressChanges.hashCode());
+    result = 31 * result + (this.hasCompletedRegistration == null ? 0: this.hasCompletedRegistration.hashCode());
     return result;
   }
 
@@ -199,6 +213,7 @@ public class User {
     sb.append("  consent: ").append(consent).append("\n");
     sb.append("  legal: ").append(legal).append("\n");
     sb.append("  pendingAddressChanges: ").append(pendingAddressChanges).append("\n");
+    sb.append("  hasCompletedRegistration: ").append(hasCompletedRegistration).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
