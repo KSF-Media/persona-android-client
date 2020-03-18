@@ -884,9 +884,9 @@ public class UsersApi {
    * @param uuid 
    * @param body 
    * @param authorization 
-   * @return List<Object>
+   * @return User
   */
-  public List<Object> usersUuidPasswordPut (UUID uuid, UserUpdatePassword body, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public User usersUuidPasswordPut (UUID uuid, UserUpdatePassword body, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = body;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -928,7 +928,7 @@ public class UsersApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<Object>) ApiInvoker.deserialize(localVarResponse, "array", Object.class);
+         return (User) ApiInvoker.deserialize(localVarResponse, "", User.class);
       } else {
          return null;
       }
@@ -954,7 +954,7 @@ public class UsersApi {
    * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid    * @param body    * @param authorization 
   */
-  public void usersUuidPasswordPut (UUID uuid, UserUpdatePassword body, String authorization, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidPasswordPut (UUID uuid, UserUpdatePassword body, String authorization, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = body;
 
     // verify the required parameter 'uuid' is set
@@ -1005,7 +1005,7 @@ public class UsersApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<Object>) ApiInvoker.deserialize(localVarResponse,  "array", Object.class));
+              responseListener.onResponse((User) ApiInvoker.deserialize(localVarResponse,  "", User.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

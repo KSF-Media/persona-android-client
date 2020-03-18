@@ -308,7 +308,7 @@ No authorization required
 
 ## usersUuidPasswordPut
 
-> List&lt;Object&gt; usersUuidPasswordPut(uuid, body, authorization)
+> User usersUuidPasswordPut(uuid, body, authorization)
 
 Set / Change user password
 
@@ -325,7 +325,7 @@ UUID uuid = null; // UUID |
 UserUpdatePassword body = new UserUpdatePassword(); // UserUpdatePassword | 
 String authorization = null; // String | 
 try {
-    List<Object> result = apiInstance.usersUuidPasswordPut(uuid, body, authorization);
+    User result = apiInstance.usersUuidPasswordPut(uuid, body, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidPasswordPut");
@@ -344,7 +344,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;Object&gt;**
+[**User**](User.md)
 
 ### Authorization
 
