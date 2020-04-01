@@ -12,6 +12,8 @@
 
 package org.openapitools.client.model;
 
+import java.util.*;
+import org.openapitools.client.model.LegalConsent;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -38,6 +40,8 @@ public class NewUser {
   private String country = null;
   @SerializedName("phone")
   private String phone = null;
+  @SerializedName("legalConsents")
+  private List<LegalConsent> legalConsents = null;
 
   /**
    **/
@@ -139,6 +143,16 @@ public class NewUser {
     this.phone = phone;
   }
 
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public List<LegalConsent> getLegalConsents() {
+    return legalConsents;
+  }
+  public void setLegalConsents(List<LegalConsent> legalConsents) {
+    this.legalConsents = legalConsents;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -158,7 +172,8 @@ public class NewUser {
         (this.zipCode == null ? newUser.zipCode == null : this.zipCode.equals(newUser.zipCode)) &&
         (this.city == null ? newUser.city == null : this.city.equals(newUser.city)) &&
         (this.country == null ? newUser.country == null : this.country.equals(newUser.country)) &&
-        (this.phone == null ? newUser.phone == null : this.phone.equals(newUser.phone));
+        (this.phone == null ? newUser.phone == null : this.phone.equals(newUser.phone)) &&
+        (this.legalConsents == null ? newUser.legalConsents == null : this.legalConsents.equals(newUser.legalConsents));
   }
 
   @Override
@@ -174,6 +189,7 @@ public class NewUser {
     result = 31 * result + (this.city == null ? 0: this.city.hashCode());
     result = 31 * result + (this.country == null ? 0: this.country.hashCode());
     result = 31 * result + (this.phone == null ? 0: this.phone.hashCode());
+    result = 31 * result + (this.legalConsents == null ? 0: this.legalConsents.hashCode());
     return result;
   }
 
@@ -192,6 +208,7 @@ public class NewUser {
     sb.append("  city: ").append(city).append("\n");
     sb.append("  country: ").append(country).append("\n");
     sb.append("  phone: ").append(phone).append("\n");
+    sb.append("  legalConsents: ").append(legalConsents).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

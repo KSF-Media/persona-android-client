@@ -12,6 +12,8 @@
 
 package org.openapitools.client.model;
 
+import java.util.*;
+import org.openapitools.client.model.LegalConsent;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -20,6 +22,8 @@ public class NewTemporaryUser {
   
   @SerializedName("emailAddress")
   private String emailAddress = null;
+  @SerializedName("legalConsents")
+  private List<LegalConsent> legalConsents = null;
 
   /**
    **/
@@ -29,6 +33,16 @@ public class NewTemporaryUser {
   }
   public void setEmailAddress(String emailAddress) {
     this.emailAddress = emailAddress;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public List<LegalConsent> getLegalConsents() {
+    return legalConsents;
+  }
+  public void setLegalConsents(List<LegalConsent> legalConsents) {
+    this.legalConsents = legalConsents;
   }
 
 
@@ -41,13 +55,15 @@ public class NewTemporaryUser {
       return false;
     }
     NewTemporaryUser newTemporaryUser = (NewTemporaryUser) o;
-    return (this.emailAddress == null ? newTemporaryUser.emailAddress == null : this.emailAddress.equals(newTemporaryUser.emailAddress));
+    return (this.emailAddress == null ? newTemporaryUser.emailAddress == null : this.emailAddress.equals(newTemporaryUser.emailAddress)) &&
+        (this.legalConsents == null ? newTemporaryUser.legalConsents == null : this.legalConsents.equals(newTemporaryUser.legalConsents));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
     result = 31 * result + (this.emailAddress == null ? 0: this.emailAddress.hashCode());
+    result = 31 * result + (this.legalConsents == null ? 0: this.legalConsents.hashCode());
     return result;
   }
 
@@ -57,6 +73,7 @@ public class NewTemporaryUser {
     sb.append("class NewTemporaryUser {\n");
     
     sb.append("  emailAddress: ").append(emailAddress).append("\n");
+    sb.append("  legalConsents: ").append(legalConsents).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
