@@ -63,10 +63,11 @@ public class EntitlementsApi {
   * 
   * 
    * @param body 
+   * @param authUser 
    * @param authorization 
    * @return List<Object>
   */
-  public List<Object> entitlementsAllowPost (EntitlementAccess body, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<Object> entitlementsAllowPost (EntitlementAccess body, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = body;
     // verify the required parameter 'body' is set
     if (body == null) {
@@ -83,6 +84,7 @@ public class EntitlementsApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     String[] contentTypes = {
       "application/json;charset=utf-8"
@@ -127,9 +129,9 @@ public class EntitlementsApi {
       /**
    * 
    * 
-   * @param body    * @param authorization 
+   * @param body    * @param authUser    * @param authorization 
   */
-  public void entitlementsAllowPost (EntitlementAccess body, String authorization, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
+  public void entitlementsAllowPost (EntitlementAccess body, UUID authUser, String authorization, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = body;
 
     // verify the required parameter 'body' is set
@@ -149,6 +151,7 @@ public class EntitlementsApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
 
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
 
     String[] contentTypes = {
@@ -195,10 +198,11 @@ public class EntitlementsApi {
   * 
    * @param uuid 
    * @param body 
+   * @param authUser 
    * @param authorization 
    * @return List<Object>
   */
-  public List<Object> entitlementsAllowUuidPost (UUID uuid, EntitlementAccess body, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<Object> entitlementsAllowUuidPost (UUID uuid, EntitlementAccess body, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = body;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -220,6 +224,7 @@ public class EntitlementsApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     String[] contentTypes = {
       "application/json;charset=utf-8"
@@ -264,9 +269,9 @@ public class EntitlementsApi {
       /**
    * Grant product access to a customer
    * 
-   * @param uuid    * @param body    * @param authorization 
+   * @param uuid    * @param body    * @param authUser    * @param authorization 
   */
-  public void entitlementsAllowUuidPost (UUID uuid, EntitlementAccess body, String authorization, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
+  public void entitlementsAllowUuidPost (UUID uuid, EntitlementAccess body, UUID authUser, String authorization, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = body;
 
     // verify the required parameter 'uuid' is set
@@ -291,6 +296,7 @@ public class EntitlementsApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
 
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
 
     String[] contentTypes = {

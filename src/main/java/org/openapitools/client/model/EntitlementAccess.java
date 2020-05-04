@@ -12,29 +12,16 @@
 
 package org.openapitools.client.model;
 
-import java.util.UUID;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
 @ApiModel(description = "")
 public class EntitlementAccess {
   
-  @SerializedName("userUuid")
-  private UUID userUuid = null;
   @SerializedName("startAt")
   private String startAt = null;
   @SerializedName("endAt")
   private String endAt = null;
-
-  /**
-   **/
-  @ApiModelProperty(required = true, value = "")
-  public UUID getUserUuid() {
-    return userUuid;
-  }
-  public void setUserUuid(UUID userUuid) {
-    this.userUuid = userUuid;
-  }
 
   /**
    **/
@@ -66,15 +53,13 @@ public class EntitlementAccess {
       return false;
     }
     EntitlementAccess entitlementAccess = (EntitlementAccess) o;
-    return (this.userUuid == null ? entitlementAccess.userUuid == null : this.userUuid.equals(entitlementAccess.userUuid)) &&
-        (this.startAt == null ? entitlementAccess.startAt == null : this.startAt.equals(entitlementAccess.startAt)) &&
+    return (this.startAt == null ? entitlementAccess.startAt == null : this.startAt.equals(entitlementAccess.startAt)) &&
         (this.endAt == null ? entitlementAccess.endAt == null : this.endAt.equals(entitlementAccess.endAt));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (this.userUuid == null ? 0: this.userUuid.hashCode());
     result = 31 * result + (this.startAt == null ? 0: this.startAt.hashCode());
     result = 31 * result + (this.endAt == null ? 0: this.endAt.hashCode());
     return result;
@@ -85,7 +70,6 @@ public class EntitlementAccess {
     StringBuilder sb = new StringBuilder();
     sb.append("class EntitlementAccess {\n");
     
-    sb.append("  userUuid: ").append(userUuid).append("\n");
     sb.append("  startAt: ").append(startAt).append("\n");
     sb.append("  endAt: ").append(endAt).append("\n");
     sb.append("}\n");

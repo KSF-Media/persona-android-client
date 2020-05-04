@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## entitlementsAllowPost
 
-> List&lt;Object&gt; entitlementsAllowPost(body, authorization)
+> List&lt;Object&gt; entitlementsAllowPost(body, authUser, authorization)
 
 
 
@@ -24,9 +24,10 @@ Method | HTTP request | Description
 
 EntitlementsApi apiInstance = new EntitlementsApi();
 EntitlementAccess body = new EntitlementAccess(); // EntitlementAccess | 
+UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 try {
-    List<Object> result = apiInstance.entitlementsAllowPost(body, authorization);
+    List<Object> result = apiInstance.entitlementsAllowPost(body, authUser, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling EntitlementsApi#entitlementsAllowPost");
@@ -40,6 +41,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**EntitlementAccess**](EntitlementAccess.md)|  |
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
  **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type
@@ -58,7 +60,7 @@ No authorization required
 
 ## entitlementsAllowUuidPost
 
-> List&lt;Object&gt; entitlementsAllowUuidPost(uuid, body, authorization)
+> List&lt;Object&gt; entitlementsAllowUuidPost(uuid, body, authUser, authorization)
 
 Grant product access to a customer
 
@@ -71,9 +73,10 @@ Grant product access to a customer
 EntitlementsApi apiInstance = new EntitlementsApi();
 UUID uuid = null; // UUID | 
 EntitlementAccess body = new EntitlementAccess(); // EntitlementAccess | 
+UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 try {
-    List<Object> result = apiInstance.entitlementsAllowUuidPost(uuid, body, authorization);
+    List<Object> result = apiInstance.entitlementsAllowUuidPost(uuid, body, authUser, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling EntitlementsApi#entitlementsAllowUuidPost");
@@ -88,6 +91,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**UUID**](.md)|  | [default to null]
  **body** | [**EntitlementAccess**](EntitlementAccess.md)|  |
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
  **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type
