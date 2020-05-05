@@ -31,8 +31,6 @@ public class DeliveryReclamation {
   private Date publicationDate = null;
   @SerializedName("claim")
   private String claim = null;
-  @SerializedName("status")
-  private String status = null;
 
   /**
    * minimum: -9223372036854775808
@@ -100,16 +98,6 @@ public class DeliveryReclamation {
     this.claim = claim;
   }
 
-  /**
-   **/
-  @ApiModelProperty(required = true, value = "")
-  public String getStatus() {
-    return status;
-  }
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
 
   @Override
   public boolean equals(Object o) {
@@ -125,8 +113,7 @@ public class DeliveryReclamation {
         (this.subscriptionNumber == null ? deliveryReclamation.subscriptionNumber == null : this.subscriptionNumber.equals(deliveryReclamation.subscriptionNumber)) &&
         (this.date == null ? deliveryReclamation.date == null : this.date.equals(deliveryReclamation.date)) &&
         (this.publicationDate == null ? deliveryReclamation.publicationDate == null : this.publicationDate.equals(deliveryReclamation.publicationDate)) &&
-        (this.claim == null ? deliveryReclamation.claim == null : this.claim.equals(deliveryReclamation.claim)) &&
-        (this.status == null ? deliveryReclamation.status == null : this.status.equals(deliveryReclamation.status));
+        (this.claim == null ? deliveryReclamation.claim == null : this.claim.equals(deliveryReclamation.claim));
   }
 
   @Override
@@ -138,7 +125,6 @@ public class DeliveryReclamation {
     result = 31 * result + (this.date == null ? 0: this.date.hashCode());
     result = 31 * result + (this.publicationDate == null ? 0: this.publicationDate.hashCode());
     result = 31 * result + (this.claim == null ? 0: this.claim.hashCode());
-    result = 31 * result + (this.status == null ? 0: this.status.hashCode());
     return result;
   }
 
@@ -153,7 +139,6 @@ public class DeliveryReclamation {
     sb.append("  date: ").append(date).append("\n");
     sb.append("  publicationDate: ").append(publicationDate).append("\n");
     sb.append("  claim: ").append(claim).append("\n");
-    sb.append("  status: ").append(status).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

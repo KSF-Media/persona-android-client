@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **date** | [**Date**](Date.md) |  | 
 **publicationDate** | [**Date**](Date.md) |  | 
 **claim** | **String** |  | 
-**status** | **String** |  | 
 
 
 
