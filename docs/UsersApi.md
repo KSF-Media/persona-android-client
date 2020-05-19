@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**usersUuidSubscriptionsSubsnoPausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoPausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 [**usersUuidSubscriptionsSubsnoReclamationPost**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationPost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
+[**usersUuidSubscriptionsSubsnoUnpausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoUnpausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/unpause | Pause users subscription
 
 
 
@@ -594,6 +595,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DeliveryReclamation**](DeliveryReclamation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=utf-8
+
+
+## usersUuidSubscriptionsSubsnoUnpausePost
+
+> Subscription usersUuidSubscriptionsSubsnoUnpausePost(uuid, subsno, authorization)
+
+Pause users subscription
+
+### Example
+
+```java
+// Import classes:
+//import org.openapitools.client.api.UsersApi;
+
+UsersApi apiInstance = new UsersApi();
+UUID uuid = null; // UUID | 
+Integer subsno = null; // Integer | 
+String authorization = null; // String | 
+try {
+    Subscription result = apiInstance.usersUuidSubscriptionsSubsnoUnpausePost(uuid, subsno, authorization);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#usersUuidSubscriptionsSubsnoUnpausePost");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**UUID**](.md)|  | [default to null]
+ **subsno** | **Integer**|  | [default to null]
+ **authorization** | **String**|  | [optional] [default to null]
+
+### Return type
+
+[**Subscription**](Subscription.md)
 
 ### Authorization
 
