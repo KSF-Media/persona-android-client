@@ -57,6 +57,8 @@ public class Subscription {
   private String orderNumber = null;
   @SerializedName("paymentMethod")
   private String paymentMethod = null;
+  @SerializedName("paymentMethodId")
+  private Integer paymentMethodId = null;
 
   /**
    * minimum: -9223372036854775808
@@ -226,6 +228,18 @@ public class Subscription {
     this.paymentMethod = paymentMethod;
   }
 
+  /**
+   * minimum: -9223372036854775808
+   * maximum: 9223372036854775807
+   **/
+  @ApiModelProperty(value = "")
+  public Integer getPaymentMethodId() {
+    return paymentMethodId;
+  }
+  public void setPaymentMethodId(Integer paymentMethodId) {
+    this.paymentMethodId = paymentMethodId;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -251,7 +265,8 @@ public class Subscription {
         (this.deliveryAddress == null ? subscription.deliveryAddress == null : this.deliveryAddress.equals(subscription.deliveryAddress)) &&
         (this.pendingAddressChanges == null ? subscription.pendingAddressChanges == null : this.pendingAddressChanges.equals(subscription.pendingAddressChanges)) &&
         (this.orderNumber == null ? subscription.orderNumber == null : this.orderNumber.equals(subscription.orderNumber)) &&
-        (this.paymentMethod == null ? subscription.paymentMethod == null : this.paymentMethod.equals(subscription.paymentMethod));
+        (this.paymentMethod == null ? subscription.paymentMethod == null : this.paymentMethod.equals(subscription.paymentMethod)) &&
+        (this.paymentMethodId == null ? subscription.paymentMethodId == null : this.paymentMethodId.equals(subscription.paymentMethodId));
   }
 
   @Override
@@ -273,6 +288,7 @@ public class Subscription {
     result = 31 * result + (this.pendingAddressChanges == null ? 0: this.pendingAddressChanges.hashCode());
     result = 31 * result + (this.orderNumber == null ? 0: this.orderNumber.hashCode());
     result = 31 * result + (this.paymentMethod == null ? 0: this.paymentMethod.hashCode());
+    result = 31 * result + (this.paymentMethodId == null ? 0: this.paymentMethodId.hashCode());
     return result;
   }
 
@@ -297,6 +313,7 @@ public class Subscription {
     sb.append("  pendingAddressChanges: ").append(pendingAddressChanges).append("\n");
     sb.append("  orderNumber: ").append(orderNumber).append("\n");
     sb.append("  paymentMethod: ").append(paymentMethod).append("\n");
+    sb.append("  paymentMethodId: ").append(paymentMethodId).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

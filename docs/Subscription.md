@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **pendingAddressChanges** | [**List&lt;PendingAddressChange&gt;**](PendingAddressChange.md) |  |  [optional]
 **orderNumber** | **String** |  |  [optional]
 **paymentMethod** | **String** |  |  [optional]
+**paymentMethodId** | **Integer** |  |  [optional]
 
 
 

@@ -74,7 +74,7 @@ public class TemporaryAddressChange {
 
   /**
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public Date getEndDate() {
     return endDate;
   }
