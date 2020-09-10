@@ -73,6 +73,10 @@ public class JsonUtil {
       return new TypeToken<List<CodeForTokenData>>(){}.getType();
     }
     
+    if ("DeleteTempAddressChangeDates".equalsIgnoreCase(className)) {
+      return new TypeToken<List<DeleteTempAddressChangeDates>>(){}.getType();
+    }
+    
     if ("DeliveryAddress".equalsIgnoreCase(className)) {
       return new TypeToken<List<DeliveryAddress>>(){}.getType();
     }
@@ -277,6 +281,10 @@ public class JsonUtil {
     
     if ("CodeForTokenData".equalsIgnoreCase(className)) {
       return new TypeToken<CodeForTokenData>(){}.getType();
+    }
+    
+    if ("DeleteTempAddressChangeDates".equalsIgnoreCase(className)) {
+      return new TypeToken<DeleteTempAddressChangeDates>(){}.getType();
     }
     
     if ("DeliveryAddress".equalsIgnoreCase(className)) {
