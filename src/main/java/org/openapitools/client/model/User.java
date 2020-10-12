@@ -36,7 +36,7 @@ public class User {
   @SerializedName("address")
   private Address address = null;
   @SerializedName("cusno")
-  private String cusno = null;
+  private Integer cusno = null;
   @SerializedName("subs")
   private List<Subscription> subs = null;
   @SerializedName("consent")
@@ -99,12 +99,14 @@ public class User {
   }
 
   /**
+   * minimum: -9223372036854775808
+   * maximum: 9223372036854775807
    **/
   @ApiModelProperty(required = true, value = "")
-  public String getCusno() {
+  public Integer getCusno() {
     return cusno;
   }
-  public void setCusno(String cusno) {
+  public void setCusno(Integer cusno) {
     this.cusno = cusno;
   }
 

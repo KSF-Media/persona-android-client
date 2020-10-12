@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **firstName** | **String** |  |  [optional]
 **lastName** | **String** |  |  [optional]
 **address** | [**Address**](Address.md) |  |  [optional]
-**cusno** | **String** |  | 
+**cusno** | **Integer** |  | 
 **subs** | [**List&lt;Subscription&gt;**](Subscription.md) |  | 
 **consent** | [**List&lt;GdprConsent&gt;**](GdprConsent.md) |  | 
 **legal** | [**List&lt;LegalConsent&gt;**](LegalConsent.md) |  | 
