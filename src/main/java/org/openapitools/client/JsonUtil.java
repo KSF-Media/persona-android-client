@@ -213,6 +213,10 @@ public class JsonUtil {
       return new TypeToken<List<PausedSubscription>>(){}.getType();
     }
     
+    if ("Payment".equalsIgnoreCase(className)) {
+      return new TypeToken<List<Payment>>(){}.getType();
+    }
+    
     if ("PendingAddressChange".equalsIgnoreCase(className)) {
       return new TypeToken<List<PendingAddressChange>>(){}.getType();
     }
@@ -231,6 +235,10 @@ public class JsonUtil {
     
     if ("SubscriptionPauseDates".equalsIgnoreCase(className)) {
       return new TypeToken<List<SubscriptionPauseDates>>(){}.getType();
+    }
+    
+    if ("SubscriptionPayments".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SubscriptionPayments>>(){}.getType();
     }
     
     if ("TemporaryAddressChange".equalsIgnoreCase(className)) {
@@ -423,6 +431,10 @@ public class JsonUtil {
       return new TypeToken<PausedSubscription>(){}.getType();
     }
     
+    if ("Payment".equalsIgnoreCase(className)) {
+      return new TypeToken<Payment>(){}.getType();
+    }
+    
     if ("PendingAddressChange".equalsIgnoreCase(className)) {
       return new TypeToken<PendingAddressChange>(){}.getType();
     }
@@ -441,6 +453,10 @@ public class JsonUtil {
     
     if ("SubscriptionPauseDates".equalsIgnoreCase(className)) {
       return new TypeToken<SubscriptionPauseDates>(){}.getType();
+    }
+    
+    if ("SubscriptionPayments".equalsIgnoreCase(className)) {
+      return new TypeToken<SubscriptionPayments>(){}.getType();
     }
     
     if ("TemporaryAddressChange".equalsIgnoreCase(className)) {

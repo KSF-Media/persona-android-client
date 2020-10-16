@@ -24,6 +24,12 @@ public class Campaign {
   private String id = null;
   @SerializedName("name")
   private String name = null;
+  @SerializedName("priceEur")
+  private Double priceEur = null;
+  @SerializedName("length")
+  private Integer length = null;
+  @SerializedName("lengthUnit")
+  private String lengthUnit = null;
 
   /**
    * minimum: -9223372036854775808
@@ -57,6 +63,38 @@ public class Campaign {
     this.name = name;
   }
 
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public Double getPriceEur() {
+    return priceEur;
+  }
+  public void setPriceEur(Double priceEur) {
+    this.priceEur = priceEur;
+  }
+
+  /**
+   * minimum: -9223372036854775808
+   * maximum: 9223372036854775807
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getLength() {
+    return length;
+  }
+  public void setLength(Integer length) {
+    this.length = length;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public String getLengthUnit() {
+    return lengthUnit;
+  }
+  public void setLengthUnit(String lengthUnit) {
+    this.lengthUnit = lengthUnit;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -69,7 +107,10 @@ public class Campaign {
     Campaign campaign = (Campaign) o;
     return (this.no == null ? campaign.no == null : this.no.equals(campaign.no)) &&
         (this.id == null ? campaign.id == null : this.id.equals(campaign.id)) &&
-        (this.name == null ? campaign.name == null : this.name.equals(campaign.name));
+        (this.name == null ? campaign.name == null : this.name.equals(campaign.name)) &&
+        (this.priceEur == null ? campaign.priceEur == null : this.priceEur.equals(campaign.priceEur)) &&
+        (this.length == null ? campaign.length == null : this.length.equals(campaign.length)) &&
+        (this.lengthUnit == null ? campaign.lengthUnit == null : this.lengthUnit.equals(campaign.lengthUnit));
   }
 
   @Override
@@ -78,6 +119,9 @@ public class Campaign {
     result = 31 * result + (this.no == null ? 0: this.no.hashCode());
     result = 31 * result + (this.id == null ? 0: this.id.hashCode());
     result = 31 * result + (this.name == null ? 0: this.name.hashCode());
+    result = 31 * result + (this.priceEur == null ? 0: this.priceEur.hashCode());
+    result = 31 * result + (this.length == null ? 0: this.length.hashCode());
+    result = 31 * result + (this.lengthUnit == null ? 0: this.lengthUnit.hashCode());
     return result;
   }
 
@@ -89,6 +133,9 @@ public class Campaign {
     sb.append("  no: ").append(no).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  name: ").append(name).append("\n");
+    sb.append("  priceEur: ").append(priceEur).append("\n");
+    sb.append("  length: ").append(length).append("\n");
+    sb.append("  lengthUnit: ").append(lengthUnit).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
