@@ -151,6 +151,7 @@ Class | Method | HTTP request | Description
  - [PackageDescription](docs/PackageDescription.md)
  - [PackageOffer](docs/PackageOffer.md)
  - [Paper](docs/Paper.md)
+ - [PastTemporaryAddress](docs/PastTemporaryAddress.md)
  - [PausedSubscription](docs/PausedSubscription.md)
  - [Payment](docs/Payment.md)
  - [PendingAddressChange](docs/PendingAddressChange.md)

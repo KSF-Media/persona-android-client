@@ -17,6 +17,7 @@ import java.util.UUID;
 import org.openapitools.client.model.Address;
 import org.openapitools.client.model.GdprConsent;
 import org.openapitools.client.model.LegalConsent;
+import org.openapitools.client.model.PastTemporaryAddress;
 import org.openapitools.client.model.PendingAddressChange;
 import org.openapitools.client.model.Subscription;
 import io.swagger.annotations.*;
@@ -45,6 +46,8 @@ public class User {
   private List<LegalConsent> legal = null;
   @SerializedName("pendingAddressChanges")
   private List<PendingAddressChange> pendingAddressChanges = null;
+  @SerializedName("pastTemporaryAddresses")
+  private List<PastTemporaryAddress> pastTemporaryAddresses = null;
   @SerializedName("hasCompletedRegistration")
   private Boolean hasCompletedRegistration = null;
 
@@ -153,6 +156,16 @@ public class User {
   /**
    **/
   @ApiModelProperty(required = true, value = "")
+  public List<PastTemporaryAddress> getPastTemporaryAddresses() {
+    return pastTemporaryAddresses;
+  }
+  public void setPastTemporaryAddresses(List<PastTemporaryAddress> pastTemporaryAddresses) {
+    this.pastTemporaryAddresses = pastTemporaryAddresses;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
   public Boolean getHasCompletedRegistration() {
     return hasCompletedRegistration;
   }
@@ -180,6 +193,7 @@ public class User {
         (this.consent == null ? user.consent == null : this.consent.equals(user.consent)) &&
         (this.legal == null ? user.legal == null : this.legal.equals(user.legal)) &&
         (this.pendingAddressChanges == null ? user.pendingAddressChanges == null : this.pendingAddressChanges.equals(user.pendingAddressChanges)) &&
+        (this.pastTemporaryAddresses == null ? user.pastTemporaryAddresses == null : this.pastTemporaryAddresses.equals(user.pastTemporaryAddresses)) &&
         (this.hasCompletedRegistration == null ? user.hasCompletedRegistration == null : this.hasCompletedRegistration.equals(user.hasCompletedRegistration));
   }
 
@@ -196,6 +210,7 @@ public class User {
     result = 31 * result + (this.consent == null ? 0: this.consent.hashCode());
     result = 31 * result + (this.legal == null ? 0: this.legal.hashCode());
     result = 31 * result + (this.pendingAddressChanges == null ? 0: this.pendingAddressChanges.hashCode());
+    result = 31 * result + (this.pastTemporaryAddresses == null ? 0: this.pastTemporaryAddresses.hashCode());
     result = 31 * result + (this.hasCompletedRegistration == null ? 0: this.hasCompletedRegistration.hashCode());
     return result;
   }
@@ -215,6 +230,7 @@ public class User {
     sb.append("  consent: ").append(consent).append("\n");
     sb.append("  legal: ").append(legal).append("\n");
     sb.append("  pendingAddressChanges: ").append(pendingAddressChanges).append("\n");
+    sb.append("  pastTemporaryAddresses: ").append(pastTemporaryAddresses).append("\n");
     sb.append("  hasCompletedRegistration: ").append(hasCompletedRegistration).append("\n");
     sb.append("}\n");
     return sb.toString();

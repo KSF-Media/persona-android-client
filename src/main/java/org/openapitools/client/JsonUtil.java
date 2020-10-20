@@ -209,6 +209,10 @@ public class JsonUtil {
       return new TypeToken<List<Paper>>(){}.getType();
     }
     
+    if ("PastTemporaryAddress".equalsIgnoreCase(className)) {
+      return new TypeToken<List<PastTemporaryAddress>>(){}.getType();
+    }
+    
     if ("PausedSubscription".equalsIgnoreCase(className)) {
       return new TypeToken<List<PausedSubscription>>(){}.getType();
     }
@@ -425,6 +429,10 @@ public class JsonUtil {
     
     if ("Paper".equalsIgnoreCase(className)) {
       return new TypeToken<Paper>(){}.getType();
+    }
+    
+    if ("PastTemporaryAddress".equalsIgnoreCase(className)) {
+      return new TypeToken<PastTemporaryAddress>(){}.getType();
     }
     
     if ("PausedSubscription".equalsIgnoreCase(className)) {
