@@ -112,9 +112,11 @@ No authorization required
 
 ## usersUuidEntitlementGet
 
-> List&lt;String&gt; usersUuidEntitlementGet(uuid, authorization, cacheControl)
+> List&lt;String&gt; usersUuidEntitlementGet(uuid, authUser, authorization, cacheControl)
 
 Get users entitlements.
+
+Authorization header expects the following format ‘OAuth {token}’
 
 ### Example
 
@@ -124,10 +126,11 @@ Get users entitlements.
 
 UsersApi apiInstance = new UsersApi();
 UUID uuid = null; // UUID | 
+UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 String cacheControl = null; // String | 
 try {
-    List<String> result = apiInstance.usersUuidEntitlementGet(uuid, authorization, cacheControl);
+    List<String> result = apiInstance.usersUuidEntitlementGet(uuid, authUser, authorization, cacheControl);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidEntitlementGet");
@@ -141,6 +144,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**UUID**](.md)|  | [default to null]
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
  **authorization** | **String**|  | [optional] [default to null]
  **cacheControl** | **String**|  | [optional] [default to null]
 
@@ -160,7 +164,7 @@ No authorization required
 
 ## usersUuidGdprPut
 
-> User usersUuidGdprPut(uuid, body, authorization)
+> User usersUuidGdprPut(uuid, body, authUser, authorization)
 
 Updates the GDPR consent settings for a given user.
 
@@ -175,9 +179,10 @@ Authorization header expects the following format ‘OAuth {token}’
 UsersApi apiInstance = new UsersApi();
 UUID uuid = null; // UUID | 
 List<GdprConsent> body = Arrays.asList(new List()); // List<GdprConsent> | 
+UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 try {
-    User result = apiInstance.usersUuidGdprPut(uuid, body, authorization);
+    User result = apiInstance.usersUuidGdprPut(uuid, body, authUser, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidGdprPut");
@@ -192,6 +197,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**UUID**](.md)|  | [default to null]
  **body** | [**List&lt;GdprConsent&gt;**](List.md)|  |
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
  **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type
@@ -210,7 +216,7 @@ No authorization required
 
 ## usersUuidGet
 
-> User usersUuidGet(uuid, authorization, cacheControl)
+> User usersUuidGet(uuid, authUser, authorization, cacheControl)
 
 Get user by UUID.
 
@@ -224,10 +230,11 @@ Authorization header expects the following format ‘OAuth {token}’
 
 UsersApi apiInstance = new UsersApi();
 UUID uuid = null; // UUID | 
+UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 String cacheControl = null; // String | 
 try {
-    User result = apiInstance.usersUuidGet(uuid, authorization, cacheControl);
+    User result = apiInstance.usersUuidGet(uuid, authUser, authorization, cacheControl);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidGet");
@@ -241,6 +248,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**UUID**](.md)|  | [default to null]
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
  **authorization** | **String**|  | [optional] [default to null]
  **cacheControl** | **String**|  | [optional] [default to null]
 
@@ -260,7 +268,7 @@ No authorization required
 
 ## usersUuidLegalPut
 
-> User usersUuidLegalPut(uuid, body, authorization)
+> User usersUuidLegalPut(uuid, body, authUser, authorization)
 
 Updates the legal consent settings for a given user.
 
@@ -275,9 +283,10 @@ Authorization header expects the following format ‘OAuth {token}’
 UsersApi apiInstance = new UsersApi();
 UUID uuid = null; // UUID | 
 List<LegalConsent> body = Arrays.asList(new List()); // List<LegalConsent> | 
+UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 try {
-    User result = apiInstance.usersUuidLegalPut(uuid, body, authorization);
+    User result = apiInstance.usersUuidLegalPut(uuid, body, authUser, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidLegalPut");
@@ -292,6 +301,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**UUID**](.md)|  | [default to null]
  **body** | [**List&lt;LegalConsent&gt;**](List.md)|  |
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
  **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type
@@ -310,7 +320,7 @@ No authorization required
 
 ## usersUuidPasswordPut
 
-> User usersUuidPasswordPut(uuid, body, authorization)
+> User usersUuidPasswordPut(uuid, body, authUser, authorization)
 
 Set / Change user password
 
@@ -325,9 +335,10 @@ Authorization header expects the following format ‘OAuth {token}’
 UsersApi apiInstance = new UsersApi();
 UUID uuid = null; // UUID | 
 UserUpdatePassword body = new UserUpdatePassword(); // UserUpdatePassword | 
+UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 try {
-    User result = apiInstance.usersUuidPasswordPut(uuid, body, authorization);
+    User result = apiInstance.usersUuidPasswordPut(uuid, body, authUser, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidPasswordPut");
@@ -342,6 +353,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**UUID**](.md)|  | [default to null]
  **body** | [**UserUpdatePassword**](UserUpdatePassword.md)|  |
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
  **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type
@@ -360,7 +372,7 @@ No authorization required
 
 ## usersUuidPatch
 
-> User usersUuidPatch(uuid, body, authorization)
+> User usersUuidPatch(uuid, body, authUser, authorization)
 
 Update a user
 
@@ -375,9 +387,10 @@ Authorization header expects the following format ‘OAuth {token}’
 UsersApi apiInstance = new UsersApi();
 UUID uuid = null; // UUID | 
 UserUpdate body = new UserUpdate(); // UserUpdate | 
+UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 try {
-    User result = apiInstance.usersUuidPatch(uuid, body, authorization);
+    User result = apiInstance.usersUuidPatch(uuid, body, authUser, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidPatch");
@@ -392,6 +405,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**UUID**](.md)|  | [default to null]
  **body** | [**UserUpdate**](UserUpdate.md)|  |
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
  **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type
@@ -410,9 +424,11 @@ No authorization required
 
 ## usersUuidPaymentsGet
 
-> List&lt;SubscriptionPayments&gt; usersUuidPaymentsGet(uuid, authorization)
+> List&lt;SubscriptionPayments&gt; usersUuidPaymentsGet(uuid, authUser, authorization)
 
 Get user&#39;s subscriptions and payment events
+
+Authorization header expects the following format ‘OAuth {token}’
 
 ### Example
 
@@ -422,9 +438,10 @@ Get user&#39;s subscriptions and payment events
 
 UsersApi apiInstance = new UsersApi();
 UUID uuid = null; // UUID | 
+UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 try {
-    List<SubscriptionPayments> result = apiInstance.usersUuidPaymentsGet(uuid, authorization);
+    List<SubscriptionPayments> result = apiInstance.usersUuidPaymentsGet(uuid, authUser, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidPaymentsGet");
@@ -438,6 +455,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**UUID**](.md)|  | [default to null]
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
  **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type
@@ -456,9 +474,11 @@ No authorization required
 
 ## usersUuidSubscriptionsSubsnoAddressChangeDelete
 
-> Subscription usersUuidSubscriptionsSubsnoAddressChangeDelete(uuid, subsno, body, authorization)
+> Subscription usersUuidSubscriptionsSubsnoAddressChangeDelete(uuid, subsno, body, authUser, authorization)
 
 Delete temporary address change for subscription
+
+Authorization header expects the following format ‘OAuth {token}’
 
 ### Example
 
@@ -470,9 +490,10 @@ UsersApi apiInstance = new UsersApi();
 UUID uuid = null; // UUID | 
 Integer subsno = null; // Integer | 
 DeleteTempAddressChangeDates body = new DeleteTempAddressChangeDates(); // DeleteTempAddressChangeDates | 
+UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 try {
-    Subscription result = apiInstance.usersUuidSubscriptionsSubsnoAddressChangeDelete(uuid, subsno, body, authorization);
+    Subscription result = apiInstance.usersUuidSubscriptionsSubsnoAddressChangeDelete(uuid, subsno, body, authUser, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidSubscriptionsSubsnoAddressChangeDelete");
@@ -488,6 +509,7 @@ Name | Type | Description  | Notes
  **uuid** | [**UUID**](.md)|  | [default to null]
  **subsno** | **Integer**|  | [default to null]
  **body** | [**DeleteTempAddressChangeDates**](DeleteTempAddressChangeDates.md)|  |
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
  **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type
@@ -506,9 +528,11 @@ No authorization required
 
 ## usersUuidSubscriptionsSubsnoAddressChangePost
 
-> Subscription usersUuidSubscriptionsSubsnoAddressChangePost(uuid, subsno, body, authorization)
+> Subscription usersUuidSubscriptionsSubsnoAddressChangePost(uuid, subsno, body, authUser, authorization)
 
 Make a temporary address change for a subscription
+
+Authorization header expects the following format ‘OAuth {token}’
 
 ### Example
 
@@ -520,9 +544,10 @@ UsersApi apiInstance = new UsersApi();
 UUID uuid = null; // UUID | 
 Integer subsno = null; // Integer | 
 TemporaryAddressChange body = new TemporaryAddressChange(); // TemporaryAddressChange | 
+UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 try {
-    Subscription result = apiInstance.usersUuidSubscriptionsSubsnoAddressChangePost(uuid, subsno, body, authorization);
+    Subscription result = apiInstance.usersUuidSubscriptionsSubsnoAddressChangePost(uuid, subsno, body, authUser, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidSubscriptionsSubsnoAddressChangePost");
@@ -538,6 +563,7 @@ Name | Type | Description  | Notes
  **uuid** | [**UUID**](.md)|  | [default to null]
  **subsno** | **Integer**|  | [default to null]
  **body** | [**TemporaryAddressChange**](TemporaryAddressChange.md)|  |
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
  **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type
@@ -556,9 +582,11 @@ No authorization required
 
 ## usersUuidSubscriptionsSubsnoPausePost
 
-> Subscription usersUuidSubscriptionsSubsnoPausePost(uuid, subsno, body, authorization)
+> Subscription usersUuidSubscriptionsSubsnoPausePost(uuid, subsno, body, authUser, authorization)
 
 Pause users subscription
+
+Authorization header expects the following format ‘OAuth {token}’
 
 ### Example
 
@@ -570,9 +598,10 @@ UsersApi apiInstance = new UsersApi();
 UUID uuid = null; // UUID | 
 Integer subsno = null; // Integer | 
 SubscriptionPauseDates body = new SubscriptionPauseDates(); // SubscriptionPauseDates | 
+UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 try {
-    Subscription result = apiInstance.usersUuidSubscriptionsSubsnoPausePost(uuid, subsno, body, authorization);
+    Subscription result = apiInstance.usersUuidSubscriptionsSubsnoPausePost(uuid, subsno, body, authUser, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidSubscriptionsSubsnoPausePost");
@@ -588,6 +617,7 @@ Name | Type | Description  | Notes
  **uuid** | [**UUID**](.md)|  | [default to null]
  **subsno** | **Integer**|  | [default to null]
  **body** | [**SubscriptionPauseDates**](SubscriptionPauseDates.md)|  |
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
  **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type
@@ -606,9 +636,11 @@ No authorization required
 
 ## usersUuidSubscriptionsSubsnoReclamationPost
 
-> DeliveryReclamation usersUuidSubscriptionsSubsnoReclamationPost(uuid, subsno, body, authorization)
+> DeliveryReclamation usersUuidSubscriptionsSubsnoReclamationPost(uuid, subsno, body, authUser, authorization)
 
 Create a new delivery reclamation for a subscription
+
+Authorization header expects the following format ‘OAuth {token}’
 
 ### Example
 
@@ -620,9 +652,10 @@ UsersApi apiInstance = new UsersApi();
 UUID uuid = null; // UUID | 
 Integer subsno = null; // Integer | 
 NewDeliveryReclamation body = new NewDeliveryReclamation(); // NewDeliveryReclamation | 
+UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 try {
-    DeliveryReclamation result = apiInstance.usersUuidSubscriptionsSubsnoReclamationPost(uuid, subsno, body, authorization);
+    DeliveryReclamation result = apiInstance.usersUuidSubscriptionsSubsnoReclamationPost(uuid, subsno, body, authUser, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidSubscriptionsSubsnoReclamationPost");
@@ -638,6 +671,7 @@ Name | Type | Description  | Notes
  **uuid** | [**UUID**](.md)|  | [default to null]
  **subsno** | **Integer**|  | [default to null]
  **body** | [**NewDeliveryReclamation**](NewDeliveryReclamation.md)|  |
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
  **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type
@@ -656,9 +690,11 @@ No authorization required
 
 ## usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet
 
-> DeliveryReclamation usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet(uuid, subsno, reclaimno, authorization)
+> DeliveryReclamation usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet(uuid, subsno, reclaimno, authUser, authorization)
 
 Get a delivery reclamation
+
+Authorization header expects the following format ‘OAuth {token}’
 
 ### Example
 
@@ -670,9 +706,10 @@ UsersApi apiInstance = new UsersApi();
 UUID uuid = null; // UUID | 
 Integer subsno = null; // Integer | 
 Integer reclaimno = null; // Integer | 
+UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 try {
-    DeliveryReclamation result = apiInstance.usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet(uuid, subsno, reclaimno, authorization);
+    DeliveryReclamation result = apiInstance.usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet(uuid, subsno, reclaimno, authUser, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet");
@@ -688,6 +725,7 @@ Name | Type | Description  | Notes
  **uuid** | [**UUID**](.md)|  | [default to null]
  **subsno** | **Integer**|  | [default to null]
  **reclaimno** | **Integer**|  | [default to null]
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
  **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type
@@ -706,9 +744,11 @@ No authorization required
 
 ## usersUuidSubscriptionsSubsnoUnpausePost
 
-> Subscription usersUuidSubscriptionsSubsnoUnpausePost(uuid, subsno, authorization)
+> Subscription usersUuidSubscriptionsSubsnoUnpausePost(uuid, subsno, authUser, authorization)
 
 Pause users subscription
+
+Authorization header expects the following format ‘OAuth {token}’
 
 ### Example
 
@@ -719,9 +759,10 @@ Pause users subscription
 UsersApi apiInstance = new UsersApi();
 UUID uuid = null; // UUID | 
 Integer subsno = null; // Integer | 
+UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 try {
-    Subscription result = apiInstance.usersUuidSubscriptionsSubsnoUnpausePost(uuid, subsno, authorization);
+    Subscription result = apiInstance.usersUuidSubscriptionsSubsnoUnpausePost(uuid, subsno, authUser, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidSubscriptionsSubsnoUnpausePost");
@@ -736,6 +777,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**UUID**](.md)|  | [default to null]
  **subsno** | **Integer**|  | [default to null]
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
  **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type

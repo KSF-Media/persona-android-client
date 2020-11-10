@@ -331,13 +331,14 @@ public class UsersApi {
   }
   /**
   * Get users entitlements.
-  * 
+  * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
+   * @param authUser 
    * @param authorization 
    * @param cacheControl 
    * @return List<String>
   */
-  public List<String> usersUuidEntitlementGet (UUID uuid, String authorization, String cacheControl) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<String> usersUuidEntitlementGet (UUID uuid, UUID authUser, String authorization, String cacheControl) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -354,6 +355,7 @@ public class UsersApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     headerParams.put("Cache-Control", ApiInvoker.parameterToString(cacheControl));
     String[] contentTypes = {
@@ -397,10 +399,10 @@ public class UsersApi {
 
       /**
    * Get users entitlements.
-   * 
-   * @param uuid    * @param authorization    * @param cacheControl 
+   * Authorization header expects the following format ‘OAuth {token}’
+   * @param uuid    * @param authUser    * @param authorization    * @param cacheControl 
   */
-  public void usersUuidEntitlementGet (UUID uuid, String authorization, String cacheControl, final Response.Listener<List<String>> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidEntitlementGet (UUID uuid, UUID authUser, String authorization, String cacheControl, final Response.Listener<List<String>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'uuid' is set
@@ -420,6 +422,7 @@ public class UsersApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
 
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     headerParams.put("Cache-Control", ApiInvoker.parameterToString(cacheControl));
 
@@ -467,10 +470,11 @@ public class UsersApi {
   * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
    * @param body 
+   * @param authUser 
    * @param authorization 
    * @return User
   */
-  public User usersUuidGdprPut (UUID uuid, List<GdprConsent> body, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public User usersUuidGdprPut (UUID uuid, List<GdprConsent> body, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = body;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -492,6 +496,7 @@ public class UsersApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     String[] contentTypes = {
       "application/json;charset=utf-8"
@@ -536,9 +541,9 @@ public class UsersApi {
       /**
    * Updates the GDPR consent settings for a given user.
    * Authorization header expects the following format ‘OAuth {token}’
-   * @param uuid    * @param body    * @param authorization 
+   * @param uuid    * @param body    * @param authUser    * @param authorization 
   */
-  public void usersUuidGdprPut (UUID uuid, List<GdprConsent> body, String authorization, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidGdprPut (UUID uuid, List<GdprConsent> body, UUID authUser, String authorization, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = body;
 
     // verify the required parameter 'uuid' is set
@@ -563,6 +568,7 @@ public class UsersApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
 
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
 
     String[] contentTypes = {
@@ -608,11 +614,12 @@ public class UsersApi {
   * Get user by UUID.
   * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
+   * @param authUser 
    * @param authorization 
    * @param cacheControl 
    * @return User
   */
-  public User usersUuidGet (UUID uuid, String authorization, String cacheControl) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public User usersUuidGet (UUID uuid, UUID authUser, String authorization, String cacheControl) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -629,6 +636,7 @@ public class UsersApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     headerParams.put("Cache-Control", ApiInvoker.parameterToString(cacheControl));
     String[] contentTypes = {
@@ -673,9 +681,9 @@ public class UsersApi {
       /**
    * Get user by UUID.
    * Authorization header expects the following format ‘OAuth {token}’
-   * @param uuid    * @param authorization    * @param cacheControl 
+   * @param uuid    * @param authUser    * @param authorization    * @param cacheControl 
   */
-  public void usersUuidGet (UUID uuid, String authorization, String cacheControl, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidGet (UUID uuid, UUID authUser, String authorization, String cacheControl, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'uuid' is set
@@ -695,6 +703,7 @@ public class UsersApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
 
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     headerParams.put("Cache-Control", ApiInvoker.parameterToString(cacheControl));
 
@@ -742,10 +751,11 @@ public class UsersApi {
   * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
    * @param body 
+   * @param authUser 
    * @param authorization 
    * @return User
   */
-  public User usersUuidLegalPut (UUID uuid, List<LegalConsent> body, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public User usersUuidLegalPut (UUID uuid, List<LegalConsent> body, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = body;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -767,6 +777,7 @@ public class UsersApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     String[] contentTypes = {
       "application/json;charset=utf-8"
@@ -811,9 +822,9 @@ public class UsersApi {
       /**
    * Updates the legal consent settings for a given user.
    * Authorization header expects the following format ‘OAuth {token}’
-   * @param uuid    * @param body    * @param authorization 
+   * @param uuid    * @param body    * @param authUser    * @param authorization 
   */
-  public void usersUuidLegalPut (UUID uuid, List<LegalConsent> body, String authorization, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidLegalPut (UUID uuid, List<LegalConsent> body, UUID authUser, String authorization, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = body;
 
     // verify the required parameter 'uuid' is set
@@ -838,6 +849,7 @@ public class UsersApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
 
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
 
     String[] contentTypes = {
@@ -884,10 +896,11 @@ public class UsersApi {
   * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
    * @param body 
+   * @param authUser 
    * @param authorization 
    * @return User
   */
-  public User usersUuidPasswordPut (UUID uuid, UserUpdatePassword body, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public User usersUuidPasswordPut (UUID uuid, UserUpdatePassword body, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = body;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -909,6 +922,7 @@ public class UsersApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     String[] contentTypes = {
       "application/json;charset=utf-8"
@@ -953,9 +967,9 @@ public class UsersApi {
       /**
    * Set / Change user password
    * Authorization header expects the following format ‘OAuth {token}’
-   * @param uuid    * @param body    * @param authorization 
+   * @param uuid    * @param body    * @param authUser    * @param authorization 
   */
-  public void usersUuidPasswordPut (UUID uuid, UserUpdatePassword body, String authorization, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidPasswordPut (UUID uuid, UserUpdatePassword body, UUID authUser, String authorization, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = body;
 
     // verify the required parameter 'uuid' is set
@@ -980,6 +994,7 @@ public class UsersApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
 
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
 
     String[] contentTypes = {
@@ -1026,10 +1041,11 @@ public class UsersApi {
   * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
    * @param body 
+   * @param authUser 
    * @param authorization 
    * @return User
   */
-  public User usersUuidPatch (UUID uuid, UserUpdate body, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public User usersUuidPatch (UUID uuid, UserUpdate body, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = body;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -1051,6 +1067,7 @@ public class UsersApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     String[] contentTypes = {
       "application/json;charset=utf-8"
@@ -1095,9 +1112,9 @@ public class UsersApi {
       /**
    * Update a user
    * Authorization header expects the following format ‘OAuth {token}’
-   * @param uuid    * @param body    * @param authorization 
+   * @param uuid    * @param body    * @param authUser    * @param authorization 
   */
-  public void usersUuidPatch (UUID uuid, UserUpdate body, String authorization, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidPatch (UUID uuid, UserUpdate body, UUID authUser, String authorization, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = body;
 
     // verify the required parameter 'uuid' is set
@@ -1122,6 +1139,7 @@ public class UsersApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
 
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
 
     String[] contentTypes = {
@@ -1165,12 +1183,13 @@ public class UsersApi {
   }
   /**
   * Get user&#39;s subscriptions and payment events
-  * 
+  * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
+   * @param authUser 
    * @param authorization 
    * @return List<SubscriptionPayments>
   */
-  public List<SubscriptionPayments> usersUuidPaymentsGet (UUID uuid, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<SubscriptionPayments> usersUuidPaymentsGet (UUID uuid, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -1187,6 +1206,7 @@ public class UsersApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     String[] contentTypes = {
     };
@@ -1229,10 +1249,10 @@ public class UsersApi {
 
       /**
    * Get user&#39;s subscriptions and payment events
-   * 
-   * @param uuid    * @param authorization 
+   * Authorization header expects the following format ‘OAuth {token}’
+   * @param uuid    * @param authUser    * @param authorization 
   */
-  public void usersUuidPaymentsGet (UUID uuid, String authorization, final Response.Listener<List<SubscriptionPayments>> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidPaymentsGet (UUID uuid, UUID authUser, String authorization, final Response.Listener<List<SubscriptionPayments>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'uuid' is set
@@ -1252,6 +1272,7 @@ public class UsersApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
 
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
 
     String[] contentTypes = {
@@ -1295,14 +1316,15 @@ public class UsersApi {
   }
   /**
   * Delete temporary address change for subscription
-  * 
+  * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
    * @param subsno 
    * @param body 
+   * @param authUser 
    * @param authorization 
    * @return Subscription
   */
-  public Subscription usersUuidSubscriptionsSubsnoAddressChangeDelete (UUID uuid, Integer subsno, DeleteTempAddressChangeDates body, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Subscription usersUuidSubscriptionsSubsnoAddressChangeDelete (UUID uuid, Integer subsno, DeleteTempAddressChangeDates body, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = body;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -1329,6 +1351,7 @@ public class UsersApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     String[] contentTypes = {
       "application/json;charset=utf-8"
@@ -1372,10 +1395,10 @@ public class UsersApi {
 
       /**
    * Delete temporary address change for subscription
-   * 
-   * @param uuid    * @param subsno    * @param body    * @param authorization 
+   * Authorization header expects the following format ‘OAuth {token}’
+   * @param uuid    * @param subsno    * @param body    * @param authUser    * @param authorization 
   */
-  public void usersUuidSubscriptionsSubsnoAddressChangeDelete (UUID uuid, Integer subsno, DeleteTempAddressChangeDates body, String authorization, final Response.Listener<Subscription> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidSubscriptionsSubsnoAddressChangeDelete (UUID uuid, Integer subsno, DeleteTempAddressChangeDates body, UUID authUser, String authorization, final Response.Listener<Subscription> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = body;
 
     // verify the required parameter 'uuid' is set
@@ -1405,6 +1428,7 @@ public class UsersApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
 
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
 
     String[] contentTypes = {
@@ -1448,14 +1472,15 @@ public class UsersApi {
   }
   /**
   * Make a temporary address change for a subscription
-  * 
+  * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
    * @param subsno 
    * @param body 
+   * @param authUser 
    * @param authorization 
    * @return Subscription
   */
-  public Subscription usersUuidSubscriptionsSubsnoAddressChangePost (UUID uuid, Integer subsno, TemporaryAddressChange body, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Subscription usersUuidSubscriptionsSubsnoAddressChangePost (UUID uuid, Integer subsno, TemporaryAddressChange body, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = body;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -1482,6 +1507,7 @@ public class UsersApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     String[] contentTypes = {
       "application/json;charset=utf-8"
@@ -1525,10 +1551,10 @@ public class UsersApi {
 
       /**
    * Make a temporary address change for a subscription
-   * 
-   * @param uuid    * @param subsno    * @param body    * @param authorization 
+   * Authorization header expects the following format ‘OAuth {token}’
+   * @param uuid    * @param subsno    * @param body    * @param authUser    * @param authorization 
   */
-  public void usersUuidSubscriptionsSubsnoAddressChangePost (UUID uuid, Integer subsno, TemporaryAddressChange body, String authorization, final Response.Listener<Subscription> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidSubscriptionsSubsnoAddressChangePost (UUID uuid, Integer subsno, TemporaryAddressChange body, UUID authUser, String authorization, final Response.Listener<Subscription> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = body;
 
     // verify the required parameter 'uuid' is set
@@ -1558,6 +1584,7 @@ public class UsersApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
 
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
 
     String[] contentTypes = {
@@ -1601,14 +1628,15 @@ public class UsersApi {
   }
   /**
   * Pause users subscription
-  * 
+  * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
    * @param subsno 
    * @param body 
+   * @param authUser 
    * @param authorization 
    * @return Subscription
   */
-  public Subscription usersUuidSubscriptionsSubsnoPausePost (UUID uuid, Integer subsno, SubscriptionPauseDates body, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Subscription usersUuidSubscriptionsSubsnoPausePost (UUID uuid, Integer subsno, SubscriptionPauseDates body, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = body;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -1635,6 +1663,7 @@ public class UsersApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     String[] contentTypes = {
       "application/json;charset=utf-8"
@@ -1678,10 +1707,10 @@ public class UsersApi {
 
       /**
    * Pause users subscription
-   * 
-   * @param uuid    * @param subsno    * @param body    * @param authorization 
+   * Authorization header expects the following format ‘OAuth {token}’
+   * @param uuid    * @param subsno    * @param body    * @param authUser    * @param authorization 
   */
-  public void usersUuidSubscriptionsSubsnoPausePost (UUID uuid, Integer subsno, SubscriptionPauseDates body, String authorization, final Response.Listener<Subscription> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidSubscriptionsSubsnoPausePost (UUID uuid, Integer subsno, SubscriptionPauseDates body, UUID authUser, String authorization, final Response.Listener<Subscription> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = body;
 
     // verify the required parameter 'uuid' is set
@@ -1711,6 +1740,7 @@ public class UsersApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
 
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
 
     String[] contentTypes = {
@@ -1754,14 +1784,15 @@ public class UsersApi {
   }
   /**
   * Create a new delivery reclamation for a subscription
-  * 
+  * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
    * @param subsno 
    * @param body 
+   * @param authUser 
    * @param authorization 
    * @return DeliveryReclamation
   */
-  public DeliveryReclamation usersUuidSubscriptionsSubsnoReclamationPost (UUID uuid, Integer subsno, NewDeliveryReclamation body, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public DeliveryReclamation usersUuidSubscriptionsSubsnoReclamationPost (UUID uuid, Integer subsno, NewDeliveryReclamation body, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = body;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -1788,6 +1819,7 @@ public class UsersApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     String[] contentTypes = {
       "application/json;charset=utf-8"
@@ -1831,10 +1863,10 @@ public class UsersApi {
 
       /**
    * Create a new delivery reclamation for a subscription
-   * 
-   * @param uuid    * @param subsno    * @param body    * @param authorization 
+   * Authorization header expects the following format ‘OAuth {token}’
+   * @param uuid    * @param subsno    * @param body    * @param authUser    * @param authorization 
   */
-  public void usersUuidSubscriptionsSubsnoReclamationPost (UUID uuid, Integer subsno, NewDeliveryReclamation body, String authorization, final Response.Listener<DeliveryReclamation> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidSubscriptionsSubsnoReclamationPost (UUID uuid, Integer subsno, NewDeliveryReclamation body, UUID authUser, String authorization, final Response.Listener<DeliveryReclamation> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = body;
 
     // verify the required parameter 'uuid' is set
@@ -1864,6 +1896,7 @@ public class UsersApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
 
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
 
     String[] contentTypes = {
@@ -1907,14 +1940,15 @@ public class UsersApi {
   }
   /**
   * Get a delivery reclamation
-  * 
+  * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
    * @param subsno 
    * @param reclaimno 
+   * @param authUser 
    * @param authorization 
    * @return DeliveryReclamation
   */
-  public DeliveryReclamation usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet (UUID uuid, Integer subsno, Integer reclaimno, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public DeliveryReclamation usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet (UUID uuid, Integer subsno, Integer reclaimno, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -1941,6 +1975,7 @@ public class UsersApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     String[] contentTypes = {
     };
@@ -1983,10 +2018,10 @@ public class UsersApi {
 
       /**
    * Get a delivery reclamation
-   * 
-   * @param uuid    * @param subsno    * @param reclaimno    * @param authorization 
+   * Authorization header expects the following format ‘OAuth {token}’
+   * @param uuid    * @param subsno    * @param reclaimno    * @param authUser    * @param authorization 
   */
-  public void usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet (UUID uuid, Integer subsno, Integer reclaimno, String authorization, final Response.Listener<DeliveryReclamation> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet (UUID uuid, Integer subsno, Integer reclaimno, UUID authUser, String authorization, final Response.Listener<DeliveryReclamation> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'uuid' is set
@@ -2016,6 +2051,7 @@ public class UsersApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
 
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
 
     String[] contentTypes = {
@@ -2059,13 +2095,14 @@ public class UsersApi {
   }
   /**
   * Pause users subscription
-  * 
+  * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
    * @param subsno 
+   * @param authUser 
    * @param authorization 
    * @return Subscription
   */
-  public Subscription usersUuidSubscriptionsSubsnoUnpausePost (UUID uuid, Integer subsno, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Subscription usersUuidSubscriptionsSubsnoUnpausePost (UUID uuid, Integer subsno, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -2087,6 +2124,7 @@ public class UsersApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     String[] contentTypes = {
     };
@@ -2129,10 +2167,10 @@ public class UsersApi {
 
       /**
    * Pause users subscription
-   * 
-   * @param uuid    * @param subsno    * @param authorization 
+   * Authorization header expects the following format ‘OAuth {token}’
+   * @param uuid    * @param subsno    * @param authUser    * @param authorization 
   */
-  public void usersUuidSubscriptionsSubsnoUnpausePost (UUID uuid, Integer subsno, String authorization, final Response.Listener<Subscription> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidSubscriptionsSubsnoUnpausePost (UUID uuid, Integer subsno, UUID authUser, String authorization, final Response.Listener<Subscription> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'uuid' is set
@@ -2157,6 +2195,7 @@ public class UsersApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
 
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
 
     String[] contentTypes = {
