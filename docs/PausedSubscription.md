@@ -7,7 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **startDate** | [**Date**](Date.md) |  | 
-**endDate** | [**Date**](Date.md) |  |  [optional]
+**endDate** | [**Date**](Date.md) |  | 
 
 
 

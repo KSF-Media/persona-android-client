@@ -36,7 +36,7 @@ public class PausedSubscription {
 
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Date getEndDate() {
     return endDate;
   }

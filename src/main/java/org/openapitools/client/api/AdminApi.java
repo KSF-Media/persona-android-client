@@ -57,15 +57,150 @@ public class AdminApi {
   }
 
   /**
+  * Search for users
+  * 
+   * @param query 
+   * @param authUser 
+   * @param authorization 
+   * @return List<User>
+  */
+  public List<User> adminSearchGet (String query, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = null;
+    // verify the required parameter 'query' is set
+    if (query == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'query' when calling adminSearchGet",
+        new ApiException(400, "Missing the required parameter 'query' when calling adminSearchGet"));
+    }
+
+    // create path and map variables
+    String path = "/admin/search";
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "query", query));
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+    String[] contentTypes = {
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+    }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      if (localVarResponse != null) {
+         return (List<User>) ApiInvoker.deserialize(localVarResponse, "array", User.class);
+      } else {
+         return null;
+      }
+    } catch (ApiException ex) {
+       throw ex;
+    } catch (InterruptedException ex) {
+       throw ex;
+    } catch (ExecutionException ex) {
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
+    } catch (TimeoutException ex) {
+      throw ex;
+    }
+  }
+
+      /**
+   * Search for users
+   * 
+   * @param query    * @param authUser    * @param authorization 
+  */
+  public void adminSearchGet (String query, UUID authUser, String authorization, final Response.Listener<List<User>> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = null;
+
+    // verify the required parameter 'query' is set
+    if (query == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'query' when calling adminSearchGet",
+        new ApiException(400, "Missing the required parameter 'query' when calling adminSearchGet"));
+    }
+
+    // create path and map variables
+    String path = "/admin/search".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "query", query));
+
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+
+    String[] contentTypes = {
+      
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+            try {
+              responseListener.onResponse((List<User>) ApiInvoker.deserialize(localVarResponse,  "array", User.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
+  /**
   * Get user by admin credentials.
   * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
-   * @param authorization 
    * @param authUser 
+   * @param authorization 
    * @param cacheControl 
    * @return User
   */
-  public User adminUuidGet (UUID uuid, String authorization, UUID authUser, String cacheControl) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public User adminUuidGet (UUID uuid, UUID authUser, String authorization, String cacheControl) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -82,8 +217,8 @@ public class AdminApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
-    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     headerParams.put("Cache-Control", ApiInvoker.parameterToString(cacheControl));
     String[] contentTypes = {
     };
@@ -127,9 +262,9 @@ public class AdminApi {
       /**
    * Get user by admin credentials.
    * Authorization header expects the following format ‘OAuth {token}’
-   * @param uuid    * @param authorization    * @param authUser    * @param cacheControl 
+   * @param uuid    * @param authUser    * @param authorization    * @param cacheControl 
   */
-  public void adminUuidGet (UUID uuid, String authorization, UUID authUser, String cacheControl, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
+  public void adminUuidGet (UUID uuid, UUID authUser, String authorization, String cacheControl, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'uuid' is set
@@ -149,8 +284,8 @@ public class AdminApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
 
-    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     headerParams.put("Cache-Control", ApiInvoker.parameterToString(cacheControl));
 
     String[] contentTypes = {
