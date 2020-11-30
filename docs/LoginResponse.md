@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **token** | **String** |  | 
 **ssoCode** | **String** |  |  [optional]
 **uuid** | [**UUID**](UUID.md) |  | 
+**isAdmin** | **Boolean** |  | 
 
 
 
