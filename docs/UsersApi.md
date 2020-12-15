@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**usersUuidPaymentsGet**](UsersApi.md#usersUuidPaymentsGet) | **GET** /users/{uuid}/payments | Get user&#39;s subscriptions and payment events
 [**usersUuidSubscriptionsSubsnoAddressChangeDelete**](UsersApi.md#usersUuidSubscriptionsSubsnoAddressChangeDelete) | **DELETE** /users/{uuid}/subscriptions/{subsno}/addressChange | Delete temporary address change for subscription
 [**usersUuidSubscriptionsSubsnoAddressChangePost**](UsersApi.md#usersUuidSubscriptionsSubsnoAddressChangePost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
+[**usersUuidSubscriptionsSubsnoCancelPut**](UsersApi.md#usersUuidSubscriptionsSubsnoCancelPut) | **PUT** /users/{uuid}/subscriptions/{subsno}/cancel | Cancels user subscription
 [**usersUuidSubscriptionsSubsnoPausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoPausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 [**usersUuidSubscriptionsSubsnoReclamationPost**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationPost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
@@ -612,6 +613,60 @@ Name | Type | Description  | Notes
  **uuid** | [**UUID**](.md)|  | [default to null]
  **subsno** | **Integer**|  | [default to null]
  **body** | [**TemporaryAddressChange**](TemporaryAddressChange.md)|  |
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
+ **authorization** | **String**|  | [optional] [default to null]
+
+### Return type
+
+[**Subscription**](Subscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
+
+
+## usersUuidSubscriptionsSubsnoCancelPut
+
+> Subscription usersUuidSubscriptionsSubsnoCancelPut(uuid, subsno, body, authUser, authorization)
+
+Cancels user subscription
+
+The subscription continues to be valid until the end of the billing period. Authorization header expects the following format ‘OAuth {token}’
+
+### Example
+
+```java
+// Import classes:
+//import org.openapitools.client.api.UsersApi;
+
+UsersApi apiInstance = new UsersApi();
+UUID uuid = null; // UUID | 
+Integer subsno = null; // Integer | 
+CancelSubscriptionReason body = new CancelSubscriptionReason(); // CancelSubscriptionReason | 
+UUID authUser = null; // UUID | 
+String authorization = null; // String | 
+try {
+    Subscription result = apiInstance.usersUuidSubscriptionsSubsnoCancelPut(uuid, subsno, body, authUser, authorization);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#usersUuidSubscriptionsSubsnoCancelPut");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**UUID**](.md)|  | [default to null]
+ **subsno** | **Integer**|  | [default to null]
+ **body** | [**CancelSubscriptionReason**](CancelSubscriptionReason.md)|  |
  **authUser** | [**UUID**](.md)|  | [optional] [default to null]
  **authorization** | **String**|  | [optional] [default to null]
 

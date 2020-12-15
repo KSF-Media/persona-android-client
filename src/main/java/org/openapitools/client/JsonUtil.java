@@ -69,6 +69,10 @@ public class JsonUtil {
       return new TypeToken<List<Campaign>>(){}.getType();
     }
     
+    if ("CancelSubscriptionReason".equalsIgnoreCase(className)) {
+      return new TypeToken<List<CancelSubscriptionReason>>(){}.getType();
+    }
+    
     if ("CodeForTokenData".equalsIgnoreCase(className)) {
       return new TypeToken<List<CodeForTokenData>>(){}.getType();
     }
@@ -289,6 +293,10 @@ public class JsonUtil {
     
     if ("Campaign".equalsIgnoreCase(className)) {
       return new TypeToken<Campaign>(){}.getType();
+    }
+    
+    if ("CancelSubscriptionReason".equalsIgnoreCase(className)) {
+      return new TypeToken<CancelSubscriptionReason>(){}.getType();
     }
     
     if ("CodeForTokenData".equalsIgnoreCase(className)) {
