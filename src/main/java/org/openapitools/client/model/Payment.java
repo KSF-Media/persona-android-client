@@ -43,6 +43,8 @@ public class Payment {
   private Double discPercent = null;
   @SerializedName("discAmount")
   private Double discAmount = null;
+  @SerializedName("reference")
+  private String reference = null;
 
   /**
    * minimum: -9223372036854775808
@@ -166,6 +168,16 @@ public class Payment {
     this.discAmount = discAmount;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getReference() {
+    return reference;
+  }
+  public void setReference(String reference) {
+    this.reference = reference;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -187,7 +199,8 @@ public class Payment {
         (this.type == null ? payment.type == null : this.type.equals(payment.type)) &&
         (this.state == null ? payment.state == null : this.state.equals(payment.state)) &&
         (this.discPercent == null ? payment.discPercent == null : this.discPercent.equals(payment.discPercent)) &&
-        (this.discAmount == null ? payment.discAmount == null : this.discAmount.equals(payment.discAmount));
+        (this.discAmount == null ? payment.discAmount == null : this.discAmount.equals(payment.discAmount)) &&
+        (this.reference == null ? payment.reference == null : this.reference.equals(payment.reference));
   }
 
   @Override
@@ -205,6 +218,7 @@ public class Payment {
     result = 31 * result + (this.state == null ? 0: this.state.hashCode());
     result = 31 * result + (this.discPercent == null ? 0: this.discPercent.hashCode());
     result = 31 * result + (this.discAmount == null ? 0: this.discAmount.hashCode());
+    result = 31 * result + (this.reference == null ? 0: this.reference.hashCode());
     return result;
   }
 
@@ -225,6 +239,7 @@ public class Payment {
     sb.append("  state: ").append(state).append("\n");
     sb.append("  discPercent: ").append(discPercent).append("\n");
     sb.append("  discAmount: ").append(discAmount).append("\n");
+    sb.append("  reference: ").append(reference).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

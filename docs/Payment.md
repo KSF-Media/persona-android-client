@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **state** | **String** |  | 
 **discPercent** | **Double** |  |  [optional]
 **discAmount** | **Double** |  |  [optional]
+**reference** | **String** |  |  [optional]
 
 
 
