@@ -12,6 +12,7 @@
 
 package org.openapitools.client.model;
 
+import java.util.Date;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -24,6 +25,8 @@ public class UserUpdateAddress {
   private String zipCode = null;
   @SerializedName("streetAddress")
   private String streetAddress = null;
+  @SerializedName("validFrom")
+  private Date validFrom = null;
 
   /**
    **/
@@ -55,6 +58,16 @@ public class UserUpdateAddress {
     this.streetAddress = streetAddress;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public Date getValidFrom() {
+    return validFrom;
+  }
+  public void setValidFrom(Date validFrom) {
+    this.validFrom = validFrom;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -67,7 +80,8 @@ public class UserUpdateAddress {
     UserUpdateAddress userUpdateAddress = (UserUpdateAddress) o;
     return (this.countryCode == null ? userUpdateAddress.countryCode == null : this.countryCode.equals(userUpdateAddress.countryCode)) &&
         (this.zipCode == null ? userUpdateAddress.zipCode == null : this.zipCode.equals(userUpdateAddress.zipCode)) &&
-        (this.streetAddress == null ? userUpdateAddress.streetAddress == null : this.streetAddress.equals(userUpdateAddress.streetAddress));
+        (this.streetAddress == null ? userUpdateAddress.streetAddress == null : this.streetAddress.equals(userUpdateAddress.streetAddress)) &&
+        (this.validFrom == null ? userUpdateAddress.validFrom == null : this.validFrom.equals(userUpdateAddress.validFrom));
   }
 
   @Override
@@ -76,6 +90,7 @@ public class UserUpdateAddress {
     result = 31 * result + (this.countryCode == null ? 0: this.countryCode.hashCode());
     result = 31 * result + (this.zipCode == null ? 0: this.zipCode.hashCode());
     result = 31 * result + (this.streetAddress == null ? 0: this.streetAddress.hashCode());
+    result = 31 * result + (this.validFrom == null ? 0: this.validFrom.hashCode());
     return result;
   }
 
@@ -87,6 +102,7 @@ public class UserUpdateAddress {
     sb.append("  countryCode: ").append(countryCode).append("\n");
     sb.append("  zipCode: ").append(zipCode).append("\n");
     sb.append("  streetAddress: ").append(streetAddress).append("\n");
+    sb.append("  validFrom: ").append(validFrom).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
