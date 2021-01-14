@@ -49,6 +49,8 @@ public class Subscription {
   private Campaign campaign = null;
   @SerializedName("paused")
   private List<PausedSubscription> paused = null;
+  @SerializedName("receiver")
+  private String receiver = null;
   @SerializedName("deliveryAddress")
   private DeliveryAddress deliveryAddress = null;
   @SerializedName("pendingAddressChanges")
@@ -191,6 +193,16 @@ public class Subscription {
   /**
    **/
   @ApiModelProperty(value = "")
+  public String getReceiver() {
+    return receiver;
+  }
+  public void setReceiver(String receiver) {
+    this.receiver = receiver;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
   public DeliveryAddress getDeliveryAddress() {
     return deliveryAddress;
   }
@@ -262,6 +274,7 @@ public class Subscription {
         (this.extsubsexists == null ? subscription.extsubsexists == null : this.extsubsexists.equals(subscription.extsubsexists)) &&
         (this.campaign == null ? subscription.campaign == null : this.campaign.equals(subscription.campaign)) &&
         (this.paused == null ? subscription.paused == null : this.paused.equals(subscription.paused)) &&
+        (this.receiver == null ? subscription.receiver == null : this.receiver.equals(subscription.receiver)) &&
         (this.deliveryAddress == null ? subscription.deliveryAddress == null : this.deliveryAddress.equals(subscription.deliveryAddress)) &&
         (this.pendingAddressChanges == null ? subscription.pendingAddressChanges == null : this.pendingAddressChanges.equals(subscription.pendingAddressChanges)) &&
         (this.orderNumber == null ? subscription.orderNumber == null : this.orderNumber.equals(subscription.orderNumber)) &&
@@ -284,6 +297,7 @@ public class Subscription {
     result = 31 * result + (this.extsubsexists == null ? 0: this.extsubsexists.hashCode());
     result = 31 * result + (this.campaign == null ? 0: this.campaign.hashCode());
     result = 31 * result + (this.paused == null ? 0: this.paused.hashCode());
+    result = 31 * result + (this.receiver == null ? 0: this.receiver.hashCode());
     result = 31 * result + (this.deliveryAddress == null ? 0: this.deliveryAddress.hashCode());
     result = 31 * result + (this.pendingAddressChanges == null ? 0: this.pendingAddressChanges.hashCode());
     result = 31 * result + (this.orderNumber == null ? 0: this.orderNumber.hashCode());
@@ -309,6 +323,7 @@ public class Subscription {
     sb.append("  extsubsexists: ").append(extsubsexists).append("\n");
     sb.append("  campaign: ").append(campaign).append("\n");
     sb.append("  paused: ").append(paused).append("\n");
+    sb.append("  receiver: ").append(receiver).append("\n");
     sb.append("  deliveryAddress: ").append(deliveryAddress).append("\n");
     sb.append("  pendingAddressChanges: ").append(pendingAddressChanges).append("\n");
     sb.append("  orderNumber: ").append(orderNumber).append("\n");
