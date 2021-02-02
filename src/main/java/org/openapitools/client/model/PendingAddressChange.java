@@ -51,7 +51,7 @@ public class PendingAddressChange {
 
   /**
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public Date getEndDate() {
     return endDate;
   }
