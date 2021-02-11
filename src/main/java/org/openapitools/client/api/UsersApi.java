@@ -37,6 +37,7 @@ import org.openapitools.client.model.NewTemporaryUser;
 import org.openapitools.client.model.NewUser;
 import org.openapitools.client.model.Subscription;
 import org.openapitools.client.model.SubscriptionPauseDates;
+import org.openapitools.client.model.SubscriptionPauseEdit;
 import org.openapitools.client.model.SubscriptionPayments;
 import org.openapitools.client.model.TemporaryAddressChange;
 import java.util.UUID;
@@ -1899,6 +1900,162 @@ public class UsersApi {
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+            try {
+              responseListener.onResponse((Subscription) ApiInvoker.deserialize(localVarResponse,  "", Subscription.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
+  /**
+  * Edit pause duration
+  * Authorization header expects the following format ‘OAuth {token}’
+   * @param uuid 
+   * @param subsno 
+   * @param body 
+   * @param authUser 
+   * @param authorization 
+   * @return Subscription
+  */
+  public Subscription usersUuidSubscriptionsSubsnoPausePatch (UUID uuid, Integer subsno, SubscriptionPauseEdit body, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = body;
+    // verify the required parameter 'uuid' is set
+    if (uuid == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'uuid' when calling usersUuidSubscriptionsSubsnoPausePatch",
+        new ApiException(400, "Missing the required parameter 'uuid' when calling usersUuidSubscriptionsSubsnoPausePatch"));
+    }
+    // verify the required parameter 'subsno' is set
+    if (subsno == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'subsno' when calling usersUuidSubscriptionsSubsnoPausePatch",
+        new ApiException(400, "Missing the required parameter 'subsno' when calling usersUuidSubscriptionsSubsnoPausePatch"));
+    }
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling usersUuidSubscriptionsSubsnoPausePatch",
+        new ApiException(400, "Missing the required parameter 'body' when calling usersUuidSubscriptionsSubsnoPausePatch"));
+    }
+
+    // create path and map variables
+    String path = "/users/{uuid}/subscriptions/{subsno}/pause".replaceAll("\\{" + "uuid" + "\\}", apiInvoker.escapeString(uuid.toString())).replaceAll("\\{" + "subsno" + "\\}", apiInvoker.escapeString(subsno.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+    String[] contentTypes = {
+      "application/json;charset=utf-8"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+    }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "PATCH", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      if (localVarResponse != null) {
+         return (Subscription) ApiInvoker.deserialize(localVarResponse, "", Subscription.class);
+      } else {
+         return null;
+      }
+    } catch (ApiException ex) {
+       throw ex;
+    } catch (InterruptedException ex) {
+       throw ex;
+    } catch (ExecutionException ex) {
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
+    } catch (TimeoutException ex) {
+      throw ex;
+    }
+  }
+
+      /**
+   * Edit pause duration
+   * Authorization header expects the following format ‘OAuth {token}’
+   * @param uuid    * @param subsno    * @param body    * @param authUser    * @param authorization 
+  */
+  public void usersUuidSubscriptionsSubsnoPausePatch (UUID uuid, Integer subsno, SubscriptionPauseEdit body, UUID authUser, String authorization, final Response.Listener<Subscription> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = body;
+
+    // verify the required parameter 'uuid' is set
+    if (uuid == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'uuid' when calling usersUuidSubscriptionsSubsnoPausePatch",
+        new ApiException(400, "Missing the required parameter 'uuid' when calling usersUuidSubscriptionsSubsnoPausePatch"));
+    }
+    // verify the required parameter 'subsno' is set
+    if (subsno == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'subsno' when calling usersUuidSubscriptionsSubsnoPausePatch",
+        new ApiException(400, "Missing the required parameter 'subsno' when calling usersUuidSubscriptionsSubsnoPausePatch"));
+    }
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling usersUuidSubscriptionsSubsnoPausePatch",
+        new ApiException(400, "Missing the required parameter 'body' when calling usersUuidSubscriptionsSubsnoPausePatch"));
+    }
+
+    // create path and map variables
+    String path = "/users/{uuid}/subscriptions/{subsno}/pause".replaceAll("\\{format\\}","json").replaceAll("\\{" + "uuid" + "\\}", apiInvoker.escapeString(uuid.toString())).replaceAll("\\{" + "subsno" + "\\}", apiInvoker.escapeString(subsno.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+
+    String[] contentTypes = {
+      "application/json;charset=utf-8"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "PATCH", queryParams, postBody, headerParams, formParams, contentType, authNames,
         new Response.Listener<String>() {
           @Override
           public void onResponse(String localVarResponse) {

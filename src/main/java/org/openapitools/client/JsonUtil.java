@@ -245,6 +245,10 @@ public class JsonUtil {
       return new TypeToken<List<SubscriptionPauseDates>>(){}.getType();
     }
     
+    if ("SubscriptionPauseEdit".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SubscriptionPauseEdit>>(){}.getType();
+    }
+    
     if ("SubscriptionPayments".equalsIgnoreCase(className)) {
       return new TypeToken<List<SubscriptionPayments>>(){}.getType();
     }
@@ -469,6 +473,10 @@ public class JsonUtil {
     
     if ("SubscriptionPauseDates".equalsIgnoreCase(className)) {
       return new TypeToken<SubscriptionPauseDates>(){}.getType();
+    }
+    
+    if ("SubscriptionPauseEdit".equalsIgnoreCase(className)) {
+      return new TypeToken<SubscriptionPauseEdit>(){}.getType();
     }
     
     if ("SubscriptionPayments".equalsIgnoreCase(className)) {
