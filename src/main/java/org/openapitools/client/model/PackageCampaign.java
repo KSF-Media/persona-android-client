@@ -16,7 +16,7 @@ import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
 @ApiModel(description = "")
-public class Campaign {
+public class PackageCampaign {
   
   @SerializedName("no")
   private Integer no = null;
@@ -104,13 +104,13 @@ public class Campaign {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Campaign campaign = (Campaign) o;
-    return (this.no == null ? campaign.no == null : this.no.equals(campaign.no)) &&
-        (this.id == null ? campaign.id == null : this.id.equals(campaign.id)) &&
-        (this.name == null ? campaign.name == null : this.name.equals(campaign.name)) &&
-        (this.priceEur == null ? campaign.priceEur == null : this.priceEur.equals(campaign.priceEur)) &&
-        (this.length == null ? campaign.length == null : this.length.equals(campaign.length)) &&
-        (this.lengthUnit == null ? campaign.lengthUnit == null : this.lengthUnit.equals(campaign.lengthUnit));
+    PackageCampaign packageCampaign = (PackageCampaign) o;
+    return (this.no == null ? packageCampaign.no == null : this.no.equals(packageCampaign.no)) &&
+        (this.id == null ? packageCampaign.id == null : this.id.equals(packageCampaign.id)) &&
+        (this.name == null ? packageCampaign.name == null : this.name.equals(packageCampaign.name)) &&
+        (this.priceEur == null ? packageCampaign.priceEur == null : this.priceEur.equals(packageCampaign.priceEur)) &&
+        (this.length == null ? packageCampaign.length == null : this.length.equals(packageCampaign.length)) &&
+        (this.lengthUnit == null ? packageCampaign.lengthUnit == null : this.lengthUnit.equals(packageCampaign.lengthUnit));
   }
 
   @Override
@@ -128,7 +128,7 @@ public class Campaign {
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Campaign {\n");
+    sb.append("class PackageCampaign {\n");
     
     sb.append("  no: ").append(no).append("\n");
     sb.append("  id: ").append(id).append("\n");

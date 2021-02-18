@@ -14,7 +14,7 @@ package org.openapitools.client.model;
 
 import java.util.*;
 import java.util.Date;
-import org.openapitools.client.model.Campaign;
+import org.openapitools.client.model.PackageCampaign;
 import org.openapitools.client.model.PackageDescription;
 import org.openapitools.client.model.PackageOffer;
 import org.openapitools.client.model.Paper;
@@ -38,7 +38,7 @@ public class ModelPackage {
   @SerializedName("offers")
   private List<PackageOffer> offers = null;
   @SerializedName("campaigns")
-  private List<Campaign> campaigns = null;
+  private List<PackageCampaign> campaigns = null;
   @SerializedName("nextDelivery")
   private Date nextDelivery = null;
   @SerializedName("description")
@@ -107,10 +107,10 @@ public class ModelPackage {
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public List<Campaign> getCampaigns() {
+  public List<PackageCampaign> getCampaigns() {
     return campaigns;
   }
-  public void setCampaigns(List<Campaign> campaigns) {
+  public void setCampaigns(List<PackageCampaign> campaigns) {
     this.campaigns = campaigns;
   }
 

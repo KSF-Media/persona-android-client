@@ -65,10 +65,6 @@ public class JsonUtil {
       return new TypeToken<List<Address>>(){}.getType();
     }
     
-    if ("Campaign".equalsIgnoreCase(className)) {
-      return new TypeToken<List<Campaign>>(){}.getType();
-    }
-    
     if ("CancelSubscriptionReason".equalsIgnoreCase(className)) {
       return new TypeToken<List<CancelSubscriptionReason>>(){}.getType();
     }
@@ -201,6 +197,10 @@ public class JsonUtil {
       return new TypeToken<List<NewUser>>(){}.getType();
     }
     
+    if ("PackageCampaign".equalsIgnoreCase(className)) {
+      return new TypeToken<List<PackageCampaign>>(){}.getType();
+    }
+    
     if ("PackageDescription".equalsIgnoreCase(className)) {
       return new TypeToken<List<PackageDescription>>(){}.getType();
     }
@@ -257,6 +257,10 @@ public class JsonUtil {
       return new TypeToken<List<TemporaryAddressChange>>(){}.getType();
     }
     
+    if ("TemporaryAddressChangeDates".equalsIgnoreCase(className)) {
+      return new TypeToken<List<TemporaryAddressChangeDates>>(){}.getType();
+    }
+    
     if ("TokenResponse".equalsIgnoreCase(className)) {
       return new TypeToken<List<TokenResponse>>(){}.getType();
     }
@@ -293,10 +297,6 @@ public class JsonUtil {
     
     if ("Address".equalsIgnoreCase(className)) {
       return new TypeToken<Address>(){}.getType();
-    }
-    
-    if ("Campaign".equalsIgnoreCase(className)) {
-      return new TypeToken<Campaign>(){}.getType();
     }
     
     if ("CancelSubscriptionReason".equalsIgnoreCase(className)) {
@@ -431,6 +431,10 @@ public class JsonUtil {
       return new TypeToken<NewUser>(){}.getType();
     }
     
+    if ("PackageCampaign".equalsIgnoreCase(className)) {
+      return new TypeToken<PackageCampaign>(){}.getType();
+    }
+    
     if ("PackageDescription".equalsIgnoreCase(className)) {
       return new TypeToken<PackageDescription>(){}.getType();
     }
@@ -485,6 +489,10 @@ public class JsonUtil {
     
     if ("TemporaryAddressChange".equalsIgnoreCase(className)) {
       return new TypeToken<TemporaryAddressChange>(){}.getType();
+    }
+    
+    if ("TemporaryAddressChangeDates".equalsIgnoreCase(className)) {
+      return new TypeToken<TemporaryAddressChangeDates>(){}.getType();
     }
     
     if ("TokenResponse".equalsIgnoreCase(className)) {

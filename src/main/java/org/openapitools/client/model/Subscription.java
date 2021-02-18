@@ -13,9 +13,9 @@
 package org.openapitools.client.model;
 
 import java.util.*;
-import org.openapitools.client.model.Campaign;
 import org.openapitools.client.model.DeliveryAddress;
 import org.openapitools.client.model.ModelPackage;
+import org.openapitools.client.model.PackageCampaign;
 import org.openapitools.client.model.PausedSubscription;
 import org.openapitools.client.model.PendingAddressChange;
 import org.openapitools.client.model.SubscriptionDates;
@@ -46,7 +46,7 @@ public class Subscription {
   @SerializedName("extsubsexists")
   private Boolean extsubsexists = null;
   @SerializedName("campaign")
-  private Campaign campaign = null;
+  private PackageCampaign campaign = null;
   @SerializedName("paused")
   private List<PausedSubscription> paused = null;
   @SerializedName("receiver")
@@ -173,10 +173,10 @@ public class Subscription {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Campaign getCampaign() {
+  public PackageCampaign getCampaign() {
     return campaign;
   }
-  public void setCampaign(Campaign campaign) {
+  public void setCampaign(PackageCampaign campaign) {
     this.campaign = campaign;
   }
 
