@@ -41,6 +41,10 @@ public class ModelPackage {
   private List<PackageCampaign> campaigns = null;
   @SerializedName("nextDelivery")
   private Date nextDelivery = null;
+  @SerializedName("canPause")
+  private Boolean canPause = null;
+  @SerializedName("canTempAddr")
+  private Boolean canTempAddr = null;
   @SerializedName("description")
   private PackageDescription description = null;
 
@@ -126,6 +130,26 @@ public class ModelPackage {
 
   /**
    **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean getCanPause() {
+    return canPause;
+  }
+  public void setCanPause(Boolean canPause) {
+    this.canPause = canPause;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean getCanTempAddr() {
+    return canTempAddr;
+  }
+  public void setCanTempAddr(Boolean canTempAddr) {
+    this.canTempAddr = canTempAddr;
+  }
+
+  /**
+   **/
   @ApiModelProperty(value = "")
   public PackageDescription getDescription() {
     return description;
@@ -152,6 +176,8 @@ public class ModelPackage {
         (this.offers == null ? _package.offers == null : this.offers.equals(_package.offers)) &&
         (this.campaigns == null ? _package.campaigns == null : this.campaigns.equals(_package.campaigns)) &&
         (this.nextDelivery == null ? _package.nextDelivery == null : this.nextDelivery.equals(_package.nextDelivery)) &&
+        (this.canPause == null ? _package.canPause == null : this.canPause.equals(_package.canPause)) &&
+        (this.canTempAddr == null ? _package.canTempAddr == null : this.canTempAddr.equals(_package.canTempAddr)) &&
         (this.description == null ? _package.description == null : this.description.equals(_package.description));
   }
 
@@ -166,6 +192,8 @@ public class ModelPackage {
     result = 31 * result + (this.offers == null ? 0: this.offers.hashCode());
     result = 31 * result + (this.campaigns == null ? 0: this.campaigns.hashCode());
     result = 31 * result + (this.nextDelivery == null ? 0: this.nextDelivery.hashCode());
+    result = 31 * result + (this.canPause == null ? 0: this.canPause.hashCode());
+    result = 31 * result + (this.canTempAddr == null ? 0: this.canTempAddr.hashCode());
     result = 31 * result + (this.description == null ? 0: this.description.hashCode());
     return result;
   }
@@ -183,6 +211,8 @@ public class ModelPackage {
     sb.append("  offers: ").append(offers).append("\n");
     sb.append("  campaigns: ").append(campaigns).append("\n");
     sb.append("  nextDelivery: ").append(nextDelivery).append("\n");
+    sb.append("  canPause: ").append(canPause).append("\n");
+    sb.append("  canTempAddr: ").append(canTempAddr).append("\n");
     sb.append("  description: ").append(description).append("\n");
     sb.append("}\n");
     return sb.toString();
