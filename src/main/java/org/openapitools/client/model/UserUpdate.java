@@ -26,6 +26,8 @@ public class UserUpdate {
   private String lastName = null;
   @SerializedName("address")
   private UserUpdateAddress address = null;
+  @SerializedName("email")
+  private String email = null;
   @SerializedName("pendingAddressChanges")
   private List<Object> pendingAddressChanges = null;
 
@@ -62,6 +64,16 @@ public class UserUpdate {
   /**
    **/
   @ApiModelProperty(value = "")
+  public String getEmail() {
+    return email;
+  }
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
   public List<Object> getPendingAddressChanges() {
     return pendingAddressChanges;
   }
@@ -82,6 +94,7 @@ public class UserUpdate {
     return (this.firstName == null ? userUpdate.firstName == null : this.firstName.equals(userUpdate.firstName)) &&
         (this.lastName == null ? userUpdate.lastName == null : this.lastName.equals(userUpdate.lastName)) &&
         (this.address == null ? userUpdate.address == null : this.address.equals(userUpdate.address)) &&
+        (this.email == null ? userUpdate.email == null : this.email.equals(userUpdate.email)) &&
         (this.pendingAddressChanges == null ? userUpdate.pendingAddressChanges == null : this.pendingAddressChanges.equals(userUpdate.pendingAddressChanges));
   }
 
@@ -91,6 +104,7 @@ public class UserUpdate {
     result = 31 * result + (this.firstName == null ? 0: this.firstName.hashCode());
     result = 31 * result + (this.lastName == null ? 0: this.lastName.hashCode());
     result = 31 * result + (this.address == null ? 0: this.address.hashCode());
+    result = 31 * result + (this.email == null ? 0: this.email.hashCode());
     result = 31 * result + (this.pendingAddressChanges == null ? 0: this.pendingAddressChanges.hashCode());
     return result;
   }
@@ -103,6 +117,7 @@ public class UserUpdate {
     sb.append("  firstName: ").append(firstName).append("\n");
     sb.append("  lastName: ").append(lastName).append("\n");
     sb.append("  address: ").append(address).append("\n");
+    sb.append("  email: ").append(email).append("\n");
     sb.append("  pendingAddressChanges: ").append(pendingAddressChanges).append("\n");
     sb.append("}\n");
     return sb.toString();
