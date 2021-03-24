@@ -6,11 +6,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**countryCode** | **String** |  | 
-**zipcode** | **String** |  | 
-**cityName** | **String** |  |  [optional]
-**street** | **String** |  | 
-**temporaryName** | **String** |  |  [optional]
+**countryCode** | **String** | Country code | 
+**zipcode** | **String** | Zip code | 
+**cityName** | **String** | City |  [optional]
+**street** | **String** | Street | 
+**temporaryName** | **String** | Temporary name (c/o) |  [optional]
 
 
 

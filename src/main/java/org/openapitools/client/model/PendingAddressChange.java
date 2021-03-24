@@ -26,8 +26,11 @@ public class PendingAddressChange {
   private Date startDate = null;
   @SerializedName("endDate")
   private Date endDate = null;
+  public enum TypeEnum {
+     Definitive,  Temporary, 
+  };
   @SerializedName("type")
-  private String type = null;
+  private TypeEnum type = null;
 
   /**
    **/
@@ -60,12 +63,13 @@ public class PendingAddressChange {
   }
 
   /**
+   * Type of address change
    **/
-  @ApiModelProperty(required = true, value = "")
-  public String getType() {
+  @ApiModelProperty(required = true, value = "Type of address change")
+  public TypeEnum getType() {
     return type;
   }
-  public void setType(String type) {
+  public void setType(TypeEnum type) {
     this.type = type;
   }
 

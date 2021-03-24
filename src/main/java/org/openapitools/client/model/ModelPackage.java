@@ -49,8 +49,9 @@ public class ModelPackage {
   private PackageDescription description = null;
 
   /**
+   * Package identifier
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Package identifier")
   public String getId() {
     return id;
   }
@@ -59,8 +60,9 @@ public class ModelPackage {
   }
 
   /**
+   * Package name
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Package name")
   public String getName() {
     return name;
   }
@@ -79,8 +81,9 @@ public class ModelPackage {
   }
 
   /**
+   * All products in this package are digital
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "All products in this package are digital")
   public Boolean getDigitalOnly() {
     return digitalOnly;
   }
@@ -89,8 +92,9 @@ public class ModelPackage {
   }
 
   /**
+   * The Products contained in a package
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "The Products contained in a package")
   public List<Product> getProducts() {
     return products;
   }
@@ -99,8 +103,9 @@ public class ModelPackage {
   }
 
   /**
+   * Offers for the package
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Offers for the package")
   public List<PackageOffer> getOffers() {
     return offers;
   }
@@ -109,8 +114,9 @@ public class ModelPackage {
   }
 
   /**
+   * Active campaigns for the package
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Active campaigns for the package")
   public List<PackageCampaign> getCampaigns() {
     return campaigns;
   }
@@ -129,8 +135,9 @@ public class ModelPackage {
   }
 
   /**
+   * Does the package allow delivery pauses
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Does the package allow delivery pauses")
   public Boolean getCanPause() {
     return canPause;
   }
@@ -139,8 +146,9 @@ public class ModelPackage {
   }
 
   /**
+   * Does the package allow temporary address changes
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Does the package allow temporary address changes")
   public Boolean getCanTempAddr() {
     return canTempAddr;
   }

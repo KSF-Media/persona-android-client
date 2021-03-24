@@ -16,7 +16,7 @@ import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
 @ApiModel(description = "")
-public class DeliveryReclamationClaim {
+public class ClaimType {
   
 
 
@@ -28,7 +28,7 @@ public class DeliveryReclamationClaim {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DeliveryReclamationClaim deliveryReclamationClaim = (DeliveryReclamationClaim) o;
+    ClaimType claimType = (ClaimType) o;
     return true;
   }
 
@@ -41,7 +41,7 @@ public class DeliveryReclamationClaim {
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DeliveryReclamationClaim {\n");
+    sb.append("class ClaimType {\n");
     
     sb.append("}\n");
     return sb.toString();

@@ -16,7 +16,10 @@ import java.util.Date;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-@ApiModel(description = "")
+/**
+ * Data for a delivery reclamation.
+ **/
+@ApiModel(description = "Data for a delivery reclamation.")
 public class DeliveryReclamation {
   
   @SerializedName("number")
@@ -29,14 +32,18 @@ public class DeliveryReclamation {
   private Date date = null;
   @SerializedName("publicationDate")
   private Date publicationDate = null;
+  public enum ClaimEnum {
+     Extension,  NewDelivery, 
+  };
   @SerializedName("claim")
-  private String claim = null;
+  private ClaimEnum claim = null;
 
   /**
+   * The reclamation identifier
    * minimum: -9223372036854775808
    * maximum: 9223372036854775807
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "The reclamation identifier")
   public Integer getNumber() {
     return number;
   }
@@ -45,10 +52,11 @@ public class DeliveryReclamation {
   }
 
   /**
+   * The identifier of the customer that made reclamation
    * minimum: -9223372036854775808
    * maximum: 9223372036854775807
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "The identifier of the customer that made reclamation")
   public Integer getCustomerNumber() {
     return customerNumber;
   }
@@ -57,10 +65,11 @@ public class DeliveryReclamation {
   }
 
   /**
+   * The identifier of the subscription for which reclamation was made
    * minimum: -9223372036854775808
    * maximum: 9223372036854775807
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "The identifier of the subscription for which reclamation was made")
   public Integer getSubscriptionNumber() {
     return subscriptionNumber;
   }
@@ -89,12 +98,13 @@ public class DeliveryReclamation {
   }
 
   /**
+   * The type of claim for the reclamation
    **/
-  @ApiModelProperty(required = true, value = "")
-  public String getClaim() {
+  @ApiModelProperty(required = true, value = "The type of claim for the reclamation")
+  public ClaimEnum getClaim() {
     return claim;
   }
-  public void setClaim(String claim) {
+  public void setClaim(ClaimEnum claim) {
     this.claim = claim;
   }
 

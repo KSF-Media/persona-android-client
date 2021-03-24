@@ -28,14 +28,18 @@ public class PackageCampaign {
   private Double priceEur = null;
   @SerializedName("length")
   private Integer length = null;
+  public enum LengthUnitEnum {
+     Day,  Week,  Month,  Year, 
+  };
   @SerializedName("lengthUnit")
-  private String lengthUnit = null;
+  private LengthUnitEnum lengthUnit = null;
 
   /**
+   * Campaign number
    * minimum: -9223372036854775808
    * maximum: 9223372036854775807
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Campaign number")
   public Integer getNo() {
     return no;
   }
@@ -44,8 +48,9 @@ public class PackageCampaign {
   }
 
   /**
+   * Campaign id
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Campaign id")
   public String getId() {
     return id;
   }
@@ -54,8 +59,9 @@ public class PackageCampaign {
   }
 
   /**
+   * Campaign name
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Campaign name")
   public String getName() {
     return name;
   }
@@ -64,8 +70,9 @@ public class PackageCampaign {
   }
 
   /**
+   * Price of campaign in euros
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Price of campaign in euros")
   public Double getPriceEur() {
     return priceEur;
   }
@@ -74,10 +81,11 @@ public class PackageCampaign {
   }
 
   /**
+   * Length of campaign
    * minimum: -9223372036854775808
    * maximum: 9223372036854775807
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Length of campaign")
   public Integer getLength() {
     return length;
   }
@@ -86,12 +94,13 @@ public class PackageCampaign {
   }
 
   /**
+   * Unit of length (days, weeks, months, years)
    **/
-  @ApiModelProperty(required = true, value = "")
-  public String getLengthUnit() {
+  @ApiModelProperty(required = true, value = "Unit of length (days, weeks, months, years)")
+  public LengthUnitEnum getLengthUnit() {
     return lengthUnit;
   }
-  public void setLengthUnit(String lengthUnit) {
+  public void setLengthUnit(LengthUnitEnum lengthUnit) {
     this.lengthUnit = lengthUnit;
   }
 

@@ -34,8 +34,9 @@ public class ActiveDays {
   private Boolean sun = null;
 
   /**
+   * Active on Monday
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Active on Monday")
   public Boolean getMon() {
     return mon;
   }
@@ -44,8 +45,9 @@ public class ActiveDays {
   }
 
   /**
+   * Active on Tuesday
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Active on Tuesday")
   public Boolean getTue() {
     return tue;
   }
@@ -54,8 +56,9 @@ public class ActiveDays {
   }
 
   /**
+   * Active on Wednedsday
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Active on Wednedsday")
   public Boolean getWed() {
     return wed;
   }
@@ -64,8 +67,9 @@ public class ActiveDays {
   }
 
   /**
+   * Active on Thursday
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Active on Thursday")
   public Boolean getThu() {
     return thu;
   }
@@ -74,8 +78,9 @@ public class ActiveDays {
   }
 
   /**
+   * Active on Friday
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Active on Friday")
   public Boolean getFri() {
     return fri;
   }
@@ -84,8 +89,9 @@ public class ActiveDays {
   }
 
   /**
+   * Active on Saturday
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Active on Saturday")
   public Boolean getSat() {
     return sat;
   }
@@ -94,8 +100,9 @@ public class ActiveDays {
   }
 
   /**
+   * Active on Sunday
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Active on Sunday")
   public Boolean getSun() {
     return sun;
   }

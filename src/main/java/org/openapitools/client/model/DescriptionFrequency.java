@@ -24,10 +24,11 @@ public class DescriptionFrequency {
   private String unit = null;
 
   /**
+   * Frequency number for the package
    * minimum: -9223372036854775808
    * maximum: 9223372036854775807
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Frequency number for the package")
   public Integer getAmount() {
     return amount;
   }
@@ -36,8 +37,9 @@ public class DescriptionFrequency {
   }
 
   /**
+   * Unit in which the number is measured
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Unit in which the number is measured")
   public String getUnit() {
     return unit;
   }

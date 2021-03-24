@@ -16,7 +16,10 @@ import java.util.Date;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-@ApiModel(description = "")
+/**
+ * Data for changing a temporary address change.
+ **/
+@ApiModel(description = "Data for changing a temporary address change.")
 public class TemporaryAddressChangeDates {
   
   @SerializedName("oldStartDate")

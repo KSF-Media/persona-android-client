@@ -37,10 +37,11 @@ public class SubscriptionDates {
   private Date suspend = null;
 
   /**
+   * Length of Subscription in months
    * minimum: -9223372036854775808
    * maximum: 9223372036854775807
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Length of Subscription in months")
   public Integer getLenMonths() {
     return lenMonths;
   }
@@ -49,10 +50,11 @@ public class SubscriptionDates {
   }
 
   /**
+   * Additional days (on top of months) for Subscription duration
    * minimum: -9223372036854775808
    * maximum: 9223372036854775807
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Additional days (on top of months) for Subscription duration")
   public Integer getLenDays() {
     return lenDays;
   }

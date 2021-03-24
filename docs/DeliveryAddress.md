@@ -6,10 +6,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**streetAddress** | **String** |  |  [optional]
+**streetAddress** | **String** | Street address, containing all details |  [optional]
 **zipcode** | **String** |  | 
 **city** | **String** |  |  [optional]
-**temporaryName** | **String** |  |  [optional]
+**temporaryName** | **String** | Temporary name (or c/o) of delivery address |  [optional]
 
 
 

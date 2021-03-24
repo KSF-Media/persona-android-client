@@ -35,8 +35,9 @@ public class Product {
   private Boolean digital = null;
 
   /**
+   * Identifying code of the product
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Identifying code of the product")
   public String getId() {
     return id;
   }
@@ -45,8 +46,9 @@ public class Product {
   }
 
   /**
+   * The name of the product
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "The name of the product")
   public String getName() {
     return name;
   }
@@ -85,8 +87,9 @@ public class Product {
   }
 
   /**
+   * Is the product digital?
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Is the product digital?")
   public Boolean getDigital() {
     return digital;
   }

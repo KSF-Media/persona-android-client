@@ -24,8 +24,9 @@ public class Paper {
   private String name = null;
 
   /**
+   * Identifying code of the paper
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Identifying code of the paper")
   public String getCode() {
     return code;
   }
@@ -34,8 +35,9 @@ public class Paper {
   }
 
   /**
+   * The name of the paper
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "The name of the paper")
   public String getName() {
     return name;
   }

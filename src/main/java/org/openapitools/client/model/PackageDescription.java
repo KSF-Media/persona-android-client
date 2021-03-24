@@ -40,8 +40,9 @@ public class PackageDescription {
   private List<String> includes = null;
 
   /**
+   * Brand name
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Brand name")
   public String getBrand() {
     return brand;
   }
@@ -50,8 +51,9 @@ public class PackageDescription {
   }
 
   /**
+   * Brand name, long
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Brand name, long")
   public String getBrandLong() {
     return brandLong;
   }
@@ -60,8 +62,9 @@ public class PackageDescription {
   }
 
   /**
+   * Short description
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Short description")
   public String getDescShort() {
     return descShort;
   }
@@ -70,8 +73,9 @@ public class PackageDescription {
   }
 
   /**
+   * Long description
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Long description")
   public String getDescLong() {
     return descLong;
   }
@@ -80,8 +84,9 @@ public class PackageDescription {
   }
 
   /**
+   * Url for the current package
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Url for the current package")
   public String getUrl() {
     return url;
   }
@@ -90,8 +95,9 @@ public class PackageDescription {
   }
 
   /**
+   * How many days the package is active
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "How many days the package is active")
   public String getDays() {
     return days;
   }
@@ -100,8 +106,9 @@ public class PackageDescription {
   }
 
   /**
+   * Weekdays for which the package is active
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Weekdays for which the package is active")
   public String getWeekdays() {
     return weekdays;
   }
@@ -120,8 +127,9 @@ public class PackageDescription {
   }
 
   /**
+   * Entitlements included in the package
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Entitlements included in the package")
   public List<String> getIncludes() {
     return includes;
   }

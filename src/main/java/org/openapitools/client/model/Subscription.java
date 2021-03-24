@@ -17,6 +17,7 @@ import org.openapitools.client.model.DeliveryAddress;
 import org.openapitools.client.model.ModelPackage;
 import org.openapitools.client.model.PackageCampaign;
 import org.openapitools.client.model.PausedSubscription;
+import org.openapitools.client.model.PaymentMethodId;
 import org.openapitools.client.model.PendingAddressChange;
 import org.openapitools.client.model.SubscriptionDates;
 import io.swagger.annotations.*;
@@ -33,12 +34,21 @@ public class Subscription {
   private Integer cusno = null;
   @SerializedName("paycusno")
   private Integer paycusno = null;
+  public enum KindEnum {
+     StandingOrder,  TimeLimitedOrder,  NewsStandOrder,  FreeOrder,  Testing1,  Testing2, 
+  };
   @SerializedName("kind")
-  private String kind = null;
+  private KindEnum kind = null;
+  public enum StateEnum {
+     Upcoming,  Active,  Paused,  Ended,  UnpaidAndCanceled,  Canceled,  CanceledWithLatePayment,  RestartedAfterLatePayment,  DeactivatedRecently,  Unknown, 
+  };
   @SerializedName("state")
-  private String state = null;
+  private StateEnum state = null;
+  public enum PricegroupEnum {
+     Normal,  Campaign,  Flex,  Company,  CompanyFlex,  Student,  HBL365Discount, 
+  };
   @SerializedName("pricegroup")
-  private String pricegroup = null;
+  private PricegroupEnum pricegroup = null;
   @SerializedName("package")
   private ModelPackage _package = null;
   @SerializedName("dates")
@@ -57,16 +67,20 @@ public class Subscription {
   private List<PendingAddressChange> pendingAddressChanges = null;
   @SerializedName("orderNumber")
   private String orderNumber = null;
+  public enum PaymentMethodEnum {
+     PaperInvoice,  CreditCard,  NetBank,  ElectronicInvoice,  DirectPayment,  UnknownPaymentMethod, 
+  };
   @SerializedName("paymentMethod")
-  private String paymentMethod = null;
+  private PaymentMethodEnum paymentMethod = null;
   @SerializedName("paymentMethodId")
-  private Integer paymentMethodId = null;
+  private PaymentMethodId paymentMethodId = null;
 
   /**
+   * Subscription Id - primary key together with extno
    * minimum: -9223372036854775808
    * maximum: 9223372036854775807
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Subscription Id - primary key together with extno")
   public Integer getSubsno() {
     return subsno;
   }
@@ -75,10 +89,11 @@ public class Subscription {
   }
 
   /**
+   * Subscription Extension Id - how many times a subscription has been extended
    * minimum: -9223372036854775808
    * maximum: 9223372036854775807
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Subscription Extension Id - how many times a subscription has been extended")
   public Integer getExtno() {
     return extno;
   }
@@ -87,10 +102,11 @@ public class Subscription {
   }
 
   /**
+   * Customer getting the subscription
    * minimum: -9223372036854775808
    * maximum: 9223372036854775807
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Customer getting the subscription")
   public Integer getCusno() {
     return cusno;
   }
@@ -99,10 +115,11 @@ public class Subscription {
   }
 
   /**
+   * Customer paying for the subscription
    * minimum: -9223372036854775808
    * maximum: 9223372036854775807
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Customer paying for the subscription")
   public Integer getPaycusno() {
     return paycusno;
   }
@@ -111,32 +128,35 @@ public class Subscription {
   }
 
   /**
+   * Subscription kind - what kind of order is it
    **/
-  @ApiModelProperty(required = true, value = "")
-  public String getKind() {
+  @ApiModelProperty(required = true, value = "Subscription kind - what kind of order is it")
+  public KindEnum getKind() {
     return kind;
   }
-  public void setKind(String kind) {
+  public void setKind(KindEnum kind) {
     this.kind = kind;
   }
 
   /**
+   * Current state of the Subscription
    **/
-  @ApiModelProperty(required = true, value = "")
-  public String getState() {
+  @ApiModelProperty(required = true, value = "Current state of the Subscription")
+  public StateEnum getState() {
     return state;
   }
-  public void setState(String state) {
+  public void setState(StateEnum state) {
     this.state = state;
   }
 
   /**
+   * Pricegroup of the Subscription
    **/
-  @ApiModelProperty(value = "")
-  public String getPricegroup() {
+  @ApiModelProperty(value = "Pricegroup of the Subscription")
+  public PricegroupEnum getPricegroup() {
     return pricegroup;
   }
-  public void setPricegroup(String pricegroup) {
+  public void setPricegroup(PricegroupEnum pricegroup) {
     this.pricegroup = pricegroup;
   }
 
@@ -161,8 +181,9 @@ public class Subscription {
   }
 
   /**
+   * If the extension of this subscription exists
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "If the extension of this subscription exists")
   public Boolean getExtsubsexists() {
     return extsubsexists;
   }
@@ -181,8 +202,9 @@ public class Subscription {
   }
 
   /**
+   * Pause periods of this subscription
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Pause periods of this subscription")
   public List<PausedSubscription> getPaused() {
     return paused;
   }
@@ -191,8 +213,9 @@ public class Subscription {
   }
 
   /**
+   * The name of subscription receiver
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The name of subscription receiver")
   public String getReceiver() {
     return receiver;
   }
@@ -211,8 +234,9 @@ public class Subscription {
   }
 
   /**
+   * Pending and ongoing temporary address changes
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Pending and ongoing temporary address changes")
   public List<PendingAddressChange> getPendingAddressChanges() {
     return pendingAddressChanges;
   }
@@ -221,8 +245,9 @@ public class Subscription {
   }
 
   /**
+   * Order number of subscription
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Order number of subscription")
   public String getOrderNumber() {
     return orderNumber;
   }
@@ -231,24 +256,23 @@ public class Subscription {
   }
 
   /**
+   * Payment method of subscription
    **/
-  @ApiModelProperty(value = "")
-  public String getPaymentMethod() {
+  @ApiModelProperty(value = "Payment method of subscription")
+  public PaymentMethodEnum getPaymentMethod() {
     return paymentMethod;
   }
-  public void setPaymentMethod(String paymentMethod) {
+  public void setPaymentMethod(PaymentMethodEnum paymentMethod) {
     this.paymentMethod = paymentMethod;
   }
 
   /**
-   * minimum: -9223372036854775808
-   * maximum: 9223372036854775807
    **/
   @ApiModelProperty(value = "")
-  public Integer getPaymentMethodId() {
+  public PaymentMethodId getPaymentMethodId() {
     return paymentMethodId;
   }
-  public void setPaymentMethodId(Integer paymentMethodId) {
+  public void setPaymentMethodId(PaymentMethodId paymentMethodId) {
     this.paymentMethodId = paymentMethodId;
   }
 

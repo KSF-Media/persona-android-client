@@ -15,7 +15,10 @@ package org.openapitools.client.model;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-@ApiModel(description = "")
+/**
+ * Data for previously used temporary addresses
+ **/
+@ApiModel(description = "Data for previously used temporary addresses")
 public class PastTemporaryAddress {
   
   @SerializedName("countryCode")
@@ -30,8 +33,9 @@ public class PastTemporaryAddress {
   private String temporaryName = null;
 
   /**
+   * Country code
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Country code")
   public String getCountryCode() {
     return countryCode;
   }
@@ -40,8 +44,9 @@ public class PastTemporaryAddress {
   }
 
   /**
+   * Zip code
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Zip code")
   public String getZipcode() {
     return zipcode;
   }
@@ -50,8 +55,9 @@ public class PastTemporaryAddress {
   }
 
   /**
+   * City
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "City")
   public String getCityName() {
     return cityName;
   }
@@ -60,8 +66,9 @@ public class PastTemporaryAddress {
   }
 
   /**
+   * Street
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Street")
   public String getStreet() {
     return street;
   }
@@ -70,8 +77,9 @@ public class PastTemporaryAddress {
   }
 
   /**
+   * Temporary name (c/o)
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Temporary name (c/o)")
   public String getTemporaryName() {
     return temporaryName;
   }

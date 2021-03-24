@@ -33,10 +33,11 @@ public class SubscriptionPayments {
   private List<Payment> payments = null;
 
   /**
+   * Product subsno
    * minimum: -9223372036854775808
    * maximum: 9223372036854775807
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Product subsno")
   public Integer getSubsno() {
     return subsno;
   }
@@ -45,8 +46,9 @@ public class SubscriptionPayments {
   }
 
   /**
+   * Package name
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Package name")
   public String getName() {
     return name;
   }
@@ -75,8 +77,9 @@ public class SubscriptionPayments {
   }
 
   /**
+   * Payments
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Payments")
   public List<Payment> getPayments() {
     return payments;
   }

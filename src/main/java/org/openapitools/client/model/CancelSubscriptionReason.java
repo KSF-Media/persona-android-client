@@ -15,27 +15,35 @@ package org.openapitools.client.model;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-@ApiModel(description = "")
+/**
+ * Cancel reason
+ **/
+@ApiModel(description = "Cancel reason")
 public class CancelSubscriptionReason {
   
+  public enum ReasonEnum {
+     Price,  Distribution,  Content,  OldAge,  Deceased,  Digital,  Other,  ChangeProduct, 
+  };
   @SerializedName("reason")
-  private String reason = null;
+  private ReasonEnum reason = null;
   @SerializedName("notes")
   private String notes = null;
 
   /**
+   * Cancel reason code
    **/
-  @ApiModelProperty(required = true, value = "")
-  public String getReason() {
+  @ApiModelProperty(required = true, value = "Cancel reason code")
+  public ReasonEnum getReason() {
     return reason;
   }
-  public void setReason(String reason) {
+  public void setReason(ReasonEnum reason) {
     this.reason = reason;
   }
 
   /**
+   * Cancel reason explanation
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Cancel reason explanation")
   public String getNotes() {
     return notes;
   }

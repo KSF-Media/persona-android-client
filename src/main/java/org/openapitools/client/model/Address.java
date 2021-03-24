@@ -15,7 +15,10 @@ package org.openapitools.client.model;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-@ApiModel(description = "")
+/**
+ * Postal address for shipping the papers.
+ **/
+@ApiModel(description = "Postal address for shipping the papers.")
 public class Address {
   
   @SerializedName("countryCode")
@@ -36,8 +39,9 @@ public class Address {
   private String apartment = null;
 
   /**
+   * Country code
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Country code")
   public String getCountryCode() {
     return countryCode;
   }
@@ -46,8 +50,9 @@ public class Address {
   }
 
   /**
+   * Zip code
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Zip code")
   public String getZipCode() {
     return zipCode;
   }
@@ -56,8 +61,9 @@ public class Address {
   }
 
   /**
+   * City
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "City")
   public String getCity() {
     return city;
   }
@@ -66,8 +72,9 @@ public class Address {
   }
 
   /**
+   * Street address, containing all details
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Street address, containing all details")
   public String getStreetAddress() {
     return streetAddress;
   }
@@ -76,8 +83,9 @@ public class Address {
   }
 
   /**
+   * Street name
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Street name")
   public String getStreetName() {
     return streetName;
   }
@@ -86,8 +94,9 @@ public class Address {
   }
 
   /**
+   * House number
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "House number")
   public String getHouseNo() {
     return houseNo;
   }
@@ -96,8 +105,9 @@ public class Address {
   }
 
   /**
+   * Staircase letter
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Staircase letter")
   public String getStaircase() {
     return staircase;
   }
@@ -106,8 +116,9 @@ public class Address {
   }
 
   /**
+   * Apartment number
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Apartment number")
   public String getApartment() {
     return apartment;
   }

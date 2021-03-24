@@ -35,10 +35,16 @@ public class Payment {
   private Double amount = null;
   @SerializedName("openAmount")
   private Double openAmount = null;
+  public enum TypeEnum {
+     NormalState,  DirectDebit,  Reminder1,  Reminder2,  ReservedPaymentType1,  Nonpayment,  ReservedPaymentType2,  Reimbursement, 
+  };
   @SerializedName("type")
-  private String type = null;
+  private TypeEnum type = null;
+  public enum StateEnum {
+     PaymentOpen,  PartiallyPaid,  Paid,  Reminded,  Foreclosure,  ReservedPaymentState,  Reimbursed,  CreditLoss, 
+  };
   @SerializedName("state")
-  private String state = null;
+  private StateEnum state = null;
   @SerializedName("discPercent")
   private Double discPercent = null;
   @SerializedName("discAmount")
@@ -47,10 +53,11 @@ public class Payment {
   private String reference = null;
 
   /**
+   * Payment invoice ID
    * minimum: -9223372036854775808
    * maximum: 9223372036854775807
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Payment invoice ID")
   public Integer getInvno() {
     return invno;
   }
@@ -79,6 +86,7 @@ public class Payment {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(required = true, value = "")
   public Double getExpenses() {
@@ -89,6 +97,7 @@ public class Payment {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(required = true, value = "")
   public Double getInterest() {
@@ -99,6 +108,7 @@ public class Payment {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(required = true, value = "")
   public Double getVat() {
@@ -109,6 +119,7 @@ public class Payment {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(required = true, value = "")
   public Double getAmount() {
@@ -119,6 +130,7 @@ public class Payment {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(required = true, value = "")
   public Double getOpenAmount() {
@@ -129,26 +141,29 @@ public class Payment {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(required = true, value = "")
-  public String getType() {
+  public TypeEnum getType() {
     return type;
   }
-  public void setType(String type) {
+  public void setType(TypeEnum type) {
     this.type = type;
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(required = true, value = "")
-  public String getState() {
+  public StateEnum getState() {
     return state;
   }
-  public void setState(String state) {
+  public void setState(StateEnum state) {
     this.state = state;
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public Double getDiscPercent() {
@@ -159,6 +174,7 @@ public class Payment {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public Double getDiscAmount() {
@@ -169,8 +185,9 @@ public class Payment {
   }
 
   /**
+   * Reference number
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Reference number")
   public String getReference() {
     return reference;
   }

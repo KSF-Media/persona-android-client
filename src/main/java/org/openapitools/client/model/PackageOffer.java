@@ -12,6 +12,7 @@
 
 package org.openapitools.client.model;
 
+import org.openapitools.client.model.Price;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -21,15 +22,16 @@ public class PackageOffer {
   @SerializedName("months")
   private Integer months = null;
   @SerializedName("totalPrice")
-  private Integer totalPrice = null;
+  private Price totalPrice = null;
   @SerializedName("monthlyPrice")
-  private Integer monthlyPrice = null;
+  private Price monthlyPrice = null;
 
   /**
+   * Duration of the offer
    * minimum: -9223372036854775808
    * maximum: 9223372036854775807
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Duration of the offer")
   public Integer getMonths() {
     return months;
   }
@@ -38,26 +40,22 @@ public class PackageOffer {
   }
 
   /**
-   * minimum: -9223372036854775808
-   * maximum: 9223372036854775807
    **/
   @ApiModelProperty(required = true, value = "")
-  public Integer getTotalPrice() {
+  public Price getTotalPrice() {
     return totalPrice;
   }
-  public void setTotalPrice(Integer totalPrice) {
+  public void setTotalPrice(Price totalPrice) {
     this.totalPrice = totalPrice;
   }
 
   /**
-   * minimum: -9223372036854775808
-   * maximum: 9223372036854775807
    **/
   @ApiModelProperty(required = true, value = "")
-  public Integer getMonthlyPrice() {
+  public Price getMonthlyPrice() {
     return monthlyPrice;
   }
-  public void setMonthlyPrice(Integer monthlyPrice) {
+  public void setMonthlyPrice(Price monthlyPrice) {
     this.monthlyPrice = monthlyPrice;
   }
 

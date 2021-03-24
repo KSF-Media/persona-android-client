@@ -6,14 +6,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**countryCode** | **String** |  | 
-**zipCode** | **String** |  |  [optional]
-**city** | **String** |  |  [optional]
-**streetAddress** | **String** |  | 
-**streetName** | **String** |  |  [optional]
-**houseNo** | **String** |  |  [optional]
-**staircase** | **String** |  |  [optional]
-**apartment** | **String** |  |  [optional]
+**countryCode** | **String** | Country code | 
+**zipCode** | **String** | Zip code |  [optional]
+**city** | **String** | City |  [optional]
+**streetAddress** | **String** | Street address, containing all details | 
+**streetName** | **String** | Street name |  [optional]
+**houseNo** | **String** | House number |  [optional]
+**staircase** | **String** | Staircase letter |  [optional]
+**apartment** | **String** | Apartment number |  [optional]
 
 
 

@@ -6,9 +6,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**months** | **Integer** |  | 
-**totalPrice** | **Integer** |  | 
-**monthlyPrice** | **Integer** |  | 
+**months** | **Integer** | Duration of the offer | 
+**totalPrice** | [**Price**](Price.md) |  | 
+**monthlyPrice** | [**Price**](Price.md) |  | 
 
 
 

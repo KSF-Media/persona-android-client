@@ -69,6 +69,10 @@ public class JsonUtil {
       return new TypeToken<List<CancelSubscriptionReason>>(){}.getType();
     }
     
+    if ("ClaimType".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ClaimType>>(){}.getType();
+    }
+    
     if ("CodeForTokenData".equalsIgnoreCase(className)) {
       return new TypeToken<List<CodeForTokenData>>(){}.getType();
     }
@@ -83,10 +87,6 @@ public class JsonUtil {
     
     if ("DeliveryReclamation".equalsIgnoreCase(className)) {
       return new TypeToken<List<DeliveryReclamation>>(){}.getType();
-    }
-    
-    if ("DeliveryReclamationClaim".equalsIgnoreCase(className)) {
-      return new TypeToken<List<DeliveryReclamationClaim>>(){}.getType();
     }
     
     if ("DescriptionFrequency".equalsIgnoreCase(className)) {
@@ -303,6 +303,10 @@ public class JsonUtil {
       return new TypeToken<CancelSubscriptionReason>(){}.getType();
     }
     
+    if ("ClaimType".equalsIgnoreCase(className)) {
+      return new TypeToken<ClaimType>(){}.getType();
+    }
+    
     if ("CodeForTokenData".equalsIgnoreCase(className)) {
       return new TypeToken<CodeForTokenData>(){}.getType();
     }
@@ -317,10 +321,6 @@ public class JsonUtil {
     
     if ("DeliveryReclamation".equalsIgnoreCase(className)) {
       return new TypeToken<DeliveryReclamation>(){}.getType();
-    }
-    
-    if ("DeliveryReclamationClaim".equalsIgnoreCase(className)) {
-      return new TypeToken<DeliveryReclamationClaim>(){}.getType();
     }
     
     if ("DescriptionFrequency".equalsIgnoreCase(className)) {

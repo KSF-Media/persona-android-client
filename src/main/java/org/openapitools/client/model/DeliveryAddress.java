@@ -28,8 +28,9 @@ public class DeliveryAddress {
   private String temporaryName = null;
 
   /**
+   * Street address, containing all details
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Street address, containing all details")
   public String getStreetAddress() {
     return streetAddress;
   }
@@ -38,6 +39,7 @@ public class DeliveryAddress {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(required = true, value = "")
   public String getZipcode() {
@@ -48,6 +50,7 @@ public class DeliveryAddress {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public String getCity() {
@@ -58,8 +61,9 @@ public class DeliveryAddress {
   }
 
   /**
+   * Temporary name (or c/o) of delivery address
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Temporary name (or c/o) of delivery address")
   public String getTemporaryName() {
     return temporaryName;
   }

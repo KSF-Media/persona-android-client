@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**invno** | **Integer** |  | 
+**invno** | **Integer** | Payment invoice ID | 
 **date** | [**Date**](Date.md) |  | 
 **dueDate** | [**Date**](Date.md) |  | 
 **expenses** | **Double** |  | 
@@ -14,11 +14,23 @@ Name | Type | Description | Notes
 **vat** | **Double** |  | 
 **amount** | **Double** |  | 
 **openAmount** | **Double** |  | 
-**type** | **String** |  | 
-**state** | **String** |  | 
+**type** | [**TypeEnum**](#TypeEnum) |  | 
+**state** | [**StateEnum**](#StateEnum) |  | 
 **discPercent** | **Double** |  |  [optional]
 **discAmount** | **Double** |  |  [optional]
-**reference** | **String** |  |  [optional]
+**reference** | **String** | Reference number |  [optional]
+
+
+## Enum: TypeEnum
+
+Name | Value
+---- | -----
+
+
+## Enum: StateEnum
+
+Name | Value
+---- | -----
 
 
 

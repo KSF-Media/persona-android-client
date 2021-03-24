@@ -13,7 +13,7 @@
 package org.openapitools.client.model;
 
 import java.util.Date;
-import org.openapitools.client.model.DeliveryReclamationClaim;
+import org.openapitools.client.model.ClaimType;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -23,7 +23,7 @@ public class NewDeliveryReclamation {
   @SerializedName("publicationDate")
   private Date publicationDate = null;
   @SerializedName("claim")
-  private DeliveryReclamationClaim claim = null;
+  private ClaimType claim = null;
 
   /**
    **/
@@ -38,10 +38,10 @@ public class NewDeliveryReclamation {
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public DeliveryReclamationClaim getClaim() {
+  public ClaimType getClaim() {
     return claim;
   }
-  public void setClaim(DeliveryReclamationClaim claim) {
+  public void setClaim(ClaimType claim) {
     this.claim = claim;
   }
 
