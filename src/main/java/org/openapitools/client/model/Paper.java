@@ -12,6 +12,7 @@
 
 package org.openapitools.client.model;
 
+import org.openapitools.client.model.PaperCode;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -19,18 +20,17 @@ import com.google.gson.annotations.SerializedName;
 public class Paper {
   
   @SerializedName("code")
-  private String code = null;
+  private PaperCode code = null;
   @SerializedName("name")
   private String name = null;
 
   /**
-   * Identifying code of the paper
    **/
-  @ApiModelProperty(required = true, value = "Identifying code of the paper")
-  public String getCode() {
+  @ApiModelProperty(required = true, value = "")
+  public PaperCode getCode() {
     return code;
   }
-  public void setCode(String code) {
+  public void setCode(PaperCode code) {
     this.code = code;
   }
 

@@ -69,10 +69,6 @@ public class JsonUtil {
       return new TypeToken<List<CancelSubscriptionReason>>(){}.getType();
     }
     
-    if ("ClaimType".equalsIgnoreCase(className)) {
-      return new TypeToken<List<ClaimType>>(){}.getType();
-    }
-    
     if ("CodeForTokenData".equalsIgnoreCase(className)) {
       return new TypeToken<List<CodeForTokenData>>(){}.getType();
     }
@@ -301,10 +297,6 @@ public class JsonUtil {
     
     if ("CancelSubscriptionReason".equalsIgnoreCase(className)) {
       return new TypeToken<CancelSubscriptionReason>(){}.getType();
-    }
-    
-    if ("ClaimType".equalsIgnoreCase(className)) {
-      return new TypeToken<ClaimType>(){}.getType();
     }
     
     if ("CodeForTokenData".equalsIgnoreCase(className)) {

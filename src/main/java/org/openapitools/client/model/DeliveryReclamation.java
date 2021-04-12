@@ -13,6 +13,7 @@
 package org.openapitools.client.model;
 
 import java.util.Date;
+import org.openapitools.client.model.PaperCode;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -30,6 +31,8 @@ public class DeliveryReclamation {
   private Integer subscriptionNumber = null;
   @SerializedName("date")
   private Date date = null;
+  @SerializedName("paper")
+  private PaperCode paper = null;
   @SerializedName("publicationDate")
   private Date publicationDate = null;
   public enum ClaimEnum {
@@ -89,6 +92,16 @@ public class DeliveryReclamation {
 
   /**
    **/
+  @ApiModelProperty(value = "")
+  public PaperCode getPaper() {
+    return paper;
+  }
+  public void setPaper(PaperCode paper) {
+    this.paper = paper;
+  }
+
+  /**
+   **/
   @ApiModelProperty(required = true, value = "")
   public Date getPublicationDate() {
     return publicationDate;
@@ -122,6 +135,7 @@ public class DeliveryReclamation {
         (this.customerNumber == null ? deliveryReclamation.customerNumber == null : this.customerNumber.equals(deliveryReclamation.customerNumber)) &&
         (this.subscriptionNumber == null ? deliveryReclamation.subscriptionNumber == null : this.subscriptionNumber.equals(deliveryReclamation.subscriptionNumber)) &&
         (this.date == null ? deliveryReclamation.date == null : this.date.equals(deliveryReclamation.date)) &&
+        (this.paper == null ? deliveryReclamation.paper == null : this.paper.equals(deliveryReclamation.paper)) &&
         (this.publicationDate == null ? deliveryReclamation.publicationDate == null : this.publicationDate.equals(deliveryReclamation.publicationDate)) &&
         (this.claim == null ? deliveryReclamation.claim == null : this.claim.equals(deliveryReclamation.claim));
   }
@@ -133,6 +147,7 @@ public class DeliveryReclamation {
     result = 31 * result + (this.customerNumber == null ? 0: this.customerNumber.hashCode());
     result = 31 * result + (this.subscriptionNumber == null ? 0: this.subscriptionNumber.hashCode());
     result = 31 * result + (this.date == null ? 0: this.date.hashCode());
+    result = 31 * result + (this.paper == null ? 0: this.paper.hashCode());
     result = 31 * result + (this.publicationDate == null ? 0: this.publicationDate.hashCode());
     result = 31 * result + (this.claim == null ? 0: this.claim.hashCode());
     return result;
@@ -147,6 +162,7 @@ public class DeliveryReclamation {
     sb.append("  customerNumber: ").append(customerNumber).append("\n");
     sb.append("  subscriptionNumber: ").append(subscriptionNumber).append("\n");
     sb.append("  date: ").append(date).append("\n");
+    sb.append("  paper: ").append(paper).append("\n");
     sb.append("  publicationDate: ").append(publicationDate).append("\n");
     sb.append("  claim: ").append(claim).append("\n");
     sb.append("}\n");

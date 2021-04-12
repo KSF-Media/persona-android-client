@@ -13,17 +13,35 @@
 package org.openapitools.client.model;
 
 import java.util.Date;
-import org.openapitools.client.model.ClaimType;
+import org.openapitools.client.model.PaperCode;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-@ApiModel(description = "")
+/**
+ * Data for a delivery reclamation creation.
+ **/
+@ApiModel(description = "Data for a delivery reclamation creation.")
 public class NewDeliveryReclamation {
   
+  @SerializedName("paper")
+  private PaperCode paper = null;
   @SerializedName("publicationDate")
   private Date publicationDate = null;
+  public enum ClaimEnum {
+     Extension,  NewDelivery, 
+  };
   @SerializedName("claim")
-  private ClaimType claim = null;
+  private ClaimEnum claim = null;
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public PaperCode getPaper() {
+    return paper;
+  }
+  public void setPaper(PaperCode paper) {
+    this.paper = paper;
+  }
 
   /**
    **/
@@ -36,12 +54,13 @@ public class NewDeliveryReclamation {
   }
 
   /**
+   * The type of claim for the reclamation
    **/
-  @ApiModelProperty(required = true, value = "")
-  public ClaimType getClaim() {
+  @ApiModelProperty(required = true, value = "The type of claim for the reclamation")
+  public ClaimEnum getClaim() {
     return claim;
   }
-  public void setClaim(ClaimType claim) {
+  public void setClaim(ClaimEnum claim) {
     this.claim = claim;
   }
 
@@ -55,13 +74,15 @@ public class NewDeliveryReclamation {
       return false;
     }
     NewDeliveryReclamation newDeliveryReclamation = (NewDeliveryReclamation) o;
-    return (this.publicationDate == null ? newDeliveryReclamation.publicationDate == null : this.publicationDate.equals(newDeliveryReclamation.publicationDate)) &&
+    return (this.paper == null ? newDeliveryReclamation.paper == null : this.paper.equals(newDeliveryReclamation.paper)) &&
+        (this.publicationDate == null ? newDeliveryReclamation.publicationDate == null : this.publicationDate.equals(newDeliveryReclamation.publicationDate)) &&
         (this.claim == null ? newDeliveryReclamation.claim == null : this.claim.equals(newDeliveryReclamation.claim));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
+    result = 31 * result + (this.paper == null ? 0: this.paper.hashCode());
     result = 31 * result + (this.publicationDate == null ? 0: this.publicationDate.hashCode());
     result = 31 * result + (this.claim == null ? 0: this.claim.hashCode());
     return result;
@@ -72,6 +93,7 @@ public class NewDeliveryReclamation {
     StringBuilder sb = new StringBuilder();
     sb.append("class NewDeliveryReclamation {\n");
     
+    sb.append("  paper: ").append(paper).append("\n");
     sb.append("  publicationDate: ").append(publicationDate).append("\n");
     sb.append("  claim: ").append(claim).append("\n");
     sb.append("}\n");
