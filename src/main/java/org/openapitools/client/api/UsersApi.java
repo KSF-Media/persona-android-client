@@ -206,7 +206,7 @@ public class UsersApi {
   }
   /**
   * Search for users
-  * 
+  * deprecated
    * @param query 
    * @param authUser 
    * @param authorization 
@@ -273,7 +273,7 @@ public class UsersApi {
 
       /**
    * Search for users
-   * 
+   * deprecated
    * @param query    * @param authUser    * @param authorization 
   */
   public void usersSearchGet (String query, UUID authUser, String authorization, final Response.Listener<List<User>> responseListener, final Response.ErrorListener errorListener) {

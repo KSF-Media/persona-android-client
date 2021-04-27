@@ -93,6 +93,10 @@ public class JsonUtil {
       return new TypeToken<List<EntitlementAccess>>(){}.getType();
     }
     
+    if ("FaroUser".equalsIgnoreCase(className)) {
+      return new TypeToken<List<FaroUser>>(){}.getType();
+    }
+    
     if ("ForgotPasswordData".equalsIgnoreCase(className)) {
       return new TypeToken<List<ForgotPasswordData>>(){}.getType();
     }
@@ -155,6 +159,10 @@ public class JsonUtil {
     
     if ("InlineResponse500InternalServerError".equalsIgnoreCase(className)) {
       return new TypeToken<List<InlineResponse500InternalServerError>>(){}.getType();
+    }
+    
+    if ("JanrainUser".equalsIgnoreCase(className)) {
+      return new TypeToken<List<JanrainUser>>(){}.getType();
     }
     
     if ("LegalConsent".equalsIgnoreCase(className)) {
@@ -227,6 +235,14 @@ public class JsonUtil {
     
     if ("Product".equalsIgnoreCase(className)) {
       return new TypeToken<List<Product>>(){}.getType();
+    }
+    
+    if ("SearchQuery".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchQuery>>(){}.getType();
+    }
+    
+    if ("SearchResult".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchResult>>(){}.getType();
     }
     
     if ("Subscription".equalsIgnoreCase(className)) {
@@ -323,6 +339,10 @@ public class JsonUtil {
       return new TypeToken<EntitlementAccess>(){}.getType();
     }
     
+    if ("FaroUser".equalsIgnoreCase(className)) {
+      return new TypeToken<FaroUser>(){}.getType();
+    }
+    
     if ("ForgotPasswordData".equalsIgnoreCase(className)) {
       return new TypeToken<ForgotPasswordData>(){}.getType();
     }
@@ -385,6 +405,10 @@ public class JsonUtil {
     
     if ("InlineResponse500InternalServerError".equalsIgnoreCase(className)) {
       return new TypeToken<InlineResponse500InternalServerError>(){}.getType();
+    }
+    
+    if ("JanrainUser".equalsIgnoreCase(className)) {
+      return new TypeToken<JanrainUser>(){}.getType();
     }
     
     if ("LegalConsent".equalsIgnoreCase(className)) {
@@ -457,6 +481,14 @@ public class JsonUtil {
     
     if ("Product".equalsIgnoreCase(className)) {
       return new TypeToken<Product>(){}.getType();
+    }
+    
+    if ("SearchQuery".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchQuery>(){}.getType();
+    }
+    
+    if ("SearchResult".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchResult>(){}.getType();
     }
     
     if ("Subscription".equalsIgnoreCase(className)) {

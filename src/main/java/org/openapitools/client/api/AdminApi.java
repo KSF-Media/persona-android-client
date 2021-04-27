@@ -23,8 +23,11 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
+import org.openapitools.client.model.InlineResponse400;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.SearchQuery;
+import org.openapitools.client.model.SearchResult;
 import java.util.UUID;
-import org.openapitools.client.model.User;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -57,24 +60,23 @@ public class AdminApi {
   }
 
   /**
-  * Get user by admin credentials.
-  * Authorization header expects the following format ‘OAuth {token}’
-   * @param uuid 
+  * Search for users
+  * 
+   * @param body 
    * @param authUser 
    * @param authorization 
-   * @param cacheControl 
-   * @return User
+   * @return List<SearchResult>
   */
-  public User adminUuidGet (UUID uuid, UUID authUser, String authorization, String cacheControl) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = null;
-    // verify the required parameter 'uuid' is set
-    if (uuid == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'uuid' when calling adminUuidGet",
-        new ApiException(400, "Missing the required parameter 'uuid' when calling adminUuidGet"));
+  public List<SearchResult> adminSearchPost (SearchQuery body, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = body;
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling adminSearchPost",
+        new ApiException(400, "Missing the required parameter 'body' when calling adminSearchPost"));
     }
 
     // create path and map variables
-    String path = "/admin/{uuid}".replaceAll("\\{" + "uuid" + "\\}", apiInvoker.escapeString(uuid.toString()));
+    String path = "/admin/search";
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -84,8 +86,8 @@ public class AdminApi {
     Map<String, String> formParams = new HashMap<String, String>();
     headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
-    headerParams.put("Cache-Control", ApiInvoker.parameterToString(cacheControl));
     String[] contentTypes = {
+      "application/json;charset=utf-8"
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
 
@@ -101,9 +103,9 @@ public class AdminApi {
     String[] authNames = new String[] {  };
 
     try {
-      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (User) ApiInvoker.deserialize(localVarResponse, "", User.class);
+         return (List<SearchResult>) ApiInvoker.deserialize(localVarResponse, "array", SearchResult.class);
       } else {
          return null;
       }
@@ -125,21 +127,21 @@ public class AdminApi {
   }
 
       /**
-   * Get user by admin credentials.
-   * Authorization header expects the following format ‘OAuth {token}’
-   * @param uuid    * @param authUser    * @param authorization    * @param cacheControl 
+   * Search for users
+   * 
+   * @param body    * @param authUser    * @param authorization 
   */
-  public void adminUuidGet (UUID uuid, UUID authUser, String authorization, String cacheControl, final Response.Listener<User> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = null;
+  public void adminSearchPost (SearchQuery body, UUID authUser, String authorization, final Response.Listener<List<SearchResult>> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = body;
 
-    // verify the required parameter 'uuid' is set
-    if (uuid == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'uuid' when calling adminUuidGet",
-        new ApiException(400, "Missing the required parameter 'uuid' when calling adminUuidGet"));
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling adminSearchPost",
+        new ApiException(400, "Missing the required parameter 'body' when calling adminSearchPost"));
     }
 
     // create path and map variables
-    String path = "/admin/{uuid}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "uuid" + "\\}", apiInvoker.escapeString(uuid.toString()));
+    String path = "/admin/search".replaceAll("\\{format\\}","json");
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -151,10 +153,9 @@ public class AdminApi {
 
     headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
-    headerParams.put("Cache-Control", ApiInvoker.parameterToString(cacheControl));
 
     String[] contentTypes = {
-      
+      "application/json;charset=utf-8"
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
 
@@ -172,12 +173,12 @@ public class AdminApi {
     String[] authNames = new String[] {  };
 
     try {
-      apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
+      apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
         new Response.Listener<String>() {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((User) ApiInvoker.deserialize(localVarResponse,  "", User.class));
+              responseListener.onResponse((List<SearchResult>) ApiInvoker.deserialize(localVarResponse,  "array", SearchResult.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
