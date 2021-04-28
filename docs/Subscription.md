@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **pendingAddressChanges** | [**List&lt;PendingAddressChange&gt;**](PendingAddressChange.md) | Pending and ongoing temporary address changes |  [optional]
 **orderNumber** | **String** | Order number of subscription |  [optional]
 **paymentMethod** | [**PaymentMethodEnum**](#PaymentMethodEnum) | Payment method of subscription |  [optional]
-**paymentMethodId** | [**PaymentMethodId**](PaymentMethodId.md) |  |  [optional]
+**paymentMethodId** | **Integer** |  |  [optional]
 
 
 ## Enum: KindEnum

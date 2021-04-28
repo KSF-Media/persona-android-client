@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**paper** | [**PaperCode**](PaperCode.md) |  |  [optional]
+**paper** | **String** |  |  [optional]
 **publicationDate** | [**Date**](Date.md) |  | 
 **claim** | [**ClaimEnum**](#ClaimEnum) | The type of claim for the reclamation | 
 

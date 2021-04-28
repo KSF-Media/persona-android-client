@@ -17,7 +17,6 @@ import org.openapitools.client.model.DeliveryAddress;
 import org.openapitools.client.model.ModelPackage;
 import org.openapitools.client.model.PackageCampaign;
 import org.openapitools.client.model.PausedSubscription;
-import org.openapitools.client.model.PaymentMethodId;
 import org.openapitools.client.model.PendingAddressChange;
 import org.openapitools.client.model.SubscriptionDates;
 import io.swagger.annotations.*;
@@ -73,7 +72,7 @@ public class Subscription {
   @SerializedName("paymentMethod")
   private PaymentMethodEnum paymentMethod = null;
   @SerializedName("paymentMethodId")
-  private PaymentMethodId paymentMethodId = null;
+  private Integer paymentMethodId = null;
 
   /**
    * Subscription Id - primary key together with extno
@@ -267,12 +266,14 @@ public class Subscription {
   }
 
   /**
+   * minimum: -9223372036854775808
+   * maximum: 9223372036854775807
    **/
   @ApiModelProperty(value = "")
-  public PaymentMethodId getPaymentMethodId() {
+  public Integer getPaymentMethodId() {
     return paymentMethodId;
   }
-  public void setPaymentMethodId(PaymentMethodId paymentMethodId) {
+  public void setPaymentMethodId(Integer paymentMethodId) {
     this.paymentMethodId = paymentMethodId;
   }
 

@@ -13,7 +13,6 @@
 package org.openapitools.client.model;
 
 import java.util.Date;
-import org.openapitools.client.model.PaperCode;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -24,7 +23,7 @@ import com.google.gson.annotations.SerializedName;
 public class NewDeliveryReclamation {
   
   @SerializedName("paper")
-  private PaperCode paper = null;
+  private String paper = null;
   @SerializedName("publicationDate")
   private Date publicationDate = null;
   public enum ClaimEnum {
@@ -36,10 +35,10 @@ public class NewDeliveryReclamation {
   /**
    **/
   @ApiModelProperty(value = "")
-  public PaperCode getPaper() {
+  public String getPaper() {
     return paper;
   }
-  public void setPaper(PaperCode paper) {
+  public void setPaper(String paper) {
     this.paper = paper;
   }
 
