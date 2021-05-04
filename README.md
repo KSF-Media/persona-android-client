@@ -94,6 +94,7 @@ Class | Method | HTTP request | Description
 *LoginApi* | [**loginSomePost**](docs/LoginApi.md#loginSomePost) | **POST** /login/some | Login with social media
 *LoginApi* | [**loginSsoPost**](docs/LoginApi.md#loginSsoPost) | **POST** /login/sso | Login with the AccessToken given by the SSO auth
 *LoginApi* | [**loginUuidDelete**](docs/LoginApi.md#loginUuidDelete) | **DELETE** /login/{uuid} | Logout
+*UsersApi* | [**usersAdminPost**](docs/UsersApi.md#usersAdminPost) | **POST** /users/admin | Create a new user with admin options.
 *UsersApi* | [**usersPost**](docs/UsersApi.md#usersPost) | **POST** /users | Create a new user.
 *UsersApi* | [**usersSearchGet**](docs/UsersApi.md#usersSearchGet) | **GET** /users/search | Search for users
 *UsersApi* | [**usersTemporaryPost**](docs/UsersApi.md#usersTemporaryPost) | **POST** /users/temporary | Create a new user with email.
@@ -119,6 +120,7 @@ Class | Method | HTTP request | Description
 
  - [ActiveDays](docs/ActiveDays.md)
  - [Address](docs/Address.md)
+ - [AdminNewUser](docs/AdminNewUser.md)
  - [CancelSubscriptionReason](docs/CancelSubscriptionReason.md)
  - [CodeForTokenData](docs/CodeForTokenData.md)
  - [DeleteTempAddressChangeDates](docs/DeleteTempAddressChangeDates.md)

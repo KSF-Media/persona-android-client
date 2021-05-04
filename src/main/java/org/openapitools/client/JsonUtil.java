@@ -65,6 +65,10 @@ public class JsonUtil {
       return new TypeToken<List<Address>>(){}.getType();
     }
     
+    if ("AdminNewUser".equalsIgnoreCase(className)) {
+      return new TypeToken<List<AdminNewUser>>(){}.getType();
+    }
+    
     if ("CancelSubscriptionReason".equalsIgnoreCase(className)) {
       return new TypeToken<List<CancelSubscriptionReason>>(){}.getType();
     }
@@ -309,6 +313,10 @@ public class JsonUtil {
     
     if ("Address".equalsIgnoreCase(className)) {
       return new TypeToken<Address>(){}.getType();
+    }
+    
+    if ("AdminNewUser".equalsIgnoreCase(className)) {
+      return new TypeToken<AdminNewUser>(){}.getType();
     }
     
     if ("CancelSubscriptionReason".equalsIgnoreCase(className)) {
