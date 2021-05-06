@@ -4,7 +4,6 @@ All URIs are relative to *http://http:/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**usersAdminPost**](UsersApi.md#usersAdminPost) | **POST** /users/admin | Create a new user with admin options.
 [**usersPost**](UsersApi.md#usersPost) | **POST** /users | Create a new user.
 [**usersSearchGet**](UsersApi.md#usersSearchGet) | **GET** /users/search | Search for users
 [**usersTemporaryPost**](UsersApi.md#usersTemporaryPost) | **POST** /users/temporary | Create a new user with email.
@@ -25,54 +24,6 @@ Method | HTTP request | Description
 [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
 [**usersUuidSubscriptionsSubsnoUnpausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoUnpausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/unpause | Pause users subscription
 
-
-
-## usersAdminPost
-
-> LoginResponse usersAdminPost(body, authUser, authorization)
-
-Create a new user with admin options.
-
-### Example
-
-```java
-// Import classes:
-//import org.openapitools.client.api.UsersApi;
-
-UsersApi apiInstance = new UsersApi();
-AdminNewUser body = new AdminNewUser(); // AdminNewUser | 
-UUID authUser = null; // UUID | 
-String authorization = null; // String | 
-try {
-    LoginResponse result = apiInstance.usersAdminPost(body, authUser, authorization);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#usersAdminPost");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**AdminNewUser**](AdminNewUser.md)|  |
- **authUser** | [**UUID**](.md)|  | [optional] [default to null]
- **authorization** | **String**|  | [optional] [default to null]
-
-### Return type
-
-[**LoginResponse**](LoginResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json;charset=utf-8
-- **Accept**: application/json;charset=utf-8
 
 
 ## usersPost
