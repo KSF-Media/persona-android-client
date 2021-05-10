@@ -20,8 +20,8 @@ public class UpdatePasswordData {
   
   @SerializedName("password")
   private String password = null;
-  @SerializedName("password_confirm")
-  private String passwordConfirm = null;
+  @SerializedName("confirmPassword")
+  private String confirmPassword = null;
   @SerializedName("token")
   private String token = null;
 
@@ -38,11 +38,11 @@ public class UpdatePasswordData {
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public String getPasswordConfirm() {
-    return passwordConfirm;
+  public String getConfirmPassword() {
+    return confirmPassword;
   }
-  public void setPasswordConfirm(String passwordConfirm) {
-    this.passwordConfirm = passwordConfirm;
+  public void setConfirmPassword(String confirmPassword) {
+    this.confirmPassword = confirmPassword;
   }
 
   /**
@@ -66,7 +66,7 @@ public class UpdatePasswordData {
     }
     UpdatePasswordData updatePasswordData = (UpdatePasswordData) o;
     return (this.password == null ? updatePasswordData.password == null : this.password.equals(updatePasswordData.password)) &&
-        (this.passwordConfirm == null ? updatePasswordData.passwordConfirm == null : this.passwordConfirm.equals(updatePasswordData.passwordConfirm)) &&
+        (this.confirmPassword == null ? updatePasswordData.confirmPassword == null : this.confirmPassword.equals(updatePasswordData.confirmPassword)) &&
         (this.token == null ? updatePasswordData.token == null : this.token.equals(updatePasswordData.token));
   }
 
@@ -74,7 +74,7 @@ public class UpdatePasswordData {
   public int hashCode() {
     int result = 17;
     result = 31 * result + (this.password == null ? 0: this.password.hashCode());
-    result = 31 * result + (this.passwordConfirm == null ? 0: this.passwordConfirm.hashCode());
+    result = 31 * result + (this.confirmPassword == null ? 0: this.confirmPassword.hashCode());
     result = 31 * result + (this.token == null ? 0: this.token.hashCode());
     return result;
   }
@@ -85,7 +85,7 @@ public class UpdatePasswordData {
     sb.append("class UpdatePasswordData {\n");
     
     sb.append("  password: ").append(password).append("\n");
-    sb.append("  passwordConfirm: ").append(passwordConfirm).append("\n");
+    sb.append("  confirmPassword: ").append(confirmPassword).append("\n");
     sb.append("  token: ").append(token).append("\n");
     sb.append("}\n");
     return sb.toString();

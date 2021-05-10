@@ -7,7 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **password** | **String** |  | 
-**passwordConfirm** | **String** |  | 
+**confirmPassword** | **String** |  | 
 **token** | **String** |  | 
 
 

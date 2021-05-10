@@ -64,12 +64,12 @@ public class AccountApiExample {
 
     public static void main(String[] args) {
         AccountApi apiInstance = new AccountApi();
-        CodeForTokenData body = new CodeForTokenData(); // CodeForTokenData | 
+        ForgotPasswordData body = new ForgotPasswordData(); // ForgotPasswordData | 
         try {
-            TokenResponse result = apiInstance.accountCodeForTokenPost(body);
+            List<Object> result = apiInstance.accountPasswordForgotPost(body);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountApi#accountCodeForTokenPost");
+            System.err.println("Exception when calling AccountApi#accountPasswordForgotPost");
             e.printStackTrace();
         }
     }
@@ -83,9 +83,8 @@ All URIs are relative to *http://http:/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AccountApi* | [**accountCodeForTokenPost**](docs/AccountApi.md#accountCodeForTokenPost) | **POST** /account/codeForToken | Get a password reset token
-*AccountApi* | [**accountForgotPassPost**](docs/AccountApi.md#accountForgotPassPost) | **POST** /account/forgotPass | Forgot Password
-*AccountApi* | [**accountResetForgottenPasswordPost**](docs/AccountApi.md#accountResetForgottenPasswordPost) | **POST** /account/resetForgottenPassword | Reset a forgotten password with a token
+*AccountApi* | [**accountPasswordForgotPost**](docs/AccountApi.md#accountPasswordForgotPost) | **POST** /account/password/forgot | Request password reset link
+*AccountApi* | [**accountPasswordResetPost**](docs/AccountApi.md#accountPasswordResetPost) | **POST** /account/password/reset | Reset a forgotten password with a token
 *AdminApi* | [**adminSearchPost**](docs/AdminApi.md#adminSearchPost) | **POST** /admin/search | Search for users
 *AdminApi* | [**adminUserPost**](docs/AdminApi.md#adminUserPost) | **POST** /admin/user | Create a new user with admin options.
 *EntitlementsApi* | [**entitlementsAllowPost**](docs/EntitlementsApi.md#entitlementsAllowPost) | **POST** /entitlements/allow | 
@@ -122,7 +121,6 @@ Class | Method | HTTP request | Description
  - [Address](docs/Address.md)
  - [AdminNewUser](docs/AdminNewUser.md)
  - [CancelSubscriptionReason](docs/CancelSubscriptionReason.md)
- - [CodeForTokenData](docs/CodeForTokenData.md)
  - [DeleteTempAddressChangeDates](docs/DeleteTempAddressChangeDates.md)
  - [DeliveryAddress](docs/DeliveryAddress.md)
  - [DeliveryReclamation](docs/DeliveryReclamation.md)
@@ -173,7 +171,6 @@ Class | Method | HTTP request | Description
  - [SubscriptionPayments](docs/SubscriptionPayments.md)
  - [TemporaryAddressChange](docs/TemporaryAddressChange.md)
  - [TemporaryAddressChangeDates](docs/TemporaryAddressChangeDates.md)
- - [TokenResponse](docs/TokenResponse.md)
  - [UpdatePasswordData](docs/UpdatePasswordData.md)
  - [User](docs/User.md)
  - [UserUpdate](docs/UserUpdate.md)

@@ -23,11 +23,9 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
-import org.openapitools.client.model.CodeForTokenData;
 import org.openapitools.client.model.ForgotPasswordData;
 import org.openapitools.client.model.InlineResponse400;
 import org.openapitools.client.model.InlineResponse415;
-import org.openapitools.client.model.TokenResponse;
 import org.openapitools.client.model.UpdatePasswordData;
 
 import org.apache.http.HttpEntity;
@@ -61,149 +59,21 @@ public class AccountApi {
   }
 
   /**
-  * Get a password reset token
-  * 
-   * @param body 
-   * @return TokenResponse
-  */
-  public TokenResponse accountCodeForTokenPost (CodeForTokenData body) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = body;
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling accountCodeForTokenPost",
-        new ApiException(400, "Missing the required parameter 'body' when calling accountCodeForTokenPost"));
-    }
-
-    // create path and map variables
-    String path = "/account/codeForToken";
-
-    // query params
-    List<Pair> queryParams = new ArrayList<Pair>();
-    // header params
-    Map<String, String> headerParams = new HashMap<String, String>();
-    // form params
-    Map<String, String> formParams = new HashMap<String, String>();
-    String[] contentTypes = {
-      "application/json;charset=utf-8"
-    };
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-
-    if (contentType.startsWith("multipart/form-data")) {
-      // file uploading
-      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
-      HttpEntity httpEntity = localVarBuilder.build();
-      postBody = httpEntity;
-    } else {
-      // normal form params
-    }
-
-    String[] authNames = new String[] {  };
-
-    try {
-      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
-      if (localVarResponse != null) {
-         return (TokenResponse) ApiInvoker.deserialize(localVarResponse, "", TokenResponse.class);
-      } else {
-         return null;
-      }
-    } catch (ApiException ex) {
-       throw ex;
-    } catch (InterruptedException ex) {
-       throw ex;
-    } catch (ExecutionException ex) {
-      if (ex.getCause() instanceof VolleyError) {
-        VolleyError volleyError = (VolleyError)ex.getCause();
-        if (volleyError.networkResponse != null) {
-          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-        }
-      }
-      throw ex;
-    } catch (TimeoutException ex) {
-      throw ex;
-    }
-  }
-
-      /**
-   * Get a password reset token
-   * 
-   * @param body 
-  */
-  public void accountCodeForTokenPost (CodeForTokenData body, final Response.Listener<TokenResponse> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = body;
-
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling accountCodeForTokenPost",
-        new ApiException(400, "Missing the required parameter 'body' when calling accountCodeForTokenPost"));
-    }
-
-    // create path and map variables
-    String path = "/account/codeForToken".replaceAll("\\{format\\}","json");
-
-    // query params
-    List<Pair> queryParams = new ArrayList<Pair>();
-    // header params
-    Map<String, String> headerParams = new HashMap<String, String>();
-    // form params
-    Map<String, String> formParams = new HashMap<String, String>();
-
-
-
-    String[] contentTypes = {
-      "application/json;charset=utf-8"
-    };
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-
-    if (contentType.startsWith("multipart/form-data")) {
-      // file uploading
-      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
-      
-
-      HttpEntity httpEntity = localVarBuilder.build();
-      postBody = httpEntity;
-    } else {
-      // normal form params
-          }
-
-    String[] authNames = new String[] {  };
-
-    try {
-      apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
-        new Response.Listener<String>() {
-          @Override
-          public void onResponse(String localVarResponse) {
-            try {
-              responseListener.onResponse((TokenResponse) ApiInvoker.deserialize(localVarResponse,  "", TokenResponse.class));
-            } catch (ApiException exception) {
-               errorListener.onErrorResponse(new VolleyError(exception));
-            }
-          }
-      }, new Response.ErrorListener() {
-          @Override
-          public void onErrorResponse(VolleyError error) {
-            errorListener.onErrorResponse(error);
-          }
-      });
-    } catch (ApiException ex) {
-      errorListener.onErrorResponse(new VolleyError(ex));
-    }
-  }
-  /**
-  * Forgot Password
+  * Request password reset link
   * 
    * @param body 
    * @return List<Object>
   */
-  public List<Object> accountForgotPassPost (ForgotPasswordData body) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<Object> accountPasswordForgotPost (ForgotPasswordData body) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = body;
     // verify the required parameter 'body' is set
     if (body == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling accountForgotPassPost",
-        new ApiException(400, "Missing the required parameter 'body' when calling accountForgotPassPost"));
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling accountPasswordForgotPost",
+        new ApiException(400, "Missing the required parameter 'body' when calling accountPasswordForgotPost"));
     }
 
     // create path and map variables
-    String path = "/account/forgotPass";
+    String path = "/account/password/forgot";
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -252,21 +122,21 @@ public class AccountApi {
   }
 
       /**
-   * Forgot Password
+   * Request password reset link
    * 
    * @param body 
   */
-  public void accountForgotPassPost (ForgotPasswordData body, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
+  public void accountPasswordForgotPost (ForgotPasswordData body, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = body;
 
     // verify the required parameter 'body' is set
     if (body == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling accountForgotPassPost",
-        new ApiException(400, "Missing the required parameter 'body' when calling accountForgotPassPost"));
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling accountPasswordForgotPost",
+        new ApiException(400, "Missing the required parameter 'body' when calling accountPasswordForgotPost"));
     }
 
     // create path and map variables
-    String path = "/account/forgotPass".replaceAll("\\{format\\}","json");
+    String path = "/account/password/forgot".replaceAll("\\{format\\}","json");
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -322,16 +192,16 @@ public class AccountApi {
    * @param body 
    * @return List<Object>
   */
-  public List<Object> accountResetForgottenPasswordPost (UpdatePasswordData body) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<Object> accountPasswordResetPost (UpdatePasswordData body) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = body;
     // verify the required parameter 'body' is set
     if (body == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling accountResetForgottenPasswordPost",
-        new ApiException(400, "Missing the required parameter 'body' when calling accountResetForgottenPasswordPost"));
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling accountPasswordResetPost",
+        new ApiException(400, "Missing the required parameter 'body' when calling accountPasswordResetPost"));
     }
 
     // create path and map variables
-    String path = "/account/resetForgottenPassword";
+    String path = "/account/password/reset";
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -384,17 +254,17 @@ public class AccountApi {
    * 
    * @param body 
   */
-  public void accountResetForgottenPasswordPost (UpdatePasswordData body, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
+  public void accountPasswordResetPost (UpdatePasswordData body, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = body;
 
     // verify the required parameter 'body' is set
     if (body == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling accountResetForgottenPasswordPost",
-        new ApiException(400, "Missing the required parameter 'body' when calling accountResetForgottenPasswordPost"));
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling accountPasswordResetPost",
+        new ApiException(400, "Missing the required parameter 'body' when calling accountPasswordResetPost"));
     }
 
     // create path and map variables
-    String path = "/account/resetForgottenPassword".replaceAll("\\{format\\}","json");
+    String path = "/account/password/reset".replaceAll("\\{format\\}","json");
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
