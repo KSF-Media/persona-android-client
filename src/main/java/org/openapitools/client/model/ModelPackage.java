@@ -28,8 +28,8 @@ public class ModelPackage {
   private String id = null;
   @SerializedName("name")
   private String name = null;
-  @SerializedName("description")
-  private List<String> description = null;
+  @SerializedName("info")
+  private List<String> info = null;
   @SerializedName("paper")
   private Paper paper = null;
   @SerializedName("digitalOnly")
@@ -73,11 +73,11 @@ public class ModelPackage {
    * Package description
    **/
   @ApiModelProperty(required = true, value = "Package description")
-  public List<String> getDescription() {
-    return description;
+  public List<String> getInfo() {
+    return info;
   }
-  public void setDescription(List<String> description) {
-    this.description = description;
+  public void setInfo(List<String> info) {
+    this.info = info;
   }
 
   /**
@@ -178,7 +178,7 @@ public class ModelPackage {
     ModelPackage _package = (ModelPackage) o;
     return (this.id == null ? _package.id == null : this.id.equals(_package.id)) &&
         (this.name == null ? _package.name == null : this.name.equals(_package.name)) &&
-        (this.description == null ? _package.description == null : this.description.equals(_package.description)) &&
+        (this.info == null ? _package.info == null : this.info.equals(_package.info)) &&
         (this.paper == null ? _package.paper == null : this.paper.equals(_package.paper)) &&
         (this.digitalOnly == null ? _package.digitalOnly == null : this.digitalOnly.equals(_package.digitalOnly)) &&
         (this.products == null ? _package.products == null : this.products.equals(_package.products)) &&
@@ -194,7 +194,7 @@ public class ModelPackage {
     int result = 17;
     result = 31 * result + (this.id == null ? 0: this.id.hashCode());
     result = 31 * result + (this.name == null ? 0: this.name.hashCode());
-    result = 31 * result + (this.description == null ? 0: this.description.hashCode());
+    result = 31 * result + (this.info == null ? 0: this.info.hashCode());
     result = 31 * result + (this.paper == null ? 0: this.paper.hashCode());
     result = 31 * result + (this.digitalOnly == null ? 0: this.digitalOnly.hashCode());
     result = 31 * result + (this.products == null ? 0: this.products.hashCode());
@@ -213,7 +213,7 @@ public class ModelPackage {
     
     sb.append("  id: ").append(id).append("\n");
     sb.append("  name: ").append(name).append("\n");
-    sb.append("  description: ").append(description).append("\n");
+    sb.append("  info: ").append(info).append("\n");
     sb.append("  paper: ").append(paper).append("\n");
     sb.append("  digitalOnly: ").append(digitalOnly).append("\n");
     sb.append("  products: ").append(products).append("\n");

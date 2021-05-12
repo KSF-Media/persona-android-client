@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | Package identifier | 
 **name** | **String** | Package name | 
-**description** | **List&lt;String&gt;** | Package description | 
+**info** | **List&lt;String&gt;** | Package description | 
 **paper** | [**Paper**](Paper.md) |  | 
 **digitalOnly** | **Boolean** | All products in this package are digital | 
 **products** | [**List&lt;Product&gt;**](Product.md) | The Products contained in a package | 
