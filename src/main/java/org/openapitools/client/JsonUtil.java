@@ -85,10 +85,6 @@ public class JsonUtil {
       return new TypeToken<List<DeliveryReclamation>>(){}.getType();
     }
     
-    if ("DescriptionFrequency".equalsIgnoreCase(className)) {
-      return new TypeToken<List<DescriptionFrequency>>(){}.getType();
-    }
-    
     if ("EntitlementAccess".equalsIgnoreCase(className)) {
       return new TypeToken<List<EntitlementAccess>>(){}.getType();
     }
@@ -203,10 +199,6 @@ public class JsonUtil {
     
     if ("PackageCampaign".equalsIgnoreCase(className)) {
       return new TypeToken<List<PackageCampaign>>(){}.getType();
-    }
-    
-    if ("PackageDescription".equalsIgnoreCase(className)) {
-      return new TypeToken<List<PackageDescription>>(){}.getType();
     }
     
     if ("PackageOffer".equalsIgnoreCase(className)) {
@@ -327,10 +319,6 @@ public class JsonUtil {
       return new TypeToken<DeliveryReclamation>(){}.getType();
     }
     
-    if ("DescriptionFrequency".equalsIgnoreCase(className)) {
-      return new TypeToken<DescriptionFrequency>(){}.getType();
-    }
-    
     if ("EntitlementAccess".equalsIgnoreCase(className)) {
       return new TypeToken<EntitlementAccess>(){}.getType();
     }
@@ -445,10 +433,6 @@ public class JsonUtil {
     
     if ("PackageCampaign".equalsIgnoreCase(className)) {
       return new TypeToken<PackageCampaign>(){}.getType();
-    }
-    
-    if ("PackageDescription".equalsIgnoreCase(className)) {
-      return new TypeToken<PackageDescription>(){}.getType();
     }
     
     if ("PackageOffer".equalsIgnoreCase(className)) {

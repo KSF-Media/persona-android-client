@@ -15,7 +15,6 @@ package org.openapitools.client.model;
 import java.util.*;
 import java.util.Date;
 import org.openapitools.client.model.PackageCampaign;
-import org.openapitools.client.model.PackageDescription;
 import org.openapitools.client.model.PackageOffer;
 import org.openapitools.client.model.Paper;
 import org.openapitools.client.model.Product;
@@ -29,6 +28,8 @@ public class ModelPackage {
   private String id = null;
   @SerializedName("name")
   private String name = null;
+  @SerializedName("description")
+  private List<String> description = null;
   @SerializedName("paper")
   private Paper paper = null;
   @SerializedName("digitalOnly")
@@ -45,8 +46,6 @@ public class ModelPackage {
   private Boolean canPause = null;
   @SerializedName("canTempAddr")
   private Boolean canTempAddr = null;
-  @SerializedName("description")
-  private PackageDescription description = null;
 
   /**
    * Package identifier
@@ -68,6 +67,17 @@ public class ModelPackage {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  /**
+   * Package description
+   **/
+  @ApiModelProperty(required = true, value = "Package description")
+  public List<String> getDescription() {
+    return description;
+  }
+  public void setDescription(List<String> description) {
+    this.description = description;
   }
 
   /**
@@ -156,16 +166,6 @@ public class ModelPackage {
     this.canTempAddr = canTempAddr;
   }
 
-  /**
-   **/
-  @ApiModelProperty(value = "")
-  public PackageDescription getDescription() {
-    return description;
-  }
-  public void setDescription(PackageDescription description) {
-    this.description = description;
-  }
-
 
   @Override
   public boolean equals(Object o) {
@@ -178,6 +178,7 @@ public class ModelPackage {
     ModelPackage _package = (ModelPackage) o;
     return (this.id == null ? _package.id == null : this.id.equals(_package.id)) &&
         (this.name == null ? _package.name == null : this.name.equals(_package.name)) &&
+        (this.description == null ? _package.description == null : this.description.equals(_package.description)) &&
         (this.paper == null ? _package.paper == null : this.paper.equals(_package.paper)) &&
         (this.digitalOnly == null ? _package.digitalOnly == null : this.digitalOnly.equals(_package.digitalOnly)) &&
         (this.products == null ? _package.products == null : this.products.equals(_package.products)) &&
@@ -185,8 +186,7 @@ public class ModelPackage {
         (this.campaigns == null ? _package.campaigns == null : this.campaigns.equals(_package.campaigns)) &&
         (this.nextDelivery == null ? _package.nextDelivery == null : this.nextDelivery.equals(_package.nextDelivery)) &&
         (this.canPause == null ? _package.canPause == null : this.canPause.equals(_package.canPause)) &&
-        (this.canTempAddr == null ? _package.canTempAddr == null : this.canTempAddr.equals(_package.canTempAddr)) &&
-        (this.description == null ? _package.description == null : this.description.equals(_package.description));
+        (this.canTempAddr == null ? _package.canTempAddr == null : this.canTempAddr.equals(_package.canTempAddr));
   }
 
   @Override
@@ -194,6 +194,7 @@ public class ModelPackage {
     int result = 17;
     result = 31 * result + (this.id == null ? 0: this.id.hashCode());
     result = 31 * result + (this.name == null ? 0: this.name.hashCode());
+    result = 31 * result + (this.description == null ? 0: this.description.hashCode());
     result = 31 * result + (this.paper == null ? 0: this.paper.hashCode());
     result = 31 * result + (this.digitalOnly == null ? 0: this.digitalOnly.hashCode());
     result = 31 * result + (this.products == null ? 0: this.products.hashCode());
@@ -202,7 +203,6 @@ public class ModelPackage {
     result = 31 * result + (this.nextDelivery == null ? 0: this.nextDelivery.hashCode());
     result = 31 * result + (this.canPause == null ? 0: this.canPause.hashCode());
     result = 31 * result + (this.canTempAddr == null ? 0: this.canTempAddr.hashCode());
-    result = 31 * result + (this.description == null ? 0: this.description.hashCode());
     return result;
   }
 
@@ -213,6 +213,7 @@ public class ModelPackage {
     
     sb.append("  id: ").append(id).append("\n");
     sb.append("  name: ").append(name).append("\n");
+    sb.append("  description: ").append(description).append("\n");
     sb.append("  paper: ").append(paper).append("\n");
     sb.append("  digitalOnly: ").append(digitalOnly).append("\n");
     sb.append("  products: ").append(products).append("\n");
@@ -221,7 +222,6 @@ public class ModelPackage {
     sb.append("  nextDelivery: ").append(nextDelivery).append("\n");
     sb.append("  canPause: ").append(canPause).append("\n");
     sb.append("  canTempAddr: ").append(canTempAddr).append("\n");
-    sb.append("  description: ").append(description).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
