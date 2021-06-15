@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **address** | [**UserUpdateAddress**](UserUpdateAddress.md) |  |  [optional]
 **email** | **String** |  |  [optional]
 **pendingAddressChanges** | **List&lt;Object&gt;** |  |  [optional]
+**updateCusno** | **Integer** |  |  [optional]
 
 
 
