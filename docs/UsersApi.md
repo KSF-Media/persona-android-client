@@ -10,6 +10,8 @@ Method | HTTP request | Description
 [**usersUuidGdprPut**](UsersApi.md#usersUuidGdprPut) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.
 [**usersUuidGet**](UsersApi.md#usersUuidGet) | **GET** /users/{uuid} | Get user by UUID.
 [**usersUuidLegalPut**](UsersApi.md#usersUuidLegalPut) | **PUT** /users/{uuid}/legal | Updates the legal consent settings for a given user.
+[**usersUuidNewslettersGet**](UsersApi.md#usersUuidNewslettersGet) | **GET** /users/{uuid}/newsletters | Get newsletter subscriptions
+[**usersUuidNewslettersPut**](UsersApi.md#usersUuidNewslettersPut) | **PUT** /users/{uuid}/newsletters | Update newsletter subscriptions
 [**usersUuidPasswordPut**](UsersApi.md#usersUuidPasswordPut) | **PUT** /users/{uuid}/password | Set / Change user password
 [**usersUuidPatch**](UsersApi.md#usersUuidPatch) | **PATCH** /users/{uuid} | Update a user
 [**usersUuidPaymentsGet**](UsersApi.md#usersUuidPaymentsGet) | **GET** /users/{uuid}/payments | Get user&#39;s subscriptions and payment events
@@ -310,6 +312,108 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**User**](User.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
+
+
+## usersUuidNewslettersGet
+
+> NewsletterSubscriptions usersUuidNewslettersGet(uuid, authUser, authorization)
+
+Get newsletter subscriptions
+
+Get list of newsletter subscriptions from mailchimp
+
+### Example
+
+```java
+// Import classes:
+//import org.openapitools.client.api.UsersApi;
+
+UsersApi apiInstance = new UsersApi();
+UUID uuid = null; // UUID | 
+UUID authUser = null; // UUID | 
+String authorization = null; // String | 
+try {
+    NewsletterSubscriptions result = apiInstance.usersUuidNewslettersGet(uuid, authUser, authorization);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#usersUuidNewslettersGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**UUID**](.md)|  | [default to null]
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
+ **authorization** | **String**|  | [optional] [default to null]
+
+### Return type
+
+[**NewsletterSubscriptions**](NewsletterSubscriptions.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=utf-8
+
+
+## usersUuidNewslettersPut
+
+> NewsletterSubscriptions usersUuidNewslettersPut(uuid, body, authUser, authorization)
+
+Update newsletter subscriptions
+
+Get list of newsletter subscriptions from mailchimp
+
+### Example
+
+```java
+// Import classes:
+//import org.openapitools.client.api.UsersApi;
+
+UsersApi apiInstance = new UsersApi();
+UUID uuid = null; // UUID | 
+NewsletterSubscriptions body = new NewsletterSubscriptions(); // NewsletterSubscriptions | 
+UUID authUser = null; // UUID | 
+String authorization = null; // String | 
+try {
+    NewsletterSubscriptions result = apiInstance.usersUuidNewslettersPut(uuid, body, authUser, authorization);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#usersUuidNewslettersPut");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**UUID**](.md)|  | [default to null]
+ **body** | [**NewsletterSubscriptions**](NewsletterSubscriptions.md)|  |
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
+ **authorization** | **String**|  | [optional] [default to null]
+
+### Return type
+
+[**NewsletterSubscriptions**](NewsletterSubscriptions.md)
 
 ### Authorization
 
