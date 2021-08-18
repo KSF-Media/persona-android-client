@@ -67,7 +67,7 @@ public class Subscription {
   @SerializedName("orderNumber")
   private String orderNumber = null;
   public enum PaymentMethodEnum {
-     PaperInvoice,  CreditCard,  NetBank,  ElectronicInvoice,  DirectPayment,  UnknownPaymentMethod, 
+     PaperInvoice,  CreditCard,  Email,  NetBank,  ElectronicInvoice,  DirectPayment,  UnknownPaymentMethod, 
   };
   @SerializedName("paymentMethod")
   private PaymentMethodEnum paymentMethod = null;
