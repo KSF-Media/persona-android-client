@@ -24,7 +24,7 @@ Method | HTTP request | Description
 [**usersUuidSubscriptionsSubsnoPausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoPausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 [**usersUuidSubscriptionsSubsnoReclamationPost**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationPost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](UsersApi.md#usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
-[**usersUuidSubscriptionsSubsnoUnpausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoUnpausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/unpause | Pause users subscription
+[**usersUuidSubscriptionsSubsnoUnpausePost**](UsersApi.md#usersUuidSubscriptionsSubsnoUnpausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/unpause | Unpause users subscription
 
 
 
@@ -1064,9 +1064,9 @@ No authorization required
 
 ## usersUuidSubscriptionsSubsnoUnpausePost
 
-> Subscription usersUuidSubscriptionsSubsnoUnpausePost(uuid, subsno, authUser, authorization)
+> Subscription usersUuidSubscriptionsSubsnoUnpausePost(uuid, subsno, authUser, authorization, startDate, endDate)
 
-Pause users subscription
+Unpause users subscription
 
 Authorization header expects the following format ‘OAuth {token}’
 
@@ -1081,8 +1081,10 @@ UUID uuid = null; // UUID |
 Integer subsno = null; // Integer | 
 UUID authUser = null; // UUID | 
 String authorization = null; // String | 
+Date startDate = null; // Date | 
+Date endDate = null; // Date | 
 try {
-    Subscription result = apiInstance.usersUuidSubscriptionsSubsnoUnpausePost(uuid, subsno, authUser, authorization);
+    Subscription result = apiInstance.usersUuidSubscriptionsSubsnoUnpausePost(uuid, subsno, authUser, authorization, startDate, endDate);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidSubscriptionsSubsnoUnpausePost");
@@ -1099,6 +1101,8 @@ Name | Type | Description  | Notes
  **subsno** | **Integer**|  | [default to null]
  **authUser** | [**UUID**](.md)|  | [optional] [default to null]
  **authorization** | **String**|  | [optional] [default to null]
+ **startDate** | **Date**|  | [optional] [default to null]
+ **endDate** | **Date**|  | [optional] [default to null]
 
 ### Return type
 

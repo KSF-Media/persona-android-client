@@ -24,6 +24,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
 import org.openapitools.client.model.CancelSubscriptionReason;
+import java.util.Date;
 import org.openapitools.client.model.DeleteTempAddressChangeDates;
 import org.openapitools.client.model.DeliveryReclamation;
 import org.openapitools.client.model.GdprConsent;
@@ -2977,15 +2978,17 @@ public class UsersApi {
     }
   }
   /**
-  * Pause users subscription
+  * Unpause users subscription
   * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
    * @param subsno 
    * @param authUser 
    * @param authorization 
+   * @param startDate 
+   * @param endDate 
    * @return Subscription
   */
-  public Subscription usersUuidSubscriptionsSubsnoUnpausePost (UUID uuid, Integer subsno, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Subscription usersUuidSubscriptionsSubsnoUnpausePost (UUID uuid, Integer subsno, UUID authUser, String authorization, Date startDate, Date endDate) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -3007,6 +3010,8 @@ public class UsersApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "startDate", startDate));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "endDate", endDate));
     headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     String[] contentTypes = {
@@ -3049,11 +3054,11 @@ public class UsersApi {
   }
 
       /**
-   * Pause users subscription
+   * Unpause users subscription
    * Authorization header expects the following format ‘OAuth {token}’
-   * @param uuid    * @param subsno    * @param authUser    * @param authorization 
+   * @param uuid    * @param subsno    * @param authUser    * @param authorization    * @param startDate    * @param endDate 
   */
-  public void usersUuidSubscriptionsSubsnoUnpausePost (UUID uuid, Integer subsno, UUID authUser, String authorization, final Response.Listener<Subscription> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidSubscriptionsSubsnoUnpausePost (UUID uuid, Integer subsno, UUID authUser, String authorization, Date startDate, Date endDate, final Response.Listener<Subscription> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'uuid' is set
@@ -3077,6 +3082,8 @@ public class UsersApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
 
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "startDate", startDate));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "endDate", endDate));
 
     headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));

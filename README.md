@@ -114,7 +114,7 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**usersUuidSubscriptionsSubsnoPausePost**](docs/UsersApi.md#usersUuidSubscriptionsSubsnoPausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoReclamationPost**](docs/UsersApi.md#usersUuidSubscriptionsSubsnoReclamationPost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 *UsersApi* | [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](docs/UsersApi.md#usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
-*UsersApi* | [**usersUuidSubscriptionsSubsnoUnpausePost**](docs/UsersApi.md#usersUuidSubscriptionsSubsnoUnpausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/unpause | Pause users subscription
+*UsersApi* | [**usersUuidSubscriptionsSubsnoUnpausePost**](docs/UsersApi.md#usersUuidSubscriptionsSubsnoUnpausePost) | **POST** /users/{uuid}/subscriptions/{subsno}/unpause | Unpause users subscription
 
 
 ## Documentation for Models
