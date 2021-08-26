@@ -582,7 +582,7 @@ No authorization required
 
 ## usersUuidScopeGet
 
-> usersUuidScopeGet(uuid, authorization, scope)
+> Integer usersUuidScopeGet(uuid, authorization, scope)
 
 Check if user has valid token for a scope
 
@@ -599,7 +599,8 @@ UUID uuid = null; // UUID |
 String authorization = null; // String | 
 String scope = null; // String | 
 try {
-    apiInstance.usersUuidScopeGet(uuid, authorization, scope);
+    Integer result = apiInstance.usersUuidScopeGet(uuid, authorization, scope);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidScopeGet");
     e.printStackTrace();
@@ -617,7 +618,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+**Integer**
 
 ### Authorization
 
@@ -626,7 +627,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json;charset=utf-8
 
 
 ## usersUuidSubscriptionsSubsnoAddressChangeDelete

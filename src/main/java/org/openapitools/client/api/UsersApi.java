@@ -1602,9 +1602,9 @@ public class UsersApi {
    * @param uuid 
    * @param authorization 
    * @param scope 
-   * @return void
+   * @return Integer
   */
-  public void usersUuidScopeGet (UUID uuid, String authorization, String scope) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Integer usersUuidScopeGet (UUID uuid, String authorization, String scope) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -1641,9 +1641,9 @@ public class UsersApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return ;
+         return (Integer) ApiInvoker.deserialize(localVarResponse, "", Integer.class);
       } else {
-         return ;
+         return null;
       }
     } catch (ApiException ex) {
        throw ex;
@@ -1667,7 +1667,7 @@ public class UsersApi {
    * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid    * @param authorization    * @param scope 
   */
-  public void usersUuidScopeGet (UUID uuid, String authorization, String scope, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidScopeGet (UUID uuid, String authorization, String scope, final Response.Listener<Integer> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'uuid' is set
@@ -1713,7 +1713,11 @@ public class UsersApi {
         new Response.Listener<String>() {
           @Override
           public void onResponse(String localVarResponse) {
-              responseListener.onResponse(localVarResponse);
+            try {
+              responseListener.onResponse((Integer) ApiInvoker.deserialize(localVarResponse,  "", Integer.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
           }
       }, new Response.ErrorListener() {
           @Override
