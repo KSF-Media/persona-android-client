@@ -28,6 +28,8 @@ public class UserUpdate {
   private UserUpdateAddress address = null;
   @SerializedName("email")
   private String email = null;
+  @SerializedName("phone")
+  private String phone = null;
   @SerializedName("pendingAddressChanges")
   private List<Object> pendingAddressChanges = null;
   @SerializedName("updateCusno")
@@ -76,6 +78,16 @@ public class UserUpdate {
   /**
    **/
   @ApiModelProperty(value = "")
+  public String getPhone() {
+    return phone;
+  }
+  public void setPhone(String phone) {
+    this.phone = phone;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
   public List<Object> getPendingAddressChanges() {
     return pendingAddressChanges;
   }
@@ -109,6 +121,7 @@ public class UserUpdate {
         (this.lastName == null ? userUpdate.lastName == null : this.lastName.equals(userUpdate.lastName)) &&
         (this.address == null ? userUpdate.address == null : this.address.equals(userUpdate.address)) &&
         (this.email == null ? userUpdate.email == null : this.email.equals(userUpdate.email)) &&
+        (this.phone == null ? userUpdate.phone == null : this.phone.equals(userUpdate.phone)) &&
         (this.pendingAddressChanges == null ? userUpdate.pendingAddressChanges == null : this.pendingAddressChanges.equals(userUpdate.pendingAddressChanges)) &&
         (this.updateCusno == null ? userUpdate.updateCusno == null : this.updateCusno.equals(userUpdate.updateCusno));
   }
@@ -120,6 +133,7 @@ public class UserUpdate {
     result = 31 * result + (this.lastName == null ? 0: this.lastName.hashCode());
     result = 31 * result + (this.address == null ? 0: this.address.hashCode());
     result = 31 * result + (this.email == null ? 0: this.email.hashCode());
+    result = 31 * result + (this.phone == null ? 0: this.phone.hashCode());
     result = 31 * result + (this.pendingAddressChanges == null ? 0: this.pendingAddressChanges.hashCode());
     result = 31 * result + (this.updateCusno == null ? 0: this.updateCusno.hashCode());
     return result;
@@ -134,6 +148,7 @@ public class UserUpdate {
     sb.append("  lastName: ").append(lastName).append("\n");
     sb.append("  address: ").append(address).append("\n");
     sb.append("  email: ").append(email).append("\n");
+    sb.append("  phone: ").append(phone).append("\n");
     sb.append("  pendingAddressChanges: ").append(pendingAddressChanges).append("\n");
     sb.append("  updateCusno: ").append(updateCusno).append("\n");
     sb.append("}\n");

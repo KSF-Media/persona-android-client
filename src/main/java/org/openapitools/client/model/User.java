@@ -34,6 +34,8 @@ public class User {
   private String firstName = null;
   @SerializedName("lastName")
   private String lastName = null;
+  @SerializedName("phone")
+  private String phone = null;
   @SerializedName("address")
   private Address address = null;
   @SerializedName("cusno")
@@ -89,6 +91,16 @@ public class User {
   }
   public void setLastName(String lastName) {
     this.lastName = lastName;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getPhone() {
+    return phone;
+  }
+  public void setPhone(String phone) {
+    this.phone = phone;
   }
 
   /**
@@ -187,6 +199,7 @@ public class User {
         (this.email == null ? user.email == null : this.email.equals(user.email)) &&
         (this.firstName == null ? user.firstName == null : this.firstName.equals(user.firstName)) &&
         (this.lastName == null ? user.lastName == null : this.lastName.equals(user.lastName)) &&
+        (this.phone == null ? user.phone == null : this.phone.equals(user.phone)) &&
         (this.address == null ? user.address == null : this.address.equals(user.address)) &&
         (this.cusno == null ? user.cusno == null : this.cusno.equals(user.cusno)) &&
         (this.subs == null ? user.subs == null : this.subs.equals(user.subs)) &&
@@ -204,6 +217,7 @@ public class User {
     result = 31 * result + (this.email == null ? 0: this.email.hashCode());
     result = 31 * result + (this.firstName == null ? 0: this.firstName.hashCode());
     result = 31 * result + (this.lastName == null ? 0: this.lastName.hashCode());
+    result = 31 * result + (this.phone == null ? 0: this.phone.hashCode());
     result = 31 * result + (this.address == null ? 0: this.address.hashCode());
     result = 31 * result + (this.cusno == null ? 0: this.cusno.hashCode());
     result = 31 * result + (this.subs == null ? 0: this.subs.hashCode());
@@ -224,6 +238,7 @@ public class User {
     sb.append("  email: ").append(email).append("\n");
     sb.append("  firstName: ").append(firstName).append("\n");
     sb.append("  lastName: ").append(lastName).append("\n");
+    sb.append("  phone: ").append(phone).append("\n");
     sb.append("  address: ").append(address).append("\n");
     sb.append("  cusno: ").append(cusno).append("\n");
     sb.append("  subs: ").append(subs).append("\n");
