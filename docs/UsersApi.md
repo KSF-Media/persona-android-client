@@ -582,7 +582,7 @@ No authorization required
 
 ## usersUuidScopeGet
 
-> Integer usersUuidScopeGet(uuid, authorization, scope)
+> Integer usersUuidScopeGet(uuid, scope, authorization)
 
 Check if user has valid token for a scope
 
@@ -596,10 +596,10 @@ Authorization header expects the following format ‘OAuth {token}’
 
 UsersApi apiInstance = new UsersApi();
 UUID uuid = null; // UUID | 
-String authorization = null; // String | 
 String scope = null; // String | 
+String authorization = null; // String | 
 try {
-    Integer result = apiInstance.usersUuidScopeGet(uuid, authorization, scope);
+    Integer result = apiInstance.usersUuidScopeGet(uuid, scope, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidScopeGet");
@@ -613,8 +613,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**UUID**](.md)|  | [default to null]
+ **scope** | **String**|  | [default to null] [enum: UserRead, UserWrite, UserPassword, AdminAccess]
  **authorization** | **String**|  | [optional] [default to null]
- **scope** | **String**|  | [optional] [default to null] [enum: UserRead, UserWrite, UserPassword]
 
 ### Return type
 

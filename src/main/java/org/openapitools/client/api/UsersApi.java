@@ -1601,16 +1601,21 @@ public class UsersApi {
   * Check if user has valid token for a scope
   * Authorization header expects the following format ‘OAuth {token}’
    * @param uuid 
-   * @param authorization 
    * @param scope 
+   * @param authorization 
    * @return Integer
   */
-  public Integer usersUuidScopeGet (UUID uuid, String authorization, String scope) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Integer usersUuidScopeGet (UUID uuid, String scope, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
       VolleyError error = new VolleyError("Missing the required parameter 'uuid' when calling usersUuidScopeGet",
         new ApiException(400, "Missing the required parameter 'uuid' when calling usersUuidScopeGet"));
+    }
+    // verify the required parameter 'scope' is set
+    if (scope == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'scope' when calling usersUuidScopeGet",
+        new ApiException(400, "Missing the required parameter 'scope' when calling usersUuidScopeGet"));
     }
 
     // create path and map variables
@@ -1666,15 +1671,20 @@ public class UsersApi {
       /**
    * Check if user has valid token for a scope
    * Authorization header expects the following format ‘OAuth {token}’
-   * @param uuid    * @param authorization    * @param scope 
+   * @param uuid    * @param scope    * @param authorization 
   */
-  public void usersUuidScopeGet (UUID uuid, String authorization, String scope, final Response.Listener<Integer> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidScopeGet (UUID uuid, String scope, String authorization, final Response.Listener<Integer> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
       VolleyError error = new VolleyError("Missing the required parameter 'uuid' when calling usersUuidScopeGet",
         new ApiException(400, "Missing the required parameter 'uuid' when calling usersUuidScopeGet"));
+    }
+    // verify the required parameter 'scope' is set
+    if (scope == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'scope' when calling usersUuidScopeGet",
+        new ApiException(400, "Missing the required parameter 'scope' when calling usersUuidScopeGet"));
     }
 
     // create path and map variables
