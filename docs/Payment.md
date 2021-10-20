@@ -7,8 +7,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **invno** | **Integer** | Payment invoice ID | 
-**date** | [**Date**](Date.md) |  | 
-**dueDate** | [**Date**](Date.md) |  | 
+**date** | [**Date**](Date.md) |  |  [optional]
+**dueDate** | [**Date**](Date.md) |  |  [optional]
 **expenses** | **Double** |  | 
 **interest** | **Double** |  | 
 **vat** | **Double** |  | 

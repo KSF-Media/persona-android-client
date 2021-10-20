@@ -67,7 +67,7 @@ public class Payment {
 
   /**
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public Date getDate() {
     return date;
   }
@@ -77,7 +77,7 @@ public class Payment {
 
   /**
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public Date getDueDate() {
     return dueDate;
   }
