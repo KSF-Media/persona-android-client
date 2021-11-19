@@ -4,10 +4,57 @@ All URIs are relative to *http://http:/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**entitlementsAllowGet**](EntitlementsApi.md#entitlementsAllowGet) | **GET** /entitlements/allow | Check if global entitlements are enabled
 [**entitlementsAllowPost**](EntitlementsApi.md#entitlementsAllowPost) | **POST** /entitlements/allow | 
 [**entitlementsAllowUuidPost**](EntitlementsApi.md#entitlementsAllowUuidPost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
 [**entitlementsGet**](EntitlementsApi.md#entitlementsGet) | **GET** /entitlements | List all entitlements
 
+
+
+## entitlementsAllowGet
+
+> String entitlementsAllowGet(authUser, authorization)
+
+Check if global entitlements are enabled
+
+### Example
+
+```java
+// Import classes:
+//import org.openapitools.client.api.EntitlementsApi;
+
+EntitlementsApi apiInstance = new EntitlementsApi();
+UUID authUser = null; // UUID | 
+String authorization = null; // String | 
+try {
+    String result = apiInstance.entitlementsAllowGet(authUser, authorization);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling EntitlementsApi#entitlementsAllowGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
+ **authorization** | **String**|  | [optional] [default to null]
+
+### Return type
+
+**String**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=utf-8
 
 
 ## entitlementsAllowPost
