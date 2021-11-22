@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## entitlementsAllowGet
 
-> String entitlementsAllowGet(authUser, authorization)
+> List&lt;String&gt; entitlementsAllowGet(authUser, authorization)
 
 Check if global entitlements are enabled
 
@@ -27,7 +27,7 @@ EntitlementsApi apiInstance = new EntitlementsApi();
 UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 try {
-    String result = apiInstance.entitlementsAllowGet(authUser, authorization);
+    List<String> result = apiInstance.entitlementsAllowGet(authUser, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling EntitlementsApi#entitlementsAllowGet");
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+**List&lt;String&gt;**
 
 ### Authorization
 

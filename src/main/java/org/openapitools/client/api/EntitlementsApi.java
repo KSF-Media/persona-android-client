@@ -64,9 +64,9 @@ public class EntitlementsApi {
   * 
    * @param authUser 
    * @param authorization 
-   * @return String
+   * @return List<String>
   */
-  public String entitlementsAllowGet (UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<String> entitlementsAllowGet (UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -98,7 +98,7 @@ public class EntitlementsApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (String) ApiInvoker.deserialize(localVarResponse, "", String.class);
+         return (List<String>) ApiInvoker.deserialize(localVarResponse, "array", String.class);
       } else {
          return null;
       }
@@ -124,7 +124,7 @@ public class EntitlementsApi {
    * 
    * @param authUser    * @param authorization 
   */
-  public void entitlementsAllowGet (UUID authUser, String authorization, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
+  public void entitlementsAllowGet (UUID authUser, String authorization, final Response.Listener<List<String>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -166,7 +166,7 @@ public class EntitlementsApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((String) ApiInvoker.deserialize(localVarResponse,  "", String.class));
+              responseListener.onResponse((List<String>) ApiInvoker.deserialize(localVarResponse,  "array", String.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
