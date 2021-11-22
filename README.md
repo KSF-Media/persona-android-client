@@ -64,12 +64,13 @@ public class AccountApiExample {
 
     public static void main(String[] args) {
         AccountApi apiInstance = new AccountApi();
-        ForgotPasswordData body = new ForgotPasswordData(); // ForgotPasswordData | 
+        String email = null; // String | 
+        Boolean redir = null; // Boolean | 
         try {
-            List<Object> result = apiInstance.accountPasswordForgotPost(body);
+            List<Object> result = apiInstance.accountPasswordForgotGet(email, redir);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountApi#accountPasswordForgotPost");
+            System.err.println("Exception when calling AccountApi#accountPasswordForgotGet");
             e.printStackTrace();
         }
     }
@@ -83,6 +84,7 @@ All URIs are relative to *http://http:/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountApi* | [**accountPasswordForgotGet**](docs/AccountApi.md#accountPasswordForgotGet) | **GET** /account/password/forgot | Request password reset link
 *AccountApi* | [**accountPasswordForgotPost**](docs/AccountApi.md#accountPasswordForgotPost) | **POST** /account/password/forgot | Request password reset link
 *AccountApi* | [**accountPasswordResetPost**](docs/AccountApi.md#accountPasswordResetPost) | **POST** /account/password/reset | Reset a forgotten password with a token
 *AdminApi* | [**adminSearchPost**](docs/AdminApi.md#adminSearchPost) | **POST** /admin/search | Search for users

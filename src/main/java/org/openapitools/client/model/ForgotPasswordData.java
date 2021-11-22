@@ -20,6 +20,8 @@ public class ForgotPasswordData {
   
   @SerializedName("email")
   private String email = null;
+  @SerializedName("redir")
+  private Boolean redir = null;
 
   /**
    **/
@@ -29,6 +31,16 @@ public class ForgotPasswordData {
   }
   public void setEmail(String email) {
     this.email = email;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public Boolean getRedir() {
+    return redir;
+  }
+  public void setRedir(Boolean redir) {
+    this.redir = redir;
   }
 
 
@@ -41,13 +53,15 @@ public class ForgotPasswordData {
       return false;
     }
     ForgotPasswordData forgotPasswordData = (ForgotPasswordData) o;
-    return (this.email == null ? forgotPasswordData.email == null : this.email.equals(forgotPasswordData.email));
+    return (this.email == null ? forgotPasswordData.email == null : this.email.equals(forgotPasswordData.email)) &&
+        (this.redir == null ? forgotPasswordData.redir == null : this.redir.equals(forgotPasswordData.redir));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
     result = 31 * result + (this.email == null ? 0: this.email.hashCode());
+    result = 31 * result + (this.redir == null ? 0: this.redir.hashCode());
     return result;
   }
 
@@ -57,6 +71,7 @@ public class ForgotPasswordData {
     sb.append("class ForgotPasswordData {\n");
     
     sb.append("  email: ").append(email).append("\n");
+    sb.append("  redir: ").append(redir).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
