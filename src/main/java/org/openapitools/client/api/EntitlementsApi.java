@@ -64,9 +64,11 @@ public class EntitlementsApi {
   * 
    * @param authUser 
    * @param authorization 
+   * @param ip 
+   * @param paper 
    * @return List<String>
   */
-  public List<String> entitlementsAllowGet (UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<String> entitlementsAllowGet (UUID authUser, String authorization, String ip, String paper) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -78,6 +80,8 @@ public class EntitlementsApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "ip", ip));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
     headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     String[] contentTypes = {
@@ -122,9 +126,9 @@ public class EntitlementsApi {
       /**
    * Check if global entitlements are enabled
    * 
-   * @param authUser    * @param authorization 
+   * @param authUser    * @param authorization    * @param ip    * @param paper 
   */
-  public void entitlementsAllowGet (UUID authUser, String authorization, final Response.Listener<List<String>> responseListener, final Response.ErrorListener errorListener) {
+  public void entitlementsAllowGet (UUID authUser, String authorization, String ip, String paper, final Response.Listener<List<String>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -138,6 +142,8 @@ public class EntitlementsApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
 
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "ip", ip));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
 
     headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));

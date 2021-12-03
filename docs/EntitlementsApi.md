@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## entitlementsAllowGet
 
-> List&lt;String&gt; entitlementsAllowGet(authUser, authorization)
+> List&lt;String&gt; entitlementsAllowGet(authUser, authorization, ip, paper)
 
 Check if global entitlements are enabled
 
@@ -26,8 +26,10 @@ Check if global entitlements are enabled
 EntitlementsApi apiInstance = new EntitlementsApi();
 UUID authUser = null; // UUID | 
 String authorization = null; // String | 
+String ip = null; // String | 
+String paper = null; // String | 
 try {
-    List<String> result = apiInstance.entitlementsAllowGet(authUser, authorization);
+    List<String> result = apiInstance.entitlementsAllowGet(authUser, authorization, ip, paper);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling EntitlementsApi#entitlementsAllowGet");
@@ -42,6 +44,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authUser** | [**UUID**](.md)|  | [optional] [default to null]
  **authorization** | **String**|  | [optional] [default to null]
+ **ip** | **String**|  | [optional] [default to null]
+ **paper** | **String**|  | [optional] [default to null] [enum: HBL, ON, VN, HT, JUNIOR, FORUM, LS]
 
 ### Return type
 
