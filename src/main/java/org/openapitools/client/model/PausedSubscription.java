@@ -23,6 +23,11 @@ public class PausedSubscription {
   private Date startDate = null;
   @SerializedName("endDate")
   private Date endDate = null;
+  public enum SleepTypeEnum {
+     Pause,  Rebate,  UnknownSleepType, 
+  };
+  @SerializedName("sleepType")
+  private SleepTypeEnum sleepType = null;
 
   /**
    **/
@@ -44,6 +49,17 @@ public class PausedSubscription {
     this.endDate = endDate;
   }
 
+  /**
+   * Type of subscription pause
+   **/
+  @ApiModelProperty(required = true, value = "Type of subscription pause")
+  public SleepTypeEnum getSleepType() {
+    return sleepType;
+  }
+  public void setSleepType(SleepTypeEnum sleepType) {
+    this.sleepType = sleepType;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -55,7 +71,8 @@ public class PausedSubscription {
     }
     PausedSubscription pausedSubscription = (PausedSubscription) o;
     return (this.startDate == null ? pausedSubscription.startDate == null : this.startDate.equals(pausedSubscription.startDate)) &&
-        (this.endDate == null ? pausedSubscription.endDate == null : this.endDate.equals(pausedSubscription.endDate));
+        (this.endDate == null ? pausedSubscription.endDate == null : this.endDate.equals(pausedSubscription.endDate)) &&
+        (this.sleepType == null ? pausedSubscription.sleepType == null : this.sleepType.equals(pausedSubscription.sleepType));
   }
 
   @Override
@@ -63,6 +80,7 @@ public class PausedSubscription {
     int result = 17;
     result = 31 * result + (this.startDate == null ? 0: this.startDate.hashCode());
     result = 31 * result + (this.endDate == null ? 0: this.endDate.hashCode());
+    result = 31 * result + (this.sleepType == null ? 0: this.sleepType.hashCode());
     return result;
   }
 
@@ -73,6 +91,7 @@ public class PausedSubscription {
     
     sb.append("  startDate: ").append(startDate).append("\n");
     sb.append("  endDate: ").append(endDate).append("\n");
+    sb.append("  sleepType: ").append(sleepType).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

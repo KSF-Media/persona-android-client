@@ -12,6 +12,7 @@
 
 package org.openapitools.client.model;
 
+import java.util.Date;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -33,6 +34,10 @@ public class PackageCampaign {
   };
   @SerializedName("lengthUnit")
   private LengthUnitEnum lengthUnit = null;
+  @SerializedName("startDay")
+  private Date startDay = null;
+  @SerializedName("endDay")
+  private Date endDay = null;
 
   /**
    * Campaign number
@@ -104,6 +109,26 @@ public class PackageCampaign {
     this.lengthUnit = lengthUnit;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public Date getStartDay() {
+    return startDay;
+  }
+  public void setStartDay(Date startDay) {
+    this.startDay = startDay;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public Date getEndDay() {
+    return endDay;
+  }
+  public void setEndDay(Date endDay) {
+    this.endDay = endDay;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -119,7 +144,9 @@ public class PackageCampaign {
         (this.name == null ? packageCampaign.name == null : this.name.equals(packageCampaign.name)) &&
         (this.priceEur == null ? packageCampaign.priceEur == null : this.priceEur.equals(packageCampaign.priceEur)) &&
         (this.length == null ? packageCampaign.length == null : this.length.equals(packageCampaign.length)) &&
-        (this.lengthUnit == null ? packageCampaign.lengthUnit == null : this.lengthUnit.equals(packageCampaign.lengthUnit));
+        (this.lengthUnit == null ? packageCampaign.lengthUnit == null : this.lengthUnit.equals(packageCampaign.lengthUnit)) &&
+        (this.startDay == null ? packageCampaign.startDay == null : this.startDay.equals(packageCampaign.startDay)) &&
+        (this.endDay == null ? packageCampaign.endDay == null : this.endDay.equals(packageCampaign.endDay));
   }
 
   @Override
@@ -131,6 +158,8 @@ public class PackageCampaign {
     result = 31 * result + (this.priceEur == null ? 0: this.priceEur.hashCode());
     result = 31 * result + (this.length == null ? 0: this.length.hashCode());
     result = 31 * result + (this.lengthUnit == null ? 0: this.lengthUnit.hashCode());
+    result = 31 * result + (this.startDay == null ? 0: this.startDay.hashCode());
+    result = 31 * result + (this.endDay == null ? 0: this.endDay.hashCode());
     return result;
   }
 
@@ -145,6 +174,8 @@ public class PackageCampaign {
     sb.append("  priceEur: ").append(priceEur).append("\n");
     sb.append("  length: ").append(length).append("\n");
     sb.append("  lengthUnit: ").append(lengthUnit).append("\n");
+    sb.append("  startDay: ").append(startDay).append("\n");
+    sb.append("  endDay: ").append(endDay).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
