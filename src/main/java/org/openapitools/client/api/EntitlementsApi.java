@@ -27,6 +27,7 @@ import org.openapitools.client.model.EntitlementAccess;
 import org.openapitools.client.model.InlineResponse400;
 import org.openapitools.client.model.InlineResponse415;
 import java.util.*;
+import org.openapitools.client.model.PersistedEntitlementAccess;
 import java.util.UUID;
 
 import org.apache.http.HttpEntity;
@@ -60,15 +61,149 @@ public class EntitlementsApi {
   }
 
   /**
+  * Remove an entitlement
+  * 
+   * @param body 
+   * @param authUser 
+   * @param authorization 
+   * @return List<Object>
+  */
+  public List<Object> entitlementsAllowDelete (Long body, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = body;
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling entitlementsAllowDelete",
+        new ApiException(400, "Missing the required parameter 'body' when calling entitlementsAllowDelete"));
+    }
+
+    // create path and map variables
+    String path = "/entitlements/allow";
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+    String[] contentTypes = {
+      "application/json;charset=utf-8"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+    }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      if (localVarResponse != null) {
+         return (List<Object>) ApiInvoker.deserialize(localVarResponse, "array", Object.class);
+      } else {
+         return null;
+      }
+    } catch (ApiException ex) {
+       throw ex;
+    } catch (InterruptedException ex) {
+       throw ex;
+    } catch (ExecutionException ex) {
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
+    } catch (TimeoutException ex) {
+      throw ex;
+    }
+  }
+
+      /**
+   * Remove an entitlement
+   * 
+   * @param body    * @param authUser    * @param authorization 
+  */
+  public void entitlementsAllowDelete (Long body, UUID authUser, String authorization, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = body;
+
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling entitlementsAllowDelete",
+        new ApiException(400, "Missing the required parameter 'body' when calling entitlementsAllowDelete"));
+    }
+
+    // create path and map variables
+    String path = "/entitlements/allow".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+
+    String[] contentTypes = {
+      "application/json;charset=utf-8"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+            try {
+              responseListener.onResponse((List<Object>) ApiInvoker.deserialize(localVarResponse,  "array", Object.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
+  /**
   * Check if global entitlements are enabled
   * 
    * @param authUser 
    * @param authorization 
    * @param ip 
    * @param paper 
-   * @return List<String>
+   * @return List<PersistedEntitlementAccess>
   */
-  public List<String> entitlementsAllowGet (UUID authUser, String authorization, String ip, String paper) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<PersistedEntitlementAccess> entitlementsAllowGet (UUID authUser, String authorization, String ip, String paper) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -102,7 +237,7 @@ public class EntitlementsApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<String>) ApiInvoker.deserialize(localVarResponse, "array", String.class);
+         return (List<PersistedEntitlementAccess>) ApiInvoker.deserialize(localVarResponse, "array", PersistedEntitlementAccess.class);
       } else {
          return null;
       }
@@ -128,7 +263,7 @@ public class EntitlementsApi {
    * 
    * @param authUser    * @param authorization    * @param ip    * @param paper 
   */
-  public void entitlementsAllowGet (UUID authUser, String authorization, String ip, String paper, final Response.Listener<List<String>> responseListener, final Response.ErrorListener errorListener) {
+  public void entitlementsAllowGet (UUID authUser, String authorization, String ip, String paper, final Response.Listener<List<PersistedEntitlementAccess>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -172,7 +307,7 @@ public class EntitlementsApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<String>) ApiInvoker.deserialize(localVarResponse,  "array", String.class));
+              responseListener.onResponse((List<PersistedEntitlementAccess>) ApiInvoker.deserialize(localVarResponse,  "array", PersistedEntitlementAccess.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -188,7 +323,7 @@ public class EntitlementsApi {
     }
   }
   /**
-  * 
+  * Add an entitlement for all users
   * 
    * @param body 
    * @param authUser 
@@ -255,7 +390,7 @@ public class EntitlementsApi {
   }
 
       /**
-   * 
+   * Add an entitlement for all users
    * 
    * @param body    * @param authUser    * @param authorization 
   */

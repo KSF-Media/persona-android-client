@@ -4,16 +4,65 @@ All URIs are relative to *http://http:/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**entitlementsAllowDelete**](EntitlementsApi.md#entitlementsAllowDelete) | **DELETE** /entitlements/allow | Remove an entitlement
 [**entitlementsAllowGet**](EntitlementsApi.md#entitlementsAllowGet) | **GET** /entitlements/allow | Check if global entitlements are enabled
-[**entitlementsAllowPost**](EntitlementsApi.md#entitlementsAllowPost) | **POST** /entitlements/allow | 
+[**entitlementsAllowPost**](EntitlementsApi.md#entitlementsAllowPost) | **POST** /entitlements/allow | Add an entitlement for all users
 [**entitlementsAllowUuidPost**](EntitlementsApi.md#entitlementsAllowUuidPost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
 [**entitlementsGet**](EntitlementsApi.md#entitlementsGet) | **GET** /entitlements | List all entitlements
 
 
 
+## entitlementsAllowDelete
+
+> List&lt;Object&gt; entitlementsAllowDelete(body, authUser, authorization)
+
+Remove an entitlement
+
+### Example
+
+```java
+// Import classes:
+//import org.openapitools.client.api.EntitlementsApi;
+
+EntitlementsApi apiInstance = new EntitlementsApi();
+Long body = 56L; // Long | 
+UUID authUser = null; // UUID | 
+String authorization = null; // String | 
+try {
+    List<Object> result = apiInstance.entitlementsAllowDelete(body, authUser, authorization);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling EntitlementsApi#entitlementsAllowDelete");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **Long**|  |
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
+ **authorization** | **String**|  | [optional] [default to null]
+
+### Return type
+
+**List&lt;Object&gt;**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
+
+
 ## entitlementsAllowGet
 
-> List&lt;String&gt; entitlementsAllowGet(authUser, authorization, ip, paper)
+> List&lt;PersistedEntitlementAccess&gt; entitlementsAllowGet(authUser, authorization, ip, paper)
 
 Check if global entitlements are enabled
 
@@ -29,7 +78,7 @@ String authorization = null; // String |
 String ip = null; // String | 
 String paper = null; // String | 
 try {
-    List<String> result = apiInstance.entitlementsAllowGet(authUser, authorization, ip, paper);
+    List<PersistedEntitlementAccess> result = apiInstance.entitlementsAllowGet(authUser, authorization, ip, paper);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling EntitlementsApi#entitlementsAllowGet");
@@ -49,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**List&lt;PersistedEntitlementAccess&gt;**](PersistedEntitlementAccess.md)
 
 ### Authorization
 
@@ -65,7 +114,7 @@ No authorization required
 
 > List&lt;Object&gt; entitlementsAllowPost(body, authUser, authorization)
 
-
+Add an entitlement for all users
 
 ### Example
 

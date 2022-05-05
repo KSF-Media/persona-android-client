@@ -229,6 +229,10 @@ public class JsonUtil {
       return new TypeToken<List<PendingAddressChange>>(){}.getType();
     }
     
+    if ("PersistedEntitlementAccess".equalsIgnoreCase(className)) {
+      return new TypeToken<List<PersistedEntitlementAccess>>(){}.getType();
+    }
+    
     if ("Product".equalsIgnoreCase(className)) {
       return new TypeToken<List<Product>>(){}.getType();
     }
@@ -465,6 +469,10 @@ public class JsonUtil {
     
     if ("PendingAddressChange".equalsIgnoreCase(className)) {
       return new TypeToken<PendingAddressChange>(){}.getType();
+    }
+    
+    if ("PersistedEntitlementAccess".equalsIgnoreCase(className)) {
+      return new TypeToken<PersistedEntitlementAccess>(){}.getType();
     }
     
     if ("Product".equalsIgnoreCase(className)) {
