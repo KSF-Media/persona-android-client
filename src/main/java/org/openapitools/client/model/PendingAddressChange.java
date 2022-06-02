@@ -63,9 +63,8 @@ public class PendingAddressChange {
   }
 
   /**
-   * Type of address change
    **/
-  @ApiModelProperty(required = true, value = "Type of address change")
+  @ApiModelProperty(required = true, value = "")
   public TypeEnum getType() {
     return type;
   }

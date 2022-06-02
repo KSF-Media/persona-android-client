@@ -141,7 +141,6 @@ public class Payment {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(required = true, value = "")
   public TypeEnum getType() {
@@ -152,7 +151,6 @@ public class Payment {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(required = true, value = "")
   public StateEnum getState() {

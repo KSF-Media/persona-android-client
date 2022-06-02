@@ -255,9 +255,8 @@ public class Subscription {
   }
 
   /**
-   * Payment method of subscription
    **/
-  @ApiModelProperty(value = "Payment method of subscription")
+  @ApiModelProperty(value = "")
   public PaymentMethodEnum getPaymentMethod() {
     return paymentMethod;
   }

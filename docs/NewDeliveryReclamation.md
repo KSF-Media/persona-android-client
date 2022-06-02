@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **paper** | **String** |  |  [optional]
 **publicationDate** | [**Date**](Date.md) |  | 
-**claim** | [**ClaimEnum**](#ClaimEnum) | The type of claim for the reclamation | 
+**claim** | [**ClaimEnum**](#ClaimEnum) |  | 
 
 
 ## Enum: ClaimEnum

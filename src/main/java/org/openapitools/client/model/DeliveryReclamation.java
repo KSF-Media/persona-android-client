@@ -110,9 +110,8 @@ public class DeliveryReclamation {
   }
 
   /**
-   * The type of claim for the reclamation
    **/
-  @ApiModelProperty(required = true, value = "The type of claim for the reclamation")
+  @ApiModelProperty(required = true, value = "")
   public ClaimEnum getClaim() {
     return claim;
   }

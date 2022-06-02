@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **deliveryAddress** | [**DeliveryAddress**](DeliveryAddress.md) |  |  [optional]
 **pendingAddressChanges** | [**List&lt;PendingAddressChange&gt;**](PendingAddressChange.md) | Pending and ongoing temporary address changes |  [optional]
 **orderNumber** | **String** | Order number of subscription |  [optional]
-**paymentMethod** | [**PaymentMethodEnum**](#PaymentMethodEnum) | Payment method of subscription |  [optional]
+**paymentMethod** | [**PaymentMethodEnum**](#PaymentMethodEnum) |  |  [optional]
 **paymentMethodId** | **Integer** |  |  [optional]
 
 

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **name** | **String** | Campaign name | 
 **priceEur** | **Double** | Price of campaign in euros | 
 **length** | **Integer** | Length of campaign | 
-**lengthUnit** | [**LengthUnitEnum**](#LengthUnitEnum) | Unit of length (days, weeks, months, years) | 
+**lengthUnit** | [**LengthUnitEnum**](#LengthUnitEnum) |  | 
 **startDay** | [**Date**](Date.md) |  |  [optional]
 **endDay** | [**Date**](Date.md) |  |  [optional]
 

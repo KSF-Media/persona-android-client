@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **date** | [**Date**](Date.md) |  | 
 **paper** | **String** |  |  [optional]
 **publicationDate** | [**Date**](Date.md) |  | 
-**claim** | [**ClaimEnum**](#ClaimEnum) | The type of claim for the reclamation | 
+**claim** | [**ClaimEnum**](#ClaimEnum) |  | 
 
 
 ## Enum: ClaimEnum

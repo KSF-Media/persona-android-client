@@ -99,9 +99,8 @@ public class PackageCampaign {
   }
 
   /**
-   * Unit of length (days, weeks, months, years)
    **/
-  @ApiModelProperty(required = true, value = "Unit of length (days, weeks, months, years)")
+  @ApiModelProperty(required = true, value = "")
   public LengthUnitEnum getLengthUnit() {
     return lengthUnit;
   }
