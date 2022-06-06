@@ -30,9 +30,8 @@ public class CancelSubscriptionReason {
   private String notes = null;
 
   /**
-   * Cancel reason code
    **/
-  @ApiModelProperty(required = true, value = "Cancel reason code")
+  @ApiModelProperty(required = true, value = "")
   public ReasonEnum getReason() {
     return reason;
   }

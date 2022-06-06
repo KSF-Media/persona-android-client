@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reason** | [**ReasonEnum**](#ReasonEnum) | Cancel reason code | 
+**reason** | [**ReasonEnum**](#ReasonEnum) |  | 
 **notes** | **String** | Cancel reason explanation |  [optional]
 
 

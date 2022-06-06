@@ -24,7 +24,7 @@ public class PausedSubscription {
   @SerializedName("endDate")
   private Date endDate = null;
   public enum SleepTypeEnum {
-     Upcoming,  Active,  Paused,  Ended,  UnpaidAndCanceled,  Canceled,  CanceledWithLatePayment,  RestartedAfterLatePayment,  DeactivatedRecently,  Unknown, 
+     Pause,  Rebate,  UnknownSleepType, 
   };
   @SerializedName("sleepType")
   private SleepTypeEnum sleepType = null;

@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 **extno** | **Integer** | Subscription Extension Id - how many times a subscription has been extended | 
 **cusno** | **Integer** | Customer getting the subscription | 
 **paycusno** | **Integer** | Customer paying for the subscription | 
-**kind** | [**KindEnum**](#KindEnum) | Subscription kind - what kind of order is it | 
-**state** | [**StateEnum**](#StateEnum) | Current state of the Subscription | 
-**pricegroup** | [**PricegroupEnum**](#PricegroupEnum) | Pricegroup of the Subscription |  [optional]
+**kind** | [**KindEnum**](#KindEnum) |  | 
+**state** | [**StateEnum**](#StateEnum) |  | 
+**pricegroup** | [**PricegroupEnum**](#PricegroupEnum) |  |  [optional]
 **_package** | [**ModelPackage**](ModelPackage.md) |  | 
 **dates** | [**SubscriptionDates**](SubscriptionDates.md) |  | 
 **extsubsexists** | **Boolean** | If the extension of this subscription exists | 

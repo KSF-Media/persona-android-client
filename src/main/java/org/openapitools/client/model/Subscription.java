@@ -127,9 +127,8 @@ public class Subscription {
   }
 
   /**
-   * Subscription kind - what kind of order is it
    **/
-  @ApiModelProperty(required = true, value = "Subscription kind - what kind of order is it")
+  @ApiModelProperty(required = true, value = "")
   public KindEnum getKind() {
     return kind;
   }
@@ -138,9 +137,8 @@ public class Subscription {
   }
 
   /**
-   * Current state of the Subscription
    **/
-  @ApiModelProperty(required = true, value = "Current state of the Subscription")
+  @ApiModelProperty(required = true, value = "")
   public StateEnum getState() {
     return state;
   }
@@ -149,9 +147,8 @@ public class Subscription {
   }
 
   /**
-   * Pricegroup of the Subscription
    **/
-  @ApiModelProperty(value = "Pricegroup of the Subscription")
+  @ApiModelProperty(value = "")
   public PricegroupEnum getPricegroup() {
     return pricegroup;
   }
