@@ -4,11 +4,60 @@ All URIs are relative to *http://http:/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**loginIpGet**](LoginApi.md#loginIpGet) | **GET** /login/ip | Login with IP
 [**loginPost**](LoginApi.md#loginPost) | **POST** /login | Login with email and password
 [**loginSomePost**](LoginApi.md#loginSomePost) | **POST** /login/some | Login with social media
 [**loginSsoPost**](LoginApi.md#loginSsoPost) | **POST** /login/sso | Login with the AccessToken given by the SSO auth
 [**loginUuidDelete**](LoginApi.md#loginUuidDelete) | **DELETE** /login/{uuid} | Logout
 
+
+
+## loginIpGet
+
+> LoginResponse loginIpGet(xRealIP, paper)
+
+Login with IP
+
+Returns auth &amp; token for customers with IP based entitlement
+
+### Example
+
+```java
+// Import classes:
+//import org.openapitools.client.api.LoginApi;
+
+LoginApi apiInstance = new LoginApi();
+String xRealIP = null; // String | 
+String paper = null; // String | 
+try {
+    LoginResponse result = apiInstance.loginIpGet(xRealIP, paper);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LoginApi#loginIpGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xRealIP** | **String**|  | [optional] [default to null]
+ **paper** | **String**|  | [optional] [default to null] [enum: HBL, ON, VN, HT, JUNIOR, FORUM, LS]
+
+### Return type
+
+[**LoginResponse**](LoginResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=utf-8
 
 
 ## loginPost
