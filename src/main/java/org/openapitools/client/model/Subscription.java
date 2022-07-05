@@ -73,6 +73,8 @@ public class Subscription {
   private PaymentMethodEnum paymentMethod = null;
   @SerializedName("paymentMethodId")
   private Integer paymentMethodId = null;
+  @SerializedName("deliveryTroubleEnd")
+  private String deliveryTroubleEnd = null;
 
   /**
    * Subscription Id - primary key together with extno
@@ -273,6 +275,16 @@ public class Subscription {
     this.paymentMethodId = paymentMethodId;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getDeliveryTroubleEnd() {
+    return deliveryTroubleEnd;
+  }
+  public void setDeliveryTroubleEnd(String deliveryTroubleEnd) {
+    this.deliveryTroubleEnd = deliveryTroubleEnd;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -300,7 +312,8 @@ public class Subscription {
         (this.pendingAddressChanges == null ? subscription.pendingAddressChanges == null : this.pendingAddressChanges.equals(subscription.pendingAddressChanges)) &&
         (this.orderNumber == null ? subscription.orderNumber == null : this.orderNumber.equals(subscription.orderNumber)) &&
         (this.paymentMethod == null ? subscription.paymentMethod == null : this.paymentMethod.equals(subscription.paymentMethod)) &&
-        (this.paymentMethodId == null ? subscription.paymentMethodId == null : this.paymentMethodId.equals(subscription.paymentMethodId));
+        (this.paymentMethodId == null ? subscription.paymentMethodId == null : this.paymentMethodId.equals(subscription.paymentMethodId)) &&
+        (this.deliveryTroubleEnd == null ? subscription.deliveryTroubleEnd == null : this.deliveryTroubleEnd.equals(subscription.deliveryTroubleEnd));
   }
 
   @Override
@@ -324,6 +337,7 @@ public class Subscription {
     result = 31 * result + (this.orderNumber == null ? 0: this.orderNumber.hashCode());
     result = 31 * result + (this.paymentMethod == null ? 0: this.paymentMethod.hashCode());
     result = 31 * result + (this.paymentMethodId == null ? 0: this.paymentMethodId.hashCode());
+    result = 31 * result + (this.deliveryTroubleEnd == null ? 0: this.deliveryTroubleEnd.hashCode());
     return result;
   }
 
@@ -350,6 +364,7 @@ public class Subscription {
     sb.append("  orderNumber: ").append(orderNumber).append("\n");
     sb.append("  paymentMethod: ").append(paymentMethod).append("\n");
     sb.append("  paymentMethodId: ").append(paymentMethodId).append("\n");
+    sb.append("  deliveryTroubleEnd: ").append(deliveryTroubleEnd).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

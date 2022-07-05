@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **orderNumber** | **String** | Order number of subscription |  [optional]
 **paymentMethod** | [**PaymentMethodEnum**](#PaymentMethodEnum) |  |  [optional]
 **paymentMethodId** | **Integer** |  |  [optional]
+**deliveryTroubleEnd** | **String** |  |  [optional]
 
 
 ## Enum: KindEnum
