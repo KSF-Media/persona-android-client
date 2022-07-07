@@ -13,6 +13,7 @@
 package org.openapitools.client.model;
 
 import java.util.*;
+import java.util.Date;
 import org.openapitools.client.model.DeliveryAddress;
 import org.openapitools.client.model.ModelPackage;
 import org.openapitools.client.model.PackageCampaign;
@@ -74,7 +75,7 @@ public class Subscription {
   @SerializedName("paymentMethodId")
   private Integer paymentMethodId = null;
   @SerializedName("deliveryTroubleEnd")
-  private String deliveryTroubleEnd = null;
+  private Date deliveryTroubleEnd = null;
 
   /**
    * Subscription Id - primary key together with extno
@@ -278,10 +279,10 @@ public class Subscription {
   /**
    **/
   @ApiModelProperty(value = "")
-  public String getDeliveryTroubleEnd() {
+  public Date getDeliveryTroubleEnd() {
     return deliveryTroubleEnd;
   }
-  public void setDeliveryTroubleEnd(String deliveryTroubleEnd) {
+  public void setDeliveryTroubleEnd(Date deliveryTroubleEnd) {
     this.deliveryTroubleEnd = deliveryTroubleEnd;
   }
 
