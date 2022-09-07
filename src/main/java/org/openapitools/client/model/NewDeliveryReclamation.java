@@ -31,6 +31,8 @@ public class NewDeliveryReclamation {
   };
   @SerializedName("claim")
   private ClaimEnum claim = null;
+  @SerializedName("doorCode")
+  private String doorCode = null;
 
   /**
    **/
@@ -62,6 +64,17 @@ public class NewDeliveryReclamation {
     this.claim = claim;
   }
 
+  /**
+   * Door code for possible redelivery
+   **/
+  @ApiModelProperty(value = "Door code for possible redelivery")
+  public String getDoorCode() {
+    return doorCode;
+  }
+  public void setDoorCode(String doorCode) {
+    this.doorCode = doorCode;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -74,7 +87,8 @@ public class NewDeliveryReclamation {
     NewDeliveryReclamation newDeliveryReclamation = (NewDeliveryReclamation) o;
     return (this.paper == null ? newDeliveryReclamation.paper == null : this.paper.equals(newDeliveryReclamation.paper)) &&
         (this.publicationDate == null ? newDeliveryReclamation.publicationDate == null : this.publicationDate.equals(newDeliveryReclamation.publicationDate)) &&
-        (this.claim == null ? newDeliveryReclamation.claim == null : this.claim.equals(newDeliveryReclamation.claim));
+        (this.claim == null ? newDeliveryReclamation.claim == null : this.claim.equals(newDeliveryReclamation.claim)) &&
+        (this.doorCode == null ? newDeliveryReclamation.doorCode == null : this.doorCode.equals(newDeliveryReclamation.doorCode));
   }
 
   @Override
@@ -83,6 +97,7 @@ public class NewDeliveryReclamation {
     result = 31 * result + (this.paper == null ? 0: this.paper.hashCode());
     result = 31 * result + (this.publicationDate == null ? 0: this.publicationDate.hashCode());
     result = 31 * result + (this.claim == null ? 0: this.claim.hashCode());
+    result = 31 * result + (this.doorCode == null ? 0: this.doorCode.hashCode());
     return result;
   }
 
@@ -94,6 +109,7 @@ public class NewDeliveryReclamation {
     sb.append("  paper: ").append(paper).append("\n");
     sb.append("  publicationDate: ").append(publicationDate).append("\n");
     sb.append("  claim: ").append(claim).append("\n");
+    sb.append("  doorCode: ").append(doorCode).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
