@@ -326,7 +326,7 @@ No authorization required
 
 ## usersUuidNewslettersGet
 
-> NewsletterSubscriptions usersUuidNewslettersGet(uuid, authUser, authorization)
+> List&lt;Newsletter&gt; usersUuidNewslettersGet(uuid, authUser, authorization)
 
 Get newsletter subscriptions
 
@@ -343,7 +343,7 @@ UUID uuid = null; // UUID |
 UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 try {
-    NewsletterSubscriptions result = apiInstance.usersUuidNewslettersGet(uuid, authUser, authorization);
+    List<Newsletter> result = apiInstance.usersUuidNewslettersGet(uuid, authUser, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidNewslettersGet");
@@ -362,7 +362,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NewsletterSubscriptions**](NewsletterSubscriptions.md)
+[**List&lt;Newsletter&gt;**](Newsletter.md)
 
 ### Authorization
 
@@ -376,7 +376,7 @@ No authorization required
 
 ## usersUuidNewslettersPut
 
-> NewsletterSubscriptions usersUuidNewslettersPut(uuid, body, authUser, authorization)
+> List&lt;Newsletter&gt; usersUuidNewslettersPut(uuid, body, authUser, authorization)
 
 Update newsletter subscriptions
 
@@ -390,11 +390,11 @@ Get list of newsletter subscriptions from mailchimp
 
 UsersApi apiInstance = new UsersApi();
 UUID uuid = null; // UUID | 
-NewsletterSubscriptions body = new NewsletterSubscriptions(); // NewsletterSubscriptions | 
+List<Newsletter> body = Arrays.asList(new List()); // List<Newsletter> | 
 UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 try {
-    NewsletterSubscriptions result = apiInstance.usersUuidNewslettersPut(uuid, body, authUser, authorization);
+    List<Newsletter> result = apiInstance.usersUuidNewslettersPut(uuid, body, authUser, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersUuidNewslettersPut");
@@ -408,13 +408,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**UUID**](.md)|  | [default to null]
- **body** | [**NewsletterSubscriptions**](NewsletterSubscriptions.md)|  |
+ **body** | [**List&lt;Newsletter&gt;**](List.md)|  |
  **authUser** | [**UUID**](.md)|  | [optional] [default to null]
  **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type
 
-[**NewsletterSubscriptions**](NewsletterSubscriptions.md)
+[**List&lt;Newsletter&gt;**](Newsletter.md)
 
 ### Authorization
 

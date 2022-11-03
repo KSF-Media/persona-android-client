@@ -197,8 +197,12 @@ public class JsonUtil {
       return new TypeToken<List<NewUser>>(){}.getType();
     }
     
-    if ("NewsletterSubscriptions".equalsIgnoreCase(className)) {
-      return new TypeToken<List<NewsletterSubscriptions>>(){}.getType();
+    if ("Newsletter".equalsIgnoreCase(className)) {
+      return new TypeToken<List<Newsletter>>(){}.getType();
+    }
+    
+    if ("NewsletterSubscription".equalsIgnoreCase(className)) {
+      return new TypeToken<List<NewsletterSubscription>>(){}.getType();
     }
     
     if ("PackageCampaign".equalsIgnoreCase(className)) {
@@ -439,8 +443,12 @@ public class JsonUtil {
       return new TypeToken<NewUser>(){}.getType();
     }
     
-    if ("NewsletterSubscriptions".equalsIgnoreCase(className)) {
-      return new TypeToken<NewsletterSubscriptions>(){}.getType();
+    if ("Newsletter".equalsIgnoreCase(className)) {
+      return new TypeToken<Newsletter>(){}.getType();
+    }
+    
+    if ("NewsletterSubscription".equalsIgnoreCase(className)) {
+      return new TypeToken<NewsletterSubscription>(){}.getType();
     }
     
     if ("PackageCampaign".equalsIgnoreCase(className)) {

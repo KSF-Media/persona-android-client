@@ -36,7 +36,7 @@ import org.openapitools.client.model.LoginResponse;
 import org.openapitools.client.model.NewDeliveryReclamation;
 import org.openapitools.client.model.NewTemporaryUser;
 import org.openapitools.client.model.NewUser;
-import org.openapitools.client.model.NewsletterSubscriptions;
+import org.openapitools.client.model.Newsletter;
 import org.openapitools.client.model.Subscription;
 import org.openapitools.client.model.SubscriptionPauseDates;
 import org.openapitools.client.model.SubscriptionPauseEdit;
@@ -902,9 +902,9 @@ public class UsersApi {
    * @param uuid 
    * @param authUser 
    * @param authorization 
-   * @return NewsletterSubscriptions
+   * @return List<Newsletter>
   */
-  public NewsletterSubscriptions usersUuidNewslettersGet (UUID uuid, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<Newsletter> usersUuidNewslettersGet (UUID uuid, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -941,7 +941,7 @@ public class UsersApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (NewsletterSubscriptions) ApiInvoker.deserialize(localVarResponse, "", NewsletterSubscriptions.class);
+         return (List<Newsletter>) ApiInvoker.deserialize(localVarResponse, "array", Newsletter.class);
       } else {
          return null;
       }
@@ -967,7 +967,7 @@ public class UsersApi {
    * Get list of newsletter subscriptions from mailchimp
    * @param uuid    * @param authUser    * @param authorization 
   */
-  public void usersUuidNewslettersGet (UUID uuid, UUID authUser, String authorization, final Response.Listener<NewsletterSubscriptions> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidNewslettersGet (UUID uuid, UUID authUser, String authorization, final Response.Listener<List<Newsletter>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'uuid' is set
@@ -1014,7 +1014,7 @@ public class UsersApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((NewsletterSubscriptions) ApiInvoker.deserialize(localVarResponse,  "", NewsletterSubscriptions.class));
+              responseListener.onResponse((List<Newsletter>) ApiInvoker.deserialize(localVarResponse,  "array", Newsletter.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -1036,9 +1036,9 @@ public class UsersApi {
    * @param body 
    * @param authUser 
    * @param authorization 
-   * @return NewsletterSubscriptions
+   * @return List<Newsletter>
   */
-  public NewsletterSubscriptions usersUuidNewslettersPut (UUID uuid, NewsletterSubscriptions body, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<Newsletter> usersUuidNewslettersPut (UUID uuid, List<Newsletter> body, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = body;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -1081,7 +1081,7 @@ public class UsersApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (NewsletterSubscriptions) ApiInvoker.deserialize(localVarResponse, "", NewsletterSubscriptions.class);
+         return (List<Newsletter>) ApiInvoker.deserialize(localVarResponse, "array", Newsletter.class);
       } else {
          return null;
       }
@@ -1107,7 +1107,7 @@ public class UsersApi {
    * Get list of newsletter subscriptions from mailchimp
    * @param uuid    * @param body    * @param authUser    * @param authorization 
   */
-  public void usersUuidNewslettersPut (UUID uuid, NewsletterSubscriptions body, UUID authUser, String authorization, final Response.Listener<NewsletterSubscriptions> responseListener, final Response.ErrorListener errorListener) {
+  public void usersUuidNewslettersPut (UUID uuid, List<Newsletter> body, UUID authUser, String authorization, final Response.Listener<List<Newsletter>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = body;
 
     // verify the required parameter 'uuid' is set
@@ -1159,7 +1159,7 @@ public class UsersApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((NewsletterSubscriptions) ApiInvoker.deserialize(localVarResponse,  "", NewsletterSubscriptions.class));
+              responseListener.onResponse((List<Newsletter>) ApiInvoker.deserialize(localVarResponse,  "array", Newsletter.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
