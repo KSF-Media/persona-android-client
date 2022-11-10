@@ -25,6 +25,8 @@ public class EntitlementAccess {
   private String endAt = null;
   @SerializedName("onlyToProducts")
   private List<String> onlyToProducts = null;
+  @SerializedName("byPackageId")
+  private String byPackageId = null;
 
   /**
    **/
@@ -56,6 +58,16 @@ public class EntitlementAccess {
     this.onlyToProducts = onlyToProducts;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getByPackageId() {
+    return byPackageId;
+  }
+  public void setByPackageId(String byPackageId) {
+    this.byPackageId = byPackageId;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -68,7 +80,8 @@ public class EntitlementAccess {
     EntitlementAccess entitlementAccess = (EntitlementAccess) o;
     return (this.startAt == null ? entitlementAccess.startAt == null : this.startAt.equals(entitlementAccess.startAt)) &&
         (this.endAt == null ? entitlementAccess.endAt == null : this.endAt.equals(entitlementAccess.endAt)) &&
-        (this.onlyToProducts == null ? entitlementAccess.onlyToProducts == null : this.onlyToProducts.equals(entitlementAccess.onlyToProducts));
+        (this.onlyToProducts == null ? entitlementAccess.onlyToProducts == null : this.onlyToProducts.equals(entitlementAccess.onlyToProducts)) &&
+        (this.byPackageId == null ? entitlementAccess.byPackageId == null : this.byPackageId.equals(entitlementAccess.byPackageId));
   }
 
   @Override
@@ -77,6 +90,7 @@ public class EntitlementAccess {
     result = 31 * result + (this.startAt == null ? 0: this.startAt.hashCode());
     result = 31 * result + (this.endAt == null ? 0: this.endAt.hashCode());
     result = 31 * result + (this.onlyToProducts == null ? 0: this.onlyToProducts.hashCode());
+    result = 31 * result + (this.byPackageId == null ? 0: this.byPackageId.hashCode());
     return result;
   }
 
@@ -88,6 +102,7 @@ public class EntitlementAccess {
     sb.append("  startAt: ").append(startAt).append("\n");
     sb.append("  endAt: ").append(endAt).append("\n");
     sb.append("  onlyToProducts: ").append(onlyToProducts).append("\n");
+    sb.append("  byPackageId: ").append(byPackageId).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
