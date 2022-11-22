@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**entitlementsAllowPost**](EntitlementsApi.md#entitlementsAllowPost) | **POST** /entitlements/allow | Add an entitlement for all users
 [**entitlementsAllowUuidPost**](EntitlementsApi.md#entitlementsAllowUuidPost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
 [**entitlementsGet**](EntitlementsApi.md#entitlementsGet) | **GET** /entitlements | List all entitlements
+[**entitlementsGlobalGet**](EntitlementsApi.md#entitlementsGlobalGet) | **GET** /entitlements/global | Lists all past and future global entitlements
 
 
 
@@ -237,6 +238,52 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**Map&lt;String, List&lt;String&gt;&gt;**](List.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=utf-8
+
+
+## entitlementsGlobalGet
+
+> List&lt;PersistedEntitlementAccess&gt; entitlementsGlobalGet(authUser, authorization)
+
+Lists all past and future global entitlements
+
+### Example
+
+```java
+// Import classes:
+//import org.openapitools.client.api.EntitlementsApi;
+
+EntitlementsApi apiInstance = new EntitlementsApi();
+UUID authUser = null; // UUID | 
+String authorization = null; // String | 
+try {
+    List<PersistedEntitlementAccess> result = apiInstance.entitlementsGlobalGet(authUser, authorization);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling EntitlementsApi#entitlementsGlobalGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
+ **authorization** | **String**|  | [optional] [default to null]
+
+### Return type
+
+[**List&lt;PersistedEntitlementAccess&gt;**](PersistedEntitlementAccess.md)
 
 ### Authorization
 
