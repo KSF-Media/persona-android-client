@@ -74,6 +74,16 @@ public class LoginApi {
   */
   public LoginResponse loginIpGet (String xRealIP, String paper) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
+    // verify the required parameter 'xRealIP' is set
+    if (xRealIP == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'xRealIP' when calling loginIpGet",
+        new ApiException(400, "Missing the required parameter 'xRealIP' when calling loginIpGet"));
+    }
+    // verify the required parameter 'paper' is set
+    if (paper == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'paper' when calling loginIpGet",
+        new ApiException(400, "Missing the required parameter 'paper' when calling loginIpGet"));
+    }
 
     // create path and map variables
     String path = "/login/ip";
@@ -133,6 +143,16 @@ public class LoginApi {
   public void loginIpGet (String xRealIP, String paper, final Response.Listener<LoginResponse> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
+    // verify the required parameter 'xRealIP' is set
+    if (xRealIP == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'xRealIP' when calling loginIpGet",
+        new ApiException(400, "Missing the required parameter 'xRealIP' when calling loginIpGet"));
+    }
+    // verify the required parameter 'paper' is set
+    if (paper == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'paper' when calling loginIpGet",
+        new ApiException(400, "Missing the required parameter 'paper' when calling loginIpGet"));
+    }
 
     // create path and map variables
     String path = "/login/ip".replaceAll("\\{format\\}","json");

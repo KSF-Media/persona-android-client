@@ -43,8 +43,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xRealIP** | **String**|  | [optional] [default to null]
- **paper** | **String**|  | [optional] [default to null] [enum: HBL, ON, VN, HT, JUNIOR, FORUM, LS]
+ **xRealIP** | **String**|  | [default to null]
+ **paper** | **String**|  | [default to null] [enum: HBL, ON, VN, HT, JUNIOR, FORUM, LS]
 
 ### Return type
 
