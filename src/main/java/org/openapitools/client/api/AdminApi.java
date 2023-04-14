@@ -196,6 +196,135 @@ public class AdminApi {
     }
   }
   /**
+  * Transfers passive customers from Kayak to Mailchimp
+  * Passive subscribers/members/customers are users who don&#39;t have active entitlements and haven&#39;t opted out from email marketing. For the given list (audience) ID, this endpoint transfers the list of passive subscribers from Kayak to Mailchimp (via Faro).
+   * @param listid 
+   * @param authUser 
+   * @param authorization 
+   * @return void
+  */
+  public void adminTransferPassiveSubscribersListidPost (String listid, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = null;
+    // verify the required parameter 'listid' is set
+    if (listid == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'listid' when calling adminTransferPassiveSubscribersListidPost",
+        new ApiException(400, "Missing the required parameter 'listid' when calling adminTransferPassiveSubscribersListidPost"));
+    }
+
+    // create path and map variables
+    String path = "/admin/transfer-passive-subscribers/{listid}".replaceAll("\\{" + "listid" + "\\}", apiInvoker.escapeString(listid.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+    String[] contentTypes = {
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+    }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      if (localVarResponse != null) {
+         return ;
+      } else {
+         return ;
+      }
+    } catch (ApiException ex) {
+       throw ex;
+    } catch (InterruptedException ex) {
+       throw ex;
+    } catch (ExecutionException ex) {
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
+    } catch (TimeoutException ex) {
+      throw ex;
+    }
+  }
+
+      /**
+   * Transfers passive customers from Kayak to Mailchimp
+   * Passive subscribers/members/customers are users who don&#39;t have active entitlements and haven&#39;t opted out from email marketing. For the given list (audience) ID, this endpoint transfers the list of passive subscribers from Kayak to Mailchimp (via Faro).
+   * @param listid    * @param authUser    * @param authorization 
+  */
+  public void adminTransferPassiveSubscribersListidPost (String listid, UUID authUser, String authorization, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = null;
+
+    // verify the required parameter 'listid' is set
+    if (listid == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'listid' when calling adminTransferPassiveSubscribersListidPost",
+        new ApiException(400, "Missing the required parameter 'listid' when calling adminTransferPassiveSubscribersListidPost"));
+    }
+
+    // create path and map variables
+    String path = "/admin/transfer-passive-subscribers/{listid}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "listid" + "\\}", apiInvoker.escapeString(listid.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+
+    String[] contentTypes = {
+      
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+              responseListener.onResponse(localVarResponse);
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
+  /**
   * Create a new user with admin options.
   * 
    * @param body 
