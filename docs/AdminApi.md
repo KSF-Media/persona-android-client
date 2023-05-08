@@ -60,7 +60,7 @@ No authorization required
 
 ## adminTransferPassiveSubscribersListidPost
 
-> adminTransferPassiveSubscribersListidPost(listid, authUser, authorization)
+> Object adminTransferPassiveSubscribersListidPost(listid, authUser, authorization)
 
 Transfers passive customers from Kayak to Mailchimp
 
@@ -77,7 +77,8 @@ String listid = null; // String |
 UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 try {
-    apiInstance.adminTransferPassiveSubscribersListidPost(listid, authUser, authorization);
+    Object result = apiInstance.adminTransferPassiveSubscribersListidPost(listid, authUser, authorization);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AdminApi#adminTransferPassiveSubscribersListidPost");
     e.printStackTrace();
@@ -95,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+**Object**
 
 ### Authorization
 
@@ -104,7 +105,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json;charset=utf-8
 
 
 ## adminUserPost

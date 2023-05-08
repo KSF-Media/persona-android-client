@@ -201,9 +201,9 @@ public class AdminApi {
    * @param listid 
    * @param authUser 
    * @param authorization 
-   * @return void
+   * @return Object
   */
-  public void adminTransferPassiveSubscribersListidPost (String listid, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Object adminTransferPassiveSubscribersListidPost (String listid, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'listid' is set
     if (listid == null) {
@@ -240,9 +240,9 @@ public class AdminApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return ;
+         return (Object) ApiInvoker.deserialize(localVarResponse, "", Object.class);
       } else {
-         return ;
+         return null;
       }
     } catch (ApiException ex) {
        throw ex;
@@ -266,7 +266,7 @@ public class AdminApi {
    * Passive subscribers/members/customers are users who don&#39;t have active entitlements and haven&#39;t opted out from email marketing. For the given list (audience) ID, this endpoint transfers the list of passive subscribers from Kayak to Mailchimp (via Faro).
    * @param listid    * @param authUser    * @param authorization 
   */
-  public void adminTransferPassiveSubscribersListidPost (String listid, UUID authUser, String authorization, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
+  public void adminTransferPassiveSubscribersListidPost (String listid, UUID authUser, String authorization, final Response.Listener<Object> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'listid' is set
@@ -312,7 +312,11 @@ public class AdminApi {
         new Response.Listener<String>() {
           @Override
           public void onResponse(String localVarResponse) {
-              responseListener.onResponse(localVarResponse);
+            try {
+              responseListener.onResponse((Object) ApiInvoker.deserialize(localVarResponse,  "", Object.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
           }
       }, new Response.ErrorListener() {
           @Override
