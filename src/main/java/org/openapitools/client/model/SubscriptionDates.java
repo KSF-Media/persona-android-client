@@ -19,10 +19,10 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class SubscriptionDates {
   
-  @SerializedName("lenMonths")
-  private Integer lenMonths = null;
   @SerializedName("lenDays")
   private Integer lenDays = null;
+  @SerializedName("lenMonths")
+  private Integer lenMonths = null;
   @SerializedName("start")
   private Date start = null;
   @SerializedName("end")
@@ -37,19 +37,6 @@ public class SubscriptionDates {
   private Date suspend = null;
 
   /**
-   * Length of Subscription in months
-   * minimum: -9223372036854775808
-   * maximum: 9223372036854775807
-   **/
-  @ApiModelProperty(value = "Length of Subscription in months")
-  public Integer getLenMonths() {
-    return lenMonths;
-  }
-  public void setLenMonths(Integer lenMonths) {
-    this.lenMonths = lenMonths;
-  }
-
-  /**
    * Additional days (on top of months) for Subscription duration
    * minimum: -9223372036854775808
    * maximum: 9223372036854775807
@@ -60,6 +47,19 @@ public class SubscriptionDates {
   }
   public void setLenDays(Integer lenDays) {
     this.lenDays = lenDays;
+  }
+
+  /**
+   * Length of Subscription in months
+   * minimum: -9223372036854775808
+   * maximum: 9223372036854775807
+   **/
+  @ApiModelProperty(value = "Length of Subscription in months")
+  public Integer getLenMonths() {
+    return lenMonths;
+  }
+  public void setLenMonths(Integer lenMonths) {
+    this.lenMonths = lenMonths;
   }
 
   /**
@@ -132,8 +132,8 @@ public class SubscriptionDates {
       return false;
     }
     SubscriptionDates subscriptionDates = (SubscriptionDates) o;
-    return (this.lenMonths == null ? subscriptionDates.lenMonths == null : this.lenMonths.equals(subscriptionDates.lenMonths)) &&
-        (this.lenDays == null ? subscriptionDates.lenDays == null : this.lenDays.equals(subscriptionDates.lenDays)) &&
+    return (this.lenDays == null ? subscriptionDates.lenDays == null : this.lenDays.equals(subscriptionDates.lenDays)) &&
+        (this.lenMonths == null ? subscriptionDates.lenMonths == null : this.lenMonths.equals(subscriptionDates.lenMonths)) &&
         (this.start == null ? subscriptionDates.start == null : this.start.equals(subscriptionDates.start)) &&
         (this.end == null ? subscriptionDates.end == null : this.end.equals(subscriptionDates.end)) &&
         (this.unpaidBreak == null ? subscriptionDates.unpaidBreak == null : this.unpaidBreak.equals(subscriptionDates.unpaidBreak)) &&
@@ -145,8 +145,8 @@ public class SubscriptionDates {
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (this.lenMonths == null ? 0: this.lenMonths.hashCode());
     result = 31 * result + (this.lenDays == null ? 0: this.lenDays.hashCode());
+    result = 31 * result + (this.lenMonths == null ? 0: this.lenMonths.hashCode());
     result = 31 * result + (this.start == null ? 0: this.start.hashCode());
     result = 31 * result + (this.end == null ? 0: this.end.hashCode());
     result = 31 * result + (this.unpaidBreak == null ? 0: this.unpaidBreak.hashCode());
@@ -161,8 +161,8 @@ public class SubscriptionDates {
     StringBuilder sb = new StringBuilder();
     sb.append("class SubscriptionDates {\n");
     
-    sb.append("  lenMonths: ").append(lenMonths).append("\n");
     sb.append("  lenDays: ").append(lenDays).append("\n");
+    sb.append("  lenMonths: ").append(lenMonths).append("\n");
     sb.append("  start: ").append(start).append("\n");
     sb.append("  end: ").append(end).append("\n");
     sb.append("  unpaidBreak: ").append(unpaidBreak).append("\n");

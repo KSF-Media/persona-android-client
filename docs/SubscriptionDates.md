@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**lenMonths** | **Integer** | Length of Subscription in months |  [optional]
 **lenDays** | **Integer** | Additional days (on top of months) for Subscription duration |  [optional]
+**lenMonths** | **Integer** | Length of Subscription in months |  [optional]
 **start** | [**Date**](Date.md) |  | 
 **end** | [**Date**](Date.md) |  |  [optional]
 **unpaidBreak** | [**Date**](Date.md) |  |  [optional]
