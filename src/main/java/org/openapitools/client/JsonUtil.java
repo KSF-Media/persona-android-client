@@ -97,14 +97,6 @@ public class JsonUtil {
       return new TypeToken<List<ForgotPasswordData>>(){}.getType();
     }
     
-    if ("FreePass".equalsIgnoreCase(className)) {
-      return new TypeToken<List<FreePass>>(){}.getType();
-    }
-    
-    if ("FreePassInput".equalsIgnoreCase(className)) {
-      return new TypeToken<List<FreePassInput>>(){}.getType();
-    }
-    
     if ("GdprConsent".equalsIgnoreCase(className)) {
       return new TypeToken<List<GdprConsent>>(){}.getType();
     }
@@ -349,14 +341,6 @@ public class JsonUtil {
     
     if ("ForgotPasswordData".equalsIgnoreCase(className)) {
       return new TypeToken<ForgotPasswordData>(){}.getType();
-    }
-    
-    if ("FreePass".equalsIgnoreCase(className)) {
-      return new TypeToken<FreePass>(){}.getType();
-    }
-    
-    if ("FreePassInput".equalsIgnoreCase(className)) {
-      return new TypeToken<FreePassInput>(){}.getType();
     }
     
     if ("GdprConsent".equalsIgnoreCase(className)) {
