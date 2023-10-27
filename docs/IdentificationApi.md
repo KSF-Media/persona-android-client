@@ -5,6 +5,7 @@ All URIs are relative to *http://http:/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**identificationLoginGet**](IdentificationApi.md#identificationLoginGet) | **GET** /identification/login | Authenticate with OpenID Connect
+[**identificationLoginMonitorGet**](IdentificationApi.md#identificationLoginMonitorGet) | **GET** /identification/login/monitor | Get token for off band response login flow monitor
 [**identificationLoginReturnGet**](IdentificationApi.md#identificationLoginReturnGet) | **GET** /identification/login/return | Redirect endpoint for OpenID Connect
 [**identificationUserStampUuidPost**](IdentificationApi.md#identificationUserStampUuidPost) | **POST** /identification/user/stamp/{uuid} | Query when the strong identification was last updated
 
@@ -27,6 +28,45 @@ try {
     apiInstance.identificationLoginGet();
 } catch (ApiException e) {
     System.err.println("Exception when calling IdentificationApi#identificationLoginGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## identificationLoginMonitorGet
+
+> identificationLoginMonitorGet()
+
+Get token for off band response login flow monitor
+
+### Example
+
+```java
+// Import classes:
+//import org.openapitools.client.api.IdentificationApi;
+
+IdentificationApi apiInstance = new IdentificationApi();
+try {
+    apiInstance.identificationLoginMonitorGet();
+} catch (ApiException e) {
+    System.err.println("Exception when calling IdentificationApi#identificationLoginMonitorGet");
     e.printStackTrace();
 }
 ```
