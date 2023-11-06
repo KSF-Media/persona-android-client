@@ -59,9 +59,10 @@ public class IdentificationApi {
   /**
   * Authenticate with OpenID Connect
   * 
+   * @param monitor 
    * @return void
   */
-  public void identificationLoginGet () throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public void identificationLoginGet (String monitor) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -73,6 +74,7 @@ public class IdentificationApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "monitor", monitor));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -115,9 +117,9 @@ public class IdentificationApi {
       /**
    * Authenticate with OpenID Connect
    * 
-
+   * @param monitor 
   */
-  public void identificationLoginGet (final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
+  public void identificationLoginGet (String monitor, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -131,6 +133,7 @@ public class IdentificationApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
 
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "monitor", monitor));
 
 
     String[] contentTypes = {

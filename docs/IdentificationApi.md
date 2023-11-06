@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## identificationLoginGet
 
-> identificationLoginGet()
+> identificationLoginGet(monitor)
 
 Authenticate with OpenID Connect
 
@@ -24,8 +24,9 @@ Authenticate with OpenID Connect
 //import org.openapitools.client.api.IdentificationApi;
 
 IdentificationApi apiInstance = new IdentificationApi();
+String monitor = null; // String | 
 try {
-    apiInstance.identificationLoginGet();
+    apiInstance.identificationLoginGet(monitor);
 } catch (ApiException e) {
     System.err.println("Exception when calling IdentificationApi#identificationLoginGet");
     e.printStackTrace();
@@ -34,7 +35,10 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **monitor** | **String**|  | [optional] [default to null]
 
 ### Return type
 
