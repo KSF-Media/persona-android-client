@@ -4,10 +4,160 @@ All URIs are relative to *http://http:/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**adminFreePassDelete**](AdminApi.md#adminFreePassDelete) | **DELETE** /admin/free-pass | Revokes an existing free pass
+[**adminFreePassPost**](AdminApi.md#adminFreePassPost) | **POST** /admin/free-pass | Creates a free pass to an article
+[**adminFreePassesGet**](AdminApi.md#adminFreePassesGet) | **GET** /admin/free-passes | Lists all free passes
 [**adminSearchPost**](AdminApi.md#adminSearchPost) | **POST** /admin/search | Search for users
 [**adminTransferPassiveSubscribersListidPost**](AdminApi.md#adminTransferPassiveSubscribersListidPost) | **POST** /admin/transfer-passive-subscribers/{listid} | Transfers passive customers from Kayak to Mailchimp
 [**adminUserPost**](AdminApi.md#adminUserPost) | **POST** /admin/user | Create a new user with admin options.
 
+
+
+## adminFreePassDelete
+
+> adminFreePassDelete(body, authUser, authorization)
+
+Revokes an existing free pass
+
+Marks a free pass as being revoked so that it can&#39;t be used anymore. Currently, revoked free passes can&#39;t be reinstated through Persona API (though it&#39;s possible to do so with an SQL query).
+
+### Example
+
+```java
+// Import classes:
+//import org.openapitools.client.api.AdminApi;
+
+AdminApi apiInstance = new AdminApi();
+String body = "body_example"; // String | 
+UUID authUser = null; // UUID | 
+String authorization = null; // String | 
+try {
+    apiInstance.adminFreePassDelete(body, authUser, authorization);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#adminFreePassDelete");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **String**|  |
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
+ **authorization** | **String**|  | [optional] [default to null]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: Not defined
+
+
+## adminFreePassPost
+
+> String adminFreePassPost(body, authUser, authorization)
+
+Creates a free pass to an article
+
+Free passes can be used to temporarily bypass the paywall for individual articles.
+
+### Example
+
+```java
+// Import classes:
+//import org.openapitools.client.api.AdminApi;
+
+AdminApi apiInstance = new AdminApi();
+FreePassInput body = new FreePassInput(); // FreePassInput | 
+UUID authUser = null; // UUID | 
+String authorization = null; // String | 
+try {
+    String result = apiInstance.adminFreePassPost(body, authUser, authorization);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#adminFreePassPost");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**FreePassInput**](FreePassInput.md)|  |
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
+ **authorization** | **String**|  | [optional] [default to null]
+
+### Return type
+
+**String**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
+
+
+## adminFreePassesGet
+
+> List&lt;FreePass&gt; adminFreePassesGet(authUser, authorization)
+
+Lists all free passes
+
+This end point returns the list of all free passes, including those that have been expired or revoked.
+
+### Example
+
+```java
+// Import classes:
+//import org.openapitools.client.api.AdminApi;
+
+AdminApi apiInstance = new AdminApi();
+UUID authUser = null; // UUID | 
+String authorization = null; // String | 
+try {
+    List<FreePass> result = apiInstance.adminFreePassesGet(authUser, authorization);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#adminFreePassesGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
+ **authorization** | **String**|  | [optional] [default to null]
+
+### Return type
+
+[**List&lt;FreePass&gt;**](FreePass.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=utf-8
 
 
 ## adminSearchPost
