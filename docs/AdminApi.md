@@ -5,7 +5,7 @@ All URIs are relative to *http://http:/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**adminFreePassDelete**](AdminApi.md#adminFreePassDelete) | **DELETE** /admin/free-pass | Revokes an existing free pass
-[**adminFreePassPost**](AdminApi.md#adminFreePassPost) | **POST** /admin/free-pass | Creates a free pass to an article
+[**adminFreePassPut**](AdminApi.md#adminFreePassPut) | **PUT** /admin/free-pass | Creates a free pass to an article
 [**adminFreePassesGet**](AdminApi.md#adminFreePassesGet) | **GET** /admin/free-passes | Lists all free passes
 [**adminSearchPost**](AdminApi.md#adminSearchPost) | **POST** /admin/search | Search for users
 [**adminTransferPassiveSubscribersListidPost**](AdminApi.md#adminTransferPassiveSubscribersListidPost) | **POST** /admin/transfer-passive-subscribers/{listid} | Transfers passive customers from Kayak to Mailchimp
@@ -62,9 +62,9 @@ No authorization required
 - **Accept**: Not defined
 
 
-## adminFreePassPost
+## adminFreePassPut
 
-> String adminFreePassPost(body, authUser, authorization)
+> String adminFreePassPut(body, authUser, authorization)
 
 Creates a free pass to an article
 
@@ -81,10 +81,10 @@ FreePassInput body = new FreePassInput(); // FreePassInput |
 UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 try {
-    String result = apiInstance.adminFreePassPost(body, authUser, authorization);
+    String result = apiInstance.adminFreePassPut(body, authUser, authorization);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AdminApi#adminFreePassPost");
+    System.err.println("Exception when calling AdminApi#adminFreePassPut");
     e.printStackTrace();
 }
 ```

@@ -201,12 +201,12 @@ public class AdminApi {
    * @param authorization 
    * @return String
   */
-  public String adminFreePassPost (FreePassInput body, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public String adminFreePassPut (FreePassInput body, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = body;
     // verify the required parameter 'body' is set
     if (body == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling adminFreePassPost",
-        new ApiException(400, "Missing the required parameter 'body' when calling adminFreePassPost"));
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling adminFreePassPut",
+        new ApiException(400, "Missing the required parameter 'body' when calling adminFreePassPut"));
     }
 
     // create path and map variables
@@ -237,7 +237,7 @@ public class AdminApi {
     String[] authNames = new String[] {  };
 
     try {
-      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
          return (String) ApiInvoker.deserialize(localVarResponse, "", String.class);
       } else {
@@ -265,13 +265,13 @@ public class AdminApi {
    * Free passes can be used to temporarily bypass the paywall for individual articles.
    * @param body    * @param authUser    * @param authorization 
   */
-  public void adminFreePassPost (FreePassInput body, UUID authUser, String authorization, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
+  public void adminFreePassPut (FreePassInput body, UUID authUser, String authorization, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = body;
 
     // verify the required parameter 'body' is set
     if (body == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling adminFreePassPost",
-        new ApiException(400, "Missing the required parameter 'body' when calling adminFreePassPost"));
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling adminFreePassPut",
+        new ApiException(400, "Missing the required parameter 'body' when calling adminFreePassPut"));
     }
 
     // create path and map variables
@@ -307,7 +307,7 @@ public class AdminApi {
     String[] authNames = new String[] {  };
 
     try {
-      apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
+      apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
         new Response.Listener<String>() {
           @Override
           public void onResponse(String localVarResponse) {
