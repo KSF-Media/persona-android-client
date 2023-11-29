@@ -6,8 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**loginIpGet**](LoginApi.md#loginIpGet) | **GET** /login/ip | Login with IP
 [**loginPost**](LoginApi.md#loginPost) | **POST** /login | Login with email and password
-[**loginSomePost**](LoginApi.md#loginSomePost) | **POST** /login/some | Login with social media
-[**loginSsoPost**](LoginApi.md#loginSsoPost) | **POST** /login/sso | Login with the AccessToken given by the SSO auth
+[**loginSsoPost**](LoginApi.md#loginSsoPost) | **POST** /login/sso | Disabled. Always returns 403.
 [**loginUuidDelete**](LoginApi.md#loginUuidDelete) | **DELETE** /login/{uuid} | Logout
 
 
@@ -104,55 +103,11 @@ No authorization required
 - **Accept**: application/json;charset=utf-8
 
 
-## loginSomePost
-
-> LoginResponse loginSomePost(body)
-
-Login with social media
-
-### Example
-
-```java
-// Import classes:
-//import org.openapitools.client.api.LoginApi;
-
-LoginApi apiInstance = new LoginApi();
-LoginDataSoMe body = new LoginDataSoMe(); // LoginDataSoMe | 
-try {
-    LoginResponse result = apiInstance.loginSomePost(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoginApi#loginSomePost");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**LoginDataSoMe**](LoginDataSoMe.md)|  |
-
-### Return type
-
-[**LoginResponse**](LoginResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json;charset=utf-8
-- **Accept**: application/json;charset=utf-8
-
-
 ## loginSsoPost
 
 > LoginResponse loginSsoPost(body)
 
-Login with the AccessToken given by the SSO auth
+Disabled. Always returns 403.
 
 ### Example
 

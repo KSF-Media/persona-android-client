@@ -58,19 +58,19 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import org.openapitools.client.api.AccountApi;
+import org.openapitools.client.api.AdminApi;
 
-public class AccountApiExample {
+public class AdminApiExample {
 
     public static void main(String[] args) {
-        AccountApi apiInstance = new AccountApi();
-        String email = null; // String | 
-        Boolean redir = null; // Boolean | 
+        AdminApi apiInstance = new AdminApi();
+        String body = "body_example"; // String | 
+        UUID authUser = null; // UUID | 
+        String authorization = null; // String | 
         try {
-            List<Object> result = apiInstance.accountPasswordForgotGet(email, redir);
-            System.out.println(result);
+            apiInstance.adminFreePassDelete(body, authUser, authorization);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountApi#accountPasswordForgotGet");
+            System.err.println("Exception when calling AdminApi#adminFreePassDelete");
             e.printStackTrace();
         }
     }
@@ -84,9 +84,6 @@ All URIs are relative to *http://http:/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AccountApi* | [**accountPasswordForgotGet**](docs/AccountApi.md#accountPasswordForgotGet) | **GET** /account/password/forgot | Request password reset link
-*AccountApi* | [**accountPasswordForgotPost**](docs/AccountApi.md#accountPasswordForgotPost) | **POST** /account/password/forgot | Request password reset link
-*AccountApi* | [**accountPasswordResetPost**](docs/AccountApi.md#accountPasswordResetPost) | **POST** /account/password/reset | Reset a forgotten password with a token
 *AdminApi* | [**adminFreePassDelete**](docs/AdminApi.md#adminFreePassDelete) | **DELETE** /admin/free-pass | Revokes an existing free pass
 *AdminApi* | [**adminFreePassPut**](docs/AdminApi.md#adminFreePassPut) | **PUT** /admin/free-pass | Creates a free pass to an article
 *AdminApi* | [**adminFreePassesGet**](docs/AdminApi.md#adminFreePassesGet) | **GET** /admin/free-passes | Lists all free passes
@@ -106,8 +103,7 @@ Class | Method | HTTP request | Description
 *IdentificationApi* | [**identificationUserStampUuidPost**](docs/IdentificationApi.md#identificationUserStampUuidPost) | **POST** /identification/user/stamp/{uuid} | Query when the strong identification was last updated
 *LoginApi* | [**loginIpGet**](docs/LoginApi.md#loginIpGet) | **GET** /login/ip | Login with IP
 *LoginApi* | [**loginPost**](docs/LoginApi.md#loginPost) | **POST** /login | Login with email and password
-*LoginApi* | [**loginSomePost**](docs/LoginApi.md#loginSomePost) | **POST** /login/some | Login with social media
-*LoginApi* | [**loginSsoPost**](docs/LoginApi.md#loginSsoPost) | **POST** /login/sso | Login with the AccessToken given by the SSO auth
+*LoginApi* | [**loginSsoPost**](docs/LoginApi.md#loginSsoPost) | **POST** /login/sso | Disabled. Always returns 403.
 *LoginApi* | [**loginUuidDelete**](docs/LoginApi.md#loginUuidDelete) | **DELETE** /login/{uuid} | Logout
 *UsersApi* | [**usersPost**](docs/UsersApi.md#usersPost) | **POST** /users | Create a new user.
 *UsersApi* | [**usersTemporaryPost**](docs/UsersApi.md#usersTemporaryPost) | **POST** /users/temporary | Create a new user with email.
@@ -143,7 +139,6 @@ Class | Method | HTTP request | Description
  - [DeliveryReclamation](docs/DeliveryReclamation.md)
  - [EntitlementAccess](docs/EntitlementAccess.md)
  - [FaroUser](docs/FaroUser.md)
- - [ForgotPasswordData](docs/ForgotPasswordData.md)
  - [FreePass](docs/FreePass.md)
  - [FreePassInput](docs/FreePassInput.md)
  - [GdprConsent](docs/GdprConsent.md)
@@ -152,10 +147,6 @@ Class | Method | HTTP request | Description
  - [InlineResponse403](docs/InlineResponse403.md)
  - [InlineResponse4031](docs/InlineResponse4031.md)
  - [InlineResponse4031AccessTokenExpired](docs/InlineResponse4031AccessTokenExpired.md)
- - [InlineResponse4032](docs/InlineResponse4032.md)
- - [InlineResponse4032EmailAddressInUse](docs/InlineResponse4032EmailAddressInUse.md)
- - [InlineResponse4032EmailNotAuthorized](docs/InlineResponse4032EmailNotAuthorized.md)
- - [InlineResponse4032OauthFailed](docs/InlineResponse4032OauthFailed.md)
  - [InlineResponse403InvalidCredentials](docs/InlineResponse403InvalidCredentials.md)
  - [InlineResponse415](docs/InlineResponse415.md)
  - [InlineResponse415UnsupportedMediaType](docs/InlineResponse415UnsupportedMediaType.md)
@@ -165,7 +156,6 @@ Class | Method | HTTP request | Description
  - [LegalConsent](docs/LegalConsent.md)
  - [LoginData](docs/LoginData.md)
  - [LoginDataSSO](docs/LoginDataSSO.md)
- - [LoginDataSoMe](docs/LoginDataSoMe.md)
  - [LoginResponse](docs/LoginResponse.md)
  - [ModelPackage](docs/ModelPackage.md)
  - [NewDeliveryReclamation](docs/NewDeliveryReclamation.md)
@@ -191,7 +181,6 @@ Class | Method | HTTP request | Description
  - [SubscriptionPayments](docs/SubscriptionPayments.md)
  - [TemporaryAddressChange](docs/TemporaryAddressChange.md)
  - [TemporaryAddressChangeDates](docs/TemporaryAddressChangeDates.md)
- - [UpdatePasswordData](docs/UpdatePasswordData.md)
  - [User](docs/User.md)
  - [UserUpdate](docs/UserUpdate.md)
  - [UserUpdateAddress](docs/UserUpdateAddress.md)

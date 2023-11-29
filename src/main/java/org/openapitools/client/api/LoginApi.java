@@ -26,12 +26,10 @@ import com.android.volley.VolleyError;
 import org.openapitools.client.model.InlineResponse400;
 import org.openapitools.client.model.InlineResponse403;
 import org.openapitools.client.model.InlineResponse4031;
-import org.openapitools.client.model.InlineResponse4032;
 import org.openapitools.client.model.InlineResponse415;
 import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.LoginData;
 import org.openapitools.client.model.LoginDataSSO;
-import org.openapitools.client.model.LoginDataSoMe;
 import org.openapitools.client.model.LoginResponse;
 import java.util.UUID;
 
@@ -336,135 +334,7 @@ public class LoginApi {
     }
   }
   /**
-  * Login with social media
-  * 
-   * @param body 
-   * @return LoginResponse
-  */
-  public LoginResponse loginSomePost (LoginDataSoMe body) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = body;
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling loginSomePost",
-        new ApiException(400, "Missing the required parameter 'body' when calling loginSomePost"));
-    }
-
-    // create path and map variables
-    String path = "/login/some";
-
-    // query params
-    List<Pair> queryParams = new ArrayList<Pair>();
-    // header params
-    Map<String, String> headerParams = new HashMap<String, String>();
-    // form params
-    Map<String, String> formParams = new HashMap<String, String>();
-    String[] contentTypes = {
-      "application/json;charset=utf-8"
-    };
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-
-    if (contentType.startsWith("multipart/form-data")) {
-      // file uploading
-      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
-      HttpEntity httpEntity = localVarBuilder.build();
-      postBody = httpEntity;
-    } else {
-      // normal form params
-    }
-
-    String[] authNames = new String[] {  };
-
-    try {
-      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
-      if (localVarResponse != null) {
-         return (LoginResponse) ApiInvoker.deserialize(localVarResponse, "", LoginResponse.class);
-      } else {
-         return null;
-      }
-    } catch (ApiException ex) {
-       throw ex;
-    } catch (InterruptedException ex) {
-       throw ex;
-    } catch (ExecutionException ex) {
-      if (ex.getCause() instanceof VolleyError) {
-        VolleyError volleyError = (VolleyError)ex.getCause();
-        if (volleyError.networkResponse != null) {
-          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-        }
-      }
-      throw ex;
-    } catch (TimeoutException ex) {
-      throw ex;
-    }
-  }
-
-      /**
-   * Login with social media
-   * 
-   * @param body 
-  */
-  public void loginSomePost (LoginDataSoMe body, final Response.Listener<LoginResponse> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = body;
-
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling loginSomePost",
-        new ApiException(400, "Missing the required parameter 'body' when calling loginSomePost"));
-    }
-
-    // create path and map variables
-    String path = "/login/some".replaceAll("\\{format\\}","json");
-
-    // query params
-    List<Pair> queryParams = new ArrayList<Pair>();
-    // header params
-    Map<String, String> headerParams = new HashMap<String, String>();
-    // form params
-    Map<String, String> formParams = new HashMap<String, String>();
-
-
-
-    String[] contentTypes = {
-      "application/json;charset=utf-8"
-    };
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-
-    if (contentType.startsWith("multipart/form-data")) {
-      // file uploading
-      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
-      
-
-      HttpEntity httpEntity = localVarBuilder.build();
-      postBody = httpEntity;
-    } else {
-      // normal form params
-          }
-
-    String[] authNames = new String[] {  };
-
-    try {
-      apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
-        new Response.Listener<String>() {
-          @Override
-          public void onResponse(String localVarResponse) {
-            try {
-              responseListener.onResponse((LoginResponse) ApiInvoker.deserialize(localVarResponse,  "", LoginResponse.class));
-            } catch (ApiException exception) {
-               errorListener.onErrorResponse(new VolleyError(exception));
-            }
-          }
-      }, new Response.ErrorListener() {
-          @Override
-          public void onErrorResponse(VolleyError error) {
-            errorListener.onErrorResponse(error);
-          }
-      });
-    } catch (ApiException ex) {
-      errorListener.onErrorResponse(new VolleyError(ex));
-    }
-  }
-  /**
-  * Login with the AccessToken given by the SSO auth
+  * Disabled. Always returns 403.
   * 
    * @param body 
    * @return LoginResponse
@@ -527,7 +397,7 @@ public class LoginApi {
   }
 
       /**
-   * Login with the AccessToken given by the SSO auth
+   * Disabled. Always returns 403.
    * 
    * @param body 
   */

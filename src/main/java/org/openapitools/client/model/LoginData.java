@@ -22,8 +22,6 @@ public class LoginData {
   private String username = null;
   @SerializedName("password")
   private String password = null;
-  @SerializedName("mergeToken")
-  private String mergeToken = null;
 
   /**
    **/
@@ -45,16 +43,6 @@ public class LoginData {
     this.password = password;
   }
 
-  /**
-   **/
-  @ApiModelProperty(value = "")
-  public String getMergeToken() {
-    return mergeToken;
-  }
-  public void setMergeToken(String mergeToken) {
-    this.mergeToken = mergeToken;
-  }
-
 
   @Override
   public boolean equals(Object o) {
@@ -66,8 +54,7 @@ public class LoginData {
     }
     LoginData loginData = (LoginData) o;
     return (this.username == null ? loginData.username == null : this.username.equals(loginData.username)) &&
-        (this.password == null ? loginData.password == null : this.password.equals(loginData.password)) &&
-        (this.mergeToken == null ? loginData.mergeToken == null : this.mergeToken.equals(loginData.mergeToken));
+        (this.password == null ? loginData.password == null : this.password.equals(loginData.password));
   }
 
   @Override
@@ -75,7 +62,6 @@ public class LoginData {
     int result = 17;
     result = 31 * result + (this.username == null ? 0: this.username.hashCode());
     result = 31 * result + (this.password == null ? 0: this.password.hashCode());
-    result = 31 * result + (this.mergeToken == null ? 0: this.mergeToken.hashCode());
     return result;
   }
 
@@ -86,7 +72,6 @@ public class LoginData {
     
     sb.append("  username: ").append(username).append("\n");
     sb.append("  password: ").append(password).append("\n");
-    sb.append("  mergeToken: ").append(mergeToken).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

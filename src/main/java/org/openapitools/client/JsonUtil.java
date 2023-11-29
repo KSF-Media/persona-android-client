@@ -93,10 +93,6 @@ public class JsonUtil {
       return new TypeToken<List<FaroUser>>(){}.getType();
     }
     
-    if ("ForgotPasswordData".equalsIgnoreCase(className)) {
-      return new TypeToken<List<ForgotPasswordData>>(){}.getType();
-    }
-    
     if ("FreePass".equalsIgnoreCase(className)) {
       return new TypeToken<List<FreePass>>(){}.getType();
     }
@@ -127,22 +123,6 @@ public class JsonUtil {
     
     if ("InlineResponse4031AccessTokenExpired".equalsIgnoreCase(className)) {
       return new TypeToken<List<InlineResponse4031AccessTokenExpired>>(){}.getType();
-    }
-    
-    if ("InlineResponse4032".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse4032>>(){}.getType();
-    }
-    
-    if ("InlineResponse4032EmailAddressInUse".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse4032EmailAddressInUse>>(){}.getType();
-    }
-    
-    if ("InlineResponse4032EmailNotAuthorized".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse4032EmailNotAuthorized>>(){}.getType();
-    }
-    
-    if ("InlineResponse4032OauthFailed".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse4032OauthFailed>>(){}.getType();
     }
     
     if ("InlineResponse403InvalidCredentials".equalsIgnoreCase(className)) {
@@ -179,10 +159,6 @@ public class JsonUtil {
     
     if ("LoginDataSSO".equalsIgnoreCase(className)) {
       return new TypeToken<List<LoginDataSSO>>(){}.getType();
-    }
-    
-    if ("LoginDataSoMe".equalsIgnoreCase(className)) {
-      return new TypeToken<List<LoginDataSoMe>>(){}.getType();
     }
     
     if ("LoginResponse".equalsIgnoreCase(className)) {
@@ -285,10 +261,6 @@ public class JsonUtil {
       return new TypeToken<List<TemporaryAddressChangeDates>>(){}.getType();
     }
     
-    if ("UpdatePasswordData".equalsIgnoreCase(className)) {
-      return new TypeToken<List<UpdatePasswordData>>(){}.getType();
-    }
-    
     if ("User".equalsIgnoreCase(className)) {
       return new TypeToken<List<User>>(){}.getType();
     }
@@ -347,10 +319,6 @@ public class JsonUtil {
       return new TypeToken<FaroUser>(){}.getType();
     }
     
-    if ("ForgotPasswordData".equalsIgnoreCase(className)) {
-      return new TypeToken<ForgotPasswordData>(){}.getType();
-    }
-    
     if ("FreePass".equalsIgnoreCase(className)) {
       return new TypeToken<FreePass>(){}.getType();
     }
@@ -381,22 +349,6 @@ public class JsonUtil {
     
     if ("InlineResponse4031AccessTokenExpired".equalsIgnoreCase(className)) {
       return new TypeToken<InlineResponse4031AccessTokenExpired>(){}.getType();
-    }
-    
-    if ("InlineResponse4032".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse4032>(){}.getType();
-    }
-    
-    if ("InlineResponse4032EmailAddressInUse".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse4032EmailAddressInUse>(){}.getType();
-    }
-    
-    if ("InlineResponse4032EmailNotAuthorized".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse4032EmailNotAuthorized>(){}.getType();
-    }
-    
-    if ("InlineResponse4032OauthFailed".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse4032OauthFailed>(){}.getType();
     }
     
     if ("InlineResponse403InvalidCredentials".equalsIgnoreCase(className)) {
@@ -433,10 +385,6 @@ public class JsonUtil {
     
     if ("LoginDataSSO".equalsIgnoreCase(className)) {
       return new TypeToken<LoginDataSSO>(){}.getType();
-    }
-    
-    if ("LoginDataSoMe".equalsIgnoreCase(className)) {
-      return new TypeToken<LoginDataSoMe>(){}.getType();
     }
     
     if ("LoginResponse".equalsIgnoreCase(className)) {
@@ -537,10 +485,6 @@ public class JsonUtil {
     
     if ("TemporaryAddressChangeDates".equalsIgnoreCase(className)) {
       return new TypeToken<TemporaryAddressChangeDates>(){}.getType();
-    }
-    
-    if ("UpdatePasswordData".equalsIgnoreCase(className)) {
-      return new TypeToken<UpdatePasswordData>(){}.getType();
     }
     
     if ("User".equalsIgnoreCase(className)) {

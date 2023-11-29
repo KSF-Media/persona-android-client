@@ -21,8 +21,6 @@ public class LoginResponse {
   
   @SerializedName("token")
   private String token = null;
-  @SerializedName("ssoCode")
-  private String ssoCode = null;
   @SerializedName("uuid")
   private UUID uuid = null;
   @SerializedName("isAdmin")
@@ -36,16 +34,6 @@ public class LoginResponse {
   }
   public void setToken(String token) {
     this.token = token;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(value = "")
-  public String getSsoCode() {
-    return ssoCode;
-  }
-  public void setSsoCode(String ssoCode) {
-    this.ssoCode = ssoCode;
   }
 
   /**
@@ -79,7 +67,6 @@ public class LoginResponse {
     }
     LoginResponse loginResponse = (LoginResponse) o;
     return (this.token == null ? loginResponse.token == null : this.token.equals(loginResponse.token)) &&
-        (this.ssoCode == null ? loginResponse.ssoCode == null : this.ssoCode.equals(loginResponse.ssoCode)) &&
         (this.uuid == null ? loginResponse.uuid == null : this.uuid.equals(loginResponse.uuid)) &&
         (this.isAdmin == null ? loginResponse.isAdmin == null : this.isAdmin.equals(loginResponse.isAdmin));
   }
@@ -88,7 +75,6 @@ public class LoginResponse {
   public int hashCode() {
     int result = 17;
     result = 31 * result + (this.token == null ? 0: this.token.hashCode());
-    result = 31 * result + (this.ssoCode == null ? 0: this.ssoCode.hashCode());
     result = 31 * result + (this.uuid == null ? 0: this.uuid.hashCode());
     result = 31 * result + (this.isAdmin == null ? 0: this.isAdmin.hashCode());
     return result;
@@ -100,7 +86,6 @@ public class LoginResponse {
     sb.append("class LoginResponse {\n");
     
     sb.append("  token: ").append(token).append("\n");
-    sb.append("  ssoCode: ").append(ssoCode).append("\n");
     sb.append("  uuid: ").append(uuid).append("\n");
     sb.append("  isAdmin: ").append(isAdmin).append("\n");
     sb.append("}\n");

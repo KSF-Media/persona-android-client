@@ -14,8 +14,6 @@ package org.openapitools.client.model;
 
 import java.util.*;
 import java.util.UUID;
-import org.openapitools.client.model.GdprConsent;
-import org.openapitools.client.model.LegalConsent;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -30,12 +28,6 @@ public class JanrainUser {
   private String firstName = null;
   @SerializedName("lastName")
   private String lastName = null;
-  @SerializedName("middleName")
-  private String middleName = null;
-  @SerializedName("consent")
-  private List<GdprConsent> consent = null;
-  @SerializedName("legal")
-  private List<LegalConsent> legal = null;
   @SerializedName("cusno")
   private String cusno = null;
   @SerializedName("otherCusnos")
@@ -84,36 +76,6 @@ public class JanrainUser {
   /**
    **/
   @ApiModelProperty(value = "")
-  public String getMiddleName() {
-    return middleName;
-  }
-  public void setMiddleName(String middleName) {
-    this.middleName = middleName;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(required = true, value = "")
-  public List<GdprConsent> getConsent() {
-    return consent;
-  }
-  public void setConsent(List<GdprConsent> consent) {
-    this.consent = consent;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(required = true, value = "")
-  public List<LegalConsent> getLegal() {
-    return legal;
-  }
-  public void setLegal(List<LegalConsent> legal) {
-    this.legal = legal;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(value = "")
   public String getCusno() {
     return cusno;
   }
@@ -145,9 +107,6 @@ public class JanrainUser {
         (this.email == null ? janrainUser.email == null : this.email.equals(janrainUser.email)) &&
         (this.firstName == null ? janrainUser.firstName == null : this.firstName.equals(janrainUser.firstName)) &&
         (this.lastName == null ? janrainUser.lastName == null : this.lastName.equals(janrainUser.lastName)) &&
-        (this.middleName == null ? janrainUser.middleName == null : this.middleName.equals(janrainUser.middleName)) &&
-        (this.consent == null ? janrainUser.consent == null : this.consent.equals(janrainUser.consent)) &&
-        (this.legal == null ? janrainUser.legal == null : this.legal.equals(janrainUser.legal)) &&
         (this.cusno == null ? janrainUser.cusno == null : this.cusno.equals(janrainUser.cusno)) &&
         (this.otherCusnos == null ? janrainUser.otherCusnos == null : this.otherCusnos.equals(janrainUser.otherCusnos));
   }
@@ -159,9 +118,6 @@ public class JanrainUser {
     result = 31 * result + (this.email == null ? 0: this.email.hashCode());
     result = 31 * result + (this.firstName == null ? 0: this.firstName.hashCode());
     result = 31 * result + (this.lastName == null ? 0: this.lastName.hashCode());
-    result = 31 * result + (this.middleName == null ? 0: this.middleName.hashCode());
-    result = 31 * result + (this.consent == null ? 0: this.consent.hashCode());
-    result = 31 * result + (this.legal == null ? 0: this.legal.hashCode());
     result = 31 * result + (this.cusno == null ? 0: this.cusno.hashCode());
     result = 31 * result + (this.otherCusnos == null ? 0: this.otherCusnos.hashCode());
     return result;
@@ -176,9 +132,6 @@ public class JanrainUser {
     sb.append("  email: ").append(email).append("\n");
     sb.append("  firstName: ").append(firstName).append("\n");
     sb.append("  lastName: ").append(lastName).append("\n");
-    sb.append("  middleName: ").append(middleName).append("\n");
-    sb.append("  consent: ").append(consent).append("\n");
-    sb.append("  legal: ").append(legal).append("\n");
     sb.append("  cusno: ").append(cusno).append("\n");
     sb.append("  otherCusnos: ").append(otherCusnos).append("\n");
     sb.append("}\n");
