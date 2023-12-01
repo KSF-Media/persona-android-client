@@ -58,19 +58,17 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import org.openapitools.client.api.AdminApi;
+import org.openapitools.client.api.AccountApi;
 
-public class AdminApiExample {
+public class AccountApiExample {
 
     public static void main(String[] args) {
-        AdminApi apiInstance = new AdminApi();
+        AccountApi apiInstance = new AccountApi();
         String body = "body_example"; // String | 
-        UUID authUser = null; // UUID | 
-        String authorization = null; // String | 
         try {
-            apiInstance.adminFreePassDelete(body, authUser, authorization);
+            apiInstance.accountPasswordCheckTokenPost(body);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AdminApi#adminFreePassDelete");
+            System.err.println("Exception when calling AccountApi#accountPasswordCheckTokenPost");
             e.printStackTrace();
         }
     }
@@ -84,6 +82,9 @@ All URIs are relative to *http://http:/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountApi* | [**accountPasswordCheckTokenPost**](docs/AccountApi.md#accountPasswordCheckTokenPost) | **POST** /account/password/check-token | Validate password reset token
+*AccountApi* | [**accountPasswordForgotPost**](docs/AccountApi.md#accountPasswordForgotPost) | **POST** /account/password/forgot | Request password reset link
+*AccountApi* | [**accountPasswordResetPost**](docs/AccountApi.md#accountPasswordResetPost) | **POST** /account/password/reset | Reset a forgotten password with a token
 *AdminApi* | [**adminFreePassDelete**](docs/AdminApi.md#adminFreePassDelete) | **DELETE** /admin/free-pass | Revokes an existing free pass
 *AdminApi* | [**adminFreePassPut**](docs/AdminApi.md#adminFreePassPut) | **PUT** /admin/free-pass | Creates a free pass to an article
 *AdminApi* | [**adminFreePassesGet**](docs/AdminApi.md#adminFreePassesGet) | **GET** /admin/free-passes | Lists all free passes
@@ -139,6 +140,7 @@ Class | Method | HTTP request | Description
  - [DeliveryReclamation](docs/DeliveryReclamation.md)
  - [EntitlementAccess](docs/EntitlementAccess.md)
  - [FaroUser](docs/FaroUser.md)
+ - [ForgotPasswordData](docs/ForgotPasswordData.md)
  - [FreePass](docs/FreePass.md)
  - [FreePassInput](docs/FreePassInput.md)
  - [GdprConsent](docs/GdprConsent.md)
@@ -181,6 +183,7 @@ Class | Method | HTTP request | Description
  - [SubscriptionPayments](docs/SubscriptionPayments.md)
  - [TemporaryAddressChange](docs/TemporaryAddressChange.md)
  - [TemporaryAddressChangeDates](docs/TemporaryAddressChangeDates.md)
+ - [UpdatePasswordData](docs/UpdatePasswordData.md)
  - [User](docs/User.md)
  - [UserUpdate](docs/UserUpdate.md)
  - [UserUpdateAddress](docs/UserUpdateAddress.md)

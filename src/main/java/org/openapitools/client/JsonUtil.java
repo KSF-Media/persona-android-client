@@ -93,6 +93,10 @@ public class JsonUtil {
       return new TypeToken<List<FaroUser>>(){}.getType();
     }
     
+    if ("ForgotPasswordData".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ForgotPasswordData>>(){}.getType();
+    }
+    
     if ("FreePass".equalsIgnoreCase(className)) {
       return new TypeToken<List<FreePass>>(){}.getType();
     }
@@ -261,6 +265,10 @@ public class JsonUtil {
       return new TypeToken<List<TemporaryAddressChangeDates>>(){}.getType();
     }
     
+    if ("UpdatePasswordData".equalsIgnoreCase(className)) {
+      return new TypeToken<List<UpdatePasswordData>>(){}.getType();
+    }
+    
     if ("User".equalsIgnoreCase(className)) {
       return new TypeToken<List<User>>(){}.getType();
     }
@@ -317,6 +325,10 @@ public class JsonUtil {
     
     if ("FaroUser".equalsIgnoreCase(className)) {
       return new TypeToken<FaroUser>(){}.getType();
+    }
+    
+    if ("ForgotPasswordData".equalsIgnoreCase(className)) {
+      return new TypeToken<ForgotPasswordData>(){}.getType();
     }
     
     if ("FreePass".equalsIgnoreCase(className)) {
@@ -485,6 +497,10 @@ public class JsonUtil {
     
     if ("TemporaryAddressChangeDates".equalsIgnoreCase(className)) {
       return new TypeToken<TemporaryAddressChangeDates>(){}.getType();
+    }
+    
+    if ("UpdatePasswordData".equalsIgnoreCase(className)) {
+      return new TypeToken<UpdatePasswordData>(){}.getType();
     }
     
     if ("User".equalsIgnoreCase(className)) {
