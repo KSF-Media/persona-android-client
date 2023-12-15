@@ -27,7 +27,7 @@ public class UpdatePasswordData {
 
   /**
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public String getPassword() {
     return password;
   }
@@ -37,7 +37,7 @@ public class UpdatePasswordData {
 
   /**
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public String getConfirmPassword() {
     return confirmPassword;
   }
