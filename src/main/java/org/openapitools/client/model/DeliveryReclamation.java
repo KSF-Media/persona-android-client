@@ -41,6 +41,11 @@ public class DeliveryReclamation {
   private ClaimEnum claim = null;
   @SerializedName("doorCode")
   private String doorCode = null;
+  public enum ReasonEnum {
+     MissingDelivery,  WrongPaper,  DamagedPaper,  OlderReclamation, 
+  };
+  @SerializedName("reason")
+  private ReasonEnum reason = null;
 
   /**
    * The reclamation identifier
@@ -132,6 +137,16 @@ public class DeliveryReclamation {
     this.doorCode = doorCode;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public ReasonEnum getReason() {
+    return reason;
+  }
+  public void setReason(ReasonEnum reason) {
+    this.reason = reason;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -149,7 +164,8 @@ public class DeliveryReclamation {
         (this.paper == null ? deliveryReclamation.paper == null : this.paper.equals(deliveryReclamation.paper)) &&
         (this.publicationDate == null ? deliveryReclamation.publicationDate == null : this.publicationDate.equals(deliveryReclamation.publicationDate)) &&
         (this.claim == null ? deliveryReclamation.claim == null : this.claim.equals(deliveryReclamation.claim)) &&
-        (this.doorCode == null ? deliveryReclamation.doorCode == null : this.doorCode.equals(deliveryReclamation.doorCode));
+        (this.doorCode == null ? deliveryReclamation.doorCode == null : this.doorCode.equals(deliveryReclamation.doorCode)) &&
+        (this.reason == null ? deliveryReclamation.reason == null : this.reason.equals(deliveryReclamation.reason));
   }
 
   @Override
@@ -163,6 +179,7 @@ public class DeliveryReclamation {
     result = 31 * result + (this.publicationDate == null ? 0: this.publicationDate.hashCode());
     result = 31 * result + (this.claim == null ? 0: this.claim.hashCode());
     result = 31 * result + (this.doorCode == null ? 0: this.doorCode.hashCode());
+    result = 31 * result + (this.reason == null ? 0: this.reason.hashCode());
     return result;
   }
 
@@ -179,6 +196,7 @@ public class DeliveryReclamation {
     sb.append("  publicationDate: ").append(publicationDate).append("\n");
     sb.append("  claim: ").append(claim).append("\n");
     sb.append("  doorCode: ").append(doorCode).append("\n");
+    sb.append("  reason: ").append(reason).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
