@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**adminSearchPost**](AdminApi.md#adminSearchPost) | **POST** /admin/search | Search for users
 [**adminTransferPassiveSubscribersListidPost**](AdminApi.md#adminTransferPassiveSubscribersListidPost) | **POST** /admin/transfer-passive-subscribers/{listid} | Transfers passive customers from Kayak to Mailchimp
 [**adminUserPost**](AdminApi.md#adminUserPost) | **POST** /admin/user | Create a new user with admin options.
+[**adminUserUuidDelete**](AdminApi.md#adminUserUuidDelete) | **DELETE** /admin/user/{uuid} | Delete user
 
 
 
@@ -304,4 +305,51 @@ No authorization required
 
 - **Content-Type**: application/json;charset=utf-8
 - **Accept**: application/json;charset=utf-8
+
+
+## adminUserUuidDelete
+
+> adminUserUuidDelete(uuid, authUser, authorization)
+
+Delete user
+
+### Example
+
+```java
+// Import classes:
+//import org.openapitools.client.api.AdminApi;
+
+AdminApi apiInstance = new AdminApi();
+UUID uuid = null; // UUID | 
+UUID authUser = null; // UUID | 
+String authorization = null; // String | 
+try {
+    apiInstance.adminUserUuidDelete(uuid, authUser, authorization);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#adminUserUuidDelete");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**UUID**](.md)|  | [default to null]
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
+ **authorization** | **String**|  | [optional] [default to null]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
